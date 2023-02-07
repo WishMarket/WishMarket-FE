@@ -1,0 +1,205 @@
+@keyframes toggleLoad {
+    from {
+        transform: translateX(0px);
+    }
+    to {
+        transform: translateX(-400px);
+    }
+}
+
+@keyframes toggleClose {
+    from {
+        transform: translateX(-400px);
+    }
+    to {
+        transform: translateX(0px);
+    }
+}
+
+#Toggle_Bar {
+    height: 100%;
+    z-index: 200;
+    position: fixed;
+    right: -400px;
+    top: 0;
+    padding: 16px;
+    background-color: $color-yellow-800;
+    color: $color-gray-800;
+
+    &.on {
+        animation: toggleLoad 0.4s ease-in-out forwards;
+    }
+
+    &.off {
+        animation: toggleClose 0.4s ease-in-out forwards;
+    }
+
+    .Toggle_Close_Btn {
+        position: absolute;
+        z-index: 300;
+        top: 0px;
+        left: 0;
+        padding: 16px;
+        cursor: pointer;
+        color: $color-gray-800;
+    }
+
+    .Toggle_Bar_Container {
+        width: 360px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        .Toggle_Bar_Wrapper {
+            width: 360px;
+            transform: translateY(-32px);
+
+            .Toggle_User_Info {
+                width: 100%;
+
+                .Toggle_User_Img {
+                    display: flex;
+                    justify-content: center;
+
+                    .Toggle_User_Profile {
+                        width: 150px;
+                        height: 150px;
+                        border-radius: 50%;
+                    }
+                }
+
+                .Toggle_User_Welcome {
+                    text-align: center;
+                    margin-top: 24px;
+                    font-size: 22px;
+                    font-weight: 700;
+                    color: $color-gray-800;
+                }
+
+                .Toggle_User_Point {
+                    text-align: center;
+                    margin: 16px 0px;
+                    font-size: 14px;
+                    font-weight: 300;
+                    color: $color-gray-800;
+
+                    span {
+                        color: $color-blue;
+                    }
+                }
+
+                .Toggle_Btn_Area {
+                    display: flex;
+                    justify-content: center;
+
+                    a {
+                        .Toggle_User_Modify_Btn,
+                        .Toggle_Logout_Btn {
+                            height: 32px;
+                            line-height: 1;
+                        }
+
+                        .Toggle_Logout_Btn {
+                            border: 1px solid $color-blue;
+                            color: $color-blue;
+                            margin-left: 8px;
+
+                            &:hover {
+                                background-color: $color-yellow-600;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .Toggle_Divide_Bar {
+                margin: 40px 0px;
+                border: 0;
+                width: 100%;
+                height: 1px;
+                background-color: $color-gray-800;
+            }
+
+            .Project_Info {
+                width: 100%;
+
+                .Project_Info_Title {
+                    font-weight: 700;
+                    text-align: center;
+                    color: $color-gray-800;
+                }
+
+                .Project_Info_Desc {
+                    display: flex;
+                    justify-content: center;
+
+                    a {
+                        margin-top: 16px;
+
+                        .Github_Icon,
+                        .Notion_Icon,
+                        .Zb_Icon {
+                            margin: 0 4px;
+                            font-size: 40px;
+                            cursor: pointer;
+                            color: $color-gray-800;
+                            transition: 0.4s;
+
+                            &:hover {
+                                color: $color-blue;
+                                transform: scale(1.2);
+                                transition: 0.4s;
+                            }
+                        }
+
+                        .Notion_Icon,
+                        .Zb_Icon {
+                            margin-left: 24px;
+                        }
+                    }
+                }
+            }
+
+            .Toggle_Not_Users_Container {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+
+                .Toggle_Not_Users_Wrapper {
+                    .Toggle_Login_Area {
+                        width: 100%;
+                        text-align: center;
+                        margin-bottom: 28px;
+
+                        .Toggle_Login_Desc {
+                            color: $color-gray-800;
+                            margin-bottom: 12px;
+                        }
+
+                        a {
+                            .Toggle_Login_Btn {
+                                width: 180px;
+                            }
+                        }
+                    }
+
+                    .Toggle_Go_To_Sign_Up {
+                        width: 100%;
+                        text-align: center;
+
+                        .Toggle_Sign_Up_Desc {
+                            color: $color-gray-800;
+                            margin-bottom: 12px;
+                        }
+
+                        a {
+                            .Toggle_Sign_Up_Btn {
+                                width: 180px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

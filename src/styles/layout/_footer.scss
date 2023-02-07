@@ -1,0 +1,112 @@
+footer {
+    background-color: $color-gray-600;
+    padding: 60px 200px;
+
+    .Footer_Top_Area {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        .Footer_Left {
+            line-height: 1.8;
+
+            .Footer_Company_Title {
+                margin-bottom: 12px;
+                color: $color-gray-400;
+                font-size: 24px;
+                font-weight: 600;
+            }
+
+            .Footer_Company_Desc {
+                color: $color-gray-400;
+                font-size: 14px;
+                font-weight: 300;
+            }
+        }
+
+        .Footer_Right {
+            display: flex;
+            justify-content: space-between;
+            line-height: 1.4;
+
+            .Footer_Etc {
+                margin-right: 32px;
+
+                .Footer_Etc_Title {
+                    margin-bottom: 12px;
+                    color: $color-gray-400;
+                    font-size: 24px;
+                    font-weight: 600;
+                }
+
+                .Footer_Etc_Desc {
+                    margin-bottom: 12px;
+                    color: $color-gray-400;
+                    font-size: 14px;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: $color-white;
+                    }
+                }
+            }
+
+            .Footer_Contact {
+                .Footer_Contact_Title {
+                    margin-bottom: 12px;
+                    color: $color-gray-400;
+                    font-size: 24px;
+                    font-weight: 600;
+                }
+
+                .Footer_Contact_Info {
+                    margin-bottom: 12px;
+                    color: $color-gray-400;
+                    font-size: 16px;
+                    font-weight: 700;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: $color-white;
+                    }
+                }
+
+                .Footer_Contact_Desc {
+                    margin-bottom: 12px;
+                    color: $color-gray-400;
+                    font-size: 14px;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+
+    .Footer_Bottom_Area {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+
+        .Footer_Copyright {
+            color: $color-gray-400;
+            font-size: 14px;
+            font-weight: 300;
+        }
+
+        .Footer_Icons {
+            width: 80px;
+            display: flex;
+            justify-content: space-between;
+
+            .Footer_Notion_Icon,
+            .Footer_Github_Icon {
+                color: $color-gray-400;
+                font-size: 32px;
+                cursor: pointer;
+
+                &:hover {
+                    color: $color-white;
+                }
+            }
+        }
+    }
+}

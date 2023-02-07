@@ -1,0 +1,98 @@
+.FamousFund_title {
+    font-family: "Noto Sans KR", sans-serif;
+    text-align: center;
+    margin-top: 120px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: $font-title-size;
+    color: $color-blue;
+}
+
+.FamousFund_desc {
+    text-align: center;
+    color: $color-gray-800;
+    font-size: $font-sub-title-size;
+    margin-bottom: 28px;
+}
+
+.Product_Scroll_Wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    .carousel_Button_Left {
+        position: relative;
+        margin-top: 128px;
+        width: 40px;
+        height: 40px;
+        z-index: 100;
+        border-radius: 50%;
+        background-color: $color-yellow-800;
+        border: 0;
+        color: $color-white;
+        transition: 0.4s;
+        text-align: center;
+
+        &:disabled {
+            background-color: $color-gray-400;
+            transition: 0.4s;
+        }
+
+        &::before {
+            position: absolute;
+            top: -128px;
+            left: 48px;
+            display: block;
+            width: 60px;
+            height: 300px;
+            background-image: linear-gradient(to right, $color-white 0%, transparent 100%);
+            content: "";
+        }
+    }
+
+    .carousel_Button_Right {
+        position: relative;
+        margin-top: 128px;
+        width: 40px;
+        height: 40px;
+        z-index: 100;
+        border-radius: 50%;
+        background-color: $color-yellow-800;
+        border: 0;
+        color: $color-white;
+        transition: 0.4s;
+        text-align: center;
+
+        &:disabled {
+            background-color: $color-gray-400;
+        }
+
+        &::before {
+            position: absolute;
+            top: -128px;
+            right: 48px;
+            display: block;
+            width: 60px;
+            height: 300px;
+            background-image: linear-gradient(to left, $color-white 0%, transparent 100%);
+            content: "";
+        }
+    }
+}
+
+.product_Wrapper {
+    position: relative;
+    display: flex;
+    width: 1024px;
+    overflow: hidden;
+    margin: 0 8px;
+
+    .product_Scroll {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        white-space: no-wrap;
+        overflow: visible;
+    }
+}
