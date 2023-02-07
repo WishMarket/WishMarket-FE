@@ -125,8 +125,13 @@
                         display: flex;
                         align-items: center;
 
-                        .Category_Wish_Add_Btn,
                         .Product_Share_Btn {
+                            border: 0;
+                            background-color: transparent;
+                        }
+
+                        .Category_Wish_Add_Btn,
+                        .Product_Share_Btn > .Product_Share_Inner {
                             color: $color-gray-800;
                             transition: 0.4s;
 

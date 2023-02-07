@@ -152,6 +152,19 @@
     }
 }
 
-.copy_Button {
-    font-size: 25px;
+.Modal_Inner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .Share_LinkBox {
+        width: 368px;
+        height: 38px;
+        border-radius: 12px;
+    }
+
+    .copy_Button {
+        font-size: 25px;
+    }
 }

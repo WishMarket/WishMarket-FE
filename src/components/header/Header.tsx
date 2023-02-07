@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 import logo from "../../assets/logo.png";
 import { FaBell, FaBars } from "react-icons/fa";
 import { ImSearch } from "react-icons/im";
+
 import ToggleBar from "../header/ToggleBar";
 
 export default function Header() {
@@ -43,9 +46,9 @@ export default function Header() {
                     <div className="Header-Category">
                         <ul className="Header_Category_Area">
                             <li className="Header_Category_Item">
-                                <a href="/" className="Header_Category_Link">
+                                <Link to="/category" className="Header_Category_Link">
                                     카테고리
-                                </a>
+                                </Link>
                             </li>
                             <li className="Header_Category_Item">
                                 <a href="/" className="Header_Category_Link">

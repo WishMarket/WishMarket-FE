@@ -1,9 +1,15 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
+import { Modal } from "react-bootstrap";
 
 import { BsShareFill } from "react-icons/bs";
 import { RiHeartAddFill } from "react-icons/ri";
 import { TbHeartMinus } from "react-icons/tb";
 import { MdReadMore } from "react-icons/md";
+import { IoMdCopy } from "react-icons/io";
+
+import { CopyClipBoard } from "../../hooks/CopyClipBoard";
 import { products } from "../../data/productData.json";
 
 export default function ProductList() {
@@ -11,6 +17,7 @@ export default function ProductList() {
 
     const productCardList = sliceProducts.map((product) => {
         const [tabWish, setTabWish] = useState(false);
+        const [showModal, setShowModal] = useState(false);
 
         // wishlist btn
         const handleTabWish = () => {
@@ -20,6 +27,16 @@ export default function ProductList() {
         // comma
         const commaNums = (num: number) => {
             return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        };
+
+        // share btn
+        const handleShowModal = (e: React.MouseEvent<HTMLButtonElement>) => {
+            e.preventDefault();
+            setShowModal(true);
+        };
+
+        const handleCloseModal = (e: React.MouseEvent<HTMLButtonElement> | void) => {
+            setShowModal(false);
         };
 
         return (
@@ -40,10 +57,31 @@ export default function ProductList() {
                         </a>
                         <div className="Product_List_Icon">
                             {tabWish ? <TbHeartMinus className="Category_Wish_Minus_Btn" onClick={handleTabWish} /> : <RiHeartAddFill className="Category_Wish_Add_Btn" onClick={handleTabWish} />}
-                            <BsShareFill className="Product_Share_Btn" />
+                            <button className="Product_Share_Btn" onClick={handleShowModal}>
+                                <BsShareFill className="Product_Share_Inner" />
+                            </button>
                         </div>
                     </div>
                 </div>
+                <Modal show={showModal} onHide={handleCloseModal}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>공유하기</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <div className="Modal_Inner">
+                            <span className="Modal_Title">링크:</span>
+                            <input className="Share_LinkBox" type="text" value={product.url} readOnly></input>
+                            <button className="btn btn-light">
+                                <IoMdCopy className="copy_Button" onClick={() => CopyClipBoard(product.url)} />
+                            </button>
+                        </div>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <button className="btn btn-secondary" onClick={handleCloseModal}>
+                            닫기
+                        </button>
+                    </Modal.Footer>
+                </Modal>
             </div>
         );
     });
@@ -56,11 +94,11 @@ export default function ProductList() {
                 <div className="Card_Product_Wrapper">{productCardList}</div>
             </div>
             <div className="More_Btn_Area">
-                <a href="/">
+                <Link to="/category">
                     <button className="btn Product_More_Info">
                         <MdReadMore className="More_Info_Icon" /> 베스트 상품 더보기
                     </button>
-                </a>
+                </Link>
             </div>
         </>
     );

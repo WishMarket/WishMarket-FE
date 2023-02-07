@@ -94,8 +94,8 @@ export default function FundingAttend(props: Product) {
                         <Modal.Title>공유하기</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <div>
-                            <span>링크:</span>
+                        <div className="Modal_Inner">
+                            <span className="Modal_Title">링크:</span>
                             <input className="Share_LinkBox" type="text" value={url} readOnly></input>
                             <button className="btn btn-light">
                                 <IoMdCopy className="copy_Button" onClick={() => CopyClipBoard(url)} />

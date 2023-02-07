@@ -11351,13 +11351,17 @@ table {
   display: flex;
   align-items: center;
 }
-.Product_List_Container .Card_Product_Wrapper .Product_List_Item .Product_List_Inner .Product_Btn_Area .Product_List_Icon .Category_Wish_Add_Btn,
 .Product_List_Container .Card_Product_Wrapper .Product_List_Item .Product_List_Inner .Product_Btn_Area .Product_List_Icon .Product_Share_Btn {
+  border: 0;
+  background-color: transparent;
+}
+.Product_List_Container .Card_Product_Wrapper .Product_List_Item .Product_List_Inner .Product_Btn_Area .Product_List_Icon .Category_Wish_Add_Btn,
+.Product_List_Container .Card_Product_Wrapper .Product_List_Item .Product_List_Inner .Product_Btn_Area .Product_List_Icon .Product_Share_Btn > .Product_Share_Inner {
   color: #303030;
   transition: 0.4s;
 }
 .Product_List_Container .Card_Product_Wrapper .Product_List_Item .Product_List_Inner .Product_Btn_Area .Product_List_Icon .Category_Wish_Add_Btn:hover,
-.Product_List_Container .Card_Product_Wrapper .Product_List_Item .Product_List_Inner .Product_Btn_Area .Product_List_Icon .Product_Share_Btn:hover {
+.Product_List_Container .Card_Product_Wrapper .Product_List_Item .Product_List_Inner .Product_Btn_Area .Product_List_Icon .Product_Share_Btn > .Product_Share_Inner:hover {
   color: #ffc32a;
   transition: 0.4s;
 }
@@ -11794,7 +11798,18 @@ table {
   color: #ffc32a;
 }
 
-.copy_Button {
+.Modal_Inner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Modal_Inner .Share_LinkBox {
+  width: 368px;
+  height: 38px;
+  border-radius: 12px;
+}
+.Modal_Inner .copy_Button {
   font-size: 25px;
 }
 
