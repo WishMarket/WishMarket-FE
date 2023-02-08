@@ -1,0 +1,108 @@
+.signup_Wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1500px;
+}
+
+.signup {
+    font-family: 'Noto Sans Kr', 'sans-serif';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 40vw;
+    height: 100vh;
+    padding: 5vh;
+    border-radius: 15px;
+    max-height: 1800px;
+    min-height: 600px;
+    max-width: 600px;
+    min-width: 500px;
+    background-color: $color-yellow-800;
+
+    div {
+
+        h2 {
+            font-weight: 600;
+            font-size: 50px;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 20px;
+            white-space: nowrap;
+            margin-bottom: 50px;
+        }
+    }
+
+    .signup_content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 40vh;
+        min-height: 300px;
+    }
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    min-height: 150px;
+
+    .signup_Form {
+        background-color: $color-white;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 30vh;
+        padding: 2vh;
+        min-width: 100px;
+        min-height: 650px;
+
+        div {
+            width: 300px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            input {
+                margin-left: 3px;
+            }
+        }
+    }
+
+    .signup_Button {
+        margin-top: 50px;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        div {
+            button {
+                width: 100%;
+            }
+        }
+
+    }
+}
+
+.signup_Input_Box {
+    width: 200px;
+    height: 30px;
+    font-size: 14px;
+    border: 0;
+    border-radius: 16px;
+    outline: none;
+    padding-left: 10px;
+    background-color: $color-gray-200;
+}
