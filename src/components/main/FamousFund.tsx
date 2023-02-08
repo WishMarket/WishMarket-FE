@@ -4,7 +4,7 @@ import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import { products } from "../../data/productData.json";
 
 interface Product {
-    category: string;
+    category: number;
     productId: string;
     name: string;
     image: string;
@@ -14,15 +14,15 @@ interface Product {
     funded_price: number;
     my_fund: number;
     url: string;
+    best: boolean;
 }
 
 export default function FamousFund() {
-    const productData = products;
-
-    const ITEM_WIDTH = 866;
-    const LENGTH = products.length - 1;
+    const productData = products.slice(0, 11);
+    const ITEM_WIDTH = 876;
+    const LENGTH = productData.length - 1;
     const MAX_WIDTH = LENGTH * ITEM_WIDTH;
-    const INIT_SLIDE_PX = Math.floor(LENGTH / 2) * ITEM_WIDTH;
+    const INIT_SLIDE_PX = (LENGTH / 2) * ITEM_WIDTH;
     const [slidePx, setSlidePx] = useState<number>(-INIT_SLIDE_PX);
 
     const toPrev = () => {
