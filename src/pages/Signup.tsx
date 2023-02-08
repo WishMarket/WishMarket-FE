@@ -7,7 +7,7 @@ export default function Signup() {
       <div>
           <Header />
           <SignupForm />
-          {/* <Footer /> */}
+          <Footer />
     </div>
   )
 }
