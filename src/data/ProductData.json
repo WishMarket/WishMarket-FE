@@ -1,7 +1,7 @@
 {
     "products": [
         {
-            "category": "01",
+            "category": 1,
             "productId": "000",
             "name": "CITY BOYS SLIM BRIEFCASE 001",
             "image": "https://img.29cm.co.kr/next-product/2022/04/19/cec1c374d95b4551a44a906c894f0847_20220419161534.jpg?width=700",
@@ -13,7 +13,7 @@
             "url": "잘나오나1"
         },
         {
-            "category": "01",
+            "category": 2,
             "productId": "001",
             "name": "삼성 스마트모니터 M5 S32BM501",
             "image": "https://img.29cm.co.kr/next-product/2022/07/04/73ac0c7646434fb7bc7508a8853bc51a_20220704082707.jpg?width=700",
@@ -25,7 +25,7 @@
             "url": "잘나오나2"
         },
         {
-            "category": "01",
+            "category": 3,
             "productId": "002",
             "name": "LG 32QN650 32인치 QHD",
             "image": "https://img.29cm.co.kr/next-product/2022/11/18/5f2736ee13ec40d687b6dc86fc213578_20221118144436.jpg?width=700",
@@ -37,7 +37,7 @@
             "url": "잘나오나3"
         },
         {
-            "category": "02",
+            "category": 4,
             "productId": "003",
             "name": "삼성전자 그랑데 AI 건조기",
             "image": "https://img.29cm.co.kr/next-product/2022/04/13/ecde223a17864e12b2d96994fec684c3_20220413102154.jpg?width=700",
@@ -49,7 +49,7 @@
             "url": "잘나오나4"
         },
         {
-            "category": "02",
+            "category": 5,
             "productId": "004",
             "name": "삼성전자 그랑데 AI 의류 건조기",
             "image": "https://img.29cm.co.kr/next-product/2022/08/18/979c9bfa22db4720996608688d8b9ff0_20220818171330.jpg?width=700",
@@ -61,7 +61,7 @@
             "url": "잘나오나5"
         },
         {
-            "category": "02",
+            "category": 6,
             "productId": "005",
             "name": "아이닉 3세대 대용량 올스텐 에어프라이어 7L",
             "image": "https://img.29cm.co.kr/next-product/2022/08/25/923eb4c0286a42e8a5d174beea61d6b9_20220825142949.jpg?width=700",
@@ -73,7 +73,7 @@
             "url": "잘나오나6"
         },
         {
-            "category": "02",
+            "category": 7,
             "productId": "006",
             "name": "비베카 리본 갈바닉 마사지기 핫앤쿨 EMS 홈케어 디바이스",
             "image": "https://img.29cm.co.kr/next-product/2022/07/19/ab75d96fafc745719a78a1e5a5d3d911_20220719084520.png?width=700",

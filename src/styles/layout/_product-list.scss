@@ -44,117 +44,117 @@
         display: flex;
         overflow: hidden;
         justify-content: space-between;
+    }
+}
 
-        .Product_List_Item {
-            position: relative;
-            width: 232px;
-            margin: 12px;
-            cursor: pointer;
-            transition: 0.4s;
+.Product_List_Item {
+    position: relative;
+    width: 232px;
+    margin: 12px;
+    cursor: pointer;
+    transition: 0.4s;
 
-            &:hover {
-                transform: scale(1.02);
-                transition: 0.4s;
+    &:hover {
+        transform: scale(1.02);
+        transition: 0.4s;
+    }
+
+    .Product_List_Img {
+        width: 232px;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+    }
+
+    .Product_List_Inner {
+        background-color: $color-gray-200;
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+        padding: 12px;
+
+        .Product_Top_Like {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+
+            .Like_Amount {
+                color: $color-blue;
+                font-size: 12px;
             }
 
-            .Product_List_Img {
-                width: 232px;
-                border-top-left-radius: 16px;
-                border-top-right-radius: 16px;
+            .Product_List_Best_Badge {
+                width: 34px;
+                padding: 1px 3px;
+                background-color: $color-blue;
+                border-radius: 32px;
+                text-align: center;
+                color: $color-white;
+                font-size: $font-desc-size;
+                font-weight: 400;
+                line-height: 1.3;
+            }
+        }
+
+        .Product_List_Title {
+            width: 200px;
+            height: 20px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-break: break-all;
+            font-size: $font-sub-title-size;
+            font-weight: 600;
+        }
+
+        .Product_List_Price {
+            margin-top: 8px;
+            font-size: 14px;
+        }
+
+        .Product_Btn_Area {
+            margin-top: 12px;
+            display: flex;
+            justify-content: space-between;
+
+            a {
+                .Category_Funding_Btn {
+                    width: 102px;
+                    color: $color-white;
+                }
             }
 
-            .Product_List_Inner {
-                background-color: $color-gray-200;
-                border-bottom-left-radius: 16px;
-                border-bottom-right-radius: 16px;
-                padding: 12px;
+            .Product_List_Icon {
+                display: flex;
+                align-items: center;
 
-                .Product_Top_Like {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    margin-bottom: 4px;
+                .Product_Share_Btn {
+                    border: 0;
+                    background-color: transparent;
+                }
 
-                    .Like_Amount {
-                        color: $color-blue;
-                        font-size: 12px;
-                    }
+                .Category_Wish_Add_Btn,
+                .Product_Share_Btn > .Product_Share_Inner {
+                    color: $color-gray-800;
+                    transition: 0.4s;
 
-                    .Product_List_Best_Badge {
-                        width: 34px;
-                        padding: 1px 3px;
-                        background-color: $color-blue;
-                        border-radius: 32px;
-                        text-align: center;
-                        color: $color-white;
-                        font-size: $font-desc-size;
-                        font-weight: 400;
-                        line-height: 1.3;
+                    &:hover {
+                        color: $color-yellow-800;
+                        transition: 0.4s;
                     }
                 }
 
-                .Product_List_Title {
-                    width: 200px;
-                    height: 20px;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    white-space: nowrap;
-                    word-break: break-all;
-                    font-size: $font-sub-title-size;
-                    font-weight: 600;
+                .Category_Wish_Minus_Btn {
+                    color: $color-yellow-800;
                 }
 
-                .Product_List_Price {
-                    margin-top: 8px;
-                    font-size: 14px;
+                .Category_Wish_Add_Btn,
+                .Category_Wish_Minus_Btn {
+                    margin-right: 16px;
+                    font-size: 26px;
                 }
 
-                .Product_Btn_Area {
-                    margin-top: 12px;
-                    display: flex;
-                    justify-content: space-between;
-
-                    a {
-                        .Category_Funding_Btn {
-                            width: 102px;
-                            color: $color-white;
-                        }
-                    }
-
-                    .Product_List_Icon {
-                        display: flex;
-                        align-items: center;
-
-                        .Product_Share_Btn {
-                            border: 0;
-                            background-color: transparent;
-                        }
-
-                        .Category_Wish_Add_Btn,
-                        .Product_Share_Btn > .Product_Share_Inner {
-                            color: $color-gray-800;
-                            transition: 0.4s;
-
-                            &:hover {
-                                color: $color-yellow-800;
-                                transition: 0.4s;
-                            }
-                        }
-
-                        .Category_Wish_Minus_Btn {
-                            color: $color-yellow-800;
-                        }
-
-                        .Category_Wish_Add_Btn,
-                        .Category_Wish_Minus_Btn {
-                            margin-right: 16px;
-                            font-size: 26px;
-                        }
-
-                        .Product_Share_Btn {
-                            font-size: 20px;
-                        }
-                    }
+                .Product_Share_Btn {
+                    font-size: 20px;
                 }
             }
         }
