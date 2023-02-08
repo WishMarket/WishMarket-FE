@@ -99,8 +99,8 @@ export default function SubItemCategory() {
                     <img src={product.image} alt="/" className="Product_List_Img" />
                     <div className="Product_List_Inner">
                         <div className="Product_Top_Like">
-                            <div className="Like_Amount">{product.like} 명이 좋아합니다!</div>
-                            <div className="Product_List_Best_Badge">BEST</div>
+                            <div className="Like_Amount">💙 {product.like} 명이 추천했어요.</div>
+                            {product.best ? <div className="Product_List_Best_Badge">BEST</div> : null}
                         </div>
                         <div className="Product_List_Title">{product.name}</div>
                         <div className="Product_List_Price">{commaNums(product.price)} 원</div>
@@ -143,8 +143,8 @@ export default function SubItemCategory() {
                     <img src={product.image} alt="/" className="Product_List_Img" />
                     <div className="Product_List_Inner">
                         <div className="Product_Top_Like">
-                            <div className="Like_Amount">{product.like} 명이 좋아합니다!</div>
-                            <div className="Product_List_Best_Badge">BEST</div>
+                            <div className="Like_Amount">💙 {product.like} 명이 추천했어요.</div>
+                            {product.best ? <div className="Product_List_Best_Badge">BEST</div> : null}
                         </div>
                         <div className="Product_List_Title">{product.name}</div>
                         <div className="Product_List_Price">{commaNums(product.price)} 원</div>
