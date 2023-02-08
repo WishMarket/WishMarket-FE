@@ -12137,7 +12137,7 @@ form .login_Button div button {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 1500px;
+  height: 1300px;
 }
 
 .signup {
@@ -12150,8 +12150,8 @@ form .login_Button div button {
   height: 100vh;
   padding: 5vh;
   border-radius: 15px;
-  max-height: 1800px;
-  min-height: 600px;
+  max-height: 800px;
+  min-height: 700px;
   max-width: 600px;
   min-width: 500px;
   background-color: #ffc32a;
@@ -12189,13 +12189,13 @@ form .signup_Form {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 30vh;
+  height: 20vh;
   padding: 2vh;
-  min-width: 100px;
-  min-height: 650px;
+  min-width: 150px;
+  min-height: 400px;
 }
 form .signup_Form div {
-  width: 300px;
+  width: 350px;
   margin-top: 5px;
   margin-bottom: 5px;
   display: flex;

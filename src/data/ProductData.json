@@ -285,6 +285,58 @@
             "my_fund": 20000,
             "url": "잘나오나20",
             "best": false
+        },
+        {
+            "category": 2,
+            "productId": "022",
+            "name": "CLOVIA DUELLO 목걸이+귀걸이 세트 (SET-J0-0823)",
+            "image": "https://webimg.jestina.co.kr/UpData2/item/G2000025518/20221013170810ZM.jpg",
+            "price": 251600,
+            "like": 28,
+            "date": "2023-02-01",
+            "funded_price": 40000,
+            "my_fund": 20000,
+            "url": "잘나오나21",
+            "best": false
+        },
+        {
+            "category": 2,
+            "productId": "023",
+            "name": "THE J 14K 목걸이+귀걸이 세트 (SET-J0-0626)",
+            "image": "https://webimg.jestina.co.kr/UpData2/item/G2000025472/20221013170820ZM.jpg",
+            "price": 790500,
+            "like": 8,
+            "date": "2023-02-01",
+            "funded_price": 40000,
+            "my_fund": 20000,
+            "url": "잘나오나22",
+            "best": false
+        },
+        {
+            "category": 2,
+            "productId": "024",
+            "name": "Mioello 14K 목걸이+귀걸이 세트 (SET-J0-0505)",
+            "image": "https://webimg.jestina.co.kr/UpData2/item/G2000025278/20221013170834ZM.jpg",
+            "price": 731000,
+            "like": 8,
+            "date": "2023-02-01",
+            "funded_price": 40000,
+            "my_fund": 20000,
+            "url": "잘나오나23",
+            "best": false
+        },
+        {
+            "category": 2,
+            "productId": "025",
+            "name": "WHITEMOND 목걸이+귀걸이 세트 (SET-J0-1027)",
+            "image": "https://webimg.jestina.co.kr/UpData2/item/G2000025767/20221111092828ZM.jpg",
+            "price": 204000,
+            "like": 454,
+            "date": "2023-02-01",
+            "funded_price": 40000,
+            "my_fund": 20000,
+            "url": "잘나오나24",
+            "best": false
         }
     ]
 }
