@@ -1,0 +1,93 @@
+.Category_Title {
+    margin-top: 100px;
+    margin-bottom: 64px;
+    text-align: center;
+    font-size: $font-larger;
+    font-weight: 600;
+    color: $color-gray-800;
+}
+
+.Sub_Item_Category_Container {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 100;
+    background-color: $color-white;
+    padding-bottom: 4px;
+
+    .Sub_Item_Category_Wrapper {
+        display: flex;
+
+        .Sub_Item_Category_Inner {
+            display: flex;
+            justify-content: center;
+
+            #Sub_Item_Category_Item {
+                margin: 20px;
+                width: 100px;
+                height: 100px;
+                cursor: pointer;
+
+                &:hover > .Sub_Item_Category_Img {
+                    background-color: $color-gray-400;
+                    transition: 0.4s;
+                }
+
+                &.focused > .Sub_Item_Category_Title,
+                &:hover > .Sub_Item_Category_Title {
+                    &::after,
+                    &::before {
+                        width: 36%;
+                    }
+                }
+
+                .Sub_Item_Category_Img {
+                    width: 80px;
+                    margin-left: 10px;
+                    margin-bottom: 8px;
+                    border-radius: 50%;
+                    transition: 0.4s;
+                }
+
+                .Sub_Item_Category_Title {
+                    position: relative;
+                    text-align: center;
+                    font-size: $font-btn-size;
+                    font-weight: 500;
+                    color: $color-gray-800;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: 50%;
+                        bottom: -8px;
+                        width: 0;
+                        height: 2px;
+                        background-color: $color-gray-800;
+                        transition: all 0.5s;
+                    }
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        right: 50%;
+                        bottom: -8px;
+                        width: 0;
+                        height: 2px;
+                        background-color: $color-gray-800;
+                        transition: all 0.5s;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.Category_Item_Container {
+    padding: 120px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
