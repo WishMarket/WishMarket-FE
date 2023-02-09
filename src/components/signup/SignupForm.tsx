@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
 import { SignUpError } from "../../hooks/SignUpError";
-
+import { useNavigate } from "react-router-dom";
 export default function SignupForm() {
+    const navigate = useNavigate();
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     const [retypePassword, setRetypePassword] = useState<string>("");
@@ -54,6 +55,8 @@ export default function SignupForm() {
             console.log(retypePassword);
             console.log(name);
             console.log(nickname);
+
+            navigate("/");
         }
     };
 

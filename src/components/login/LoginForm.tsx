@@ -91,7 +91,7 @@ export default function LoginForm() {
             <Link to={"/signup"}>
               <span>회원가입</span>
             </Link>
-            <Link to={"/"}>
+            <Link to={"/login/findpasswd"}>
               <span className="link_findPassword">비밀번호 찾기</span>
             </Link>
           </div>

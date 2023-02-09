@@ -12013,7 +12013,8 @@ footer .Footer_Bottom_Area .Footer_Icons .Footer_Github_Icon:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 1000px;
+  height: 1280px;
+  overflow: hidden;
 }
 
 .login {
@@ -12137,7 +12138,7 @@ form .login_Button div button {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 1300px;
+  height: 1280px;
 }
 
 .signup {
@@ -12218,6 +12219,110 @@ form .signup_Button div button {
 
 .signup_Input_Box {
   width: 200px;
+  height: 30px;
+  font-size: 14px;
+  border: 0;
+  border-radius: 16px;
+  outline: none;
+  padding-left: 10px;
+  background-color: #f7f7f7;
+}
+
+.findpasswd_Wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 1280px;
+}
+
+.findpasswd {
+  font-family: "Noto Sans Kr", "sans-serif";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 40vw;
+  height: 100vh;
+  padding: 5vh;
+  border-radius: 15px;
+  max-height: 700px;
+  min-height: 400px;
+  max-width: 700px;
+  min-width: 600px;
+  background-color: #ffc32a;
+}
+.findpasswd div h2, .findpasswd div .h2 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+}
+.findpasswd div h3, .findpasswd div .h3 {
+  font-size: 20px;
+  white-space: nowrap;
+  margin-bottom: 50px;
+}
+.findpasswd .findpasswd_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 40vh;
+  min-height: 300px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  min-height: 150px;
+}
+form .findpasswd_Form {
+  background-color: #ffffff;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 20vh;
+  padding: 2vh;
+  min-width: 150px;
+  min-height: 300px;
+}
+form .findpasswd_Form div {
+  width: 350px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+form .findpasswd_Form div input {
+  margin-left: 3px;
+}
+form .validate {
+  display: flex;
+  flex-direction: column;
+}
+form .validate button {
+  margin-top: 5px;
+  white-space: nowrap;
+  align-self: flex-end;
+}
+form .findpasswd_Button {
+  margin-top: 50px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+form .findpasswd_Button div button {
+  width: 100%;
+}
+
+.findpasswd_Input_Box {
+  width: 250px;
   height: 30px;
   font-size: 14px;
   border: 0;
