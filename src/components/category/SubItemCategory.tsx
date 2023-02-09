@@ -26,10 +26,6 @@ interface Product {
 export default function SubItemCategory() {
     const [currentTab, setCurrentTab] = useState(0);
     const [items, setItems] = useState<Product[]>([]);
-
-    const [isScrollEnd, setIsScrollEnd] = useState(false);
-    const [ref, inView] = useInView();
-    const [offset, setOffset] = useState(0);
     const [loading, setLoading] = useState(false);
 
     const categories = [
@@ -78,8 +74,8 @@ export default function SubItemCategory() {
     const url = "/data/ProductData.json";
 
     // tab
-    const selectMenuHandler = (index: any) => {
-        setCurrentTab(index);
+    const selectMenuHandler = (id: any) => {
+        setCurrentTab(id);
     };
 
     // axios
@@ -97,12 +93,6 @@ export default function SubItemCategory() {
     };
 
     useEffect(() => {
-        if (inView && !loading) {
-            setOffset((prev) => prev + 12);
-        }
-    }, [inView]);
-
-    useEffect(() => {
         getItems();
     }, []);
 
@@ -112,8 +102,8 @@ export default function SubItemCategory() {
             <div className="Sub_Item_Category_Container">
                 <div className="Sub_Item_Category_Wrapper">
                     <ul className="Sub_Item_Category_Inner">
-                        {categories.map((item, index) => (
-                            <li id="Sub_Item_Category_Item" className={index === currentTab ? "focused" : ""} onClick={() => selectMenuHandler(index)} key={item.id}>
+                        {categories.map((item) => (
+                            <li id="Sub_Item_Category_Item" className={item.id === currentTab ? "focused" : ""} onClick={() => selectMenuHandler(item.id)} key={item.id}>
                                 <img src={item.img} alt={item.name} className="Sub_Item_Category_Img" />
                                 <div className="Sub_Item_Category_Title">{item.name}</div>
                             </li>
@@ -123,7 +113,6 @@ export default function SubItemCategory() {
             </div>
             <div className="Category_Item_Container">
                 <CategoryItemList currentTab={currentTab} items={items} />
-                <div ref={ref}></div>
             </div>
         </>
     );

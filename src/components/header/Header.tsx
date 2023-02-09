@@ -40,9 +40,9 @@ export default function Header() {
             <div className="Header_Bar">
                 {/* 로고, 카테고리, 서브 카테고리 구현 영역 */}
                 <div className="Header_Left_Area">
-                    <a href="/">
+                    <Link to="/">
                         <img className="Header_Title" src={logo} alt="Wish Market" />
-                    </a>
+                    </Link>
                     <div className="Header-Category">
                         <ul className="Header_Category_Area">
                             <li className="Header_Category_Item">
