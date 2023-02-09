@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Modal } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { FindPasswdError } from "../../../hooks/SignUpError";
+import { Timer } from "./Timer";
 export default function FindPasswdForm() {
   const navigate = useNavigate();
   const [name, setName] = useState<string>("");
@@ -11,6 +12,8 @@ export default function FindPasswdForm() {
   const [errorShow, setErrorShow] = useState<boolean>(false);
   const [showCodeInput, setShowCodeInput] = useState<boolean>(false);
   const [submitCode, setSubmitCode] = useState<boolean>(true);
+  const [inputBlock, setInputBlock] = useState<boolean>(false);
+  const [timer, setTimer] = useState<number>(3);
 
   useEffect(() => {
     if (code.length == 6) {
@@ -18,8 +21,8 @@ export default function FindPasswdForm() {
     } else {
       setSubmitCode(true);
     }
-  }, [code])
-  
+  }, [code]);
+
   const onNameChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     setName(e.currentTarget.value);
@@ -30,13 +33,15 @@ export default function FindPasswdForm() {
   };
 
   const onCodeSendHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (name=="" || email=="") {
+    if (name == "" || email == "") {
       setError(1);
     } else {
-      setError(0)
+      setInputBlock(true);
+      setError(0);
       setShowCodeInput(true);
       console.log(name);
       console.log(email);
+      setTimer(timer);
     }
     setErrorShow(true);
   };
@@ -53,7 +58,7 @@ export default function FindPasswdForm() {
     console.log(name);
     console.log(email);
     console.log(code);
-    navigate('/');
+    navigate("/");
   };
 
   return (
@@ -74,6 +79,7 @@ export default function FindPasswdForm() {
                   placeholder="이름"
                   className="findpasswd_Input_Box"
                   onChange={onNameChangeHandler}
+                  readOnly={inputBlock}
                   required
                 />
               </div>
@@ -87,29 +93,43 @@ export default function FindPasswdForm() {
                     placeholder="이메일"
                     className="findpasswd_Input_Box"
                     onChange={onEmailChangeHandler}
+                    readOnly={inputBlock}
                     required
                   />
                 </div>
-                <button className="btn btn-primary" type="button" onClick={onCodeSendHandler}>
+                <button
+                  className="btn btn-primary"
+                  type="button"
+                  onClick={onCodeSendHandler}
+                  disabled={inputBlock}
+                >
                   인증코드받기
                 </button>
               </div>
-              {showCodeInput && <div className="code-input">
-                <label htmlFor="validationCode">인증코드 입력:</label>
-                <input
-                  id="validationCode"
-                  type="text"
-                  placeholder="인증코드"
-                  className="findpasswd_Input_Box"
-                  onChange={onCodeChangeHandler}
-                  required
-                />
-              </div>
-              }
+              {showCodeInput && (
+                <div className="code-input">
+                  <div>
+                    <label htmlFor="validationCode">인증코드 입력:</label>
+                    <input
+                      id="validationCode"
+                      type="text"
+                      placeholder="인증코드"
+                      className="findpasswd_Input_Box"
+                      onChange={onCodeChangeHandler}
+                      required
+                    />
+                  </div>
+                  <Timer time={timer} error={error} />
+                </div>
+              )}
             </div>
             <div className="findpasswd_Button">
               <div>
-                <button className="btn btn-primary" type="submit" disabled={submitCode}>
+                <button
+                  className="btn btn-primary"
+                  type="submit"
+                  disabled={submitCode}
+                >
                   인증코드확인
                 </button>
               </div>
@@ -124,7 +144,7 @@ export default function FindPasswdForm() {
         }}
       ></iframe>
       <Modal show={errorShow} onHide={handleClose}>
-        <Modal.Body>{FindPasswdError(error) }</Modal.Body>
+        <Modal.Body>{FindPasswdError(error)}</Modal.Body>
         <Modal.Footer>
           <button className="btn btn-secondary" onClick={handleClose}>
             닫기
