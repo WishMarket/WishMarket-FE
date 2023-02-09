@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import FundingAttend from "./FundingAttend";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
-import { products } from "../../data/productData.json";
+import { products } from "../../data/ProductData.json";
 
 interface Product {
     category: number;

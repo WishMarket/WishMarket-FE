@@ -11909,10 +11909,10 @@ table {
 }
 
 .Category_Item_Container {
-  padding: 120px;
+  margin: 60px auto;
+  width: 1060px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 footer {
