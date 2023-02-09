@@ -12330,4 +12330,31 @@ form .findpasswd_Button div button {
   outline: none;
   padding-left: 10px;
   background-color: #f7f7f7;
-}/*# sourceMappingURL=main.css.map */
+
+}
+
+.code-input {
+  display: flex;
+  flex-direction: column;
+}
+.code-input .count {
+  display: flex;
+  justify-content: end;
+}
+.code-input .count .counter {
+  font-size: 15px;
+  color: #0e63fc;
+}
+.code-input .count .counter_end {
+  font-size: 13px;
+  color: #dc3545;
+}
+
+.reload_Button {
+  display: flex;
+  align-self: start;
+  font-size: 10px;
+  padding: 3px;
+  margin-right: 2px;
+}
+

@@ -3,14 +3,14 @@ import { Modal } from "react-bootstrap";
 import { SignUpError } from "../../hooks/SignUpError";
 import { useNavigate } from "react-router-dom";
 export default function SignupForm() {
-    const navigate = useNavigate();
-    const [email, setEmail] = useState<string>("");
-    const [password, setPassword] = useState<string>("");
-    const [retypePassword, setRetypePassword] = useState<string>("");
-    const [name, setName] = useState<string>("");
-    const [nickname, setNickname] = useState<string>("");
-    const [errorShow, setErrorShow] = useState<boolean>(false);
-    const [errorCode, setErrorCode] = useState<number>(0);
+  const navigate = useNavigate();
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [retypePassword, setRetypePassword] = useState<string>("");
+  const [name, setName] = useState<string>("");
+  const [nickname, setNickname] = useState<string>("");
+  const [errorShow, setErrorShow] = useState<boolean>(false);
+  const [errorCode, setErrorCode] = useState<number>(0);
 
   const onEmailChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -43,24 +43,24 @@ export default function SignupForm() {
     setErrorShow(false);
   };
 
-    const onLoginSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
-        if (password !== retypePassword) {
-            setErrorCode(1);
-            setErrorShow(true);
-        } else if (password.length < 8) {
-            setErrorCode(2);
-            setErrorShow(true);
-        } else {
-            e.preventDefault();
-            console.log(email);
-            console.log(password);
-            console.log(retypePassword);
-            console.log(name);
-            console.log(nickname);
-
-            navigate("/");
-        }
-    };
+  const onLoginSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    if (password !== retypePassword) {
+      setErrorCode(1);
+      setErrorShow(true);
+    } else if (password.length < 8) {
+      setErrorCode(2);
+      setErrorShow(true);
+    } else {
+      e.preventDefault();
+      console.log(email);
+      console.log(password);
+      console.log(retypePassword);
+      console.log(name);
+      console.log(nickname);
+      
+      navigate('/');
+    }
+  };
 
   return (
     <div className="signup_Wrapper">
