@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Modal } from "react-bootstrap";
 
 import { BsShareFill } from "react-icons/bs";
@@ -48,9 +49,9 @@ export default function CategoryItemList({ currentTab, items }: TabNums) {
                                 <div className="Product_List_Title">{item.name}</div>
                                 <div className="Product_List_Price">{commaNums(item.price)} 원</div>
                                 <div className="Product_Btn_Area">
-                                    <a href="/">
+                                    <Link to={"/category/" + item.productId}>
                                         <button className="btn btn-warning Category_Funding_Btn">선물하기</button>
-                                    </a>
+                                    </Link>
                                     <div className="Product_List_Icon">
                                         {tabWish ? (
                                             <TbHeartMinus className="Category_Wish_Minus_Btn" onClick={handleTabWish} />
@@ -96,9 +97,9 @@ export default function CategoryItemList({ currentTab, items }: TabNums) {
                                 <div className="Product_List_Title">{item.name}</div>
                                 <div className="Product_List_Price">{commaNums(item.price)} 원</div>
                                 <div className="Product_Btn_Area">
-                                    <a href="/">
+                                    <Link to={"/category/" + item.productId}>
                                         <button className="btn btn-warning Category_Funding_Btn">선물하기</button>
-                                    </a>
+                                    </Link>
                                     <div className="Product_List_Icon">
                                         {tabWish ? (
                                             <TbHeartMinus className="Category_Wish_Minus_Btn" onClick={handleTabWish} />

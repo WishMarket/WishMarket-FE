@@ -2,7 +2,7 @@
     "products": [
         {
             "category": 5,
-            "productId": "000",
+            "productId": 0,
             "name": "CITY BOYS SLIM BRIEFCASE 001",
             "image": "https://img.29cm.co.kr/next-product/2022/04/19/cec1c374d95b4551a44a906c894f0847_20220419161534.jpg?width=700",
             "price": 103550,
@@ -15,7 +15,7 @@
         },
         {
             "category": 4,
-            "productId": "001",
+            "productId": 1,
             "name": "삼성 스마트모니터 M5 S32BM501",
             "image": "https://img.29cm.co.kr/next-product/2022/07/04/73ac0c7646434fb7bc7508a8853bc51a_20220704082707.jpg?width=700",
             "price": 347000,
@@ -28,7 +28,7 @@
         },
         {
             "category": 4,
-            "productId": "002",
+            "productId": 2,
             "name": "LG 32QN650 32인치 QHD",
             "image": "https://img.29cm.co.kr/next-product/2022/11/18/5f2736ee13ec40d687b6dc86fc213578_20221118144436.jpg?width=700",
             "price": 399000,
@@ -41,7 +41,7 @@
         },
         {
             "category": 4,
-            "productId": "003",
+            "productId": 3,
             "name": "삼성전자 그랑데 AI 건조기",
             "image": "https://img.29cm.co.kr/next-product/2022/04/13/ecde223a17864e12b2d96994fec684c3_20220413102154.jpg?width=700",
             "price": 655650,
@@ -54,7 +54,7 @@
         },
         {
             "category": 4,
-            "productId": "004",
+            "productId": 4,
             "name": "삼성전자 그랑데 AI 의류 건조기",
             "image": "https://img.29cm.co.kr/next-product/2022/08/18/979c9bfa22db4720996608688d8b9ff0_20220818171330.jpg?width=700",
             "price": 1106110,
@@ -67,7 +67,7 @@
         },
         {
             "category": 4,
-            "productId": "005",
+            "productId": 5,
             "name": "아이닉 3세대 대용량 올스텐 에어프라이어 7L",
             "image": "https://img.29cm.co.kr/next-product/2022/08/25/923eb4c0286a42e8a5d174beea61d6b9_20220825142949.jpg?width=700",
             "price": 139000,
@@ -80,7 +80,7 @@
         },
         {
             "category": 4,
-            "productId": "006",
+            "productId": 6,
             "name": "비베카 리본 갈바닉 마사지기 핫앤쿨 EMS 홈케어 디바이스",
             "image": "https://img.29cm.co.kr/next-product/2022/07/19/ab75d96fafc745719a78a1e5a5d3d911_20220719084520.png?width=700",
             "price": 193500,
@@ -93,7 +93,7 @@
         },
         {
             "category": 2,
-            "productId": "007",
+            "productId": 7,
             "name": "14K 핑크골드 러브더블플라이 1부 다이아 목걸이 TNJK4P00079SD-1C",
             "image": "https://www.tirrlirr.co.kr/shopimages/sillajewel/001001000847.jpg?1672100531",
             "price": 495200,
@@ -106,7 +106,7 @@
         },
         {
             "category": 2,
-            "productId": "008",
+            "productId": 8,
             "name": "14K 핑크골드 러브벨 귀걸이 TEJK4P00055S-1Q",
             "image": "https://www.tirrlirr.co.kr/shopimages/sillajewel/001001000842.jpg?1672100617",
             "price": 247200,
@@ -119,7 +119,7 @@
         },
         {
             "category": 2,
-            "productId": "009",
+            "productId": 9,
             "name": "14K 핑크골드 트윙클 체인 발찌 TASK4P21017M",
             "image": "https://www.tirrlirr.co.kr/shopimages/sillajewel/013001000102.jpg?1657001006",
             "price": 119000,
@@ -132,7 +132,7 @@
         },
         {
             "category": 2,
-            "productId": "010",
+            "productId": 10,
             "name": "14K골드 플럼핑 0.01ct다이아 목걸이 ANJK4P00001MD",
             "image": "https://www.tirrlirr.co.kr/shopimages/sillajewel/004001000018.jpg?1656983764",
             "price": 272300,
@@ -145,7 +145,7 @@
         },
         {
             "category": 2,
-            "productId": "011",
+            "productId": 11,
             "name": "14K 옐로우골드 체인 목걸이 3종 택1",
             "image": "https://www.tirrlirr.co.kr/shopimages/sillajewel/004001000017.jpg?1638430996",
             "price": 209300,
@@ -158,7 +158,7 @@
         },
         {
             "category": 2,
-            "productId": "012",
+            "productId": 12,
             "name": "14K 핑크골드 러브섬 버터플라이 피어싱 TEJK4P00037M(PC)",
             "image": "https://www.tirrlirr.co.kr/shopimages/sillajewel/001001000570.jpg?1656999794",
             "price": 143000,
@@ -171,7 +171,7 @@
         },
         {
             "category": 2,
-            "productId": "013",
+            "productId": 13,
             "name": "메모리아 모던튤리 L 실버 화이트 팔찌 TBSSVW13738M-L",
             "image": "https://www.tirrlirr.co.kr/shopimages/sillajewel/001002000067.jpg?1666850312",
             "price": 239000,
@@ -184,7 +184,7 @@
         },
         {
             "category": 2,
-            "productId": "014",
+            "productId": 14,
             "name": "14K 화이트골드 러브플라이풀 귀걸이 TEJK4W00080S",
             "image": "https://www.tirrlirr.co.kr/shopimages/sillajewel/001001000845.jpg?1668503433",
             "price": 463200,
@@ -197,7 +197,7 @@
         },
         {
             "category": 2,
-            "productId": "015",
+            "productId": 15,
             "name": "14K 핑크골드 러브 하트 플라이 귀걸이 TEJK4P00082S",
             "image": "https://www.tirrlirr.co.kr/shopimages/sillajewel/003001000030.jpg?1670813092",
             "price": 263200,
@@ -210,7 +210,7 @@
         },
         {
             "category": 2,
-            "productId": "016",
+            "productId": 16,
             "name": "LA POEME MIOELLO 목걸이 (JJL1NQ3BS257SW420)",
             "image": "https://webimg.jestina.co.kr/UpData2/item/G2000026032/20230206102400ZM.gif",
             "price": 170000,
@@ -223,7 +223,7 @@
         },
         {
             "category": 2,
-            "productId": "017",
+            "productId": 17,
             "name": "LA POEME 14K 목걸이 (JJL1NQ3BS250R4420)",
             "image": "https://webimg.jestina.co.kr/UpData2/item/G2000026020/20230206114641ZM.png",
             "price": 440000,
@@ -236,7 +236,7 @@
         },
         {
             "category": 2,
-            "productId": "018",
+            "productId": 18,
             "name": "CLOVIA MIOELLO 14K 목걸이 (JJCLNQ3BS150R4420)",
             "image": "https://webimg.jestina.co.kr/UpData2/item/G2000025815/20221118114840ZM.gif",
             "price": 380000,
@@ -249,7 +249,7 @@
         },
         {
             "category": 2,
-            "productId": "019",
+            "productId": 19,
             "name": "LA POEME MIOELLO 14K 목걸이 (JJL1NQ3BS256R4420)",
             "image": "https://webimg.jestina.co.kr/UpData2/item/G2000026030/20230206101608ZM.gif",
             "price": 420000,
@@ -262,7 +262,7 @@
         },
         {
             "category": 2,
-            "productId": "020",
+            "productId": 20,
             "name": "MARIEBEL 14K 1부 다이아 목걸이 (JJMBND2BF551W4420)",
             "image": "https://webimg.jestina.co.kr/UpData2/item/G2000025750/20221026093618ZM.png",
             "price": 501500,
@@ -275,7 +275,7 @@
         },
         {
             "category": 2,
-            "productId": "021",
+            "productId": 21,
             "name": "WHITEMOND 목걸이+귀걸이 세트 (SET-J0-1028)",
             "image": "https://webimg.jestina.co.kr/UpData2/item/G2000025768/20221026092407ZM.png",
             "price": 204000,
@@ -288,7 +288,7 @@
         },
         {
             "category": 2,
-            "productId": "022",
+            "productId": 22,
             "name": "CLOVIA DUELLO 목걸이+귀걸이 세트 (SET-J0-0823)",
             "image": "https://webimg.jestina.co.kr/UpData2/item/G2000025518/20221013170810ZM.jpg",
             "price": 251600,
@@ -301,7 +301,7 @@
         },
         {
             "category": 2,
-            "productId": "023",
+            "productId": 23,
             "name": "THE J 14K 목걸이+귀걸이 세트 (SET-J0-0626)",
             "image": "https://webimg.jestina.co.kr/UpData2/item/G2000025472/20221013170820ZM.jpg",
             "price": 790500,
@@ -314,7 +314,7 @@
         },
         {
             "category": 2,
-            "productId": "024",
+            "productId": 24,
             "name": "Mioello 14K 목걸이+귀걸이 세트 (SET-J0-0505)",
             "image": "https://webimg.jestina.co.kr/UpData2/item/G2000025278/20221013170834ZM.jpg",
             "price": 731000,
@@ -327,7 +327,7 @@
         },
         {
             "category": 2,
-            "productId": "025",
+            "productId": 25,
             "name": "WHITEMOND 목걸이+귀걸이 세트 (SET-J0-1027)",
             "image": "https://webimg.jestina.co.kr/UpData2/item/G2000025767/20221111092828ZM.jpg",
             "price": 204000,

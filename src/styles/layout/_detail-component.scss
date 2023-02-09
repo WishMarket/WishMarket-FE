@@ -1,0 +1,246 @@
+.Detail_Container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .Detail_Wrapper {
+        padding: 60px 0;
+        width: 1020px;
+
+        .Detail_Top_Area {
+            width: 1020px;
+            display: flex;
+            justify-content: center;
+
+            .Detail_Img {
+                width: 450px;
+                height: 450px;
+                border-radius: 12px;
+                margin-right: 28px;
+            }
+
+            .Detail_Desc {
+                width: 450px;
+                height: 450px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .Detail_Like_Area {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 8px;
+
+                    .Like_Amount {
+                        font-size: 16px;
+                        color: $color-blue;
+                        line-height: 2;
+                    }
+
+                    .Detail_Best_Badge {
+                        background-color: $color-blue;
+                        color: $color-white;
+                        font-size: $font-desc-size;
+                        border-radius: 12px;
+                        padding: 8px;
+                    }
+                }
+
+                .Detail_Title {
+                    font-size: $product-title;
+                    font-weight: 700;
+                    margin-bottom: 12px;
+                    line-height: 1.5;
+                }
+
+                .Detail_Price {
+                    font-size: $font-sub-title-size;
+                    font-weight: 700;
+                }
+            }
+        }
+
+        .Detail_Desc_Bottom {
+            display: flex;
+            justify-content: right;
+
+            .Detail_Btn {
+                width: 200px;
+                height: 50px;
+                color: $color-white;
+                font-weight: 600;
+            }
+
+            .Detail_Wish_Minus_Btn,
+            .Detail_Wish_Add_Btn {
+                font-size: $font-larger;
+                margin-left: 12px;
+                margin-top: 4px;
+                cursor: pointer;
+
+                &:hover {
+                    color: $color-yellow-800;
+                    transition: 0.4s;
+                }
+            }
+
+            .Detail_Wish_Minus_Btn {
+                color: $color-yellow-800;
+            }
+
+            .Detail_Wish_Add_Btn {
+                color: $color-gray-800;
+                transition: 0.4s;
+            }
+
+            .Detail_Share_Btn {
+                border: none;
+                background-color: transparent;
+
+                .Detail_Share_Inner {
+                    font-size: $font-title-size;
+                    margin-left: 12px;
+                    margin-top: 4px;
+                    color: $color-gray-800;
+                    transition: 0.4s;
+
+                    &:hover {
+                        color: $color-yellow-800;
+                        transition: 0.4s;
+                    }
+                }
+            }
+        }
+
+        .Detail_Info_Container {
+            margin: 64px 0;
+            width: 1020px;
+            display: flex;
+            justify-content: center;
+
+            .Detail_Info_Wrapper {
+                width: 100%;
+
+                .Detail_Info_Inner {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+
+                    #Detail_Info_Tab {
+                        padding: 12px;
+                        width: 100%;
+                        height: 40px;
+                        text-align: center;
+                        background-color: $color-gray-200;
+                        color: $color-gray-800;
+                        font-size: $font-btn-size;
+                        cursor: pointer;
+
+                        &.focused {
+                            background-color: $color-white;
+                            border-top: 1px solid $color-yellow-800;
+                            color: $color-yellow-800;
+                            font-weight: 700;
+                        }
+                    }
+                }
+
+                .Detail_Info_Content {
+                    width: 100%;
+                    margin-top: 64px;
+                    padding: 12px;
+
+                    .Product_Info_Area {
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+
+                        .Product_Info_Img {
+                            width: 700px;
+                        }
+                    }
+
+                    .How_To_Use_Container {
+                        display: flex;
+                        justify-content: space-between;
+
+                        .How_To_Use_Item {
+                            text-align: center;
+                            margin: 12px;
+                            width: 190px;
+
+                            .How_To_Use_Icon {
+                                color: $color-yellow-800;
+                                font-size: $font-larger;
+                                margin-bottom: 12px;
+                            }
+
+                            .How_To_Use_Title {
+                                text-align: center;
+                                font-size: $font-btn-size;
+                                margin-bottom: 12px;
+                            }
+
+                            .How_To_Use_Desc {
+                                text-align: center;
+                                font-size: $font-desc-size;
+                                line-height: 1.5;
+                            }
+                        }
+                    }
+
+                    .Matters_Container {
+                        margin-bottom: 12px;
+
+                        .Matters_title {
+                            text-align: left;
+                            font-weight: 700;
+                            line-height: 2;
+                        }
+
+                        .Matters_Desc {
+                            font-weight: 400;
+                            line-height: 2;
+                        }
+                    }
+                }
+            }
+        }
+
+        .Detail_Review_Container {
+            margin: 64px 0;
+            display: flex;
+            justify-content: left;
+
+            .Detail_Review_Wrapper {
+                .Detail_Review_Title {
+                    font-size: $font-title-size;
+                    font-weight: 700;
+                    color: $color-gray-800;
+                    line-height: 1.5;
+                }
+
+                .Detail_Review_Desc {
+                    font-size: $font-btn-size;
+                    font-weight: 500;
+                    color: $color-gray-800;
+                    line-height: 1.5;
+                }
+
+                .Detail_Review_Item {
+                    display: flex;
+                    width: 1020px;
+                    background-color: $color-gray-400;
+                    border-radius: 12px;
+                    margin-top: 12px;
+                    padding: 16px;
+
+                    .Detail_Review_Name {
+                        font-weight: 700;
+                        margin-right: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
