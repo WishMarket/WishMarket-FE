@@ -3,6 +3,7 @@ import { Modal } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { FindPasswdError } from "../../../hooks/SignUpError";
 import { Timer } from "./Timer";
+
 export default function FindPasswdForm() {
   const navigate = useNavigate();
   const [name, setName] = useState<string>("");
@@ -14,6 +15,7 @@ export default function FindPasswdForm() {
   const [submitCode, setSubmitCode] = useState<boolean>(true);
   const [inputBlock, setInputBlock] = useState<boolean>(false);
   const [timer, setTimer] = useState<number>(3);
+
 
   useEffect(() => {
     if (code.length == 6) {
@@ -59,6 +61,7 @@ export default function FindPasswdForm() {
     console.log(email);
     console.log(code);
     navigate("/");
+
   };
 
   return (
@@ -79,6 +82,7 @@ export default function FindPasswdForm() {
                   placeholder="이름"
                   className="findpasswd_Input_Box"
                   onChange={onNameChangeHandler}
+
                   readOnly={inputBlock}
                   required
                 />
@@ -145,6 +149,7 @@ export default function FindPasswdForm() {
       ></iframe>
       <Modal show={errorShow} onHide={handleClose}>
         <Modal.Body>{FindPasswdError(error)}</Modal.Body>
+
         <Modal.Footer>
           <button className="btn btn-secondary" onClick={handleClose}>
             닫기
