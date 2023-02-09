@@ -12330,6 +12330,7 @@ form .findpasswd_Button div button {
   outline: none;
   padding-left: 10px;
   background-color: #f7f7f7;
+<<<<<<< HEAD
 }
 
 .Detail_Container {
@@ -12538,3 +12539,6 @@ form .findpasswd_Button div button {
   font-weight: 700;
   margin-right: 12px;
 }/*# sourceMappingURL=main.css.map */
+=======
+}/*# sourceMappingURL=main.css.map */
+>>>>>>> f5a0ba65c7b80ae5ab638a24cb542d635c0e2f5b

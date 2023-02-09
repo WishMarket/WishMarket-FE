@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { VscChromeClose } from "react-icons/vsc";
 import { FaGithub, FaSchool } from "react-icons/fa";
 import { SiNotion } from "react-icons/si";
+import {Link} from "react-router-dom"
 import defaultProfileImg from "../../assets/default-profile-img.png";
 
 interface ToggleBtnType {
@@ -75,19 +76,19 @@ export default function ToggleBar({ tabState, setTabState }: ToggleBtnType) {
                             <div className="Toggle_Not_Users_Wrapper">
                                 <div className="Toggle_Login_Area">
                                     <div className="Toggle_Login_Desc">Wish Market 회원이시라면</div>
-                                    <a href="/">
+                                    <Link to={'/login' }>
                                         <button type="button" className="btn btn-primary Toggle_Login_Btn">
                                             로그인
                                         </button>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="Toggle_Go_To_Sign_Up">
                                     <div className="Toggle_Sign_Up_Desc">아직 회원이 아니신가요?</div>
-                                    <a href="/">
+                                    <Link to={'/signup'}>
                                         <button type="button" className="btn btn-success Toggle_Sign_Up_Btn">
                                             회원 가입
                                         </button>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
