@@ -46,7 +46,7 @@ export default function ToggleBar({ tabState, setTabState }: ToggleBtnType) {
                 <div className="Toggle_Bar_Container">
                     <div className="Toggle_Bar_Wrapper">
                         {/* 로그인 O */}
-                        <div className="Toggle_User_Info">
+                        {/* <div className="Toggle_User_Info">
                             <div className="Toggle_User_Img">
                                 <img src={defaultProfileImg} alt="Profile" className="Toggle_User_Profile" />
                             </div>
@@ -67,11 +67,11 @@ export default function ToggleBar({ tabState, setTabState }: ToggleBtnType) {
                                     </button>
                                 </a>
                             </div>
-                        </div>
+                        </div> */}
                         {/* 로그인 O */}
 
                         {/* 로그인 X */}
-                        {/* <div className="Toggle_Not_Users_Container">
+                        <div className="Toggle_Not_Users_Container">
                             <div className="Toggle_Not_Users_Wrapper">
                                 <div className="Toggle_Login_Area">
                                     <div className="Toggle_Login_Desc">Wish Market 회원이시라면</div>
@@ -90,7 +90,7 @@ export default function ToggleBar({ tabState, setTabState }: ToggleBtnType) {
                                     </a>
                                 </div>
                             </div>
-                        </div> */}
+                        </div>
                         {/* 로그인 X */}
 
                         <hr className="Toggle_Divide_Bar" />
