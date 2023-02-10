@@ -166,8 +166,8 @@
 
                         .How_To_Use_Item {
                             text-align: center;
-                            margin: 12px;
-                            width: 190px;
+                            margin: 8px;
+                            width: 200px;
 
                             .How_To_Use_Icon {
                                 color: $color-yellow-800;
@@ -186,21 +186,6 @@
                                 font-size: $font-desc-size;
                                 line-height: 1.5;
                             }
-                        }
-                    }
-
-                    .Matters_Container {
-                        margin-bottom: 12px;
-
-                        .Matters_title {
-                            text-align: left;
-                            font-weight: 700;
-                            line-height: 2;
-                        }
-
-                        .Matters_Desc {
-                            font-weight: 400;
-                            line-height: 2;
                         }
                     }
                 }

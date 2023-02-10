@@ -12,6 +12,7 @@ import toy from "../../assets/category_icon/toy.png";
 import etc from "../../assets/category_icon/etc.png";
 
 import CategoryItemList from "./CategoryItemList";
+import { Link } from "react-router-dom";
 
 interface Product {
     name: string;
@@ -103,10 +104,12 @@ export default function SubItemCategory() {
                 <div className="Sub_Item_Category_Wrapper">
                     <ul className="Sub_Item_Category_Inner">
                         {categories.map((item) => (
-                            <li id="Sub_Item_Category_Item" className={item.id === currentTab ? "focused" : ""} onClick={() => selectMenuHandler(item.id)} key={item.id}>
-                                <img src={item.img} alt={item.name} className="Sub_Item_Category_Img" />
-                                <div className="Sub_Item_Category_Title">{item.name}</div>
-                            </li>
+                            <Link to={"/category/" + item.id}>
+                                <li id="Sub_Item_Category_Item" className={item.id === currentTab ? "focused" : ""} onClick={() => selectMenuHandler(item.id)} key={item.id}>
+                                    <img src={item.img} alt={item.name} className="Sub_Item_Category_Img" />
+                                    <div className="Sub_Item_Category_Title">{item.name}</div>
+                                </li>
+                            </Link>
                         ))}
                     </ul>
                 </div>
