@@ -12563,6 +12563,9 @@ form .findpasswd_Button div button {
 .Profile_Container .Profile_Wrapper {
   padding: 64px;
 }
+.Profile_Container .Profile_Wrapper .Profile_Select_Container table {
+  font-size: 14px;
+}
 .Profile_Container .Profile_Wrapper .Profile_Select_Container table caption {
   display: none;
 }
@@ -12577,11 +12580,17 @@ form .findpasswd_Button div button {
   background-color: #f7f7f7;
   font-weight: 500;
   color: #303030;
+  vertical-align: middle;
 }
 .Profile_Container .Profile_Wrapper .Profile_Select_Container table tbody tr td {
   width: 500px;
   padding: 24px;
   color: #303030;
+}
+.Profile_Container .Profile_Wrapper .Profile_Select_Container table tbody tr td .User_Profile_Img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
 }
 .Profile_Container .Profile_Wrapper .Profile_Select_Container table tbody tr td .Profile_Img_Select_Form {
   display: flex;
@@ -12610,10 +12619,29 @@ form .findpasswd_Button div button {
   cursor: pointer;
   opacity: 0.1;
 }
-.Profile_Container .Profile_Wrapper .Profile_Select_Container table tbody tr td .Profile_Img_Select_Form input {
+.Profile_Container .Profile_Wrapper .Profile_Select_Container table tbody tr td .Profile_Img_Select_Form .hidden {
   display: none;
 }
+.Profile_Container .Profile_Wrapper .Profile_Select_Container table tbody tr td input {
+  width: 280px;
+  height: 42px;
+  font-size: 14px;
+  border: 1px solid #cfcfcf;
+  border-radius: 16px;
+  outline: none;
+  padding-left: 10px;
+  background-color: #f7f7f7;
+}
+.Profile_Container .Profile_Wrapper .Profile_Select_Container table tbody tr td .Modify_Profile_Address_Btn {
+  margin-left: 4px;
+  margin-bottom: 4px;
+}
+.Profile_Container .Profile_Wrapper .Profile_Select_Container table tbody tr td .Modify_Profile_Address_Btn .Modify_Profile_Address_Btn_Icon {
+  margin-bottom: 4px;
+}
 .Profile_Container .Profile_Wrapper .User_Profile_Btn_Area {
+  display: flex;
+  justify-content: right;
   margin-top: 16px;
 }
 .Profile_Container .Profile_Wrapper .User_Profile_Btn_Area .Point_Charge_Btn {
@@ -12623,4 +12651,117 @@ form .findpasswd_Button div button {
 }
 .Profile_Container .Profile_Wrapper .User_Profile_Btn_Area .Point_Charge_Btn:hover {
   background-color: #cfcfcf;
+}
+
+.changepasswd_Wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 1280px;
+}
+
+.changepasswd {
+  font-family: "Noto Sans Kr", "sans-serif";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 40vw;
+  height: 100vh;
+  padding: 5vh;
+  border-radius: 15px;
+  max-height: 650px;
+  min-height: 400px;
+  max-width: 700px;
+  min-width: 600px;
+  background-color: #ffc32a;
+}
+.changepasswd div h2, .changepasswd div .h2 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+}
+.changepasswd div h3, .changepasswd div .h3 {
+  font-size: 20px;
+  white-space: nowrap;
+  margin-bottom: 50px;
+}
+.changepasswd .changepasswd_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 40vh;
+  min-height: 300px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  min-height: 150px;
+}
+form .changepasswd_Form {
+  background-color: #ffffff;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 20vh;
+  padding: 2vh;
+  min-width: 150px;
+  min-height: 300px;
+}
+form .changepasswd_Form div {
+  width: 350px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+form .changepasswd_Form div input {
+  margin-left: 3px;
+}
+form .changepasswd_Form .changeEmail_Form {
+  justify-content: start;
+}
+form .changepasswd_Form .changeEmail_Form div {
+  width: 110px;
+}
+form .changepasswd_Form .changeEmail_Form span {
+  font-weight: 600;
+}
+form .validate {
+  display: flex;
+  flex-direction: column;
+}
+form .validate button {
+  margin-top: 5px;
+  white-space: nowrap;
+  align-self: flex-end;
+}
+form .changepasswd_Button {
+  margin-top: 50px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+form .changepasswd_Button div button {
+  width: 100%;
+}
+
+.changepasswd_Input_Box {
+  width: 250px;
+  height: 30px;
+  font-size: 14px;
+  border: 0;
+  border-radius: 16px;
+  outline: none;
+  padding-left: 10px;
+  background-color: #f7f7f7;
 }/*# sourceMappingURL=main.css.map */

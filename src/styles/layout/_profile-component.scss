@@ -8,6 +8,7 @@
 
         .Profile_Select_Container {
             table {
+                font-size: $font-btn-size;
                 caption {
                     display: none;
                 }
@@ -23,12 +24,19 @@
                             background-color: $color-gray-200;
                             font-weight: 500;
                             color: $color-gray-800;
+                            vertical-align: middle;
                         }
 
                         td {
                             width: 500px;
                             padding: 24px;
                             color: $color-gray-800;
+
+                            .User_Profile_Img {
+                                width: 150px;
+                                height: 150px;
+                                border-radius: 50%;
+                            }
 
                             .Profile_Img_Select_Form {
                                 display: flex;
@@ -60,8 +68,28 @@
                                     }
                                 }
 
-                                input {
+                                .hidden {
                                     display: none;
+                                }
+                            }
+
+                            input {
+                                width: 280px;
+                                height: 42px;
+                                font-size: $font-btn-size;
+                                border: 1px solid $color-gray-400;
+                                border-radius: 16px;
+                                outline: none;
+                                padding-left: 10px;
+                                background-color: $color-gray-200;
+                            }
+
+                            .Modify_Profile_Address_Btn {
+                                margin-left: 4px;
+                                margin-bottom: 4px;
+
+                                .Modify_Profile_Address_Btn_Icon {
+                                    margin-bottom: 4px;
                                 }
                             }
                         }
@@ -71,6 +99,8 @@
         }
 
         .User_Profile_Btn_Area {
+            display: flex;
+            justify-content: right;
             margin-top: 16px;
 
             .Point_Charge_Btn {

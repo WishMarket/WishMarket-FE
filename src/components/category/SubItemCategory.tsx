@@ -1,6 +1,5 @@
-import { useEffect, useState, useRef, useCallback } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
-import { useInView } from "react-intersection-observer";
 
 import best from "../../assets/category_icon/best.png";
 import clothes from "../../assets/category_icon/clothes.png";
@@ -104,8 +103,8 @@ export default function SubItemCategory() {
                 <div className="Sub_Item_Category_Wrapper">
                     <ul className="Sub_Item_Category_Inner">
                         {categories.map((item) => (
-                            <Link to={"/category/" + item.id}>
-                                <li id="Sub_Item_Category_Item" className={item.id === currentTab ? "focused" : ""} onClick={() => selectMenuHandler(item.id)} key={item.id}>
+                            <Link to={"/category/" + item.id} key={item.id}>
+                                <li id="Sub_Item_Category_Item" className={item.id === currentTab ? "focused" : ""} onClick={() => selectMenuHandler(item.id)}>
                                     <img src={item.img} alt={item.name} className="Sub_Item_Category_Img" />
                                     <div className="Sub_Item_Category_Title">{item.name}</div>
                                 </li>

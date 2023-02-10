@@ -3,11 +3,14 @@ import { Modal } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { FindPasswdError } from "../../../hooks/SignUpError";
 import { Timer } from "./Timer";
+import { useRecoilState } from "recoil";
+import { EmailSet } from "../../../hooks/recoil/atoms";
+
 
 export default function FindPasswdForm() {
   const navigate = useNavigate();
   const [name, setName] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
+  const [email, setEmail] = useRecoilState<string>(EmailSet);
   const [code, setCode] = useState<string>("");
   const [error, setError] = useState<number>(0);
   const [errorShow, setErrorShow] = useState<boolean>(false);
@@ -15,7 +18,6 @@ export default function FindPasswdForm() {
   const [submitCode, setSubmitCode] = useState<boolean>(true);
   const [inputBlock, setInputBlock] = useState<boolean>(false);
   const [timer, setTimer] = useState<number>(3);
-
 
   useEffect(() => {
     if (code.length == 6) {
@@ -57,10 +59,10 @@ export default function FindPasswdForm() {
   };
 
   const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    
     console.log(name);
-    console.log(email);
     console.log(code);
-    navigate("/");
+    navigate("./changepasswd");
 
   };
 
@@ -82,7 +84,6 @@ export default function FindPasswdForm() {
                   placeholder="이름"
                   className="findpasswd_Input_Box"
                   onChange={onNameChangeHandler}
-
                   readOnly={inputBlock}
                   required
                 />
@@ -149,7 +150,6 @@ export default function FindPasswdForm() {
       ></iframe>
       <Modal show={errorShow} onHide={handleClose}>
         <Modal.Body>{FindPasswdError(error)}</Modal.Body>
-
         <Modal.Footer>
           <button className="btn btn-secondary" onClick={handleClose}>
             닫기
