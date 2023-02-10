@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Modal } from "react-bootstrap";
 
 import { CopyClipBoard } from "../../hooks/CopyClipBoard";
-import { commaNums } from "../../hooks/CommaNum";
+import { commaNums } from "../../hooks/CommaNums";
 
 import { BsShareFill } from "react-icons/bs";
 import { RiHeartAddFill } from "react-icons/ri";
@@ -47,7 +47,7 @@ export default function FetchProduct({ items }: IFetch) {
                             <div className="Product_List_Title">{item.name}</div>
                             <div className="Product_List_Price">{commaNums(item.price)} 원</div>
                             <div className="Product_Btn_Area">
-                                <Link to={"/category/" + item.productId}>
+                                <Link to={"/category/product/" + item.productId}>
                                     <button className="btn btn-warning Category_Funding_Btn">선물하기</button>
                                 </Link>
                                 <div className="Product_List_Icon">

@@ -14,8 +14,8 @@ function App() {
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Home />}></Route>
-                    <Route path="/category" element={<Category />}></Route>
-                    <Route path="/category/:id" element={<ProductDetail />}></Route>
+                    <Route path="/category/:id" element={<Category />}></Route>
+                    <Route path="/category/product/:id" element={<ProductDetail />}></Route>
                     <Route path="/login" element={<Login />}></Route>
                     <Route path="/login/findpasswd" element={<FindPasswd />}></Route>
                     <Route path="/signup" element={<Signup />}></Route>

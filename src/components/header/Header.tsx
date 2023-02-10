@@ -46,7 +46,7 @@ export default function Header() {
                     <div className="Header-Category">
                         <ul className="Header_Category_Area">
                             <li className="Header_Category_Item">
-                                <Link to="/category" className="Header_Category_Link">
+                                <Link to="/category/0" className="Header_Category_Link">
                                     카테고리
                                 </Link>
                             </li>

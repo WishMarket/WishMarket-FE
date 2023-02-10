@@ -10,10 +10,9 @@ import { IoMdCopy } from "react-icons/io";
 
 import ProductInfo from "./ProductInfo";
 import HowToUse from "./HowToUse";
-import Matters from "./Matters";
 
 import { CopyClipBoard } from "../../hooks/CopyClipBoard";
-import { commaNums } from "../../hooks/CommaNum";
+import { commaNums } from "../../hooks/CommaNums";
 
 type ProductObj = {
     category: number;
@@ -41,7 +40,6 @@ export default function DetailComponent() {
     const tabs = [
         { id: 0, name: "상품 정보", content: <ProductInfo items={items} /> },
         { id: 1, name: "이용 안내", content: <HowToUse /> },
-        { id: 2, name: "주의 사항", content: <Matters /> },
     ];
 
     // axios
