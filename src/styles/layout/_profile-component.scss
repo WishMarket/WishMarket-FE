@@ -1,0 +1,117 @@
+.Profile_Container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .Profile_Wrapper {
+        padding: 64px;
+
+        .Profile_Select_Container {
+            table {
+                font-size: $font-btn-size;
+                caption {
+                    display: none;
+                }
+
+                tbody {
+                    border-top: 1px solid $color-gray-400;
+
+                    tr {
+                        border-bottom: 1px solid $color-gray-400;
+
+                        th {
+                            padding: 24px;
+                            background-color: $color-gray-200;
+                            font-weight: 500;
+                            color: $color-gray-800;
+                            vertical-align: middle;
+                        }
+
+                        td {
+                            width: 500px;
+                            padding: 24px;
+                            color: $color-gray-800;
+
+                            .User_Profile_Img {
+                                width: 150px;
+                                height: 150px;
+                                border-radius: 50%;
+                            }
+
+                            .Profile_Img_Select_Form {
+                                display: flex;
+                                justify-content: center;
+                                height: 150px;
+
+                                label {
+                                    position: relative;
+
+                                    .Profile_Img_Select_Area {
+                                        width: 150px;
+                                        height: 150px;
+                                        border-radius: 50%;
+                                        cursor: pointer;
+                                    }
+
+                                    &:hover::after {
+                                        content: "";
+                                        position: absolute;
+                                        width: 150px;
+                                        height: 150px;
+                                        border-radius: 50%;
+                                        top: 0;
+                                        left: 0;
+                                        background-color: $color-black;
+                                        z-index: 20;
+                                        cursor: pointer;
+                                        opacity: 0.1;
+                                    }
+                                }
+
+                                .hidden {
+                                    display: none;
+                                }
+                            }
+
+                            input {
+                                width: 280px;
+                                height: 42px;
+                                font-size: $font-btn-size;
+                                border: 1px solid $color-gray-400;
+                                border-radius: 16px;
+                                outline: none;
+                                padding-left: 10px;
+                                background-color: $color-gray-200;
+                            }
+
+                            .Modify_Profile_Address_Btn {
+                                margin-left: 4px;
+                                margin-bottom: 4px;
+
+                                .Modify_Profile_Address_Btn_Icon {
+                                    margin-bottom: 4px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .User_Profile_Btn_Area {
+            display: flex;
+            justify-content: right;
+            margin-top: 16px;
+
+            .Point_Charge_Btn {
+                margin-left: 8px;
+                border: 1px solid $color-blue;
+                color: $color-blue;
+
+                &:hover {
+                    background-color: $color-gray-400;
+                }
+            }
+        }
+    }
+}

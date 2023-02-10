@@ -43,7 +43,7 @@ export default function ProductList() {
                 </div>
             </div>
             <div className="More_Btn_Area">
-                <Link to="/category">
+                <Link to="/category/0">
                     <button className="btn Product_More_Info">
                         <MdReadMore className="More_Info_Icon" /> 베스트 상품 더보기
                     </button>

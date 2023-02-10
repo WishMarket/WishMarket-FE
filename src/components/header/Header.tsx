@@ -11,6 +11,7 @@ export default function Header() {
     const [tabState, setTabState] = useState(false);
     const [tabNotify, setTabNotify] = useState(false);
     const [showSubCategory, setShowSubCategory] = useState(false);
+    const [showSubMyPage, setshowSubMyPage] = useState(false);
 
     // 우측 토글 handle
     const handleToggleMenu = () => {
@@ -35,6 +36,14 @@ export default function Header() {
         setShowSubCategory(false);
     };
 
+    const subMyPageMouseOver = () => {
+        setshowSubMyPage(true);
+    };
+
+    const subMyPageMouseOut = () => {
+        setshowSubMyPage(false);
+    };
+
     return (
         <>
             <div className="Header_Bar">
@@ -45,7 +54,7 @@ export default function Header() {
                     </Link>
                     <div className="Header-Category">
                         <ul className="Header_Category_Area">
-                            <li className="Header_Category_Item">
+                            <li className="Header_Category_Item" onMouseOver={subCategoryMouseOver} onMouseOut={subCategoryMouseOut}>
                                 <Link to="/category/0" className="Header_Category_Link">
                                     카테고리
                                 </Link>
@@ -55,15 +64,15 @@ export default function Header() {
                                     친구 찾기
                                 </a>
                             </li>
-                            <li className="Header_Category_Item" onMouseOver={subCategoryMouseOver} onMouseOut={subCategoryMouseOut}>
-                                <a href="/" className="Header_Category_Link">
+                            <li className="Header_Category_Item" onMouseOver={subMyPageMouseOver} onMouseOut={subMyPageMouseOut}>
+                                <Link to="/profile" className="Header_Category_Link">
                                     마이 페이지
-                                </a>
-                                <ul id="My_Page_Sub_Category" className={showSubCategory ? "Sub_Category_Active" : ""}>
+                                </Link>
+                                <ul id="My_Page_Sub_Category" className={showSubMyPage ? "Sub_Category_Active" : ""}>
                                     <li className="My_Page_Sub_Category_Item">
-                                        <a href="/" className="My_Page_Sub_Category_Link">
+                                        <Link to="/profile" className="My_Page_Sub_Category_Link">
                                             프로필
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li className="My_Page_Sub_Category_Item">
                                         <a href="/" className="My_Page_Sub_Category_Link">
