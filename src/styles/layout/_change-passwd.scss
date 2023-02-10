@@ -1,5 +1,4 @@
-
-.findpasswd_Wrapper {
+.changepasswd_Wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,7 +6,7 @@
     height: 1280px;
 }
 
-.findpasswd {
+.changepasswd {
     font-family: 'Noto Sans Kr', 'sans-serif';
     display: flex;
     flex-direction: column;
@@ -17,21 +16,19 @@
     height: 100vh;
     padding: 5vh;
     border-radius: 15px;
-    max-height: 700px;
+    max-height: 650px;
     min-height: 400px;
     max-width: 700px;
     min-width: 600px;
     background-color: $color-yellow-800;
 
     div {
-
         h2 {
             margin-bottom: 20px;
             font-weight: 600;
             font-size: 50px;
             display: flex;
             justify-content: center;
-
         }
 
         h3 {
@@ -41,7 +38,7 @@
         }
     }
 
-    .findpasswd_content {
+    .changepasswd_content {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -57,7 +54,7 @@ form {
     height: 400px;
     min-height: 150px;
 
-    .findpasswd_Form {
+    .changepasswd_Form {
         background-color: $color-white;
         border-radius: 15px;
         display: flex;
@@ -69,7 +66,8 @@ form {
         min-width: 150px;
         min-height: 300px;
 
-        div{
+
+        div {
             width: 350px;
             margin-top: 5px;
             margin-bottom: 5px;
@@ -82,6 +80,15 @@ form {
             }
         }
 
+        .changeEmail_Form {
+            justify-content: start;
+            div{
+                width: 110px;
+            }
+            span{
+                font-weight: 600;
+            }
+        }
     }
 
     .validate {
@@ -95,7 +102,7 @@ form {
         }
     }
 
-    .findpasswd_Button {
+    .changepasswd_Button {
         margin-top: 50px;
         height: 150px;
         display: flex;
@@ -111,7 +118,7 @@ form {
     }
 }
 
-.findpasswd_Input_Box {
+.changepasswd_Input_Box {
     width: 250px;
     height: 30px;
     font-size: 14px;
@@ -120,34 +127,4 @@ form {
     outline: none;
     padding-left: 10px;
     background-color: $color-gray-200;
-}
-
-.code-input {
-    display: flex;
-    flex-direction: column;
-
-    .count {
-        display: flex;
-        justify-content: end;
-
-        .counter {
-            font-size: 15px;
-            color: $color-blue;
-        }
-
-        .counter_end {
-            font-size: 13px;
-            color: $color-red-600;
-        }
-    }
-
-}
-
-.reload_Button {
-    display: flex;
-    align-self: start;
-    font-size: 10px;
-    padding: 3px;
-    margin-right: 2px;
-
 }

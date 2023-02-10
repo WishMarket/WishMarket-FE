@@ -12553,4 +12553,117 @@ form .findpasswd_Button div button {
 .Detail_Container .Detail_Wrapper .Detail_Review_Container .Detail_Review_Wrapper .Detail_Review_Item .Detail_Review_Name {
   font-weight: 700;
   margin-right: 12px;
-}/*# sourceMappingURL=main.css.map */
+}
+
+.changepasswd_Wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 1280px;
+}
+
+.changepasswd {
+  font-family: "Noto Sans Kr", "sans-serif";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 40vw;
+  height: 100vh;
+  padding: 5vh;
+  border-radius: 15px;
+  max-height: 650px;
+  min-height: 400px;
+  max-width: 700px;
+  min-width: 600px;
+  background-color: #ffc32a;
+}
+.changepasswd div h2, .changepasswd div .h2 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+}
+.changepasswd div h3, .changepasswd div .h3 {
+  font-size: 20px;
+  white-space: nowrap;
+  margin-bottom: 50px;
+}
+.changepasswd .changepasswd_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 40vh;
+  min-height: 300px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  min-height: 150px;
+}
+form .changepasswd_Form {
+  background-color: #ffffff;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 20vh;
+  padding: 2vh;
+  min-width: 150px;
+  min-height: 300px;
+}
+form .changepasswd_Form div {
+  width: 350px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+form .changepasswd_Form div input {
+  margin-left: 3px;
+}
+form .changepasswd_Form .changeEmail_Form {
+  justify-content: start;
+}
+form .changepasswd_Form .changeEmail_Form div {
+  width: 110px;
+}
+form .changepasswd_Form .changeEmail_Form span {
+  font-weight: 600;
+}
+form .validate {
+  display: flex;
+  flex-direction: column;
+}
+form .validate button {
+  margin-top: 5px;
+  white-space: nowrap;
+  align-self: flex-end;
+}
+form .changepasswd_Button {
+  margin-top: 50px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+form .changepasswd_Button div button {
+  width: 100%;
+}
+
+.changepasswd_Input_Box {
+  width: 250px;
+  height: 30px;
+  font-size: 14px;
+  border: 0;
+  border-radius: 16px;
+  outline: none;
+  padding-left: 10px;
+  background-color: #f7f7f7;
+}
