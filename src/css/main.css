@@ -11036,7 +11036,7 @@ table {
   content: "";
   height: 0;
   top: -12px;
-  left: 380px;
+  left: 348px;
   position: absolute;
   width: 0;
 }
@@ -12553,4 +12553,74 @@ form .findpasswd_Button div button {
 .Detail_Container .Detail_Wrapper .Detail_Review_Container .Detail_Review_Wrapper .Detail_Review_Item .Detail_Review_Name {
   font-weight: 700;
   margin-right: 12px;
+}
+
+.Profile_Container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.Profile_Container .Profile_Wrapper {
+  padding: 64px;
+}
+.Profile_Container .Profile_Wrapper .Profile_Select_Container table caption {
+  display: none;
+}
+.Profile_Container .Profile_Wrapper .Profile_Select_Container table tbody {
+  border-top: 1px solid #cfcfcf;
+}
+.Profile_Container .Profile_Wrapper .Profile_Select_Container table tbody tr {
+  border-bottom: 1px solid #cfcfcf;
+}
+.Profile_Container .Profile_Wrapper .Profile_Select_Container table tbody tr th {
+  padding: 24px;
+  background-color: #f7f7f7;
+  font-weight: 500;
+  color: #303030;
+}
+.Profile_Container .Profile_Wrapper .Profile_Select_Container table tbody tr td {
+  width: 500px;
+  padding: 24px;
+  color: #303030;
+}
+.Profile_Container .Profile_Wrapper .Profile_Select_Container table tbody tr td .Profile_Img_Select_Form {
+  display: flex;
+  justify-content: center;
+  height: 150px;
+}
+.Profile_Container .Profile_Wrapper .Profile_Select_Container table tbody tr td .Profile_Img_Select_Form label {
+  position: relative;
+}
+.Profile_Container .Profile_Wrapper .Profile_Select_Container table tbody tr td .Profile_Img_Select_Form label .Profile_Img_Select_Area {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.Profile_Container .Profile_Wrapper .Profile_Select_Container table tbody tr td .Profile_Img_Select_Form label:hover::after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  z-index: 20;
+  cursor: pointer;
+  opacity: 0.1;
+}
+.Profile_Container .Profile_Wrapper .Profile_Select_Container table tbody tr td .Profile_Img_Select_Form input {
+  display: none;
+}
+.Profile_Container .Profile_Wrapper .User_Profile_Btn_Area {
+  margin-top: 16px;
+}
+.Profile_Container .Profile_Wrapper .User_Profile_Btn_Area .Point_Charge_Btn {
+  margin-left: 8px;
+  border: 1px solid #0e63fc;
+  color: #0e63fc;
+}
+.Profile_Container .Profile_Wrapper .User_Profile_Btn_Area .Point_Charge_Btn:hover {
+  background-color: #cfcfcf;
 }/*# sourceMappingURL=main.css.map */
