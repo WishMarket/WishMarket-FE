@@ -6,6 +6,7 @@ import { Timer } from "./Timer";
 import { useRecoilState } from "recoil";
 import { EmailSet } from "../../../hooks/recoil/atoms";
 
+
 export default function FindPasswdForm() {
   const navigate = useNavigate();
   const [name, setName] = useState<string>("");
@@ -62,6 +63,7 @@ export default function FindPasswdForm() {
     console.log(name);
     console.log(code);
     navigate("./changepasswd");
+
   };
 
   return (
