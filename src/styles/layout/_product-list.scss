@@ -52,7 +52,6 @@
     width: 232px;
     margin: 12px;
     margin-bottom: 40px;
-    cursor: pointer;
     transition: 0.4s;
 
     &:hover {
@@ -133,6 +132,7 @@
             .Product_List_Icon {
                 display: flex;
                 align-items: center;
+                cursor: pointer;
 
                 .Product_Share_Btn {
                     border: 0;
