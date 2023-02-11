@@ -5,11 +5,11 @@ import Home from "./pages/Home";
 import Category from "./pages/Category";
 import ProductDetail from "./pages/ProductDetail";
 import Profile from "./pages/Profile";
+import Wishlist from "./pages/Wishlist";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import FindPasswd from "./pages/FindPasswd";
 import ChagngePasswd from "./pages/ChagngePasswd";
-
 
 function App() {
     return (
@@ -20,6 +20,7 @@ function App() {
                     <Route path="/category/:id" element={<Category />}></Route>
                     <Route path="/category/product/:id" element={<ProductDetail />}></Route>
                     <Route path="/profile" element={<Profile />}></Route>
+                    <Route path="/wish" element={<Wishlist />}></Route>
                     <Route path="/login" element={<Login />}></Route>
                     <Route path="/login/findpasswd" element={<FindPasswd />}></Route>
                     <Route path="/login/findpasswd/changepasswd" element={<ChagngePasswd />}></Route>
