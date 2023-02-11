@@ -75,13 +75,13 @@ export default function Header() {
                                         </Link>
                                     </li>
                                     <li className="My_Page_Sub_Category_Item">
-                                        <a href="/" className="My_Page_Sub_Category_Link">
-                                            받은 선물
-                                        </a>
+                                        <Link to="/wish" className="My_Page_Sub_Category_Link">
+                                            위시 리스트
+                                        </Link>
                                     </li>
                                     <li className="My_Page_Sub_Category_Item">
                                         <a href="/" className="My_Page_Sub_Category_Link">
-                                            위시 리스트
+                                            받은 선물
                                         </a>
                                     </li>
                                     <li className="My_Page_Sub_Category_Item">
