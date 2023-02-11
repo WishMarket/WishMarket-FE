@@ -133,7 +133,7 @@
                         text-align: center;
                         background-color: $color-gray-200;
                         color: $color-gray-800;
-                        font-size: $font-btn-size;
+                        font-size: 16px;
                         cursor: pointer;
 
                         &.focused {
@@ -193,7 +193,6 @@
         }
 
         .Detail_Review_Container {
-            margin: 64px 0;
             display: flex;
             justify-content: left;
 

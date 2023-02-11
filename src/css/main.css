@@ -10961,7 +10961,7 @@ table {
   padding: 16px;
   display: flex;
   align-items: center;
-  width: 84px;
+  width: 120px;
   font-size: 38px;
   font-weight: bold;
 }
@@ -12479,7 +12479,7 @@ form .findpasswd_Button div button {
   text-align: center;
   background-color: #f7f7f7;
   color: #303030;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
 }
 .Detail_Container .Detail_Wrapper .Detail_Info_Container .Detail_Info_Wrapper .Detail_Info_Inner #Detail_Info_Tab.focused {
@@ -12526,7 +12526,6 @@ form .findpasswd_Button div button {
   line-height: 1.5;
 }
 .Detail_Container .Detail_Wrapper .Detail_Review_Container {
-  margin: 64px 0;
   display: flex;
   justify-content: left;
 }
@@ -12583,9 +12582,15 @@ form .findpasswd_Button div button {
   vertical-align: middle;
 }
 .Profile_Container .Profile_Wrapper .Profile_Select_Container table tbody tr td {
-  width: 500px;
+  width: 700px;
   padding: 24px;
   color: #303030;
+  display: flex;
+  justify-content: space-between;
+}
+.Profile_Container .Profile_Wrapper .Profile_Select_Container table tbody tr td .Modify_Profile_Error_Msg {
+  color: #dc3545;
+  margin-top: 16px;
 }
 .Profile_Container .Profile_Wrapper .Profile_Select_Container table tbody tr td .User_Profile_Img {
   width: 150px;
@@ -12635,6 +12640,7 @@ form .findpasswd_Button div button {
 .Profile_Container .Profile_Wrapper .Profile_Select_Container table tbody tr td .Modify_Profile_Address_Btn {
   margin-left: 4px;
   margin-bottom: 4px;
+  border-radius: 50%;
 }
 .Profile_Container .Profile_Wrapper .Profile_Select_Container table tbody tr td .Modify_Profile_Address_Btn .Modify_Profile_Address_Btn_Icon {
   margin-bottom: 4px;
