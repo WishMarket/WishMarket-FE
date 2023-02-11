@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 
 import { Modal } from "react-bootstrap";
 import DaumPostCode from "react-daum-postcode";
 
 import { commaNums } from "../../hooks/CommaNums";
+import { validateNickname, validatePhone } from "../../utils/regex";
 
 import { FaSearchLocation } from "react-icons/fa";
 
@@ -30,12 +31,15 @@ type UserInfo = {
 export default function ModifyProfile({ profileState, setProfileState }: IProfiles) {
     const [imageSrc, setImageSrc]: any = useState(null);
     const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
-    // const [nickname, setNickname] = useState<string>("");
+    const [nickname, setNickname] = useState<string>("");
+    const [phone, setPhone] = useState<string>("");
+    const phoneRef = useRef<HTMLInputElement>(null);
+    const [phoneErrorMsg, setPhoneErrorMsg] = useState<string>("");
+    const [nicknameErrorMsg, setNicknameErrorMsg] = useState<string>("");
     const [address, setAddress] = useState<string>("");
-    // const [phone, setPhone] = useState<string>("");
-    // const [phoneMessage, setPhoneMessage] = useState<string>("");
-    // const [isPhone, setIsPhone] = useState<boolean>(false);
     const [mapShow, setMapShow] = useState<boolean>(false);
+    const [disabled, setDisabled] = useState(false);
+
     const url = "/data/UserData.json";
 
     // photo upload
@@ -67,8 +71,11 @@ export default function ModifyProfile({ profileState, setProfileState }: IProfil
 
     useEffect(() => {
         getUserInfo();
-        console.log(userInfo);
     }, []);
+
+    useEffect(() => {
+        setDisabled(!(!phoneErrorMsg && !nicknameErrorMsg));
+    }, [phoneErrorMsg, nicknameErrorMsg]);
 
     const onAddressChangeHandler = (data: AddressData) => {
         setAddress(data.address);
@@ -84,30 +91,39 @@ export default function ModifyProfile({ profileState, setProfileState }: IProfil
         setMapShow(false);
     };
 
-    // const onChangePhone = (getNumber: string) => {
-    //     const currentPhone = getNumber;
-    //     setPhone(currentPhone);
-    //     const phoneRegExp = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
+    const handleNicknameChange = (nickname: string) => {
+        setNickname(nickname);
+        setNicknameErrorMsg(validateNickname(nickname) ? "📢 닉네임은 3 글자 이상, 최대 8 글자입니다." : "");
+    };
 
-    //     if (!phoneRegExp.test(currentPhone)) {
-    //         setPhoneMessage("올바른 형식이 아닙니다!");
-    //         setIsPhone(false);
-    //     } else {
-    //         setPhoneMessage("사용 가능한 번호입니다:-)");
-    //         setIsPhone(true);
-    //     }
-    // };
+    const handlePhoneChange = (e: any) => {
+        const value = phoneRef.current!.value.replace(/\D+/g, "");
+        const numberLength = 11;
 
-    // const addHyphen = (e: any) => {
-    //     const currentNumber = e.target.value;
-    //     setPhone(currentNumber);
-    //     if (currentNumber.length == 3 || currentNumber.length == 8) {
-    //         setPhone(currentNumber + "-");
-    //         onChangePhone(currentNumber + "-");
-    //     } else {
-    //         onChangePhone(currentNumber);
-    //     }
-    // };
+        let result;
+        result = "";
+
+        for (let i = 0; i < value.length && i < numberLength; i++) {
+            switch (i) {
+                case 3:
+                    result += "-";
+                    break;
+                case 7:
+                    result += "-";
+                    break;
+
+                default:
+                    break;
+            }
+
+            result += value[i];
+        }
+
+        phoneRef.current!.value = result;
+
+        setPhone(e.target.value);
+        setPhoneErrorMsg(validatePhone(e.target.value) ? "📢 올바른 휴대폰 번호 형식이 아닙니다." : "");
+    };
 
     return (
         <>
@@ -142,7 +158,8 @@ export default function ModifyProfile({ profileState, setProfileState }: IProfil
                                     <div className="User_Profile_Nickname_Head">닉네임</div>
                                 </th>
                                 <td>
-                                    <input type="text" className="Modify_Profile_Nickname" defaultValue={userInfo.nickname} />
+                                    <input type="text" className="Modify_Profile_Nickname" defaultValue={userInfo.nickname} onChange={(e) => handleNicknameChange(e.target.value)} />
+                                    <div className="Modify_Profile_Error_Msg">{nicknameErrorMsg}</div>
                                 </td>
                             </tr>
                             <tr>
@@ -166,10 +183,12 @@ export default function ModifyProfile({ profileState, setProfileState }: IProfil
                                     <div className="User_Profile_Address_Head">주소</div>
                                 </th>
                                 <td>
-                                    <input type="text" className="Modify_Profile_Address" value={address ? address : userInfo.address} readOnly />
-                                    <button className="btn btn-light Modify_Profile_Address_Btn" onClick={onMapClickHandler}>
-                                        <FaSearchLocation className="Modify_Profile_Address_Btn_Icon" />
-                                    </button>
+                                    <div className="Address_Area">
+                                        <input type="text" className="Modify_Profile_Address" value={address ? address : userInfo.address} readOnly />
+                                        <button className="btn btn-light Modify_Profile_Address_Btn" onClick={onMapClickHandler}>
+                                            <FaSearchLocation className="Modify_Profile_Address_Btn_Icon" />
+                                        </button>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -177,7 +196,8 @@ export default function ModifyProfile({ profileState, setProfileState }: IProfil
                                     <div className="User_Profile_Phone_Head">연락처</div>
                                 </th>
                                 <td>
-                                    <input type="text" className="Modify_Profile_Phone" defaultValue={userInfo.phone} />
+                                    <input type="text" className="Modify_Profile_Phone" defaultValue={userInfo.phone} ref={phoneRef} onChange={handlePhoneChange} />
+                                    <div className="Modify_Profile_Error_Msg">{phoneErrorMsg}</div>
                                 </td>
                             </tr>
                         </tbody>
@@ -195,7 +215,7 @@ export default function ModifyProfile({ profileState, setProfileState }: IProfil
                 </Modal.Footer>
             </Modal>
             <div className="User_Profile_Btn_Area">
-                <button className="btn btn-primary" onClick={() => setProfileState(true)}>
+                <button className="btn btn-primary" onClick={() => setProfileState(true)} disabled={disabled}>
                     변경하기
                 </button>
                 <button className="btn Point_Charge_Btn">포인트 충전</button>

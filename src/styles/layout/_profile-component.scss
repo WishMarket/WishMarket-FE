@@ -28,9 +28,16 @@
                         }
 
                         td {
-                            width: 500px;
+                            width: 700px;
                             padding: 24px;
                             color: $color-gray-800;
+                            display: flex;
+                            justify-content: space-between;
+
+                            .Modify_Profile_Error_Msg {
+                                color: $color-red-600;
+                                margin-top: 16px;
+                            }
 
                             .User_Profile_Img {
                                 width: 150px;
@@ -87,6 +94,7 @@
                             .Modify_Profile_Address_Btn {
                                 margin-left: 4px;
                                 margin-bottom: 4px;
+                                border-radius: 50%;
 
                                 .Modify_Profile_Address_Btn_Icon {
                                     margin-bottom: 4px;
