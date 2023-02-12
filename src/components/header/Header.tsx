@@ -80,9 +80,9 @@ export default function Header() {
                                         </Link>
                                     </li>
                                     <li className="My_Page_Sub_Category_Item">
-                                        <a href="/" className="My_Page_Sub_Category_Link">
+                                        <Link to="/received" className="My_Page_Sub_Category_Link">
                                             받은 선물
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li className="My_Page_Sub_Category_Item">
                                         <a href="/" className="My_Page_Sub_Category_Link">

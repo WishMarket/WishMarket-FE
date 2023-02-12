@@ -1,13 +1,12 @@
-import React from "react";
 import Header from "../components/header/Header";
-import ProfileComponent from "../components/mypage/profile/ProfileComponent";
+import GiftComponent from "../components/mypage/received/GiftComponent";
 import Footer from "../components/footer/Footer";
 
-export default function Profile() {
+export default function ReceivedGift() {
     return (
         <>
             <Header />
-            <ProfileComponent />
+            <GiftComponent />
             <Footer />
         </>
     );
