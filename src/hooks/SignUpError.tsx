@@ -29,3 +29,18 @@ export function FindPasswdError(errorCode: number) {
     return <div>일치하는 계정이 없습니다.</div>
   }
 }
+
+
+export function FundingStartError(errorCode: number) {
+  if (errorCode ==0) {
+    return <div>펀딩을 시작합니다!</div>
+  }
+  else if (errorCode == 1) {
+    return <div>펀딩 마감 기간이 설정되지 않았습니다.</div>
+  } else if (errorCode == 2) {
+    return <div>펀딩 받을 친구가 설정되지 않았습니다.</div>
+  }else if (errorCode == 3) {
+    return <div>펀딩 최소금액은 1000원 이상이어야 합니다.</div>
+  }
+}
+

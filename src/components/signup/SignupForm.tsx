@@ -70,6 +70,7 @@ export default function SignupForm() {
   };
 
   const onLoginSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
     if (password !== retypePassword) {
       setErrorCode(1);
       setErrorShow(true);
@@ -77,13 +78,11 @@ export default function SignupForm() {
       setErrorCode(2);
       setErrorShow(true);
     } else {
-      e.preventDefault();
       console.log(email);
       console.log(password);
       console.log(retypePassword);
       console.log(name);
       console.log(nickname);
-
       navigate("/");
     }
   };
