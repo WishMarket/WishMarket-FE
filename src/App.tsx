@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import FindPasswd from "./pages/FindPasswd";
 import ChagngePasswd from "./pages/ChagngePasswd";
+import FundingStart from "./pages/FundingStart";
 
 function App() {
     return (
@@ -25,6 +26,7 @@ function App() {
                     <Route path="/login/findpasswd" element={<FindPasswd />}></Route>
                     <Route path="/login/findpasswd/changepasswd" element={<ChagngePasswd />}></Route>
                     <Route path="/signup" element={<Signup />}></Route>
+                    <Route path="/funding/start/:id" element={<FundingStart />}></Route>
                 </Routes>
             </BrowserRouter>
         </div>

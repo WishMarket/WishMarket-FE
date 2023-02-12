@@ -1,0 +1,133 @@
+.FundingStart_Container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .FundingStart_Wrapper {
+        padding: 60px 0;
+        width: 1020px;
+        height: 1280px;
+
+        .FundingStart_Top_Area {
+            width: 1020px;
+            display: flex;
+            justify-content: center;
+
+            .FundingStart_Img {
+                width: 450px;
+                height: 450px;
+                border-radius: 15px;
+                margin-right: 100px;
+            }
+
+            .FundingStart_Desc {
+                width: 450px;
+                // 나중에 높이조절
+                height: 1000px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .FundingStart_Title {
+                    font-size: $product-title;
+                    font-weight: 700;
+                    margin-bottom: 12px;
+                    line-height: 1.5;
+                }
+
+                .FundingStart_Price {
+                    font-size: $font-sub-title-size;
+                    font-weight: 700;
+                }
+
+                .FundingStart_DatePicker {
+                    h2 {
+                        margin-bottom: 12px;
+                        font-weight: 700;
+                        font-size: $font-sub-title-size;
+                    }
+
+                    input {
+                        padding-left: 10px;
+                        width: 230px;
+                        border-radius: 10px;
+                    }
+                }
+
+                .FundingStart_FriendPicker {
+                    
+                    h2 {
+                        margin-bottom: 15px;
+                        font-weight: 700;
+                        font-size: $font-sub-title-size;
+                    }
+
+                    //border 없애기 
+                    .FriendPicker_Wrapper {
+                        border-radius: 15px;
+                        border: 2px solid;
+                        padding: 15px;
+                        height: 400px;
+                        overflow: scroll;
+                        font-size: 17px;
+
+                        .Friend {
+                            margin-bottom: 10px;
+                            padding: 15px;
+                            // border: 1px solid;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                        }
+
+                        .Friend:hover {
+                            background-color: $color-yellow-800;
+                            transition: 0.3s;
+                        }
+                    }
+
+                    .Selected_Wrapper {
+                        margin-top: 20px;
+
+                        .Selected_Friend {
+                            border-radius: 15px;
+                            padding: 15px;
+                            padding-left: 28px;
+                            padding-right: 28px;
+                            border: 2px solid;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                        }
+                    }
+                }
+            }
+        }
+
+        .FundingStart_Desc_Bottom {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+
+            align-items: center;
+
+            label {
+                font-weight: 700;
+                font-size: $font-sub-title-size;
+                margin-right: 10px;
+
+            }
+
+            input {
+                width: 230px;
+                border-radius: 10px;
+                margin-right: 10px;
+                padding-left: 10px;
+
+            }
+
+
+        }
+    }
+
+}
