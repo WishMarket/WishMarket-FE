@@ -10842,7 +10842,7 @@ textarea.form-control-lg {
 }
 
 .react-datepicker {
-  font-family: "Noto Sans Kr", "Sans-serif";
+  font-family: "Helvetica Neue", helvetica, arial, sans-serif;
   font-size: 0.8rem;
   background-color: #fff;
   color: #000;
@@ -13596,7 +13596,8 @@ form .changepasswd_Button div button {
 }
 .Wishlist_Container .Wishlist_Wrapper .Wishlist_Item .Wishlist_Content .Wishlist_Btn_Area .Wishlist_Delete {
   width: 100px;
-}/*# sourceMappingURL=main.css.map */
+}
+
 .FundingStart_Container {
   width: 100%;
   display: flex;
@@ -13665,6 +13666,18 @@ form .changepasswd_Button div button {
   justify-content: space-between;
   align-items: center;
 }
+.FundingStart_Container .FundingStart_Wrapper .FundingStart_Top_Area .FundingStart_Desc .FundingStart_FriendPicker .FriendPicker_Wrapper .Friend .Friend_desc {
+  display: flex;
+  align-items: center;
+}
+.FundingStart_Container .FundingStart_Wrapper .FundingStart_Top_Area .FundingStart_Desc .FundingStart_FriendPicker .FriendPicker_Wrapper .Friend .Friend_desc .Friend_image {
+  border: 1px solid;
+  border-radius: 100px;
+  padding: 3px;
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
+}
 .FundingStart_Container .FundingStart_Wrapper .FundingStart_Top_Area .FundingStart_Desc .FundingStart_FriendPicker .FriendPicker_Wrapper .Friend:hover {
   background-color: #ffc32a;
   transition: 0.3s;
@@ -13681,6 +13694,18 @@ form .changepasswd_Button div button {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.FundingStart_Container .FundingStart_Wrapper .FundingStart_Top_Area .FundingStart_Desc .FundingStart_FriendPicker .Selected_Wrapper .Selected_Friend .Friend_desc {
+  display: flex;
+  align-items: center;
+}
+.FundingStart_Container .FundingStart_Wrapper .FundingStart_Top_Area .FundingStart_Desc .FundingStart_FriendPicker .Selected_Wrapper .Selected_Friend .Friend_desc .Friend_image {
+  border: 1px solid;
+  border-radius: 100px;
+  padding: 3px;
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
 }
 .FundingStart_Container .FundingStart_Wrapper .FundingStart_Desc_Bottom {
   display: flex;
