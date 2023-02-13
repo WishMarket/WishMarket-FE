@@ -11,6 +11,7 @@ import Signup from "./pages/Signup";
 import FindPasswd from "./pages/FindPasswd";
 import ChagngePasswd from "./pages/ChagngePasswd";
 import FundingStart from "./pages/FundingStart";
+import FundingAddition from "./pages/FundingAddition";
 
 function App() {
     return (
@@ -27,6 +28,8 @@ function App() {
                     <Route path="/login/findpasswd/changepasswd" element={<ChagngePasswd />}></Route>
                     <Route path="/signup" element={<Signup />}></Route>
                     <Route path="/funding/start/:id" element={<FundingStart />}></Route>
+                    {/* funding join은 params 다른것으로 받아야함 ex) fundingId */}
+                    <Route path="/funding/join/:id" element={<FundingAddition />}></Route>
                 </Routes>
             </BrowserRouter>
         </div>

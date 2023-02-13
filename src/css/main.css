@@ -13724,3 +13724,136 @@ form .changepasswd_Button div button {
   margin-right: 10px;
   padding-left: 10px;
 }
+
+.FundingAddition_Container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.FundingAddition_Container .FundingAddition_Wrapper {
+  padding: 60px 0;
+  width: 1020px;
+  height: 1280px;
+}
+.FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area {
+  width: 1020px;
+  display: flex;
+  justify-content: center;
+}
+.FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Img {
+  width: 450px;
+  height: 450px;
+  border-radius: 15px;
+  margin-right: 100px;
+}
+.FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc {
+  width: 450px;
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingAddition_Title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+.FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingAddition_Price h2, .FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingAddition_Price .h2 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingGraph_Desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 120px;
+}
+.FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingGraph_Desc h2, .FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingGraph_Desc .h2 {
+  font-size: 18px;
+  font-weight: 700;
+}
+.FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingGraph_Desc .Funding_Amount_Desc {
+  display: flex;
+  justify-content: center;
+}
+.FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingGraph_Desc .Funding_Amount_Desc div {
+  padding-left: 35px;
+  padding-right: 35px;
+  border-right: 1px solid;
+}
+.FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingGraph_Desc .Funding_Amount_Desc div h3, .FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingGraph_Desc .Funding_Amount_Desc div .h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingGraph_Desc .Funding_Amount_Desc div span {
+  display: flex;
+  justify-content: center;
+}
+.FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingGraph_Desc .Funding_Amount_Desc .my-Funded {
+  border: none;
+}
+.FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingAddition_Date h2, .FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingAddition_Date .h2 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingAddition_To h2, .FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingAddition_To .h2 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingAddition_To .To_desc {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingAddition_To .To_desc .To_image {
+  border: 1px solid;
+  border-radius: 100px;
+  padding: 3px;
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
+}
+.FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingAddition_From h2, .FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingAddition_From .h2 {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingAddition_From h2 .From_count, .FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingAddition_From .h2 .From_count {
+  font-size: 15px;
+  font-weight: 400;
+  padding: 2px;
+  border: 1px solid;
+  margin-left: 5px;
+}
+.FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingAddition_From .From_desc {
+  display: flex;
+  align-items: center;
+}
+.FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingAddition_From .From_desc span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.FundingAddition_Container .FundingAddition_Desc_Bottom {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  align-items: center;
+}
+.FundingAddition_Container .FundingAddition_Desc_Bottom label {
+  font-weight: 700;
+  font-size: 18px;
+  margin-right: 10px;
+}
+.FundingAddition_Container .FundingAddition_Desc_Bottom input {
+  width: 200px;
+  border-radius: 10px;
+  margin-right: 10px;
+  padding-left: 10px;
+}
