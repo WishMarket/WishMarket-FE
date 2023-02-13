@@ -5,7 +5,7 @@ import { products } from "../../data/ProductData.json";
 
 interface Product {
     category: number;
-    productId: string;
+    productId: number;
     name: string;
     image: string;
     price: number;
@@ -53,7 +53,7 @@ export default function FamousFund() {
                         {productData.map((item: Product) => {
                             return (
                                 <div key={item.productId}>
-                                    <FundingAttend name={item.name} date={item.date} price={item.price} funded_price={item.funded_price} my_fund={item.my_fund} image={item.image} url={item.url} />
+                                    <FundingAttend name={item.name} date={item.date} price={item.price} funded_price={item.funded_price} my_fund={item.my_fund} image={item.image} url={item.url} productId={item.productId } />
                                 </div>
                             );
                         })}

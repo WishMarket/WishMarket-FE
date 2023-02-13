@@ -1,0 +1,172 @@
+.FundingAddition_Container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .FundingAddition_Wrapper {
+        padding: 60px 0;
+        width: 1020px;
+        height: 1280px;
+
+        .FundingAddition_Top_Area {
+            width: 1020px;
+            display: flex;
+            justify-content: center;
+
+            .FundingAddition_Img {
+                width: 450px;
+                height: 450px;
+                border-radius: 15px;
+                margin-right: 100px;
+            }
+
+            .FundingAddition_Desc {
+                width: 450px;
+                // 나중에 높이조절
+                height: 1000px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .FundingAddition_Title {
+                    font-size: $product-title;
+                    font-weight: 700;
+                    margin-bottom: 12px;
+                    line-height: 1.5;
+                }
+
+                .FundingAddition_Price {
+                    h2 {
+                        font-size: $font-sub-title-size;
+                        font-weight: 700;
+                        margin-bottom: 12px;
+                    }
+                }
+
+                .FundingGraph_Desc {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: 120px;
+
+                    h2 {
+                        font-size: $font-sub-title-size;
+                        font-weight: 700;
+                    }
+
+                    .Funding_Amount_Desc {
+
+                        display: flex;
+                        justify-content: center;
+
+                        div {
+                            padding-left: 35px;
+                            padding-right: 35px;
+                            border-right: 1px solid;
+
+                            h3 {
+                                font-size: $font-sub-title-size;
+                                font-weight: 700;
+                                margin-bottom: 5px;
+                            }
+
+                            span {
+                                display: flex;
+                                justify-content: center;
+                            }
+                        }
+
+                        .my-Funded {
+                            border: none;
+                        }
+                    }
+                }
+
+                .FundingAddition_Date {
+                    h2 {
+                        font-size: $font-sub-title-size;
+                        font-weight: 700;
+                        margin-bottom: 12px;
+                    }
+                }
+
+                .FundingAddition_To {
+                    h2 {
+                        font-size: $font-sub-title-size;
+                        font-weight: 700;
+                        margin-bottom: 12px;
+                    }
+
+                    .To_desc {
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 50px;
+
+                        .To_image {
+                            border: 1px solid;
+                            border-radius: 100px;
+                            padding: 3px;
+                            width: 35px;
+                            height: 35px;
+                            margin-right: 10px;
+                        }
+                    }
+                }
+
+                .FundingAddition_From {
+                    h2 {
+                        display: flex;
+                        align-items: center;
+                        font-size: $font-sub-title-size;
+                        font-weight: 700;
+                        margin-bottom: 12px;
+
+                        .From_count {
+                            font-size: 15px;
+                            font-weight: 400;
+                            padding: 2px;
+                            border: 1px solid;
+                            margin-left: 5px;
+                        }
+                    }
+
+                    .From_desc {
+                        display: flex;
+                        align-items: center;
+
+                        span {
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+    .FundingAddition_Desc_Bottom {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+
+        align-items: center;
+
+        label {
+            font-weight: 700;
+            font-size: $font-sub-title-size;
+            margin-right: 10px;
+
+        }
+
+        input {
+            width: 200px;
+            border-radius: 10px;
+            margin-right: 10px;
+            padding-left: 10px;
+
+        }
+
+
+    }
+}
