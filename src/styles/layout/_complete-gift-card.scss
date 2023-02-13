@@ -18,15 +18,72 @@
     color: $color-gray-800;
 }
 
+.Gift_Scroll_Tab_Area {
+    width: 900px;
+    display: flex;
+    justify-content: space-between;
+    margin: 64px auto;
+
+    #Gift_Scroll_Tab_Item {
+        text-align: center;
+        cursor: pointer;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -50%;
+            width: 0;
+            height: 3px;
+            background-color: $color-gray-600;
+            transition: all 0.5s;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            right: 50%;
+            bottom: -50%;
+            width: 0;
+            height: 3px;
+            background-color: $color-gray-600;
+            transition: all 0.5s;
+        }
+
+        &:hover::after,
+        &:hover::before {
+            width: 50%;
+        }
+    }
+}
+
 .Gift_Container {
     width: 100%;
+
+    .Gift_Division {
+        width: 900px;
+        margin: 20px auto;
+        border: solid 1px $color-gray-400;
+    }
 
     .Complete_Gift_Container {
         display: flex;
         justify-content: center;
+        margin-bottom: 80px;
 
-        .Complete_Gift_Title {
+        .Gift_Sub_Title {
+            font-weight: 600;
+            font-size: 18px;
+            margin-top: 16px;
             margin-bottom: 32px;
+            color: $color-gray-800;
+
+            .Gift_Sub_Title_Icon {
+                font-size: 38px;
+                margin-bottom: 6px;
+                margin-right: 4px;
+            }
         }
 
         .Complete_Gift_Card_Item {
@@ -35,39 +92,31 @@
             justify-content: space-between;
             margin-bottom: 28px;
             animation: slideGift 0.8s;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-radius: 24px;
 
-            .Complete_Gift_Left {
+            &:hover {
+                box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+            }
+
+            .Complete_Gift_Img {
+                width: 280px;
                 height: 290px;
-                width: 260px;
-                background-color: $color-gray-200;
                 border-top-left-radius: 24px;
                 border-bottom-left-radius: 24px;
-
-                .Complete_Gift_Date {
-                    margin-left: 16px;
-                    margin-top: 12px;
-                    margin-bottom: 12px;
-                    color: $color-blue;
-                    font-size: $font-desc-size;
-                }
-
-                .Complete_Gift_Img {
-                    margin-left: 16px;
-                    width: 240px;
-                    height: 240px;
-                    border-radius: 24px;
-                }
+                object-fit: cover;
             }
 
             .Complete_Gift_Content {
-                width: 660px;
+                width: 620px;
                 height: 290px;
                 background-color: $color-gray-200;
                 border-top-right-radius: 24px;
                 border-bottom-right-radius: 24px;
 
                 .Complete_Gift_Info {
-                    margin-top: 32px;
+                    margin-top: 16px;
                     margin-left: 16px;
 
                     .Complete_Gift_Item_Title {
@@ -86,6 +135,20 @@
                         color: $color-blue;
                     }
 
+                    .Complete_Gift_Date {
+                        margin-top: 12px;
+
+                        .Complete_Gift_Date_Label {
+                            font-size: $font-btn-size;
+                            line-height: 2;
+                            font-weight: 600;
+                        }
+
+                        .Complete_Gift_Date_Content {
+                            font-size: $font-btn-size;
+                        }
+                    }
+
                     .Complete_Gift_People {
                         margin-top: 12px;
 
@@ -95,14 +158,32 @@
                             font-weight: 600;
                         }
 
-                        .Complete_Gift_People_Content {
-                            font-size: $font-btn-size;
+                        .Flex_Container {
+                            display: flex;
+
+                            .Complete_Gift_People_Content {
+                                font-size: $font-btn-size;
+                                max-width: 376px;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                            }
+
+                            .Complete_Gift_People_Badge {
+                                padding: 0 2px;
+                                margin-left: 6px;
+                                line-height: 1.2;
+                                text-align: center;
+                                background-color: $color-blue;
+                                border-radius: 32px;
+                                color: $color-white;
+                                font-size: $font-desc-size;
+                            }
                         }
                     }
                 }
 
                 .Complete_Gift_Btn_Area {
-                    margin-top: 38px;
                     display: flex;
                     justify-content: right;
                     margin-right: 20px;
@@ -115,38 +196,23 @@
             }
 
             &.Active {
-                .Complete_Gift_Left {
-                    height: 380px;
-                    width: 260px;
-                    background-color: $color-gray-200;
+                .Complete_Gift_Img {
+                    width: 280px;
+                    height: 412px;
                     border-top-left-radius: 24px;
                     border-bottom-left-radius: 24px;
-
-                    .Complete_Gift_Date {
-                        margin-left: 16px;
-                        margin-top: 12px;
-                        margin-bottom: 12px;
-                        color: $color-blue;
-                        font-size: $font-desc-size;
-                    }
-
-                    .Complete_Gift_Img {
-                        margin-left: 16px;
-                        width: 240px;
-                        height: 240px;
-                        border-radius: 24px;
-                    }
+                    object-fit: cover;
                 }
 
                 .Complete_Gift_Content {
-                    width: 660px;
-                    height: 380px;
+                    width: 620px;
+                    height: 412px;
                     background-color: $color-gray-200;
                     border-top-right-radius: 24px;
                     border-bottom-right-radius: 24px;
 
                     .Complete_Gift_Info {
-                        margin-top: 32px;
+                        margin-top: 16px;
                         margin-left: 16px;
 
                         .Complete_Gift_Item_Title {
@@ -268,6 +334,20 @@
                             }
                         }
 
+                        .Complete_Gift_Date {
+                            margin-top: 12px;
+
+                            .Complete_Gift_Date_Label {
+                                font-size: $font-btn-size;
+                                line-height: 2;
+                                font-weight: 600;
+                            }
+
+                            .Complete_Gift_Date_Content {
+                                font-size: $font-btn-size;
+                            }
+                        }
+
                         .Complete_Gift_People {
                             margin-top: 12px;
 
@@ -279,12 +359,16 @@
 
                             .Complete_Gift_People_Content {
                                 font-size: $font-btn-size;
+                                font-size: $font-btn-size;
+                                max-width: 376px;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
                             }
                         }
                     }
 
                     .Complete_Gift_Btn_Area {
-                        margin-top: 12px;
                         display: flex;
                         justify-content: right;
                         margin-right: 20px;

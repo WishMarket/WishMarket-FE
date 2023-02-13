@@ -13,18 +13,23 @@ export default function CompleteGiftCardUnactive({ gift }: FundingInfo) {
         <>
             {!modifyState ? (
                 <div className="Complete_Gift_Card_Item">
-                    <div className="Complete_Gift_Left">
-                        <div className="Complete_Gift_Date">{gift.date}</div>
-                        <img src={gift.image} alt={gift.name} className="Complete_Gift_Img" />
-                    </div>
+                    <img src={gift.image} alt={gift.name} className="Complete_Gift_Img" />
+
                     <div className="Complete_Gift_Content">
                         <div className="Complete_Gift_Info">
                             <div className="Complete_Gift_Item_Title">{gift.name}</div>
                             <div className="Complete_Gift_Price">{commaNums(gift.price)} 원</div>
                             <div className="Complete_Gift_Notify">수령 가능한 상품입니다. 배송 정보를 입력하세요.</div>
+                            <div className="Complete_Gift_Date">
+                                <div className="Complete_Gift_Date_Label">펀딩 기간</div>
+                                <div className="Complete_Gift_Date_Content">{gift.date}</div>
+                            </div>
                             <div className="Complete_Gift_People">
                                 <div className="Complete_Gift_People_Label">참여자</div>
-                                <div className="Complete_Gift_People_Content">{gift.participant.join(", ")}</div>
+                                <div className="Flex_Container">
+                                    <div className="Complete_Gift_People_Content">{gift.participant.join(", ")}</div>
+                                    <div className="Complete_Gift_People_Badge">{gift.participant.length} 명 참여</div>
+                                </div>
                             </div>
                         </div>
                         <div className="Complete_Gift_Btn_Area">
