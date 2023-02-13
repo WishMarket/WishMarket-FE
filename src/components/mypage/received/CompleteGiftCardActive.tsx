@@ -4,6 +4,7 @@ import { Modal } from "react-bootstrap";
 import DaumPostCode from "react-daum-postcode";
 import { commaNums } from "../../../hooks/CommaNums";
 import { MdSentimentVerySatisfied, MdSentimentVeryDissatisfied } from "react-icons/md";
+import { FaKaaba } from "react-icons/fa";
 
 interface AddressData {
     address: string;
@@ -24,25 +25,13 @@ type UserInfo = {
 };
 
 export default function CompleteGiftCardActive({ gift }: FundingInfo) {
-    const [isActive, setIsActive] = useState<boolean>(false);
+    const [goodIcon, setGoodIcon] = useState<boolean>(false);
+    const [badIcon, setBadIcon] = useState<boolean>(false);
     const [address, setAddress] = useState<string>("");
     const [mapShow, setMapShow] = useState<boolean>(false);
     const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
 
     const USER_URL = "/data/UserData.json";
-    // const URL = "http://3.38.63.3:8080/sample";
-
-    // // test
-    // const getTest = async () => {
-    //     await axios
-    //         .get(URL, { withCredentials: true })
-    //         .then((res) => {
-    //             console.log(res);
-    //         })
-    //         .catch((error) => {
-    //             return Promise.reject(error);
-    //         });
-    // };
 
     // address axios
     const getUserInfo = async () => {
@@ -75,9 +64,11 @@ export default function CompleteGiftCardActive({ gift }: FundingInfo) {
         setMapShow(false);
     };
 
+    const handleReviewIcon = () => {};
+
     return (
         <>
-            <div id="Complete_Gift_Card_Item" className={isActive ? "active" : ""}>
+            <div className="Complete_Gift_Card_Item Active">
                 <div className="Complete_Gift_Left">
                     <div className="Complete_Gift_Date">{gift.date}</div>
                     <img src={gift.image} alt={gift.name} className="Complete_Gift_Img" />
@@ -104,11 +95,11 @@ export default function CompleteGiftCardActive({ gift }: FundingInfo) {
                             <div className="Complete_Review_Area">
                                 <input type="text" className="Complete_Review_Input" placeholder="리뷰를 입력하세요." />
                                 <div className="Complete_Review_Icon">
-                                    <div className="Complete_Review_Good">
+                                    <div className={goodIcon ? "Complete_Review_Good active" : "Complete_Review_Good"} onClick={() => setGoodIcon(!goodIcon)}>
                                         <MdSentimentVerySatisfied className="Complete_Review_Good_Icon" />
                                         <div>좋아요</div>
                                     </div>
-                                    <div className="Complete_Review_Bad">
+                                    <div className={badIcon ? "Complete_Review_Bad active" : "Complete_Review_Bad"} onClick={() => setBadIcon(!badIcon)}>
                                         <MdSentimentVeryDissatisfied className="Complete_Review_Bad_Icon" />
                                         <div>별로예요</div>
                                     </div>
@@ -121,9 +112,7 @@ export default function CompleteGiftCardActive({ gift }: FundingInfo) {
                         </div>
                     </div>
                     <div className="Complete_Gift_Btn_Area">
-                        <button className="btn btn-primary Active_Controll" onClick={() => setIsActive(false)}>
-                            제출
-                        </button>
+                        <button className="btn btn-primary Active_Controll">제출</button>
                     </div>
                 </div>
             </div>

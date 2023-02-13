@@ -1,46 +1,31 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Modal } from "react-bootstrap";
-import DaumPostCode from "react-daum-postcode";
 
 import CompleteGiftCardUnactive from "./CompleteGiftCardUnactive";
 import CompleteGiftCardActive from "./CompleteGiftCardActive";
-import { commaNums } from "../../../hooks/CommaNums";
-import { MdSentimentVerySatisfied, MdSentimentVeryDissatisfied } from "react-icons/md";
 
-interface AddressData {
-    address: string;
-}
-
-interface FundingInfo {
-    gift: any;
-}
-
-type UserInfo = {
+interface Funding {
+    fundingId: number;
     name: string;
-    nickname: string;
-    pointPrice: number;
-    email: string;
-    address: string;
-    phone: string;
-    photo: string;
-};
+    image: string;
+    price: number;
+    date: string;
+    gatherPoint: number;
+    participant: any;
+    addressInfo: boolean;
+}
 
-export default function CompleteGiftCard({ gift }: FundingInfo) {
-    const [isActive, setIsActive] = useState<boolean>(false);
-    const [address, setAddress] = useState<string>("");
-    const [mapShow, setMapShow] = useState<boolean>(false);
-    const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
+export default function CompleteGiftCard() {
+    const [fundingInfo, setFundingInfo] = useState<Funding[]>([]);
+    const FUNDING_URL = "/data/TestFundingData.json";
 
-    const USER_URL = "/data/UserData.json";
-
-    // address axios
-    const getUserInfo = async () => {
+    // funding data axios
+    const getFundingData = async () => {
         await axios
-            .get(USER_URL)
+            .get(FUNDING_URL)
             .then((res) => {
-                let response = res.data.users;
-                setUserInfo(response[0]); // 연동 시 교체 필요
+                let response = res.data.funding;
+                setFundingInfo(response);
             })
             .catch((error) => {
                 return Promise.reject(error);
@@ -48,27 +33,14 @@ export default function CompleteGiftCard({ gift }: FundingInfo) {
     };
 
     useEffect(() => {
-        getUserInfo();
+        getFundingData();
     }, []);
-
-    const onAddressChangeHandler = (data: AddressData) => {
-        setAddress(data.address);
-        setMapShow(false);
-    };
-
-    const onMapClickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
-        e.preventDefault();
-        setMapShow(true);
-    };
-
-    const handleClose = (e: React.MouseEvent<HTMLButtonElement> | void) => {
-        setMapShow(false);
-    };
 
     return (
         <>
-            <CompleteGiftCardUnactive gift={gift} isActive={isActive} setIsActive={setIsActive} />
-            <CompleteGiftCardActive gift={gift} />
+            {fundingInfo.map((gift) => (
+                <CompleteGiftCardUnactive gift={gift} key={gift.fundingId} />
+            ))}
         </>
     );
 }
