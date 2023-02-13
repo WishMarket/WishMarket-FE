@@ -1,0 +1,171 @@
+.In_Progress_Gift_Container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+
+    .Gift_Sub_Title {
+        font-weight: 700;
+        font-size: 18px;
+        margin-top: 16px;
+        margin-bottom: 32px;
+        color: $color-gray-800;
+
+        .Gift_Sub_Title_Icon {
+            font-size: 38px;
+            margin-bottom: 6px;
+            margin-right: 4px;
+        }
+    }
+
+    .In_Progress_Gift_Item {
+        width: 900px;
+        height: 264px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 28px;
+        animation: slideGift 0.8s;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        border-radius: 24px;
+
+        &:hover {
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        }
+
+        .In_Progress_Gift_Img {
+            width: 280px;
+            height: 264px;
+            border-top-left-radius: 24px;
+            border-bottom-left-radius: 24px;
+            object-fit: cover;
+        }
+
+        .In_Progress_Gift_Content {
+            width: 620px;
+            height: 264px;
+            background-color: $color-gray-200;
+            border-top-right-radius: 24px;
+            border-bottom-right-radius: 24px;
+
+            .In_Progrss_Gift_Info {
+                margin-top: 16px;
+                margin-left: 16px;
+
+                .In_Progress_Gift_Title {
+                    font-size: $font-sub-title-size;
+                    font-weight: 600;
+                    line-height: 2;
+                    margin-bottom: 0px;
+                }
+
+                .In_Progress_Gift_Price {
+                    line-height: 2;
+                }
+
+                .In_Progress_Gift_Progress {
+                    margin: 12px 0;
+                    width: 96%;
+                }
+
+                .In_Progress_Gift_Date {
+                    color: $color-blue;
+                    margin-bottom: 12px;
+
+                    .In_Progress_Gift_Date_Label {
+                        font-size: $font-btn-size;
+                        line-height: 2;
+                        font-weight: 600;
+                    }
+
+                    .In_Progress_Gift_Date_Content {
+                        font-size: $font-btn-size;
+                    }
+                }
+
+                .Flex_Container {
+                    display: flex;
+
+                    .In_Progress_Gift_Gathered {
+                        margin-right: 20px;
+
+                        .In_Progress_Gift_Gathered_Label {
+                            font-size: $font-btn-size;
+                            line-height: 2;
+                            font-weight: 600;
+                        }
+
+                        .In_Progress_Gift_Gathered_Content {
+                            font-size: $font-btn-size;
+                        }
+                    }
+
+                    .In_Progress_Gift_Remaining {
+                        margin-right: 20px;
+
+                        .In_Progress_Gift_Remaining_Label {
+                            font-size: $font-btn-size;
+                            line-height: 2;
+                            font-weight: 600;
+                        }
+
+                        .In_Progress_Gift_Remaining_Content {
+                            font-size: $font-btn-size;
+                        }
+                    }
+
+                    .In_Progress_Gift_Attend {
+                        .In_Progress_Gift_Attend_Label {
+                            font-size: $font-btn-size;
+                            line-height: 2;
+                            font-weight: 600;
+                        }
+
+                        .Flex_Container {
+                            display: flex;
+
+                            .In_Progress_Gift_Attend_Content {
+                                font-size: $font-btn-size;
+                                max-width: 326px;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                            }
+
+                            .In_Progress_Gift_Attend_Badge {
+                                padding: 0 2px;
+                                margin-left: 6px;
+                                line-height: 1.2;
+                                text-align: center;
+                                background-color: $color-blue;
+                                border-radius: 32px;
+                                color: $color-white;
+                                font-size: $font-desc-size;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .In_Progress_Gift_Btn_Area {
+                display: flex;
+                justify-content: right;
+                margin-right: 20px;
+
+                .In_Progress_Gift_Share_Btn {
+                    border: none;
+                    background-color: transparent;
+
+                    .In_Progress_Gift_Share_Btn_Icon {
+                        color: $color-gray-800;
+                        transition: 0.4s;
+
+                        &:hover {
+                            transition: 0.4s;
+                            color: $color-blue;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
