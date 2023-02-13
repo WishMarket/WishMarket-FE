@@ -4,8 +4,8 @@ import axios from "axios";
 import { Modal } from "react-bootstrap";
 import DaumPostCode from "react-daum-postcode";
 
-import { commaNums } from "../../hooks/CommaNums";
-import { validateNickname, validatePhone } from "../../utils/regex";
+import { commaNums } from "../../../hooks/CommaNums";
+import { validateNickname, validatePhone } from "../../../utils/regex";
 
 import { FaSearchLocation } from "react-icons/fa";
 
