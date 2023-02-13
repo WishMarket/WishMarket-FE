@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Modal } from "react-bootstrap";
 import DaumPostCode from "react-daum-postcode";
-import { FaSearchLocation } from "react-icons/fa";
+
+import CompleteGiftCardUnactive from "./CompleteGiftCardUnactive";
+import CompleteGiftCardActive from "./CompleteGiftCardActive";
+import { commaNums } from "../../../hooks/CommaNums";
 import { MdSentimentVerySatisfied, MdSentimentVeryDissatisfied } from "react-icons/md";
 
 interface AddressData {
@@ -24,6 +27,7 @@ type UserInfo = {
 };
 
 export default function CompleteGiftCard({ gift }: FundingInfo) {
+    const [isActive, setIsActive] = useState<boolean>(false);
     const [address, setAddress] = useState<string>("");
     const [mapShow, setMapShow] = useState<boolean>(false);
     const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
@@ -63,48 +67,8 @@ export default function CompleteGiftCard({ gift }: FundingInfo) {
 
     return (
         <>
-            <div className="Complate_Gift_Card_Item">
-                <div className="Complate_Gift_Left">
-                    <div className="Complate_Gift_Date">{gift.date}</div>
-                    <img src={gift.image} alt={gift.name} />
-                </div>
-                <div className="Complate_Gift_Content">
-                    <div className="Complate_Gift_Info">
-                        <div className="Complate_Gift_Title">{gift.name}</div>
-                        <div className="Complate_Gift_Price">{gift.price}</div>
-                        <div className="Complate_Gift_Addres">
-                            {userInfo?.address != null ? (
-                                <input type="text" value={address ? address : userInfo?.address} readOnly />
-                            ) : (
-                                <input type="text" value={address ? address : "주소를 입력해 주세요."} readOnly />
-                            )}
-                            <button className="btn btn-light Modify_Profile_Address_Btn" onClick={onMapClickHandler}>
-                                <FaSearchLocation className="Modify_Profile_Address_Btn_Icon" />
-                            </button>
-                        </div>
-                        <div className="Complate_Gift_Review">
-                            <input type="text" className="Complate_Review_Input" />
-                            <div className="Complate_Review_Icon">
-                                <MdSentimentVerySatisfied />
-                                <MdSentimentVeryDissatisfied />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="Complate_Gift_Btn_Area">
-                        <button className="btn btn-warning Active_Controll">제출</button>
-                    </div>
-                </div>
-            </div>
-            <Modal show={mapShow} onHide={handleClose}>
-                <Modal.Body>
-                    <DaumPostCode autoClose={false} onComplete={onAddressChangeHandler} />
-                </Modal.Body>
-                <Modal.Footer>
-                    <button className="btn btn-secondary" onClick={handleClose}>
-                        닫기
-                    </button>
-                </Modal.Footer>
-            </Modal>
+            <CompleteGiftCardUnactive gift={gift} isActive={isActive} setIsActive={setIsActive} />
+            <CompleteGiftCardActive gift={gift} />
         </>
     );
 }

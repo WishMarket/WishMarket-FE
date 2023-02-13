@@ -1,0 +1,201 @@
+.Gift_Title {
+    margin-top: 100px;
+    margin-bottom: 64px;
+    text-align: center;
+    font-size: $font-larger;
+    font-weight: 600;
+    color: $color-gray-800;
+}
+
+.Gift_Container {
+    width: 100%;
+
+    .Complete_Gift_Container {
+        display: flex;
+        justify-content: center;
+
+        .Complete_Gift_Title {
+            margin-bottom: 32px;
+        }
+
+        #Complete_Gift_Card_Item {
+            width: 900px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 28px;
+
+            .Complete_Gift_Left {
+                height: 380px;
+                width: 260px;
+                background-color: $color-gray-200;
+                border-top-left-radius: 24px;
+                border-bottom-left-radius: 24px;
+
+                .Complete_Gift_Date {
+                    margin-left: 16px;
+                    margin-top: 12px;
+                    margin-bottom: 12px;
+                    color: $color-blue;
+                    font-size: $font-desc-size;
+                }
+
+                .Complete_Gift_Img {
+                    margin-left: 16px;
+                    width: 240px;
+                    height: 240px;
+                    border-radius: 24px;
+                }
+            }
+
+            .Complete_Gift_Content {
+                width: 660px;
+                height: 380px;
+                background-color: $color-gray-200;
+                border-top-right-radius: 24px;
+                border-bottom-right-radius: 24px;
+
+                .Complete_Gift_Info {
+                    margin-top: 32px;
+                    margin-left: 16px;
+
+                    .Complete_Gift_Item_Title {
+                        font-size: $font-sub-title-size;
+                        font-weight: 600;
+                        line-height: 2;
+                    }
+
+                    .Complete_Gift_Price {
+                        line-height: 2;
+                    }
+
+                    .Complete_Gift_Address {
+                        margin-top: 12px;
+
+                        .Complete_Gift_Address_Label {
+                            font-size: $font-btn-size;
+                            line-height: 2;
+                            font-weight: 600;
+                        }
+
+                        .Complete_Gift_Address_Area {
+                            display: flex;
+
+                            .Complete_Gift_Address_Input {
+                                width: 280px;
+                                height: 42px;
+                                font-size: $font-btn-size;
+                                border: 1px solid $color-gray-400;
+                                border-radius: 16px;
+                                outline: none;
+                                padding-left: 10px;
+                                background-color: $color-white;
+                            }
+
+                            .Modify_Profile_Address_Btn {
+                                margin-left: 12px;
+                                border-radius: 16px;
+                            }
+                        }
+                    }
+
+                    .Complete_Gift_Review {
+                        margin-top: 12px;
+
+                        .Complete_Gift_Review_Label {
+                            font-size: $font-btn-size;
+                            line-height: 2;
+                            font-weight: 600;
+                        }
+
+                        .Complete_Review_Area {
+                            display: flex;
+
+                            .Complete_Review_Input {
+                                width: 280px;
+                                height: 42px;
+                                font-size: $font-btn-size;
+                                border: 1px solid $color-gray-400;
+                                border-radius: 16px;
+                                outline: none;
+                                padding-left: 10px;
+                                background-color: $color-white;
+                            }
+
+                            .Complete_Review_Icon {
+                                display: flex;
+
+                                .Complete_Review_Good {
+                                    margin-left: 12px;
+                                    border-radius: 50%;
+                                    text-align: center;
+                                    cursor: pointer;
+                                    color: $color-gray-800;
+
+                                    &:hover {
+                                        color: $color-blue;
+                                    }
+
+                                    .Complete_Review_Good_Icon {
+                                        font-size: 24px;
+                                        margin-bottom: 2px;
+                                    }
+
+                                    div {
+                                        font-size: $font-desc-size;
+                                    }
+                                }
+
+                                .Complete_Review_Bad {
+                                    margin-left: 12px;
+                                    border-radius: 50%;
+                                    text-align: center;
+                                    cursor: pointer;
+                                    color: $color-gray-600;
+
+                                    .Complete_Review_Bad_Icon {
+                                        font-size: 24px;
+                                        margin-bottom: 2px;
+                                    }
+
+                                    &:hover {
+                                        color: $color-red-600;
+                                    }
+
+                                    div {
+                                        font-size: $font-desc-size;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .Complete_Gift_People {
+                        margin-top: 12px;
+
+                        .Complete_Gift_People_Label {
+                            font-size: $font-btn-size;
+                            line-height: 2;
+                            font-weight: 600;
+                        }
+
+                        .Complete_Gift_People_Content {
+                            font-size: $font-btn-size;
+                        }
+                    }
+                }
+
+                .Complete_Gift_Btn_Area {
+                    margin-top: 12px;
+                    display: flex;
+                    justify-content: right;
+                    margin-right: 20px;
+
+                    .Active_Controll {
+                        width: 88px;
+                        border-radius: 16px;
+                    }
+                }
+            }
+        }
+    }
+}

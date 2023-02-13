@@ -10842,7 +10842,7 @@ textarea.form-control-lg {
 }
 
 .react-datepicker {
-  font-family: "Noto Sans Kr", "Sans-serif";
+  font-family: "Helvetica Neue", helvetica, arial, sans-serif;
   font-size: 0.8rem;
   background-color: #fff;
   color: #000;
@@ -13319,6 +13319,15 @@ form .findpasswd_Button div button {
   margin-right: 12px;
 }
 
+.Profile_Title {
+  margin-top: 100px;
+  margin-bottom: 64px;
+  text-align: center;
+  font-size: 38px;
+  font-weight: 600;
+  color: #303030;
+}
+
 .Profile_Container {
   width: 100%;
   display: flex;
@@ -13596,7 +13605,8 @@ form .changepasswd_Button div button {
 }
 .Wishlist_Container .Wishlist_Wrapper .Wishlist_Item .Wishlist_Content .Wishlist_Btn_Area .Wishlist_Delete {
   width: 100px;
-}/*# sourceMappingURL=main.css.map */
+}
+
 .FundingStart_Container {
   width: 100%;
   display: flex;
@@ -13665,6 +13675,18 @@ form .changepasswd_Button div button {
   justify-content: space-between;
   align-items: center;
 }
+.FundingStart_Container .FundingStart_Wrapper .FundingStart_Top_Area .FundingStart_Desc .FundingStart_FriendPicker .FriendPicker_Wrapper .Friend .Friend_desc {
+  display: flex;
+  align-items: center;
+}
+.FundingStart_Container .FundingStart_Wrapper .FundingStart_Top_Area .FundingStart_Desc .FundingStart_FriendPicker .FriendPicker_Wrapper .Friend .Friend_desc .Friend_image {
+  border: 1px solid;
+  border-radius: 100px;
+  padding: 3px;
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
+}
 .FundingStart_Container .FundingStart_Wrapper .FundingStart_Top_Area .FundingStart_Desc .FundingStart_FriendPicker .FriendPicker_Wrapper .Friend:hover {
   background-color: #ffc32a;
   transition: 0.3s;
@@ -13681,6 +13703,18 @@ form .changepasswd_Button div button {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.FundingStart_Container .FundingStart_Wrapper .FundingStart_Top_Area .FundingStart_Desc .FundingStart_FriendPicker .Selected_Wrapper .Selected_Friend .Friend_desc {
+  display: flex;
+  align-items: center;
+}
+.FundingStart_Container .FundingStart_Wrapper .FundingStart_Top_Area .FundingStart_Desc .FundingStart_FriendPicker .Selected_Wrapper .Selected_Friend .Friend_desc .Friend_image {
+  border: 1px solid;
+  border-radius: 100px;
+  padding: 3px;
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
 }
 .FundingStart_Container .FundingStart_Wrapper .FundingStart_Desc_Bottom {
   display: flex;
@@ -13699,3 +13733,172 @@ form .changepasswd_Button div button {
   margin-right: 10px;
   padding-left: 10px;
 }
+
+.Gift_Title {
+  margin-top: 100px;
+  margin-bottom: 64px;
+  text-align: center;
+  font-size: 38px;
+  font-weight: 600;
+  color: #303030;
+}
+
+.Gift_Container {
+  width: 100%;
+}
+.Gift_Container .Complete_Gift_Container {
+  display: flex;
+  justify-content: center;
+}
+.Gift_Container .Complete_Gift_Container .Complete_Gift_Title {
+  margin-bottom: 32px;
+}
+.Gift_Container .Complete_Gift_Container #Complete_Gift_Card_Item {
+  width: 900px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+.Gift_Container .Complete_Gift_Container #Complete_Gift_Card_Item .Complete_Gift_Left {
+  height: 380px;
+  width: 260px;
+  background-color: #f7f7f7;
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+}
+.Gift_Container .Complete_Gift_Container #Complete_Gift_Card_Item .Complete_Gift_Left .Complete_Gift_Date {
+  margin-left: 16px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  color: #0e63fc;
+  font-size: 12px;
+}
+.Gift_Container .Complete_Gift_Container #Complete_Gift_Card_Item .Complete_Gift_Left .Complete_Gift_Img {
+  margin-left: 16px;
+  width: 240px;
+  height: 240px;
+  border-radius: 24px;
+}
+.Gift_Container .Complete_Gift_Container #Complete_Gift_Card_Item .Complete_Gift_Content {
+  width: 660px;
+  height: 380px;
+  background-color: #f7f7f7;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+.Gift_Container .Complete_Gift_Container #Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info {
+  margin-top: 32px;
+  margin-left: 16px;
+}
+.Gift_Container .Complete_Gift_Container #Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_Item_Title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 2;
+}
+.Gift_Container .Complete_Gift_Container #Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_Price {
+  line-height: 2;
+}
+.Gift_Container .Complete_Gift_Container #Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_Address {
+  margin-top: 12px;
+}
+.Gift_Container .Complete_Gift_Container #Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_Address .Complete_Gift_Address_Label {
+  font-size: 14px;
+  line-height: 2;
+  font-weight: 600;
+}
+.Gift_Container .Complete_Gift_Container #Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_Address .Complete_Gift_Address_Area {
+  display: flex;
+}
+.Gift_Container .Complete_Gift_Container #Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_Address .Complete_Gift_Address_Area .Complete_Gift_Address_Input {
+  width: 280px;
+  height: 42px;
+  font-size: 14px;
+  border: 1px solid #cfcfcf;
+  border-radius: 16px;
+  outline: none;
+  padding-left: 10px;
+  background-color: #ffffff;
+}
+.Gift_Container .Complete_Gift_Container #Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_Address .Complete_Gift_Address_Area .Modify_Profile_Address_Btn {
+  margin-left: 12px;
+  border-radius: 16px;
+}
+.Gift_Container .Complete_Gift_Container #Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_Review {
+  margin-top: 12px;
+}
+.Gift_Container .Complete_Gift_Container #Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_Review .Complete_Gift_Review_Label {
+  font-size: 14px;
+  line-height: 2;
+  font-weight: 600;
+}
+.Gift_Container .Complete_Gift_Container #Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_Review .Complete_Review_Area {
+  display: flex;
+}
+.Gift_Container .Complete_Gift_Container #Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_Review .Complete_Review_Area .Complete_Review_Input {
+  width: 280px;
+  height: 42px;
+  font-size: 14px;
+  border: 1px solid #cfcfcf;
+  border-radius: 16px;
+  outline: none;
+  padding-left: 10px;
+  background-color: #ffffff;
+}
+.Gift_Container .Complete_Gift_Container #Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_Review .Complete_Review_Area .Complete_Review_Icon {
+  display: flex;
+}
+.Gift_Container .Complete_Gift_Container #Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_Review .Complete_Review_Area .Complete_Review_Icon .Complete_Review_Good {
+  margin-left: 12px;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  color: #303030;
+}
+.Gift_Container .Complete_Gift_Container #Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_Review .Complete_Review_Area .Complete_Review_Icon .Complete_Review_Good:hover {
+  color: #0e63fc;
+}
+.Gift_Container .Complete_Gift_Container #Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_Review .Complete_Review_Area .Complete_Review_Icon .Complete_Review_Good .Complete_Review_Good_Icon {
+  font-size: 24px;
+  margin-bottom: 2px;
+}
+.Gift_Container .Complete_Gift_Container #Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_Review .Complete_Review_Area .Complete_Review_Icon .Complete_Review_Good div {
+  font-size: 12px;
+}
+.Gift_Container .Complete_Gift_Container #Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_Review .Complete_Review_Area .Complete_Review_Icon .Complete_Review_Bad {
+  margin-left: 12px;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  color: #575757;
+}
+.Gift_Container .Complete_Gift_Container #Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_Review .Complete_Review_Area .Complete_Review_Icon .Complete_Review_Bad .Complete_Review_Bad_Icon {
+  font-size: 24px;
+  margin-bottom: 2px;
+}
+.Gift_Container .Complete_Gift_Container #Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_Review .Complete_Review_Area .Complete_Review_Icon .Complete_Review_Bad:hover {
+  color: #dc3545;
+}
+.Gift_Container .Complete_Gift_Container #Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_Review .Complete_Review_Area .Complete_Review_Icon .Complete_Review_Bad div {
+  font-size: 12px;
+}
+.Gift_Container .Complete_Gift_Container #Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_People {
+  margin-top: 12px;
+}
+.Gift_Container .Complete_Gift_Container #Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_People .Complete_Gift_People_Label {
+  font-size: 14px;
+  line-height: 2;
+  font-weight: 600;
+}
+.Gift_Container .Complete_Gift_Container #Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_People .Complete_Gift_People_Content {
+  font-size: 14px;
+}
+.Gift_Container .Complete_Gift_Container #Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Btn_Area {
+  margin-top: 12px;
+  display: flex;
+  justify-content: right;
+  margin-right: 20px;
+}
+.Gift_Container .Complete_Gift_Container #Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Btn_Area .Active_Controll {
+  width: 88px;
+  border-radius: 16px;
+}/*# sourceMappingURL=main.css.map */
