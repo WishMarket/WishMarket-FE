@@ -60,9 +60,9 @@ export default function Header() {
                                 </Link>
                             </li>
                             <li className="Header_Category_Item">
-                                <a href="/" className="Header_Category_Link">
+                                <Link to="/friends" className="Header_Category_Link">
                                     친구 찾기
-                                </a>
+                                </Link>
                             </li>
                             <li className="Header_Category_Item" onMouseOver={subMyPageMouseOver} onMouseOut={subMyPageMouseOut}>
                                 <Link to="/profile" className="Header_Category_Link">
@@ -80,9 +80,9 @@ export default function Header() {
                                         </Link>
                                     </li>
                                     <li className="My_Page_Sub_Category_Item">
-                                        <a href="/" className="My_Page_Sub_Category_Link">
+                                        <Link to="/received" className="My_Page_Sub_Category_Link">
                                             받은 선물
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li className="My_Page_Sub_Category_Item">
                                         <a href="/" className="My_Page_Sub_Category_Link">

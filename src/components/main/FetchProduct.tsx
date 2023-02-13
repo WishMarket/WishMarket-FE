@@ -28,7 +28,7 @@ export default function FetchProduct({ items }: IFetch) {
     return (
         <>
             {items.slice(0, 4).map((item: any) => {
-                return <CategoryItemCard item={item} />;
+                return <CategoryItemCard item={item} key={item.productId} />;
             })}
         </>
     );
