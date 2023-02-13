@@ -111,7 +111,7 @@ export default function CompleteGiftCardActive({ gift }: FundingInfo) {
                             <div className="Flex_Container">
                                 <div className="Complete_Gift_People_Content">{gift.participant.join(", ")}</div>
                                 <div className="Complete_Gift_People_Badge">{gift.participant.length} 명 참여</div>
-                            </div>{" "}
+                            </div>
                         </div>
                     </div>
                     <div className="Complete_Gift_Btn_Area">
