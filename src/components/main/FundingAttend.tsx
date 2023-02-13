@@ -6,6 +6,7 @@ import { BsShareFill } from "react-icons/bs";
 import { CopyClipBoard } from "../../hooks/CopyClipBoard";
 
 interface Product {
+    productId: number;
     name: string;
     image: string;
     price: number;
@@ -78,7 +79,7 @@ export default function FundingAttend(props: Product) {
                 {/* Link경로 바꿔야함 */}
 
                 <div className="Funding_Btn_Area">
-                    <Link to={"./login"}>
+                    <Link to={`./funding/join/${props.productId}`}>
                         <div className="btn btn-warning funding_Attend">펀딩 참여하기</div>
                     </Link>
                     {/* <button className="btn btn-primary funding_Share" type="button" onClick={handleShow}>
