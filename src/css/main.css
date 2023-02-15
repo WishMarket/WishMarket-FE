@@ -11863,7 +11863,7 @@ table {
   right: 4%;
   cursor: pointer;
   color: #303030;
-  font-size: 18px;
+  font-size: 22px;
   transition: 0.4s;
 }
 .Header_Bar .Header_Right_Area .Header_Icon_Area {
@@ -11893,7 +11893,7 @@ table {
 .Header_Bar .Header_Right_Area .Header_Icon_Area .Notify_Container .Notify_Dropdown .Header_Notify {
   margin: 0 12px;
   color: #575757;
-  font-size: 28px;
+  font-size: 26px;
   cursor: pointer;
   margin-left: 20px;
   transition: 0.4s;
@@ -12008,13 +12008,13 @@ table {
   font-size: 24px;
   font-weight: 600;
   color: #0e63fc;
-  font-size: 28px;
+  font-size: 26px;
 }
 
 .Main_Best_Categort_Desc {
   text-align: center;
   color: #303030;
-  font-size: 18px;
+  font-size: 22px;
   margin-bottom: 40px;
 }
 
@@ -12102,7 +12102,7 @@ table {
   text-overflow: ellipsis;
   white-space: nowrap;
   word-break: break-all;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
 }
 .Product_List_Item .Product_List_Inner .Product_List_Price {
@@ -12338,7 +12338,7 @@ table {
 .carouselCaption a p {
   position: absolute;
   bottom: 175px;
-  font-size: 28px;
+  font-size: 26px;
 }
 .carouselCaption a:hover {
   color: #f7f7f7;
@@ -12350,14 +12350,14 @@ table {
   margin-top: 120px;
   margin-bottom: 20px;
   font-weight: 600;
-  font-size: 28px;
+  font-size: 26px;
   color: #0e63fc;
 }
 
 .FamousFund_desc {
   text-align: center;
   color: #303030;
-  font-size: 18px;
+  font-size: 22px;
   margin-bottom: 28px;
 }
 
@@ -12477,7 +12477,7 @@ table {
 .fundingProgress .funding_To {
   justify-self: end;
   align-self: center;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
   grid-row-start: 2;
   grid-column-end: 5;
@@ -12486,7 +12486,7 @@ table {
 .fundingProgress .funding_ItemName {
   margin-top: 8px;
   white-space: nowrap;
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 600;
   grid-row-start: 3;
   grid-column-start: 3;
@@ -12499,7 +12499,7 @@ table {
 }
 .fundingProgress .funding_Price {
   margin-top: 8px;
-  font-size: 18px;
+  font-size: 22px;
   grid-row-start: 4;
   grid-column-start: 3;
 }
@@ -13173,13 +13173,13 @@ form .findpasswd_Button div button {
   padding: 8px;
 }
 .Detail_Container .Detail_Wrapper .Detail_Top_Area .Detail_Desc .Detail_Title {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 700;
   margin-bottom: 12px;
   line-height: 1.5;
 }
 .Detail_Container .Detail_Wrapper .Detail_Top_Area .Detail_Desc .Detail_Price {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 700;
 }
 .Detail_Container .Detail_Wrapper .Detail_Desc_Bottom {
@@ -13216,7 +13216,7 @@ form .findpasswd_Button div button {
   background-color: transparent;
 }
 .Detail_Container .Detail_Wrapper .Detail_Desc_Bottom .Detail_Share_Btn .Detail_Share_Inner {
-  font-size: 28px;
+  font-size: 26px;
   margin-left: 12px;
   margin-top: 4px;
   color: #303030;
@@ -13298,7 +13298,7 @@ form .findpasswd_Button div button {
   justify-content: left;
 }
 .Detail_Container .Detail_Wrapper .Detail_Review_Container .Detail_Review_Wrapper .Detail_Review_Title {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 700;
   color: #303030;
   line-height: 1.5;
@@ -13592,7 +13592,7 @@ form .changepasswd_Button div button {
   background-color: #f7f7f7;
 }
 .Wishlist_Container .Wishlist_Wrapper .Wishlist_Item .Wishlist_Content .Wishlist_Info .Wishlist_Title {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
   color: #303030;
   line-height: 2;
@@ -13639,19 +13639,19 @@ form .changepasswd_Button div button {
   justify-content: space-between;
 }
 .FundingStart_Container .FundingStart_Wrapper .FundingStart_Top_Area .FundingStart_Desc .FundingStart_Title {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 700;
   margin-bottom: 12px;
   line-height: 1.5;
 }
 .FundingStart_Container .FundingStart_Wrapper .FundingStart_Top_Area .FundingStart_Desc .FundingStart_Price {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 700;
 }
 .FundingStart_Container .FundingStart_Wrapper .FundingStart_Top_Area .FundingStart_Desc .FundingStart_DatePicker h2, .FundingStart_Container .FundingStart_Wrapper .FundingStart_Top_Area .FundingStart_Desc .FundingStart_DatePicker .h2 {
   margin-bottom: 12px;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 22px;
 }
 .FundingStart_Container .FundingStart_Wrapper .FundingStart_Top_Area .FundingStart_Desc .FundingStart_DatePicker input {
   padding-left: 10px;
@@ -13661,7 +13661,7 @@ form .changepasswd_Button div button {
 .FundingStart_Container .FundingStart_Wrapper .FundingStart_Top_Area .FundingStart_Desc .FundingStart_FriendPicker h2, .FundingStart_Container .FundingStart_Wrapper .FundingStart_Top_Area .FundingStart_Desc .FundingStart_FriendPicker .h2 {
   margin-bottom: 15px;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 22px;
 }
 .FundingStart_Container .FundingStart_Wrapper .FundingStart_Top_Area .FundingStart_Desc .FundingStart_FriendPicker .FriendPicker_Wrapper {
   border-radius: 15px;
@@ -13727,7 +13727,7 @@ form .changepasswd_Button div button {
 }
 .FundingStart_Container .FundingStart_Wrapper .FundingStart_Desc_Bottom label {
   font-weight: 700;
-  font-size: 18px;
+  font-size: 22px;
   margin-right: 10px;
 }
 .FundingStart_Container .FundingStart_Wrapper .FundingStart_Desc_Bottom input {
@@ -13759,36 +13759,58 @@ form .changepasswd_Button div button {
 .Gift_Scroll_Tab_Area {
   width: 900px;
   display: flex;
-  justify-content: space-between;
+  justify-content: right;
   margin: 64px auto;
 }
-.Gift_Scroll_Tab_Area #Gift_Scroll_Tab_Item {
-  text-align: center;
-  cursor: pointer;
+.Gift_Scroll_Tab_Area .Scroll_Select_Wrapper {
   position: relative;
+  width: 200px;
+  height: 35px;
+  border-radius: 4px;
+  border: 1px solid #575757;
 }
-.Gift_Scroll_Tab_Area #Gift_Scroll_Tab_Item::after {
-  content: "";
+.Gift_Scroll_Tab_Area .Scroll_Select_Wrapper .Gift_Scroll_Select_Box {
+  -o-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: inherit;
+  height: inherit;
+  background: transparent;
+  border: 0 none;
+  outline: 0 none;
+  padding: 0 5px;
+  position: relative;
+  z-index: 3;
+}
+.Gift_Scroll_Tab_Area .Scroll_Select_Wrapper .Gift_Scroll_Select_Box::-ms-expand {
+  display: none;
+}
+.Gift_Scroll_Tab_Area .Scroll_Select_Wrapper .Gift_Scroll_Select_Box option[value=""][disabled] {
+  display: none;
+}
+.Gift_Scroll_Tab_Area .Scroll_Select_Wrapper .Gift_Scroll_Select_Box option {
+  background: #f7f7f7;
+  color: #575757;
+  padding: 3px 0;
+  font-size: 14px;
+}
+.Gift_Scroll_Tab_Area .Scroll_Select_Wrapper .Ico_Arrow {
   position: absolute;
-  left: 50%;
-  bottom: -50%;
-  width: 0;
-  height: 3px;
-  background-color: #575757;
-  transition: all 0.5s;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: 35px;
+  height: 34px;
+  border-left: 1px solid #575757;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
-.Gift_Scroll_Tab_Area #Gift_Scroll_Tab_Item::before {
-  content: "";
-  position: absolute;
-  right: 50%;
-  bottom: -50%;
-  width: 0;
-  height: 3px;
-  background-color: #575757;
-  transition: all 0.5s;
-}
-.Gift_Scroll_Tab_Area #Gift_Scroll_Tab_Item:hover::after, .Gift_Scroll_Tab_Area #Gift_Scroll_Tab_Item:hover::before {
+.Gift_Scroll_Tab_Area .Scroll_Select_Wrapper .Ico_Arrow .Icon {
   width: 50%;
+  transition: 0.4s;
 }
 
 .Gift_Container {
@@ -13848,7 +13870,7 @@ form .changepasswd_Button div button {
   margin-left: 16px;
 }
 .Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_Item_Title {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
   line-height: 2;
 }
@@ -13927,7 +13949,7 @@ form .changepasswd_Button div button {
   margin-left: 16px;
 }
 .Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item.Active .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_Item_Title {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
   line-height: 2;
 }
@@ -14089,13 +14111,13 @@ form .changepasswd_Button div button {
   justify-content: space-between;
 }
 .FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingAddition_Title {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 700;
   margin-bottom: 12px;
   line-height: 1.5;
 }
 .FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingAddition_Price h2, .FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingAddition_Price .h2 {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 700;
   margin-bottom: 12px;
 }
@@ -14106,7 +14128,7 @@ form .changepasswd_Button div button {
   height: 120px;
 }
 .FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingGraph_Desc h2, .FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingGraph_Desc .h2 {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 700;
 }
 .FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingGraph_Desc .Funding_Amount_Desc {
@@ -14119,7 +14141,7 @@ form .changepasswd_Button div button {
   border-right: 1px solid;
 }
 .FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingGraph_Desc .Funding_Amount_Desc div h3, .FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingGraph_Desc .Funding_Amount_Desc div .h3 {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 700;
   margin-bottom: 5px;
 }
@@ -14131,12 +14153,12 @@ form .changepasswd_Button div button {
   border: none;
 }
 .FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingAddition_Date h2, .FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingAddition_Date .h2 {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 700;
   margin-bottom: 12px;
 }
 .FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingAddition_To h2, .FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingAddition_To .h2 {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 700;
   margin-bottom: 12px;
 }
@@ -14156,7 +14178,7 @@ form .changepasswd_Button div button {
 .FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingAddition_From h2, .FundingAddition_Container .FundingAddition_Wrapper .FundingAddition_Top_Area .FundingAddition_Desc .FundingAddition_From .h2 {
   display: flex;
   align-items: center;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 700;
   margin-bottom: 12px;
 }
@@ -14183,7 +14205,7 @@ form .changepasswd_Button div button {
 }
 .FundingAddition_Container .FundingAddition_Desc_Bottom label {
   font-weight: 700;
-  font-size: 18px;
+  font-size: 22px;
   margin-right: 10px;
 }
 .FundingAddition_Container .FundingAddition_Desc_Bottom input {
@@ -14199,6 +14221,7 @@ form .changepasswd_Button div button {
 
 .FriendsWrapper {
   width: 100%;
+  height: 100vh;
 }
 
 .SideBarContainer {
@@ -14229,7 +14252,7 @@ form .changepasswd_Button div button {
   border-radius: 8px 0px 0px 8px;
 }
 .SideBarContainer .SidebarWrapper .openButton span {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
 }
 .SideBarContainer .SidebarWrapper .Sidebar_DESC {
@@ -14280,7 +14303,7 @@ form .changepasswd_Button div button {
 }
 .FriendList .Friend_Button .Button_Inner {
   color: #dc3545;
-  font-size: 28px;
+  font-size: 26px;
 }
 .FriendList .Friend_Button .Button_Inner:hover {
   color: #6e1a22;
@@ -14341,7 +14364,7 @@ form .changepasswd_Button div button {
   flex-direction: column;
 }
 .FriendMain_Wrapper .FriendMain_DESC .FriendSearch_Wrapper form .FriendMain_Search .SelectOptions div {
-  background-color: #cfcfcf;
+  background-color: #f7f7f7;
   padding: 10px;
   cursor: pointer;
   border: 2px solid;
@@ -14368,7 +14391,7 @@ form .changepasswd_Button div button {
 
 .FriendResult_Container .FriendResult_title {
   display: flex;
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 700;
   margin-bottom: 15px;
 }
@@ -14416,13 +14439,13 @@ form .changepasswd_Button div button {
   flex-direction: row;
 }
 .FriendResult_Container .FriendResult_List .FriendResult_Wrapper .FriendResult_DESC .FriendResult_bgc .FriendResult_names h2, .FriendResult_Container .FriendResult_List .FriendResult_Wrapper .FriendResult_DESC .FriendResult_bgc .FriendResult_names .h2 {
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 600;
 }
 .FriendResult_Container .FriendResult_List .FriendResult_Wrapper .FriendResult_DESC .FriendResult_bgc .FriendResult_names h3, .FriendResult_Container .FriendResult_List .FriendResult_Wrapper .FriendResult_DESC .FriendResult_bgc .FriendResult_names .h3 {
   align-self: flex-end;
   margin-left: 10px;
-  font-size: 18px;
+  font-size: 16px;
 }
 .FriendResult_Container .FamousFriend {
   height: auto;
@@ -14431,7 +14454,7 @@ form .changepasswd_Button div button {
 }
 .FriendResult_Container .FamousFriend .FamousFriend_title {
   display: flex;
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 700;
   margin-bottom: 15px;
   margin-left: 40px;
@@ -14490,7 +14513,7 @@ form .changepasswd_Button div button {
   margin-left: 16px;
 }
 .In_Progress_Gift_Container .In_Progress_Gift_Item .In_Progress_Gift_Content .In_Progrss_Gift_Info .In_Progress_Gift_Title {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
   line-height: 2;
   margin-bottom: 0px;
@@ -14631,7 +14654,7 @@ form .changepasswd_Button div button {
   margin-top: 16px;
   margin-left: 16px;
   margin-bottom: 0px;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
   line-height: 2;
 }
@@ -14668,4 +14691,463 @@ form .changepasswd_Button div button {
 }
 .Finished_Gift_Container .Finished_Gift_Item .Finished_Gift_Review .Finished_Gift_Review_Content {
   font-size: 14px;
+}
+
+.Account_Top_Area {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+.Account_Top_Area .Account_Top_Inner {
+  width: 900px;
+}
+.Account_Top_Area .Account_Top_Inner .Account_Title {
+  margin-top: 100px;
+  margin-bottom: 64px;
+  text-align: center;
+  font-size: 38px;
+  font-weight: 600;
+  color: #303030;
+}
+.Account_Top_Area .Account_Top_Inner .Account_Select_Area {
+  display: flex;
+  justify-content: right;
+}
+.Account_Top_Area .Account_Top_Inner .Account_Select_Area .Account_Select_Wrapper {
+  position: relative;
+  width: 200px;
+  height: 35px;
+  border-radius: 4px;
+  border: 1px solid #575757;
+}
+.Account_Top_Area .Account_Top_Inner .Account_Select_Area .Account_Select_Wrapper .Account_Scroll_Select_Box {
+  -o-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: inherit;
+  height: inherit;
+  background: transparent;
+  border: 0 none;
+  outline: 0 none;
+  padding: 0 5px;
+  position: relative;
+  z-index: 3;
+}
+.Account_Top_Area .Account_Top_Inner .Account_Select_Area .Account_Select_Wrapper .Account_Scroll_Select_Box::-ms-expand {
+  display: none;
+}
+.Account_Top_Area .Account_Top_Inner .Account_Select_Area .Account_Select_Wrapper .Account_Scroll_Select_Box option[value=""][disabled] {
+  display: none;
+}
+.Account_Top_Area .Account_Top_Inner .Account_Select_Area .Account_Select_Wrapper .Account_Scroll_Select_Box option {
+  background: #f7f7f7;
+  color: #575757;
+  padding: 3px 0;
+  font-size: 14px;
+}
+.Account_Top_Area .Account_Top_Inner .Account_Select_Area .Account_Select_Wrapper .Ico_Arrow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: 35px;
+  height: 34px;
+  border-left: 1px solid #575757;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.Account_Top_Area .Account_Top_Inner .Account_Select_Area .Account_Select_Wrapper .Ico_Arrow .Icon {
+  width: 50%;
+  transition: 0.4s;
+}
+
+.Account_Card_Container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+.Account_Card_Container .Account_Division {
+  width: 900px;
+  margin: 20px auto;
+  border: solid 1px #cfcfcf;
+}
+.Account_Card_Container .Active_Account_Title {
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 16px;
+  margin-bottom: 32px;
+  color: #303030;
+}
+.Account_Card_Container .Active_Account_Title .Active_Account_Title_Icon {
+  font-size: 38px;
+  margin-bottom: 6px;
+  margin-right: 4px;
+}
+.Account_Card_Container .Unactive_Account_Title {
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 16px;
+  margin-bottom: 32px;
+  color: #303030;
+}
+.Account_Card_Container .Unactive_Account_Title .Unactive_Account_Title_Icon {
+  font-size: 38px;
+  margin-bottom: 6px;
+  margin-right: 4px;
+}
+.Account_Card_Container .Account_Card_Item {
+  width: 900px;
+  margin: 60px 0;
+}
+.Account_Card_Container .Account_Card_Item .Account_Card_Date {
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+.Account_Card_Container .Account_Card_Item .Account_Card_Date .Account_Card_Date_Icon {
+  margin-right: 6px;
+  margin-bottom: 4px;
+}
+.Account_Card_Container .Account_Card_Item .Account_Card_Inner {
+  display: flex;
+  justify-content: space-between;
+}
+.Account_Card_Container .Account_Card_Item .Account_Card_Inner .Account_Card_Img {
+  width: 280px;
+  height: 328px;
+  object-fit: cover;
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+}
+.Account_Card_Container .Account_Card_Item .Account_Card_Inner .Account_Card_Content {
+  width: 620px;
+  height: 328px;
+  padding: 16px;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+  background-color: #f7f7f7;
+}
+.Account_Card_Container .Account_Card_Item .Account_Card_Inner .Account_Card_Content .Account_Card_Receiver {
+  display: flex;
+  justify-content: right;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 2;
+  color: #0e63fc;
+}
+.Account_Card_Container .Account_Card_Item .Account_Card_Inner .Account_Card_Content .Account_Card_Top_Area {
+  display: flex;
+  justify-content: space-between;
+}
+.Account_Card_Container .Account_Card_Item .Account_Card_Inner .Account_Card_Content .Account_Card_Top_Area .Account_Card_Title {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 500px;
+}
+.Account_Card_Container .Account_Card_Item .Account_Card_Inner .Account_Card_Content .Account_Card_Top_Area .Account_Card_Price {
+  line-height: 2;
+}
+.Account_Card_Container .Account_Card_Item .Account_Card_Inner .Account_Card_Content .Account_Card_Progress {
+  margin: 12px 0;
+}
+.Account_Card_Container .Account_Card_Item .Account_Card_Inner .Account_Card_Content .Account_Card_Gatherd {
+  display: flex;
+  line-height: 2;
+}
+.Account_Card_Container .Account_Card_Item .Account_Card_Inner .Account_Card_Content .Account_Card_Gatherd .Account_Card_Gathered_Label {
+  font-weight: 600;
+  margin-right: 6px;
+}
+.Account_Card_Container .Account_Card_Item .Account_Card_Inner .Account_Card_Content .Account_Card_Gatherd .Account_Card_Gathered_Content {
+  margin-right: 6px;
+}
+.Account_Card_Container .Account_Card_Item .Account_Card_Inner .Account_Card_Content .Account_Card_Gatherd .Account_Card_Attend_Badge {
+  margin-top: 5px;
+  padding: 0 4px;
+  height: 24px;
+  background-color: #ffc32a;
+  font-size: 12px;
+  color: #ffffff;
+  border-radius: 24px;
+}
+.Account_Card_Container .Account_Card_Item .Account_Card_Inner .Account_Card_Content .Account_Card_Remaining {
+  display: flex;
+  line-height: 2;
+}
+.Account_Card_Container .Account_Card_Item .Account_Card_Inner .Account_Card_Content .Account_Card_Remaining .Account_Card_Remaining_Label {
+  font-weight: 600;
+  margin-right: 6px;
+}
+.Account_Card_Container .Account_Card_Item .Account_Card_Inner .Account_Card_Content .Account_Card_Payment {
+  display: flex;
+  color: #0e63fc;
+  line-height: 2;
+}
+.Account_Card_Container .Account_Card_Item .Account_Card_Inner .Account_Card_Content .Account_Card_Payment .Account_Card_Payment_Label {
+  font-weight: 600;
+  margin-right: 6px;
+}
+.Account_Card_Container .Account_Card_Item .Account_Card_Inner .Account_Card_Content .Account_Card_Btn_Area {
+  display: flex;
+  justify-content: right;
+  align-items: end;
+}
+.Account_Card_Container .Account_Card_Item .Account_Card_Inner .Account_Card_Content .Account_Card_Btn_Area .Account_Card_Btn_Funding {
+  margin-right: 6px;
+  height: 42px;
+}
+.Account_Card_Container .Account_Card_Item .Account_Card_Inner .Account_Card_Content .Account_Card_Btn_Area .Account_Card_Btn_Share {
+  border: none;
+  background-color: transparent;
+  height: 42px;
+}
+.Account_Card_Container .Account_Card_Item .Account_Card_Inner .Account_Card_Content .Account_Card_Btn_Area .Account_Card_Btn_Share .Account_Card_Share_Icon {
+  color: #303030;
+  font-size: 16px;
+  transition: 0.4s;
+}
+.Account_Card_Container .Account_Card_Item .Account_Card_Inner .Account_Card_Content .Account_Card_Btn_Area .Account_Card_Btn_Share .Account_Card_Share_Icon:hover {
+  color: #ffc32a;
+  transition: 0.4s;
+}
+.Account_Card_Container .Account_Achieve_Card_Item {
+  width: 900px;
+  margin: 60px 0;
+}
+.Account_Card_Container .Account_Achieve_Card_Item .Account_Achieve_Card_Date {
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+.Account_Card_Container .Account_Achieve_Card_Item .Account_Achieve_Card_Date .Account_Achieve_Card_Date_Icon {
+  margin-right: 6px;
+  margin-bottom: 4px;
+}
+.Account_Card_Container .Account_Achieve_Card_Item .Account_Achieve_Card_Inner {
+  display: flex;
+  justify-content: space-between;
+}
+.Account_Card_Container .Account_Achieve_Card_Item .Account_Achieve_Card_Inner .Account_Achieve_Card_Img {
+  width: 280px;
+  height: 316px;
+  object-fit: cover;
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+}
+.Account_Card_Container .Account_Achieve_Card_Item .Account_Achieve_Card_Inner .Account_Achieve_Card_Content {
+  width: 620px;
+  height: 316px;
+  padding: 16px;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+  background-color: #f7f7f7;
+}
+.Account_Card_Container .Account_Achieve_Card_Item .Account_Achieve_Card_Inner .Account_Achieve_Card_Content .Account_Achieve_Card_Receiver {
+  display: flex;
+  justify-content: right;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 2;
+  color: #0e63fc;
+}
+.Account_Card_Container .Account_Achieve_Card_Item .Account_Achieve_Card_Inner .Account_Achieve_Card_Content .Account_Achieve_Card_Top_Area {
+  display: flex;
+  justify-content: space-between;
+}
+.Account_Card_Container .Account_Achieve_Card_Item .Account_Achieve_Card_Inner .Account_Achieve_Card_Content .Account_Achieve_Card_Top_Area .Account_Achieve_Card_Title {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 500px;
+}
+.Account_Card_Container .Account_Achieve_Card_Item .Account_Achieve_Card_Inner .Account_Achieve_Card_Content .Account_Achieve_Card_Top_Area .Account_Achieve_Card_Price {
+  line-height: 2;
+}
+.Account_Card_Container .Account_Achieve_Card_Item .Account_Achieve_Card_Inner .Account_Achieve_Card_Content .Account_Achieve_Card_Progress {
+  margin: 12px 0;
+}
+.Account_Card_Container .Account_Achieve_Card_Item .Account_Achieve_Card_Inner .Account_Achieve_Card_Content .Account_Achieve_Card_Progress .progress-bar {
+  background-color: #575757;
+}
+.Account_Card_Container .Account_Achieve_Card_Item .Account_Achieve_Card_Inner .Account_Achieve_Card_Content .Account_Achieve_Card_Notify {
+  line-height: 2;
+  font-weight: 500;
+}
+.Account_Card_Container .Account_Achieve_Card_Item .Account_Achieve_Card_Inner .Account_Achieve_Card_Content .Account_Achieve_Card_Gatherd {
+  display: flex;
+  line-height: 2;
+}
+.Account_Card_Container .Account_Achieve_Card_Item .Account_Achieve_Card_Inner .Account_Achieve_Card_Content .Account_Achieve_Card_Gatherd .Account_Achieve_Card_Gathered_Label {
+  font-weight: 500;
+  margin-right: 6px;
+}
+.Account_Card_Container .Account_Achieve_Card_Item .Account_Achieve_Card_Inner .Account_Achieve_Card_Content .Account_Achieve_Card_Gatherd .Account_Achieve_Card_Gathered_Content {
+  margin-right: 6px;
+}
+.Account_Card_Container .Account_Achieve_Card_Item .Account_Achieve_Card_Inner .Account_Achieve_Card_Content .Account_Achieve_Card_Gatherd .Account_Achieve_Card_Attend_Badge {
+  margin-top: 5px;
+  padding: 0 4px;
+  height: 24px;
+  background-color: #575757;
+  font-size: 12px;
+  color: #ffffff;
+  border-radius: 24px;
+}
+.Account_Card_Container .Account_Achieve_Card_Item .Account_Achieve_Card_Inner .Account_Achieve_Card_Content .Account_Achieve_Card_Payment {
+  display: flex;
+  color: #303030;
+  line-height: 2;
+}
+.Account_Card_Container .Account_Achieve_Card_Item .Account_Achieve_Card_Inner .Account_Achieve_Card_Content .Account_Achieve_Card_Payment .Account_Achieve_Card_Payment_Label {
+  font-weight: 500;
+  margin-right: 6px;
+}
+.Account_Card_Container .Account_Achieve_Card_Item .Account_Achieve_Card_Inner .Account_Achieve_Card_Content .Account_Achieve_Card_Btn_Area {
+  display: flex;
+  justify-content: right;
+  align-items: end;
+}
+.Account_Card_Container .Account_Achieve_Card_Item .Account_Achieve_Card_Inner .Account_Achieve_Card_Content .Account_Achieve_Card_Btn_Area .Account_Achieve_Card_Btn_Funding {
+  margin-right: 6px;
+  height: 42px;
+}
+.Account_Card_Container .Account_Achieve_Card_Item .Account_Achieve_Card_Inner .Account_Achieve_Card_Content .Account_Achieve_Card_Btn_Area .Account_Achieve_Card_Btn_Share {
+  border: none;
+  background-color: transparent;
+  height: 42px;
+}
+.Account_Card_Container .Account_Achieve_Card_Item .Account_Achieve_Card_Inner .Account_Achieve_Card_Content .Account_Achieve_Card_Btn_Area .Account_Achieve_Card_Btn_Share .Account_Achieve_Card_Share_Icon {
+  color: #303030;
+  font-size: 16px;
+  transition: 0.4s;
+}
+.Account_Card_Container .Account_Achieve_Card_Item .Account_Achieve_Card_Inner .Account_Achieve_Card_Content .Account_Achieve_Card_Btn_Area .Account_Achieve_Card_Btn_Share .Account_Achieve_Card_Share_Icon:hover {
+  color: #ffc32a;
+  transition: 0.4s;
+}
+.Account_Card_Container .Account_Expired_Card_Item {
+  width: 900px;
+  margin: 60px 0;
+}
+.Account_Card_Container .Account_Expired_Card_Item .Account_Expired_Card_Date {
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+.Account_Card_Container .Account_Expired_Card_Item .Account_Expired_Card_Date .Account_Expired_Card_Date_Icon {
+  margin-right: 6px;
+  margin-bottom: 4px;
+}
+.Account_Card_Container .Account_Expired_Card_Item .Account_Expired_Card_Inner {
+  display: flex;
+  justify-content: space-between;
+}
+.Account_Card_Container .Account_Expired_Card_Item .Account_Expired_Card_Inner .Account_Expired_Card_Img {
+  width: 280px;
+  height: 316px;
+  object-fit: cover;
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+}
+.Account_Card_Container .Account_Expired_Card_Item .Account_Expired_Card_Inner .Account_Expired_Card_Content {
+  width: 620px;
+  height: 316px;
+  padding: 16px;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+  background-color: #f7f7f7;
+}
+.Account_Card_Container .Account_Expired_Card_Item .Account_Expired_Card_Inner .Account_Expired_Card_Content .Account_Expired_Card_Receiver {
+  display: flex;
+  justify-content: right;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 2;
+  color: #0e63fc;
+}
+.Account_Card_Container .Account_Expired_Card_Item .Account_Expired_Card_Inner .Account_Expired_Card_Content .Account_Expired_Card_Top_Area {
+  display: flex;
+  justify-content: space-between;
+}
+.Account_Card_Container .Account_Expired_Card_Item .Account_Expired_Card_Inner .Account_Expired_Card_Content .Account_Expired_Card_Top_Area .Account_Expired_Card_Title {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 500px;
+}
+.Account_Card_Container .Account_Expired_Card_Item .Account_Expired_Card_Inner .Account_Expired_Card_Content .Account_Expired_Card_Top_Area .Account_Expired_Card_Price {
+  line-height: 2;
+}
+.Account_Card_Container .Account_Expired_Card_Item .Account_Expired_Card_Inner .Account_Expired_Card_Content .Account_Expired_Card_Progress {
+  margin: 12px 0;
+}
+.Account_Card_Container .Account_Expired_Card_Item .Account_Expired_Card_Inner .Account_Expired_Card_Content .Account_Expired_Card_Progress .progress-bar {
+  background-color: #cfcfcf;
+}
+.Account_Card_Container .Account_Expired_Card_Item .Account_Expired_Card_Inner .Account_Expired_Card_Content .Account_Expired_Card_Notify {
+  line-height: 2;
+}
+.Account_Card_Container .Account_Expired_Card_Item .Account_Expired_Card_Inner .Account_Expired_Card_Content .Account_Expired_Card_Gatherd {
+  display: flex;
+  line-height: 2;
+}
+.Account_Card_Container .Account_Expired_Card_Item .Account_Expired_Card_Inner .Account_Expired_Card_Content .Account_Expired_Card_Gatherd .Account_Expired_Card_Gathered_Label {
+  font-weight: 500;
+  margin-right: 6px;
+}
+.Account_Card_Container .Account_Expired_Card_Item .Account_Expired_Card_Inner .Account_Expired_Card_Content .Account_Expired_Card_Gatherd .Account_Expired_Card_Gathered_Content {
+  margin-right: 6px;
+}
+.Account_Card_Container .Account_Expired_Card_Item .Account_Expired_Card_Inner .Account_Expired_Card_Content .Account_Expired_Card_Gatherd .Account_Expired_Card_Attend_Badge {
+  margin-top: 5px;
+  padding: 0 4px;
+  height: 24px;
+  background-color: #cfcfcf;
+  font-size: 12px;
+  color: #ffffff;
+  border-radius: 24px;
+}
+.Account_Card_Container .Account_Expired_Card_Item .Account_Expired_Card_Inner .Account_Expired_Card_Content .Account_Expired_Card_Payment {
+  display: flex;
+  color: #cfcfcf;
+  line-height: 2;
+}
+.Account_Card_Container .Account_Expired_Card_Item .Account_Expired_Card_Inner .Account_Expired_Card_Content .Account_Expired_Card_Payment .Account_Expired_Card_Payment_Label {
+  font-weight: 500;
+  margin-right: 6px;
+}
+.Account_Card_Container .Account_Expired_Card_Item .Account_Expired_Card_Inner .Account_Expired_Card_Content .Account_Expired_Card_Btn_Area {
+  display: flex;
+  justify-content: right;
+  align-items: end;
+}
+.Account_Card_Container .Account_Expired_Card_Item .Account_Expired_Card_Inner .Account_Expired_Card_Content .Account_Expired_Card_Btn_Area .Account_Expired_Card_Btn_Funding {
+  margin-right: 6px;
+  height: 42px;
+}
+.Account_Card_Container .Account_Expired_Card_Item .Account_Expired_Card_Inner .Account_Expired_Card_Content .Account_Expired_Card_Btn_Area .Account_Expired_Card_Btn_Share {
+  border: none;
+  background-color: transparent;
+  height: 42px;
+}
+.Account_Card_Container .Account_Expired_Card_Item .Account_Expired_Card_Inner .Account_Expired_Card_Content .Account_Expired_Card_Btn_Area .Account_Expired_Card_Btn_Share .Account_Expired_Card_Share_Icon {
+  color: #303030;
+  font-size: 16px;
+  transition: 0.4s;
+}
+.Account_Card_Container .Account_Expired_Card_Item .Account_Expired_Card_Inner .Account_Expired_Card_Content .Account_Expired_Card_Btn_Area .Account_Expired_Card_Btn_Share .Account_Expired_Card_Share_Icon:hover {
+  color: #0e63fc;
+  transition: 0.4s;
 }

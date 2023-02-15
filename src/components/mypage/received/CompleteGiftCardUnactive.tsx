@@ -14,7 +14,6 @@ export default function CompleteGiftCardUnactive({ gift }: FundingInfo) {
             {!modifyState ? (
                 <div className="Complete_Gift_Card_Item">
                     <img src={gift.image} alt={gift.name} className="Complete_Gift_Img" />
-
                     <div className="Complete_Gift_Content">
                         <div className="Complete_Gift_Info">
                             <div className="Complete_Gift_Item_Title">{gift.name}</div>

@@ -7,6 +7,7 @@
 
 .FriendsWrapper {
     width: 100%;
+    height: 100vh;
 }
 
 
@@ -174,7 +175,7 @@
                         flex-direction: column;
 
                         div {
-                            background-color: $color-gray-400;
+                            background-color: $color-gray-200;
                             padding: 10px;
                             cursor: pointer;
                             border: 2px solid;
@@ -268,14 +269,14 @@
                         flex-direction: row;
 
                         h2 {
-                            font-size: 26px;
+                            font-size: $font-sub-title-size;
                             font-weight: 600;
                         }
 
                         h3 {
                             align-self: flex-end;
                             margin-left: 10px;
-                            font-size: $font-sub-title-size;
+                            font-size: $font-medium;
                         }
                     }
                 }

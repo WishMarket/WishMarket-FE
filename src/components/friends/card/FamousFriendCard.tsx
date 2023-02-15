@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
 import { FriendsError } from "../../../hooks/SignUpError";
-
+import {FaMedal} from 'react-icons/fa'
 interface Props {
   data: FamousFriendsObj;
 }
@@ -11,7 +11,7 @@ interface FamousFriendsObj {
   name: string;
   nickname: string;
   profile: string;
-  // famous: boolean;
+  famous: boolean;
   friends: boolean;
 }
 
@@ -52,8 +52,20 @@ export default function FamousFriendCard({ data }: Props) {
               <h3>{data.nickname}</h3>
             </div>
             <div>
+              {data.famous ? (
+                <span>
+                  <FaMedal /> 인증된 사용자
+                </span>
+              ) : (
+                <span>일반</span>
+              )}
+            </div>
+            <div>
               {friended ? (
-                <button className="btn btn-danger" onClick={FriendDeleteHandler}>
+                <button
+                  className="btn btn-danger"
+                  onClick={FriendDeleteHandler}
+                >
                   친구삭제
                 </button>
               ) : (

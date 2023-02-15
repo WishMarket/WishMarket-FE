@@ -21,39 +21,64 @@
 .Gift_Scroll_Tab_Area {
     width: 900px;
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     margin: 64px auto;
 
-    #Gift_Scroll_Tab_Item {
-        text-align: center;
-        cursor: pointer;
+    .Scroll_Select_Wrapper {
         position: relative;
+        width: 200px;
+        height: 35px;
+        border-radius: 4px;
+        border: 1px solid $color-gray-600;
 
-        &::after {
-            content: "";
-            position: absolute;
-            left: 50%;
-            bottom: -50%;
-            width: 0;
-            height: 3px;
-            background-color: $color-gray-600;
-            transition: all 0.5s;
+        .Gift_Scroll_Select_Box {
+            -o-appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+
+            width: inherit;
+            height: inherit;
+            background: transparent;
+            border: 0 none;
+            outline: 0 none;
+            padding: 0 5px;
+            position: relative;
+            z-index: 3;
+
+            &::-ms-expand {
+                display: none;
+            }
+
+            option[value=""][disabled] {
+                display: none;
+            }
+
+            option {
+                background: $color-gray-200;
+                color: $color-gray-600;
+                padding: 3px 0;
+                font-size: $font-btn-size;
+            }
         }
 
-        &::before {
-            content: "";
+        .Ico_Arrow {
             position: absolute;
-            right: 50%;
-            bottom: -50%;
-            width: 0;
-            height: 3px;
-            background-color: $color-gray-600;
-            transition: all 0.5s;
-        }
+            top: 0;
+            right: 0;
+            z-index: 1;
+            width: 35px;
+            height: 34px;
+            border-left: 1px solid $color-gray-600;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
 
-        &:hover::after,
-        &:hover::before {
-            width: 50%;
+            .Icon {
+                width: 50%;
+                transition: 0.4s;
+            }
         }
     }
 }
