@@ -65,7 +65,7 @@ export default function FriendsSidebar() {
         </button>
         <div className="Sidebar_DESC">
           <ul>
-            {friends ? (
+            {friends.length !=0 ? (
               friends.map((data: FriendsObj) => {
                 return (
                     <Link to={'./'} key={data.Userid} style={{textDecoration:"none", color:"black"}}>
@@ -74,9 +74,8 @@ export default function FriendsSidebar() {
                 );
               })
             ) : (
-              <li>친구가 없습니다.</li>
+              <li className="NoFriend">친구를 추가해보세요!💪</li>
             )}
-            ;
           </ul>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import FriendsMain from './FriendsMain';
-import FriendsSidebar from './FriendsSidebar';
+import FriendsSidebar from './sidebar/FriendsSidebar';
 
 export default function FriendsForm() {
   return (

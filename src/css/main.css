@@ -12684,8 +12684,11 @@ table {
 }
 
 footer {
+  position: relative;
+  width: 100%;
   background-color: #575757;
   padding: 60px 200px;
+  z-index: 100;
 }
 footer .Footer_Top_Area {
   display: flex;
@@ -13753,15 +13756,65 @@ form .changepasswd_Button div button {
   color: #303030;
 }
 
+.Gift_Scroll_Tab_Area {
+  width: 900px;
+  display: flex;
+  justify-content: space-between;
+  margin: 64px auto;
+}
+.Gift_Scroll_Tab_Area #Gift_Scroll_Tab_Item {
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+}
+.Gift_Scroll_Tab_Area #Gift_Scroll_Tab_Item::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -50%;
+  width: 0;
+  height: 3px;
+  background-color: #575757;
+  transition: all 0.5s;
+}
+.Gift_Scroll_Tab_Area #Gift_Scroll_Tab_Item::before {
+  content: "";
+  position: absolute;
+  right: 50%;
+  bottom: -50%;
+  width: 0;
+  height: 3px;
+  background-color: #575757;
+  transition: all 0.5s;
+}
+.Gift_Scroll_Tab_Area #Gift_Scroll_Tab_Item:hover::after, .Gift_Scroll_Tab_Area #Gift_Scroll_Tab_Item:hover::before {
+  width: 50%;
+}
+
 .Gift_Container {
   width: 100%;
+}
+.Gift_Container .Gift_Division {
+  width: 900px;
+  margin: 20px auto;
+  border: solid 1px #cfcfcf;
 }
 .Gift_Container .Complete_Gift_Container {
   display: flex;
   justify-content: center;
+  margin-bottom: 80px;
 }
-.Gift_Container .Complete_Gift_Container .Complete_Gift_Title {
+.Gift_Container .Complete_Gift_Container .Gift_Sub_Title {
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 16px;
   margin-bottom: 32px;
+  color: #303030;
+}
+.Gift_Container .Complete_Gift_Container .Gift_Sub_Title .Gift_Sub_Title_Icon {
+  font-size: 38px;
+  margin-bottom: 6px;
+  margin-right: 4px;
 }
 .Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item {
   width: 900px;
@@ -13769,36 +13822,29 @@ form .changepasswd_Button div button {
   justify-content: space-between;
   margin-bottom: 28px;
   animation: slideGift 0.8s;
-}
-.Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item .Complete_Gift_Left {
-  height: 290px;
-  width: 260px;
-  background-color: #f7f7f7;
-  border-top-left-radius: 24px;
-  border-bottom-left-radius: 24px;
-}
-.Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item .Complete_Gift_Left .Complete_Gift_Date {
-  margin-left: 16px;
-  margin-top: 12px;
-  margin-bottom: 12px;
-  color: #0e63fc;
-  font-size: 12px;
-}
-.Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item .Complete_Gift_Left .Complete_Gift_Img {
-  margin-left: 16px;
-  width: 240px;
-  height: 240px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   border-radius: 24px;
 }
+.Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item .Complete_Gift_Img {
+  width: 280px;
+  height: 290px;
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+  object-fit: cover;
+}
 .Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item .Complete_Gift_Content {
-  width: 660px;
+  width: 620px;
   height: 290px;
   background-color: #f7f7f7;
   border-top-right-radius: 24px;
   border-bottom-right-radius: 24px;
 }
 .Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info {
-  margin-top: 32px;
+  margin-top: 16px;
   margin-left: 16px;
 }
 .Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_Item_Title {
@@ -13814,6 +13860,17 @@ form .changepasswd_Button div button {
   line-height: 2;
   color: #0e63fc;
 }
+.Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_Date {
+  margin-top: 12px;
+}
+.Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_Date .Complete_Gift_Date_Label {
+  font-size: 14px;
+  line-height: 2;
+  font-weight: 600;
+}
+.Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_Date .Complete_Gift_Date_Content {
+  font-size: 14px;
+}
 .Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_People {
   margin-top: 12px;
 }
@@ -13822,11 +13879,27 @@ form .changepasswd_Button div button {
   line-height: 2;
   font-weight: 600;
 }
-.Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_People .Complete_Gift_People_Content {
+.Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_People .Flex_Container {
+  display: flex;
+}
+.Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_People .Flex_Container .Complete_Gift_People_Content {
   font-size: 14px;
+  max-width: 376px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_People .Flex_Container .Complete_Gift_People_Badge {
+  padding: 0 2px;
+  margin-left: 6px;
+  line-height: 1.2;
+  text-align: center;
+  background-color: #0e63fc;
+  border-radius: 32px;
+  color: #ffffff;
+  font-size: 12px;
 }
 .Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item .Complete_Gift_Content .Complete_Gift_Btn_Area {
-  margin-top: 38px;
   display: flex;
   justify-content: right;
   margin-right: 20px;
@@ -13835,35 +13908,22 @@ form .changepasswd_Button div button {
   width: 124px;
   border-radius: 16px;
 }
-.Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item.Active .Complete_Gift_Left {
-  height: 380px;
-  width: 260px;
-  background-color: #f7f7f7;
+.Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item.Active .Complete_Gift_Img {
+  width: 280px;
+  height: 412px;
   border-top-left-radius: 24px;
   border-bottom-left-radius: 24px;
-}
-.Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item.Active .Complete_Gift_Left .Complete_Gift_Date {
-  margin-left: 16px;
-  margin-top: 12px;
-  margin-bottom: 12px;
-  color: #0e63fc;
-  font-size: 12px;
-}
-.Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item.Active .Complete_Gift_Left .Complete_Gift_Img {
-  margin-left: 16px;
-  width: 240px;
-  height: 240px;
-  border-radius: 24px;
+  object-fit: cover;
 }
 .Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item.Active .Complete_Gift_Content {
-  width: 660px;
-  height: 380px;
+  width: 620px;
+  height: 412px;
   background-color: #f7f7f7;
   border-top-right-radius: 24px;
   border-bottom-right-radius: 24px;
 }
 .Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item.Active .Complete_Gift_Content .Complete_Gift_Info {
-  margin-top: 32px;
+  margin-top: 16px;
   margin-left: 16px;
 }
 .Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item.Active .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_Item_Title {
@@ -13963,6 +14023,17 @@ form .changepasswd_Button div button {
 .Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item.Active .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_Review .Complete_Review_Area .Complete_Review_Icon .Complete_Review_Bad div {
   font-size: 12px;
 }
+.Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item.Active .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_Date {
+  margin-top: 12px;
+}
+.Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item.Active .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_Date .Complete_Gift_Date_Label {
+  font-size: 14px;
+  line-height: 2;
+  font-weight: 600;
+}
+.Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item.Active .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_Date .Complete_Gift_Date_Content {
+  font-size: 14px;
+}
 .Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item.Active .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_People {
   margin-top: 12px;
 }
@@ -13973,9 +14044,13 @@ form .changepasswd_Button div button {
 }
 .Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item.Active .Complete_Gift_Content .Complete_Gift_Info .Complete_Gift_People .Complete_Gift_People_Content {
   font-size: 14px;
+  font-size: 14px;
+  max-width: 376px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .Gift_Container .Complete_Gift_Container .Complete_Gift_Card_Item.Active .Complete_Gift_Content .Complete_Gift_Btn_Area {
-  margin-top: 12px;
   display: flex;
   justify-content: right;
   margin-right: 20px;
@@ -14118,27 +14193,38 @@ form .changepasswd_Button div button {
   padding-left: 10px;
 }
 
+.Friends_Container footer {
+  z-index: -10;
+}
+
 .FriendsWrapper {
-  display: flex;
-  justify-content: space-between;
   width: 100%;
 }
 
+.SideBarContainer {
+  position: absolute;
+  right: 0;
+  top: 130px;
+}
 .SideBarContainer .SidebarWrapper {
-  background-color: #ffc32a;
   position: relative;
-  height: 80vh;
+  z-index: 10;
+  background-color: #ffffff;
+  height: 100vh;
   width: 350px;
   border-left: 2px solid;
+  border: 1px solid #303030;
+  border-radius: 0px 0px 0px 15px;
 }
 .SideBarContainer .SidebarWrapper .openButton {
-  background-color: #ffc32a;
+  background-color: #ffffff;
   width: 46px;
   height: 180px;
   position: absolute;
+  translate: transformX(-100%);
   left: -46px;
-  top: 20px;
-  border: 2px solid;
+  top: -0.5px;
+  border: 1px solid #303030;
   border-right: 0px;
   border-radius: 8px 0px 0px 8px;
 }
@@ -14147,19 +14233,26 @@ form .changepasswd_Button div button {
   font-weight: 600;
 }
 .SideBarContainer .SidebarWrapper .Sidebar_DESC {
+  height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
 }
 .SideBarContainer .SidebarWrapper .Sidebar_DESC ul li {
-  border: 1px solid;
   width: 90%;
   margin: 20px;
   padding: 20px;
 }
 
+.NoFriend {
+  font-size: 24px;
+  font-weight: 600;
+}
+
 .FriendList {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
 }
 .FriendList .Friend {
   display: flex;
@@ -14181,7 +14274,398 @@ form .changepasswd_Button div button {
   height: 40px;
 }
 .FriendList .Friend_Button {
-  width: 40px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+.FriendList .Friend_Button .Button_Inner {
+  color: #dc3545;
+  font-size: 28px;
+}
+.FriendList .Friend_Button .Button_Inner:hover {
+  color: #6e1a22;
+}
+
+.FriendList:hover {
+  background-color: #f7f7f7;
+  transition: 0.3s ease-out;
+}
+
+.FriendMain_Wrapper {
+  height: auto;
+}
+.FriendMain_Wrapper .FriendMain_DESC {
+  margin-top: 50px;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  min-width: 700px;
+}
+.FriendMain_Wrapper .FriendMain_DESC .FriendMain_Title {
+  font-size: 60px;
+  font-weight: 700;
+}
+.FriendMain_Wrapper .FriendMain_DESC .FriendSearch_Wrapper form {
+  height: auto;
+}
+.FriendMain_Wrapper .FriendMain_DESC .FriendSearch_Wrapper form .FriendMain_Search {
+  margin-left: 50px;
+  display: flex;
+  align-items: start;
+  margin-top: 40px;
+  position: relative;
+}
+.FriendMain_Wrapper .FriendMain_DESC .FriendSearch_Wrapper form .FriendMain_Search .search-button {
+  margin-top: 5px;
+}
+.FriendMain_Wrapper .FriendMain_DESC .FriendSearch_Wrapper form .FriendMain_Search .SelectButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 2px solid;
+  border-radius: 10px;
+  height: 50px;
+  width: 100px;
+  margin-right: 10px;
+  font-weight: 600;
+  font-size: 18px;
+}
+.FriendMain_Wrapper .FriendMain_DESC .FriendSearch_Wrapper form .FriendMain_Search .SelectOptions {
+  position: absolute;
+  top: 42px;
+  left: 0px;
+  width: 110px;
+  display: flex;
+  flex-direction: column;
+}
+.FriendMain_Wrapper .FriendMain_DESC .FriendSearch_Wrapper form .FriendMain_Search .SelectOptions div {
+  background-color: #cfcfcf;
+  padding: 10px;
+  cursor: pointer;
+  border: 2px solid;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: none;
+}
+.FriendMain_Wrapper .FriendMain_DESC .FriendSearch_Wrapper form .FriendMain_Search .SelectOptions div:first-child {
   height: 40px;
-  border-radius: 50%;
+  border-top: 2px solid;
+}
+.FriendMain_Wrapper .FriendMain_DESC .FriendSearch_Wrapper form .FriendMain_Search .SelectOptions div:last-child {
+  border-radius: 0px 0px 10px 10px;
+}
+.FriendMain_Wrapper .FriendMain_DESC .FriendSearch_Wrapper form .FriendMain_Search input {
+  height: 50px;
+  width: 400px;
+  border-radius: 15px;
+  margin-right: 10px;
+  padding-left: 10px;
+}
+
+.FriendResult_Container .FriendResult_title {
+  display: flex;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.FriendResult_Container .FriendResult_title h2, .FriendResult_Container .FriendResult_title .h2 {
+  margin-left: 40px;
+  color: #0e63fc;
+}
+.FriendResult_Container .FriendResult_List {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+.FriendResult_Container .FriendResult_List .Not_FoundFriend {
+  color: #dc3545;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-left: 60px;
+}
+.FriendResult_Container .FriendResult_List .FriendResult_Wrapper {
+  width: 232px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.FriendResult_Container .FriendResult_List .FriendResult_Wrapper .FriendResult_image {
+  width: 232px;
+  height: 232px;
+  object-fit: contain;
+  border-radius: 20px 20px 0px 0px;
+  background-color: #ffffff;
+}
+.FriendResult_Container .FriendResult_List .FriendResult_Wrapper .FriendResult_DESC {
+  background-color: #f7f7f7;
+  border-radius: 0px 0px 20px 20px;
+}
+.FriendResult_Container .FriendResult_List .FriendResult_Wrapper .FriendResult_DESC .FriendResult_bgc {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.FriendResult_Container .FriendResult_List .FriendResult_Wrapper .FriendResult_DESC .FriendResult_bgc .FriendResult_names {
+  display: flex;
+  flex-direction: row;
+}
+.FriendResult_Container .FriendResult_List .FriendResult_Wrapper .FriendResult_DESC .FriendResult_bgc .FriendResult_names h2, .FriendResult_Container .FriendResult_List .FriendResult_Wrapper .FriendResult_DESC .FriendResult_bgc .FriendResult_names .h2 {
+  font-size: 26px;
+  font-weight: 600;
+}
+.FriendResult_Container .FriendResult_List .FriendResult_Wrapper .FriendResult_DESC .FriendResult_bgc .FriendResult_names h3, .FriendResult_Container .FriendResult_List .FriendResult_Wrapper .FriendResult_DESC .FriendResult_bgc .FriendResult_names .h3 {
+  align-self: flex-end;
+  margin-left: 10px;
+  font-size: 18px;
+}
+.FriendResult_Container .FamousFriend {
+  height: auto;
+  margin-top: 100px;
+  margin-bottom: 200px;
+}
+.FriendResult_Container .FamousFriend .FamousFriend_title {
+  display: flex;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  margin-left: 40px;
+}
+.FriendResult_Container .FamousFriend .FamousFriend_title h2, .FriendResult_Container .FamousFriend .FamousFriend_title .h2 {
+  color: #0e63fc;
+}
+
+.In_Progress_Gift_Container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+.In_Progress_Gift_Container .Gift_Sub_Title {
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 16px;
+  margin-bottom: 32px;
+  color: #303030;
+}
+.In_Progress_Gift_Container .Gift_Sub_Title .Gift_Sub_Title_Icon {
+  font-size: 38px;
+  margin-bottom: 6px;
+  margin-right: 4px;
+}
+.In_Progress_Gift_Container .In_Progress_Gift_Item {
+  width: 900px;
+  height: 264px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  animation: slideGift 0.8s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-radius: 24px;
+}
+.In_Progress_Gift_Container .In_Progress_Gift_Item:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.In_Progress_Gift_Container .In_Progress_Gift_Item .In_Progress_Gift_Img {
+  width: 280px;
+  height: 264px;
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+  object-fit: cover;
+}
+.In_Progress_Gift_Container .In_Progress_Gift_Item .In_Progress_Gift_Content {
+  width: 620px;
+  height: 264px;
+  background-color: #f7f7f7;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+.In_Progress_Gift_Container .In_Progress_Gift_Item .In_Progress_Gift_Content .In_Progrss_Gift_Info {
+  margin-top: 16px;
+  margin-left: 16px;
+}
+.In_Progress_Gift_Container .In_Progress_Gift_Item .In_Progress_Gift_Content .In_Progrss_Gift_Info .In_Progress_Gift_Title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 2;
+  margin-bottom: 0px;
+}
+.In_Progress_Gift_Container .In_Progress_Gift_Item .In_Progress_Gift_Content .In_Progrss_Gift_Info .In_Progress_Gift_Price {
+  line-height: 2;
+}
+.In_Progress_Gift_Container .In_Progress_Gift_Item .In_Progress_Gift_Content .In_Progrss_Gift_Info .In_Progress_Gift_Progress {
+  margin: 12px 0;
+  width: 96%;
+}
+.In_Progress_Gift_Container .In_Progress_Gift_Item .In_Progress_Gift_Content .In_Progrss_Gift_Info .In_Progress_Gift_Date {
+  color: #0e63fc;
+  margin-bottom: 12px;
+}
+.In_Progress_Gift_Container .In_Progress_Gift_Item .In_Progress_Gift_Content .In_Progrss_Gift_Info .In_Progress_Gift_Date .In_Progress_Gift_Date_Label {
+  font-size: 14px;
+  line-height: 2;
+  font-weight: 600;
+}
+.In_Progress_Gift_Container .In_Progress_Gift_Item .In_Progress_Gift_Content .In_Progrss_Gift_Info .In_Progress_Gift_Date .In_Progress_Gift_Date_Content {
+  font-size: 14px;
+}
+.In_Progress_Gift_Container .In_Progress_Gift_Item .In_Progress_Gift_Content .In_Progrss_Gift_Info .Flex_Container {
+  display: flex;
+}
+.In_Progress_Gift_Container .In_Progress_Gift_Item .In_Progress_Gift_Content .In_Progrss_Gift_Info .Flex_Container .In_Progress_Gift_Gathered {
+  margin-right: 20px;
+}
+.In_Progress_Gift_Container .In_Progress_Gift_Item .In_Progress_Gift_Content .In_Progrss_Gift_Info .Flex_Container .In_Progress_Gift_Gathered .In_Progress_Gift_Gathered_Label {
+  font-size: 14px;
+  line-height: 2;
+  font-weight: 600;
+}
+.In_Progress_Gift_Container .In_Progress_Gift_Item .In_Progress_Gift_Content .In_Progrss_Gift_Info .Flex_Container .In_Progress_Gift_Gathered .In_Progress_Gift_Gathered_Content {
+  font-size: 14px;
+}
+.In_Progress_Gift_Container .In_Progress_Gift_Item .In_Progress_Gift_Content .In_Progrss_Gift_Info .Flex_Container .In_Progress_Gift_Remaining {
+  margin-right: 20px;
+}
+.In_Progress_Gift_Container .In_Progress_Gift_Item .In_Progress_Gift_Content .In_Progrss_Gift_Info .Flex_Container .In_Progress_Gift_Remaining .In_Progress_Gift_Remaining_Label {
+  font-size: 14px;
+  line-height: 2;
+  font-weight: 600;
+}
+.In_Progress_Gift_Container .In_Progress_Gift_Item .In_Progress_Gift_Content .In_Progrss_Gift_Info .Flex_Container .In_Progress_Gift_Remaining .In_Progress_Gift_Remaining_Content {
+  font-size: 14px;
+}
+.In_Progress_Gift_Container .In_Progress_Gift_Item .In_Progress_Gift_Content .In_Progrss_Gift_Info .Flex_Container .In_Progress_Gift_Attend .In_Progress_Gift_Attend_Label {
+  font-size: 14px;
+  line-height: 2;
+  font-weight: 600;
+}
+.In_Progress_Gift_Container .In_Progress_Gift_Item .In_Progress_Gift_Content .In_Progrss_Gift_Info .Flex_Container .In_Progress_Gift_Attend .Flex_Container {
+  display: flex;
+}
+.In_Progress_Gift_Container .In_Progress_Gift_Item .In_Progress_Gift_Content .In_Progrss_Gift_Info .Flex_Container .In_Progress_Gift_Attend .Flex_Container .In_Progress_Gift_Attend_Content {
+  font-size: 14px;
+  max-width: 326px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.In_Progress_Gift_Container .In_Progress_Gift_Item .In_Progress_Gift_Content .In_Progrss_Gift_Info .Flex_Container .In_Progress_Gift_Attend .Flex_Container .In_Progress_Gift_Attend_Badge {
+  padding: 0 2px;
+  margin-left: 6px;
+  line-height: 1.2;
+  text-align: center;
+  background-color: #0e63fc;
+  border-radius: 32px;
+  color: #ffffff;
+  font-size: 12px;
+}
+.In_Progress_Gift_Container .In_Progress_Gift_Item .In_Progress_Gift_Content .In_Progress_Gift_Btn_Area {
+  display: flex;
+  justify-content: right;
+  margin-right: 20px;
+}
+.In_Progress_Gift_Container .In_Progress_Gift_Item .In_Progress_Gift_Content .In_Progress_Gift_Btn_Area .In_Progress_Gift_Share_Btn {
+  border: none;
+  background-color: transparent;
+}
+.In_Progress_Gift_Container .In_Progress_Gift_Item .In_Progress_Gift_Content .In_Progress_Gift_Btn_Area .In_Progress_Gift_Share_Btn .In_Progress_Gift_Share_Btn_Icon {
+  color: #303030;
+  transition: 0.4s;
+}
+.In_Progress_Gift_Container .In_Progress_Gift_Item .In_Progress_Gift_Content .In_Progress_Gift_Btn_Area .In_Progress_Gift_Share_Btn .In_Progress_Gift_Share_Btn_Icon:hover {
+  transition: 0.4s;
+  color: #0e63fc;
+}
+
+.Finished_Gift_Container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+.Finished_Gift_Container .Gift_Sub_Title {
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 16px;
+  margin-bottom: 32px;
+  color: #303030;
+}
+.Finished_Gift_Container .Gift_Sub_Title .Gift_Sub_Title_Icon {
+  font-size: 38px;
+  margin-bottom: 6px;
+  margin-right: 4px;
+}
+.Finished_Gift_Container .Finished_Gift_Item {
+  width: 900px;
+  height: 260px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  animation: slideGift 0.8s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-radius: 24px;
+}
+.Finished_Gift_Container .Finished_Gift_Item:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.Finished_Gift_Container .Finished_Gift_Item .Finished_Gift_Img {
+  width: 280px;
+  height: 260px;
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+  object-fit: cover;
+}
+.Finished_Gift_Container .Finished_Gift_Item .Finished_Gift_Content {
+  width: 620px;
+  height: 260px;
+  background-color: #f7f7f7;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+.Finished_Gift_Container .Finished_Gift_Item .Finished_Gift_Title {
+  margin-top: 16px;
+  margin-left: 16px;
+  margin-bottom: 0px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 2;
+}
+.Finished_Gift_Container .Finished_Gift_Item .Finished_Gift_Price {
+  margin-left: 16px;
+  line-height: 2;
+}
+.Finished_Gift_Container .Finished_Gift_Item .Finished_Gift_Notify {
+  margin-top: 12px;
+  margin-left: 16px;
+  color: #dc3545;
+  line-height: 2;
+}
+.Finished_Gift_Container .Finished_Gift_Item .Finished_Gift_Date {
+  margin-top: 12px;
+  margin-left: 16px;
+}
+.Finished_Gift_Container .Finished_Gift_Item .Finished_Gift_Date .Finished_Gift_Date_Label {
+  font-size: 14px;
+  line-height: 2;
+  font-weight: 600;
+}
+.Finished_Gift_Container .Finished_Gift_Item .Finished_Gift_Date .Finished_Gift_Date_Content {
+  font-size: 14px;
+}
+.Finished_Gift_Container .Finished_Gift_Item .Finished_Gift_Review {
+  margin-top: 12px;
+  margin-left: 16px;
+}
+.Finished_Gift_Container .Finished_Gift_Item .Finished_Gift_Review .Finished_Gift_Review_Label {
+  font-size: 14px;
+  line-height: 2;
+  font-weight: 600;
+}
+.Finished_Gift_Container .Finished_Gift_Item .Finished_Gift_Review .Finished_Gift_Review_Content {
+  font-size: 14px;
 }

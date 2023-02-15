@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 import CompleteGiftCardUnactive from "./CompleteGiftCardUnactive";
-import CompleteGiftCardActive from "./CompleteGiftCardActive";
 
 interface Funding {
     fundingId: number;
