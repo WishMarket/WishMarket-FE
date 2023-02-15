@@ -68,7 +68,6 @@ export default function CompleteGiftCardActive({ gift }: FundingInfo) {
         <>
             <div className="Complete_Gift_Card_Item Active">
                 <img src={gift.image} alt={gift.name} className="Complete_Gift_Img" />
-
                 <div className="Complete_Gift_Content">
                     <div className="Complete_Gift_Info">
                         <div className="Complete_Gift_Item_Title">{gift.name}</div>

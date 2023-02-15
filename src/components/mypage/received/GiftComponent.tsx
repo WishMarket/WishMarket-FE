@@ -1,23 +1,24 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import CompleteGiftCard from "./CompleteGiftCard";
 import InProgressGiftCard from "./InProgressGiftCard";
 import FinishedGiftCard from "./FinishedGiftCard";
 import { BiCalendarEdit, BiCalendarHeart, BiCalendarCheck } from "react-icons/bi";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 export default function GiftComponent() {
     const completeRef = useRef<HTMLDivElement>(null);
     const progressRef = useRef<HTMLDivElement>(null);
     const finishedRef = useRef<HTMLDivElement>(null);
 
-    const onCompleteClick = () => {
+    const handleOnComplete = () => {
         completeRef.current?.scrollIntoView({ behavior: "smooth" });
     };
 
-    const onProgressClick = () => {
+    const handleOnProgress = () => {
         progressRef.current?.scrollIntoView({ behavior: "smooth" });
     };
 
-    const onFinishedClick = () => {
+    const handleOnFinished = () => {
         finishedRef.current?.scrollIntoView({ behavior: "smooth" });
     };
 
@@ -25,29 +26,43 @@ export default function GiftComponent() {
         {
             id: 0,
             name: "펀딩 성공한 상품",
-            onClick: onCompleteClick,
+            scroll: handleOnComplete,
         },
         {
             id: 1,
             name: "펀딩 진행 중 상품",
-            onClick: onProgressClick,
+            scroll: handleOnProgress,
         },
         {
             id: 2,
             name: "수령한 상품",
-            onClick: onFinishedClick,
+            scroll: handleOnFinished,
         },
     ];
+
+    const handleScroll = (e: any) => {
+        scrollTab.map((tab) => (tab.name === e.target.value ? tab.scroll() : null));
+    };
 
     return (
         <>
             <div className="Gift_Title">Received Gift</div>
             <div className="Gift_Scroll_Tab_Area">
-                {scrollTab.map((tab) => (
-                    <div id="Gift_Scroll_Tab_Item" key={tab.id} onClick={tab.onClick}>
-                        {tab.name}
-                    </div>
-                ))}
+                <div className="Scroll_Select_Wrapper">
+                    <select className="Gift_Scroll_Select_Box" defaultValue="" onChange={handleScroll}>
+                        <option value="" disabled>
+                            슝슝 💨
+                        </option>
+                        {scrollTab.map((tab) => (
+                            <option key={tab.id} value={tab.name}>
+                                {tab.name}
+                            </option>
+                        ))}
+                    </select>
+                    <span className="Ico_Arrow">
+                        <MdKeyboardArrowDown className="Icon" />
+                    </span>
+                </div>
             </div>
             <div className="Gift_Container">
                 <hr className="Gift_Division" />
