@@ -1,0 +1,102 @@
+{
+    "funding": [
+        {
+            "fundingId": 1,
+            "name": "삼성전자 그랑데 AI 의류 건조기",
+            "image": "https://img.29cm.co.kr/next-product/2022/08/18/979c9bfa22db4720996608688d8b9ff0_20220818171330.jpg?width=700",
+            "price": 1106110,
+            "date": "2023-02-21 ~ 2023-02-28",
+            "gatherPoint": 840000,
+            "accountPoint": 20000,
+            "receiver": "철수",
+            "participant": ["짱구", "맹구", "훈이", "유리"],
+            "url": "잘나오나1",
+            "active": true,
+            "achieve": null
+        },
+        {
+            "fundingId": 2,
+            "name": "CLOVIA MIOELLO 14K 목걸이 (JJCLNQ3BS150R4420)",
+            "image": "https://webimg.jestina.co.kr/UpData2/item/G2000025815/20221118114840ZM.gif",
+            "price": 380000,
+            "date": "2023-02-21 ~ 2023-02-28",
+            "gatherPoint": 123000,
+            "accountPoint": 53000,
+            "receiver": "짱순이👻",
+            "participant": ["짱구", "철수", "맹구", "훈이", "유리", "흰둥이", "짱아", "수지", "이슬이"],
+            "url": "잘나오나2",
+            "active": true,
+            "achieve": null
+        },
+        {
+            "fundingId": 3,
+            "name": "비베카 리본 갈바닉 마사지기 핫앤쿨 EMS 홈케어 디바이스",
+            "image": "https://img.29cm.co.kr/next-product/2022/07/19/ab75d96fafc745719a78a1e5a5d3d911_20220719084520.png?width=700",
+            "price": 193500,
+            "date": "2023-02-01 ~ 2023-02-14",
+            "gatherPoint": 193500,
+            "accountPoint": 20,
+            "receiver": "커다란자갈돌은짱돌",
+            "participant": ["짱구", "철수", "맹구", "훈이", "유리", "흰둥이"],
+            "url": "잘나오나3",
+            "active": false,
+            "achieve": true
+        },
+        {
+            "fundingId": 4,
+            "name": "14K 핑크골드 러브더블플라이 1부 다이아 목걸이 TNJK4P00079SD-1C",
+            "image": "https://www.tirrlirr.co.kr/shopimages/sillajewel/001001000847.jpg?1672100531",
+            "price": 495200,
+            "date": "2023-02-01 ~ 2023-02-14",
+            "gatherPoint": 495200,
+            "accountPoint": 300,
+            "receiver": "커다란자갈돌은짱돌",
+            "participant": ["짱구", "철수", "맹구", "훈이", "유리", "흰둥이"],
+            "url": "잘나오나4",
+            "active": false,
+            "achieve": true
+        },
+        {
+            "fundingId": 5,
+            "name": "14K 핑크골드 러브벨 귀걸이 TEJK4P00055S-1Q",
+            "image": "https://www.tirrlirr.co.kr/shopimages/sillajewel/001001000842.jpg?1672100617",
+            "price": 247200,
+            "date": "2023-02-21 ~ 2023-02-28",
+            "gatherPoint": 123400,
+            "accountPoint": 80000,
+            "receiver": "빙글빙글돌아가는맷돌",
+            "participant": ["짱구", "철수", "맹구", "훈이", "유리", "흰둥이"],
+            "url": "잘나오나5",
+            "active": false,
+            "achieve": false
+        },
+        {
+            "fundingId": 6,
+            "name": "14K 화이트골드 러브플라이풀 귀걸이 TEJK4W00080S",
+            "image": "https://www.tirrlirr.co.kr/shopimages/sillajewel/001001000845.jpg?1668503433",
+            "price": 463200,
+            "date": "2023-02-01 ~ 2023-02-14",
+            "gatherPoint": 243040,
+            "accountPoint": 53930,
+            "receiver": "떡잎마을방범대원",
+            "participant": ["짱구", "철수", "맹구", "훈이", "유리", "흰둥이"],
+            "url": "잘나오나6",
+            "active": false,
+            "achieve": false
+        },
+        {
+            "fundingId": 7,
+            "name": "14K 핑크골드 러브 하트 플라이 귀걸이 TEJK4P00082S",
+            "image": "https://www.tirrlirr.co.kr/shopimages/sillajewel/003001000030.jpg?1670813092",
+            "price": 263200,
+            "date": "2023-02-01 ~ 2023-02-14",
+            "gatherPoint": 33000,
+            "accountPoint": 5000,
+            "receiver": "떡잎마을방범대원",
+            "participant": ["짱구", "철수", "맹구", "훈이", "유리", "흰둥이"],
+            "url": "잘나오나7",
+            "active": false,
+            "achieve": false
+        }
+    ]
+}
