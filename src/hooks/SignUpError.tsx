@@ -44,3 +44,10 @@ export function FundingStartError(errorCode: number) {
   }
 }
 
+export function FriendsError(errorCode: number,name:string) {
+  if (errorCode == 0) {
+    return <div>"{name}"님을 친구추가 하였습니다.</div>
+  } else if (errorCode == 1) {
+    return <div>"{name}"님을 친구삭제 하였습니다.</div>
+  }
+}
