@@ -1,0 +1,566 @@
+.Account_Top_Area {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+
+    .Account_Top_Inner {
+        width: 900px;
+
+        .Account_Title {
+            margin-top: 100px;
+            margin-bottom: 64px;
+            text-align: center;
+            font-size: $font-larger;
+            font-weight: 600;
+            color: $color-gray-800;
+        }
+
+        .Account_Select_Area {
+            display: flex;
+            justify-content: right;
+
+            .Account_Select_Wrapper {
+                position: relative;
+                width: 200px;
+                height: 35px;
+                border-radius: 4px;
+                border: 1px solid $color-gray-600;
+
+                .Account_Scroll_Select_Box {
+                    -o-appearance: none;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
+
+                    width: inherit;
+                    height: inherit;
+                    background: transparent;
+                    border: 0 none;
+                    outline: 0 none;
+                    padding: 0 5px;
+                    position: relative;
+                    z-index: 3;
+
+                    &::-ms-expand {
+                        display: none;
+                    }
+
+                    option[value=""][disabled] {
+                        display: none;
+                    }
+
+                    option {
+                        background: $color-gray-200;
+                        color: $color-gray-600;
+                        padding: 3px 0;
+                        font-size: $font-btn-size;
+                    }
+                }
+
+                .Ico_Arrow {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    z-index: 1;
+                    width: 35px;
+                    height: 34px;
+                    border-left: 1px solid $color-gray-600;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+
+                    .Icon {
+                        width: 50%;
+                        transition: 0.4s;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.Account_Card_Container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+
+    .Account_Division {
+        width: 900px;
+        margin: 20px auto;
+        border: solid 1px $color-gray-400;
+    }
+
+    .Active_Account_Title {
+        font-weight: 600;
+        font-size: 18px;
+        margin-top: 16px;
+        margin-bottom: 32px;
+        color: $color-gray-800;
+
+        .Active_Account_Title_Icon {
+            font-size: 38px;
+            margin-bottom: 6px;
+            margin-right: 4px;
+        }
+    }
+
+    .Unactive_Account_Title {
+        font-weight: 600;
+        font-size: 18px;
+        margin-top: 16px;
+        margin-bottom: 32px;
+        color: $color-gray-800;
+
+        .Unactive_Account_Title_Icon {
+            font-size: 38px;
+            margin-bottom: 6px;
+            margin-right: 4px;
+        }
+    }
+
+    .Account_Card_Item {
+        width: 900px;
+        margin: 60px 0;
+
+        .Account_Card_Date {
+            margin-bottom: 8px;
+            font-size: $font-desc-size;
+
+            .Account_Card_Date_Icon {
+                margin-right: 6px;
+                margin-bottom: 4px;
+            }
+        }
+
+        .Account_Card_Inner {
+            display: flex;
+            justify-content: space-between;
+
+            .Account_Card_Img {
+                width: 280px;
+                height: 328px;
+                object-fit: cover;
+                border-top-left-radius: 24px;
+                border-bottom-left-radius: 24px;
+            }
+
+            .Account_Card_Content {
+                width: 620px;
+                height: 328px;
+                padding: 16px;
+                border-top-right-radius: 24px;
+                border-bottom-right-radius: 24px;
+                background-color: $color-gray-200;
+
+                .Account_Card_Receiver {
+                    display: flex;
+                    justify-content: right;
+                    font-size: $font-medium;
+                    font-weight: 400;
+                    line-height: 2;
+                    color: $color-blue;
+                }
+
+                .Account_Card_Top_Area {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .Account_Card_Title {
+                        font-size: $font-sub-title-size;
+                        font-weight: 600;
+                        line-height: 2;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        max-width: 500px;
+                    }
+
+                    .Account_Card_Price {
+                        line-height: 2;
+                    }
+                }
+
+                .Account_Card_Progress {
+                    margin: 12px 0;
+                }
+
+                .Account_Card_Gatherd {
+                    display: flex;
+                    line-height: 2;
+
+                    .Account_Card_Gathered_Label {
+                        font-weight: 600;
+                        margin-right: 6px;
+                    }
+
+                    .Account_Card_Gathered_Content {
+                        margin-right: 6px;
+                    }
+
+                    .Account_Card_Attend_Badge {
+                        margin-top: 5px;
+                        padding: 0 4px;
+                        height: 24px;
+                        background-color: $color-yellow-800;
+                        font-size: $font-desc-size;
+                        color: $color-white;
+                        border-radius: 24px;
+                    }
+                }
+
+                .Account_Card_Remaining {
+                    display: flex;
+                    line-height: 2;
+
+                    .Account_Card_Remaining_Label {
+                        font-weight: 600;
+                        margin-right: 6px;
+                    }
+                }
+
+                .Account_Card_Payment {
+                    display: flex;
+                    color: $color-blue;
+                    line-height: 2;
+
+                    .Account_Card_Payment_Label {
+                        font-weight: 600;
+                        margin-right: 6px;
+                    }
+                }
+
+                .Account_Card_Btn_Area {
+                    display: flex;
+                    justify-content: right;
+                    align-items: end;
+
+                    .Account_Card_Btn_Funding {
+                        margin-right: 6px;
+                        height: 42px;
+                    }
+
+                    .Account_Card_Btn_Share {
+                        border: none;
+                        background-color: transparent;
+                        height: 42px;
+
+                        .Account_Card_Share_Icon {
+                            color: $color-gray-800;
+                            font-size: $font-medium;
+                            transition: 0.4s;
+
+                            &:hover {
+                                color: $color-yellow-800;
+                                transition: 0.4s;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .Account_Achieve_Card_Item {
+        width: 900px;
+        margin: 60px 0;
+
+        .Account_Achieve_Card_Date {
+            margin-bottom: 8px;
+            font-size: $font-desc-size;
+
+            .Account_Achieve_Card_Date_Icon {
+                margin-right: 6px;
+                margin-bottom: 4px;
+            }
+        }
+
+        .Account_Achieve_Card_Inner {
+            display: flex;
+            justify-content: space-between;
+
+            .Account_Achieve_Card_Img {
+                width: 280px;
+                height: 316px;
+                object-fit: cover;
+                border-top-left-radius: 24px;
+                border-bottom-left-radius: 24px;
+            }
+
+            .Account_Achieve_Card_Content {
+                width: 620px;
+                height: 316px;
+                padding: 16px;
+                border-top-right-radius: 24px;
+                border-bottom-right-radius: 24px;
+                background-color: $color-gray-200;
+
+                .Account_Achieve_Card_Receiver {
+                    display: flex;
+                    justify-content: right;
+                    font-size: $font-medium;
+                    font-weight: 400;
+                    line-height: 2;
+                    color: $color-blue;
+                }
+
+                .Account_Achieve_Card_Top_Area {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .Account_Achieve_Card_Title {
+                        font-size: $font-sub-title-size;
+                        font-weight: 600;
+                        line-height: 2;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        max-width: 500px;
+                    }
+
+                    .Account_Achieve_Card_Price {
+                        line-height: 2;
+                    }
+                }
+
+                .Account_Achieve_Card_Progress {
+                    margin: 12px 0;
+
+                    .progress-bar {
+                        background-color: $color-gray-600;
+                    }
+                }
+
+                .Account_Achieve_Card_Notify {
+                    line-height: 2;
+                    font-weight: 500;
+                }
+
+                .Account_Achieve_Card_Gatherd {
+                    display: flex;
+                    line-height: 2;
+
+                    .Account_Achieve_Card_Gathered_Label {
+                        font-weight: 500;
+                        margin-right: 6px;
+                    }
+
+                    .Account_Achieve_Card_Gathered_Content {
+                        margin-right: 6px;
+                    }
+
+                    .Account_Achieve_Card_Attend_Badge {
+                        margin-top: 5px;
+                        padding: 0 4px;
+                        height: 24px;
+                        background-color: $color-gray-600;
+                        font-size: $font-desc-size;
+                        color: $color-white;
+                        border-radius: 24px;
+                    }
+                }
+
+                // .Account_Card_Remaining {
+                //     display: flex;
+                //     line-height: 2;
+
+                //     .Account_Card_Remaining_Label {
+                //         font-weight: 600;
+                //         margin-right: 6px;
+                //     }
+                // }
+
+                .Account_Achieve_Card_Payment {
+                    display: flex;
+                    color: $color-gray-800;
+                    line-height: 2;
+
+                    .Account_Achieve_Card_Payment_Label {
+                        font-weight: 500;
+                        margin-right: 6px;
+                    }
+                }
+
+                .Account_Achieve_Card_Btn_Area {
+                    display: flex;
+                    justify-content: right;
+                    align-items: end;
+
+                    .Account_Achieve_Card_Btn_Funding {
+                        margin-right: 6px;
+                        height: 42px;
+                    }
+
+                    .Account_Achieve_Card_Btn_Share {
+                        border: none;
+                        background-color: transparent;
+                        height: 42px;
+
+                        .Account_Achieve_Card_Share_Icon {
+                            color: $color-gray-800;
+                            font-size: $font-medium;
+                            transition: 0.4s;
+
+                            &:hover {
+                                color: $color-yellow-800;
+                                transition: 0.4s;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .Account_Expired_Card_Item {
+        width: 900px;
+        margin: 60px 0;
+
+        .Account_Expired_Card_Date {
+            margin-bottom: 8px;
+            font-size: $font-desc-size;
+
+            .Account_Expired_Card_Date_Icon {
+                margin-right: 6px;
+                margin-bottom: 4px;
+            }
+        }
+
+        .Account_Expired_Card_Inner {
+            display: flex;
+            justify-content: space-between;
+
+            .Account_Expired_Card_Img {
+                width: 280px;
+                height: 316px;
+                object-fit: cover;
+                border-top-left-radius: 24px;
+                border-bottom-left-radius: 24px;
+            }
+
+            .Account_Expired_Card_Content {
+                width: 620px;
+                height: 316px;
+                padding: 16px;
+                border-top-right-radius: 24px;
+                border-bottom-right-radius: 24px;
+                background-color: $color-gray-200;
+
+                .Account_Expired_Card_Receiver {
+                    display: flex;
+                    justify-content: right;
+                    font-size: $font-medium;
+                    font-weight: 400;
+                    line-height: 2;
+                    color: $color-blue;
+                }
+
+                .Account_Expired_Card_Top_Area {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .Account_Expired_Card_Title {
+                        font-size: $font-sub-title-size;
+                        font-weight: 600;
+                        line-height: 2;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        max-width: 500px;
+                    }
+
+                    .Account_Expired_Card_Price {
+                        line-height: 2;
+                    }
+                }
+
+                .Account_Expired_Card_Progress {
+                    margin: 12px 0;
+
+                    .progress-bar {
+                        background-color: $color-gray-400;
+                    }
+                }
+
+                .Account_Expired_Card_Notify {
+                    line-height: 2;
+                }
+
+                .Account_Expired_Card_Gatherd {
+                    display: flex;
+                    line-height: 2;
+
+                    .Account_Expired_Card_Gathered_Label {
+                        font-weight: 500;
+                        margin-right: 6px;
+                    }
+
+                    .Account_Expired_Card_Gathered_Content {
+                        margin-right: 6px;
+                    }
+
+                    .Account_Expired_Card_Attend_Badge {
+                        margin-top: 5px;
+                        padding: 0 4px;
+                        height: 24px;
+                        background-color: $color-gray-400;
+                        font-size: $font-desc-size;
+                        color: $color-white;
+                        border-radius: 24px;
+                    }
+                }
+
+                // .Account_Card_Remaining {
+                //     display: flex;
+                //     line-height: 2;
+
+                //     .Account_Card_Remaining_Label {
+                //         font-weight: 600;
+                //         margin-right: 6px;
+                //     }
+                // }
+
+                .Account_Expired_Card_Payment {
+                    display: flex;
+                    color: $color-gray-400;
+                    line-height: 2;
+
+                    .Account_Expired_Card_Payment_Label {
+                        font-weight: 500;
+                        margin-right: 6px;
+                    }
+                }
+
+                .Account_Expired_Card_Btn_Area {
+                    display: flex;
+                    justify-content: right;
+                    align-items: end;
+
+                    .Account_Expired_Card_Btn_Funding {
+                        margin-right: 6px;
+                        height: 42px;
+                    }
+
+                    .Account_Expired_Card_Btn_Share {
+                        border: none;
+                        background-color: transparent;
+                        height: 42px;
+
+                        .Account_Expired_Card_Share_Icon {
+                            color: $color-gray-800;
+                            font-size: $font-medium;
+                            transition: 0.4s;
+
+                            &:hover {
+                                color: $color-blue;
+                                transition: 0.4s;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

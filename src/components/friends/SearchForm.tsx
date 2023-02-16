@@ -18,7 +18,7 @@ interface FamousFriendsObj {
   name: string;
   nickname: string;
   profile: string;
-  // famous: boolean;
+  famous: boolean;
   friends: boolean;
 }
 
@@ -133,7 +133,7 @@ export default function SearchForm() {
       </form>
       <div className="FriendResult_Container">
         <div className="FriendResult_title">
-          <h2>{input}&nbsp;</h2>
+          <h2>🍀 {input}&nbsp;</h2>
           {selected}
           &nbsp;검색 결과 입니다.
         </div>

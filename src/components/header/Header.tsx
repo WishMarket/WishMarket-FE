@@ -85,9 +85,9 @@ export default function Header() {
                                         </Link>
                                     </li>
                                     <li className="My_Page_Sub_Category_Item">
-                                        <a href="/" className="My_Page_Sub_Category_Link">
+                                        <Link to="/account" className="My_Page_Sub_Category_Link">
                                             펀딩 내역
-                                        </a>
+                                        </Link>
                                     </li>
                                 </ul>
                             </li>
