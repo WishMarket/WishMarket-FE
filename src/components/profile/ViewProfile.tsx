@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import defaultImg from "../../../assets/default-profile-img.png";
+import defaultImg from "../../assets/default-profile-img.png";
 
-import { commaNums } from "../../../hooks/CommaNums";
+import { commaNums } from "../../hooks/CommaNums";
 
 interface IProfiles {
     profileState: boolean;

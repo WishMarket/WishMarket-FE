@@ -1,0 +1,23 @@
+.Search_Result_Title {
+    margin-top: 100px;
+    margin-bottom: 64px;
+    text-align: center;
+    font-size: $font-larger;
+    font-weight: 400;
+    color: $color-gray-800;
+    display: flex;
+    justify-content: center;
+
+    .strong {
+        margin-right: 8px;
+        color: $color-blue;
+        font-weight: 600;
+    }
+}
+
+.Search_Result_Container {
+    margin: 60px auto;
+    width: 1060px;
+    display: flex;
+    flex-wrap: wrap;
+}

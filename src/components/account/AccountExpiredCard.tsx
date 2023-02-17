@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
-import { commaNums } from "../../../hooks/CommaNums";
+import { commaNums } from "../../hooks/CommaNums";
 
 import { TfiAlarmClock } from "react-icons/tfi";
 import { IoMdCopy } from "react-icons/io";
 import { BsShareFill } from "react-icons/bs";
-import { CopyClipBoard } from "../../../hooks/CopyClipBoard";
+import { CopyClipBoard } from "../../hooks/CopyClipBoard";
 
 interface FundingInfo {
     gift: any;

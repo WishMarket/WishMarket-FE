@@ -8,10 +8,11 @@ import Profile from "./pages/Profile";
 import Wishlist from "./pages/Wishlist";
 import ReceivedGift from "./pages/ReceivedGift";
 import Account from "./pages/Account";
+import SearchProduct from "./pages/SearchProduct";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import FindPasswd from "./pages/FindPasswd";
-import ChagngePasswd from "./pages/ChagngePasswd";
+import ChangePasswd from "./pages/ChangePasswd";
 import FundingStart from "./pages/FundingStart";
 import FundingAddition from "./pages/FundingAddition";
 import Friends from "./pages/Friends";
@@ -28,9 +29,10 @@ function App() {
                     <Route path="/wish" element={<Wishlist />}></Route>
                     <Route path="/received" element={<ReceivedGift />}></Route>
                     <Route path="/account" element={<Account />}></Route>
+                    <Route path="/search" element={<SearchProduct />}></Route>
                     <Route path="/login" element={<Login />}></Route>
                     <Route path="/login/findpasswd" element={<FindPasswd />}></Route>
-                    <Route path="/login/findpasswd/changepasswd" element={<ChagngePasswd />}></Route>
+                    <Route path="/login/findpasswd/changepasswd" element={<ChangePasswd />}></Route>
                     <Route path="/signup" element={<Signup />}></Route>
                     <Route path="/funding/start/:id" element={<FundingStart />}></Route>
                     {/* funding join은 params 다른것으로 받아야함 ex) fundingId */}
