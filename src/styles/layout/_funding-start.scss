@@ -90,6 +90,15 @@
                                     height: 35px;
                                     margin-right: 10px;
                                 }
+                                .Friend_info{
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap:3px;
+                                    .Friend_email{
+                                        font-size: $font-desc-size;
+
+                                    }
+                                }
                             }
 
                         }
@@ -147,7 +156,7 @@
             }
 
             input {
-                width: 230px;
+                width: 220px;
                 border-radius: 10px;
                 margin-right: 10px;
                 padding-left: 10px;
