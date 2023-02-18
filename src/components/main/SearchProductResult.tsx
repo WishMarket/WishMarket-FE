@@ -50,7 +50,7 @@ export default function SearchProductResult({ keyword, setKeyword }: Keyword) {
             </div>
             <div className="Search_Result_Container">
                 {/* 변경 필요 */}
-                {items.map((item) => (item.name.toLowerCase().includes(keyword.toLowerCase()) ? <CategoryItemCard item={item} key={item.productId} /> : null))}
+                {/* {items.map((item) => (item.name.toLowerCase().includes(keyword.toLowerCase()) ? <CategoryItemCard item={item} key={item.productId} /> : null))} */}
             </div>
         </>
     );

@@ -1,13 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Modal } from "react-bootstrap";
 
 import { BsShareFill } from "react-icons/bs";
 import { RiHeartAddFill } from "react-icons/ri";
 import { TbHeartMinus } from "react-icons/tb";
-import { IoMdCopy } from "react-icons/io";
 
-import { CopyClipBoard } from "../../hooks/CopyClipBoard";
+import ProductModal from "./ProductModal";
 import { commaNums } from "../../hooks/CommaNums";
 
 interface Item {
@@ -15,8 +13,8 @@ interface Item {
 }
 
 export default function CategoryItemCard({ item }: Item) {
-    const [tabWish, setTabWish] = useState(false);
-    const [showModal, setShowModal] = useState(false);
+    const [tabWish, setTabWish] = useState<boolean>(false);
+    const [showModal, setShowModal] = useState<boolean>(false);
 
     // wishlist btn
     const handleTabWish = () => {
@@ -27,10 +25,6 @@ export default function CategoryItemCard({ item }: Item) {
     const handleShowModal = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         setShowModal(true);
-    };
-
-    const handleCloseModal = (e: React.MouseEvent<HTMLButtonElement> | void) => {
-        setShowModal(false);
     };
 
     return (
@@ -56,25 +50,7 @@ export default function CategoryItemCard({ item }: Item) {
                         </div>
                     </div>
                 </div>
-                <Modal show={showModal} onHide={handleCloseModal}>
-                    <Modal.Header closeButton>
-                        <Modal.Title>공유하기</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <div className="Modal_Inner">
-                            <span className="Modal_Title">링크:</span>
-                            <input className="Share_LinkBox" type="text" value={item.url} readOnly></input>
-                            <button className="btn btn-light">
-                                <IoMdCopy className="copy_Button" onClick={() => CopyClipBoard(item.url)} />
-                            </button>
-                        </div>
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <button className="btn btn-secondary" onClick={handleCloseModal}>
-                            닫기
-                        </button>
-                    </Modal.Footer>
-                </Modal>
+                <ProductModal item={item} showModal={showModal} setShowModal={setShowModal} />
             </div>
         </>
     );

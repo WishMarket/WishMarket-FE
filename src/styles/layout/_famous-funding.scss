@@ -1,18 +1,18 @@
-.FamousFund_title {
+.Famous_Funding_Title {
     font-family: "Noto Sans KR", sans-serif;
     text-align: center;
     margin-top: 120px;
     margin-bottom: 20px;
     font-weight: 600;
     font-size: $font-title-size;
-    color: $color-blue;
+    color: $color-gray-800;
 }
 
-.FamousFund_desc {
+.Famous_Funding_Desc {
     text-align: center;
     color: $color-gray-800;
     font-size: $font-sub-title-size;
-    margin-bottom: 28px;
+    margin-bottom: 60px;
 }
 
 .Product_Scroll_Wrapper {
@@ -20,9 +20,9 @@
     display: flex;
     justify-content: center;
 
-    .carousel_Button_Left {
+    .Carousel_Button_Left {
         position: relative;
-        margin-top: 128px;
+        margin-top: 180px;
         width: 40px;
         height: 40px;
         z-index: 100;
@@ -40,19 +40,19 @@
 
         &::before {
             position: absolute;
-            top: -128px;
+            top: -180px;
             left: 48px;
             display: block;
             width: 60px;
-            height: 300px;
+            height: 400px;
             background-image: linear-gradient(to right, $color-white 0%, transparent 100%);
             content: "";
         }
     }
 
-    .carousel_Button_Right {
+    .Carousel_Button_Right {
         position: relative;
-        margin-top: 128px;
+        margin-top: 180px;
         width: 40px;
         height: 40px;
         z-index: 100;
@@ -69,18 +69,18 @@
 
         &::before {
             position: absolute;
-            top: -128px;
+            top: -180px;
             right: 48px;
             display: block;
             width: 60px;
-            height: 300px;
+            height: 400px;
             background-image: linear-gradient(to left, $color-white 0%, transparent 100%);
             content: "";
         }
     }
 }
 
-.product_Wrapper {
+.Famous_Funding_Wrapper {
     position: relative;
     display: flex;
     width: 1024px;
