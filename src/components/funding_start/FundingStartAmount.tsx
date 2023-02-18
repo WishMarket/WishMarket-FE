@@ -3,7 +3,7 @@ import React from 'react'
 interface Props {
   setFundingAmount: React.Dispatch<React.SetStateAction<number>>;
 }
-export default function FundingStart_Amount({ setFundingAmount }:Props) {
+export default function FundingStartAmount({ setFundingAmount }:Props) {
   const onChangeAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     setFundingAmount(parseInt(e.currentTarget.value));
