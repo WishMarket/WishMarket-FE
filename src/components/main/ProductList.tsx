@@ -36,7 +36,7 @@ export default function ProductList() {
     return (
         <>
             <div className="Main_Best_Category_Title">이런 선물 어떠세요?</div>
-            <div className="Main_Best_Categort_Desc">위시마켓에서 가장 🔥HOT🔥한 베스트 상품을 소개합니다.</div>
+            <div className="Main_Best_Categort_Desc">위시마켓에서 가장 HOT한 베스트 상품을 소개합니다.</div>
             <div className="Product_List_Container">
                 <div className="Card_Product_Wrapper">
                     <FetchProduct items={items} />
