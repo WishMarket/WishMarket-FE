@@ -1,4 +1,4 @@
-.FamousFund_title {
+.Famous_Funding_Title {
     font-family: "Noto Sans KR", sans-serif;
     text-align: center;
     margin-top: 120px;
@@ -8,7 +8,7 @@
     color: $color-blue;
 }
 
-.FamousFund_desc {
+.Famous_Funding_Desc {
     text-align: center;
     color: $color-gray-800;
     font-size: $font-sub-title-size;
@@ -20,7 +20,7 @@
     display: flex;
     justify-content: center;
 
-    .carousel_Button_Left {
+    .Carousel_Button_Left {
         position: relative;
         margin-top: 128px;
         width: 40px;
@@ -50,7 +50,7 @@
         }
     }
 
-    .carousel_Button_Right {
+    .Carousel_Button_Right {
         position: relative;
         margin-top: 128px;
         width: 40px;
@@ -80,7 +80,7 @@
     }
 }
 
-.product_Wrapper {
+.Famous_Funding_Wrapper {
     position: relative;
     display: flex;
     width: 1024px;
