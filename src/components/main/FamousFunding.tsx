@@ -3,30 +3,35 @@ import axios from "axios";
 
 import FamousFundingCard from "./FamousFundingCard";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
-import { products } from "../../data/ProductData.json";
 
 interface Funding {
     fundingId: number;
-    name: string;
-    image: string;
-    price: number;
-    date: string;
-    gatherPoint: number;
-    participant: any;
-    addressInfo: boolean;
-    url: string;
+    targetId: number;
+    targetName: string;
+    product: {
+        productId: number;
+        name: string;
+        productImageUrl: string;
+        price: number;
+    };
+    fundedPrice: number;
+    myfundingPrice: number;
+    participants: string[];
+    fundStatus: string;
+    startDate: string;
+    endDate: string;
 }
 
 export default function FamousFunding() {
-    const productData = products.slice(0, 11);
-    const ITEM_WIDTH = 876;
-    const LENGTH = productData.length - 1;
+    // 랜덤 노출 로직 추가 필요
+    const [fundingInfo, setFundingInfo] = useState<Funding[]>([]);
+    const FAMOUS_FUNDING_URL = "/data/FamousFunding.json";
+
+    const ITEM_WIDTH = 872;
+    const LENGTH = 11 - 1;
     const MAX_WIDTH = LENGTH * ITEM_WIDTH;
     const INIT_SLIDE_PX = (LENGTH / 2) * ITEM_WIDTH;
     const [slidePx, setSlidePx] = useState<number>(-INIT_SLIDE_PX);
-
-    const [fundingInfo, setFundingInfo] = useState<Funding[]>([]);
-    const FUNDING_URL = "/data/TestFundingData.json";
 
     const toPrev = () => {
         if (slidePx < 0) setSlidePx(slidePx + ITEM_WIDTH);
@@ -39,7 +44,7 @@ export default function FamousFunding() {
     // funding data axios
     const getFundingData = async () => {
         await axios
-            .get(FUNDING_URL)
+            .get(FAMOUS_FUNDING_URL)
             .then((res) => {
                 let response = res.data.funding;
                 setFundingInfo(response);
@@ -55,7 +60,7 @@ export default function FamousFunding() {
 
     return (
         <div>
-            <div className="Famous_Funding_Title">주목! 요즘 뜨는 펀딩 ✨</div>
+            <div className="Famous_Funding_Title">주목! 요즘 뜨는 펀딩</div>
             <div className="Famous_Funding_Desc">현재 인기 유저가 진행 중인 펀딩 목록이에요.</div>
             <div className="Product_Scroll_Wrapper">
                 <button name="left" className="Carousel_Button_Left" onClick={toPrev} disabled={slidePx === 0 ? true : false}>
@@ -70,7 +75,7 @@ export default function FamousFunding() {
                             transition: "ease-in 0.5s all",
                         }}
                     >
-                        {fundingInfo.map((gift) => {
+                        {fundingInfo.slice(0, 11).map((gift) => {
                             return <FamousFundingCard gift={gift} key={gift.fundingId} />;
                         })}
                     </div>
