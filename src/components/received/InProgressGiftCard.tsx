@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Modal } from "react-bootstrap";
-import { commaNums } from "../../../hooks/CommaNums";
+import { commaNums } from "../../hooks/CommaNums";
 
 import { IoMdCopy } from "react-icons/io";
 import { BsShareFill } from "react-icons/bs";
-import { CopyClipBoard } from "../../../hooks/CopyClipBoard";
+import { CopyClipBoard } from "../../hooks/CopyClipBoard";
 
 interface Funding {
     fundingId: number;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { commaNums } from "../../../hooks/CommaNums";
+import { commaNums } from "../../hooks/CommaNums";
 
 interface Funding {
     fundingId: number;

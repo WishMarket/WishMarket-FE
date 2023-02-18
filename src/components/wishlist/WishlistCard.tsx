@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { commaNums } from "../../../hooks/CommaNums";
+import { commaNums } from "../../hooks/CommaNums";
 
 interface Item {
     item: any;

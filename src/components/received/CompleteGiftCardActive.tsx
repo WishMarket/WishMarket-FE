@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Modal } from "react-bootstrap";
 import DaumPostCode from "react-daum-postcode";
-import { commaNums } from "../../../hooks/CommaNums";
+import { commaNums } from "../../hooks/CommaNums";
 import { MdSentimentVerySatisfied, MdSentimentVeryDissatisfied } from "react-icons/md";
 import { FaKaaba } from "react-icons/fa";
 

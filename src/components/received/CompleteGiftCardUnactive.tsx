@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import CompleteGiftCardActive from "./CompleteGiftCardActive";
-import { commaNums } from "../../../hooks/CommaNums";
+import { commaNums } from "../../hooks/CommaNums";
 
 interface FundingInfo {
     gift: any;
