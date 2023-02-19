@@ -4,6 +4,7 @@ import { TfiAlarmClock } from "react-icons/tfi";
 
 import FundingModal from "./FundingModal";
 import { commaNums } from "../../hooks/CommaNums";
+import { Link } from "react-router-dom";
 
 interface Funding {
     gift: any;
@@ -73,8 +74,10 @@ export default function FamousFundingCard({ gift }: Funding) {
                         </div>
                     </div>
                     <div className="Famous_Funding_Btn_Area">
-                        {/* 링크 추가 */}
-                        <button className="btn btn-warning">펀딩하기</button>
+                        {/* 임시링크 */}
+                        <Link to={`/funding/join/${gift.fundingId}`}>
+                            <button className="btn btn-warning">펀딩하기</button>
+                        </Link>
                         <button className="Famous_Funding_Share_Btn" onClick={handleShow}>
                             <BsShareFill className="Famous_Funding_Share_Btn_Icon" />
                         </button>

@@ -3,6 +3,7 @@ interface Props {
   Userid: string;
   profile: string;
   name: string;
+  email: string;
   FriendSelect(Userid: string, name: string, profile: string): any;
 }
 
@@ -12,7 +13,6 @@ export default function FriendPicker(props: Props) {
   };
   return (
     <>
-      {/* props로 친구 이름, 사진 받고 checkbox가 체크되면 선택된 친구에 추가 */}
       <li className="Friend">
         <div className="Friend_desc">
           <img
@@ -20,8 +20,12 @@ export default function FriendPicker(props: Props) {
             src={props.profile}
             alt="friend-image"
           />
-          <span>{props.name}</span>
+          <div className="Friend_info">
+            <span>{props.name}</span>
+            <span className="Friend_email">{props.email}</span>
+            </div>
         </div>
+
         <button
           className="btn btn-primary"
           onClick={() => clickSelect(props.Userid, props.name, props.profile)}
