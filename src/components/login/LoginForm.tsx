@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Naver_Btn from "../../assets/Naver_Btn.png";
 import { AiOutlineMail } from "react-icons/ai";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { SiNaver } from "react-icons/si";
 import { FcGoogle } from "react-icons/fc";
+import { requestLogin } from "../../hooks/Login";
 
 export default function LoginForm() {
     const [email, setEmail] = useState<string>("");
@@ -22,9 +22,13 @@ export default function LoginForm() {
 
     const onLoginSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log(email);
-        console.log(password);
+        requestLogin(email, password);
+    
     };
+
+
+
+
     return (
         <div className="login_Wrapper">
             <div className="login">
