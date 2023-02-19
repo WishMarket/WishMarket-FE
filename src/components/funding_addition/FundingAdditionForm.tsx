@@ -90,17 +90,11 @@ export default function FundingAdditionForm() {
                       <span>{commaNums(items.price)} 원</span>
                     </div>
                     <FundingAdditionGraph items={items} />
-
                     <hr />
-
-                  <FundingAdditionDate items={items} />
-
+                    <FundingAdditionDate items={items} />
                     <hr />
-
                     <FundingAdditionToFrom items={items} />
-
                     <hr />
-
                     <FundingAdditionAmount
                       setFundingAmount={setFundingAmount}
                     />
