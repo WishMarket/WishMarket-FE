@@ -4,7 +4,6 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    height: 120vh;
 }
 
 .login {
@@ -41,8 +40,6 @@
 
 .login-form-container {
     width: 360px;
-    height: 320px;
-    display: flex;
 
     .login_Form {
         div {
@@ -170,6 +167,7 @@
 
 .login_Link {
     color: $color-gray-800;
+    margin-top: 40px;
     margin-bottom: 120px;
 
     .go-to-sign-up,

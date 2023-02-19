@@ -34,15 +34,36 @@ export default function DetailComponent() {
   const [tabWish, setTabWish] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [items, setItems] = useState<ProductObj | null>(null);
-
+  
   let { id } = useParams() as { id: string };
   const url = "/data/ProductData.json";
-
+  
   const tabs = [
     { id: 0, name: "상품 정보", content: <ProductInfo items={items} /> },
     { id: 1, name: "한줄 리뷰", content: <ProductReview /> },
     { id: 2, name: "이용 안내", content: <HowToUse /> },
   ];
+  
+  const [test, setTest] = useState<ProductObj | null>(null);
+
+  const url2 = "http://3.38.63.3:8080/api/products/1/detail";
+  const getTest = async () => {
+    await axios
+      .get(url2)
+      .then((res) => {
+        console.log(res.data);
+        let response = res.data.products;
+        setTest(response[id]); // 연동 시 교체 필요
+      })
+      .catch((error) => {
+        return Promise.reject(error);
+      });
+    };
+    
+  useEffect(() => {
+    getTest();
+    console.log(test);
+  }, []);
 
   // axios
   const getItems = async () => {

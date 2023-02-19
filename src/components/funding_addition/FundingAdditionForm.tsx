@@ -5,7 +5,7 @@ import { commaNums } from "../../hooks/CommaNums";
 
 import FundingAdditionAmount from "./FundingAdditionAmount";
 import FundingAdditionGraph from "./FundingAdditionGraph";
-// import FundingAdditionDate from "./FundingAdditionDate";
+import FundingAdditionDate from "./FundingAdditionDate";
 import FundingAdditionToFrom from "./FundingAdditionToFrom";
 import FundingAdditionModal from "./FundingAdditionModal";
 
@@ -86,17 +86,11 @@ export default function FundingAdditionForm() {
                                             <span>{commaNums(items.price)} 원</span>
                                         </div>
                                         <FundingAdditionGraph items={items} />
-
                                         <hr />
-
-                                        {/* <FundingAdditionDate items={items} /> */}
-
+                                        <FundingAdditionDate items={items} />
                                         <hr />
-
                                         <FundingAdditionToFrom items={items} />
-
                                         <hr />
-
                                         <FundingAdditionAmount setFundingAmount={setFundingAmount} />
                                     </div>
                                 </div>

@@ -26,7 +26,7 @@ export default function LoginForm() {
         console.log(password);
     };
     return (
-        <div className="login_Wrapper">
+        <div className="login_Wrapper main">
             <div className="login">
                 <div>
                     <h2>Login</h2>
@@ -50,7 +50,6 @@ export default function LoginForm() {
                                     이메일로 로그인
                                 </button>
                             </div>
-
                             <div>
                                 <button className="Login_Button_Naver" type="button">
                                     <SiNaver className="Social_img_Naver" />
@@ -61,7 +60,6 @@ export default function LoginForm() {
                                 <button className="login_Button_Google" type="button">
                                     <div>
                                         <FcGoogle className="Social_img_Google" />
-
                                         <span className="Social_Google">Sign with Google</span>
                                     </div>
                                 </button>
