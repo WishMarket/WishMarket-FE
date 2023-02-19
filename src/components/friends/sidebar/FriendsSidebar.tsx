@@ -68,7 +68,7 @@ export default function FriendsSidebar() {
             {friends.length !=0 ? (
               friends.map((data: FriendsObj) => {
                 return (
-                    <Link to={'./'} key={data.Userid} style={{textDecoration:"none", color:"black"}}>
+                    <Link to={`./${data.Userid}`} key={data.Userid} style={{textDecoration:"none", color:"black"}}>
                         <FriendList image={data.profile} name={data.name} nickname={data.nickname} />
                   </Link>
                 );
