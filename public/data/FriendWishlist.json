@@ -1,0 +1,148 @@
+{
+    "wishlist": [
+      {
+        "fundingId": 1,
+        "userId": 1,
+        "name": "홍길원",
+        "fundStatus": "Ing",
+        "product": {
+          "productId": 1,
+          "name": "삼성 스마트모니터 M5 S32BM501",
+          "image": "https://img.29cm.co.kr/next-product/2022/07/04/73ac0c7646434fb7bc7508a8853bc51a_20220704082707.jpg?width=700",
+          "price": 347000
+        }
+      },
+      {
+        "fundingId": 2,
+        "userId": 1,
+        "name": "홍길원",
+        "fundStatus": "Ing",
+        "product": {
+          "productId": 14,
+          "name": "14K 화이트골드 러브플라이풀 귀걸이 TEJK4W00080S",
+          "image": "https://www.tirrlirr.co.kr/shopimages/sillajewel/001001000845.jpg?1668503433",
+          "price": 463200
+        }
+      },
+      {
+        "fundingId": 3,
+        "userId": 1,
+        "name": "홍길원",
+        "fundStatus": "Ing",
+        "product": {
+          "productId": 17,
+          "name": "LA POEME 14K 목걸이 (JJL1NQ3BS250R4420)",
+          "image": "https://webimg.jestina.co.kr/UpData2/item/G2000026020/20230206114641ZM.png",
+          "price": 440000
+        }
+      },
+      {
+        "fundingId": 4,
+        "userId": 1,
+        "name": "홍길원",
+        "fundStatus": "NotStart",
+        "product": {
+          "productId": 13,
+          "name": "메모리아 모던튤리 L 실버 화이트 팔찌 TBSSVW13738M-L",
+          "image": "https://www.tirrlirr.co.kr/shopimages/sillajewel/001002000067.jpg?1666850312",
+          "price": 239000
+        }
+      },
+      {
+        "fundingId": 5,
+        "userId": 1,
+        "name": "홍길원",
+        "fundStatus": "NotStart",
+        "product": {
+          "productId": 15,
+          "name": "14K 핑크골드 러브 하트 플라이 귀걸이 TEJK4P00082S",
+          "image": "https://www.tirrlirr.co.kr/shopimages/sillajewel/003001000030.jpg?1670813092",
+          "price": 263200
+        }
+      },
+      {
+        "fundingId": 6,
+        "userId": 2,
+        "name": "홍길투",
+        "fundStatus": "Ing",
+        "product": {
+          "productId": 1,
+          "name": "삼성 스마트모니터 M5 S32BM501",
+          "image": "https://img.29cm.co.kr/next-product/2022/07/04/73ac0c7646434fb7bc7508a8853bc51a_20220704082707.jpg?width=700",
+          "price": 347000
+        }
+      },
+      {
+        "fundingId": 7,
+        "userId": 7,
+        "name": "홍길칠",
+        "fundStatus": "Ing",
+        "product": {
+          "productId": 14,
+          "name": "14K 화이트골드 러브플라이풀 귀걸이 TEJK4W00080S",
+          "image": "https://www.tirrlirr.co.kr/shopimages/sillajewel/001001000845.jpg?1668503433",
+          "price": 463200
+        }
+      },
+      {
+        "fundingId": 8,
+        "userId": 8,
+        "name": "홍길팔",
+        "fundStatus": "Ing",
+        "product": {
+          "productId": 17,
+          "name": "LA POEME 14K 목걸이 (JJL1NQ3BS250R4420)",
+          "image": "https://webimg.jestina.co.kr/UpData2/item/G2000026020/20230206114641ZM.png",
+          "price": 440000
+        }
+      },
+      {
+        "fundingId": 9,
+        "userId": 2,
+        "name": "홍길투",
+        "fundStatus": "NotStart",
+        "product": {
+          "productId": 13,
+          "name": "메모리아 모던튤리 L 실버 화이트 팔찌 TBSSVW13738M-L",
+          "image": "https://www.tirrlirr.co.kr/shopimages/sillajewel/001002000067.jpg?1666850312",
+          "price": 239000
+        }
+      },
+      {
+        "fundingId": 10,
+        "userId": 2,
+        "name": "홍길투",
+        "fundStatus": "NotStart",
+        "product": {
+          "productId": 15,
+          "name": "14K 핑크골드 러브 하트 플라이 귀걸이 TEJK4P00082S",
+          "image": "https://www.tirrlirr.co.kr/shopimages/sillajewel/003001000030.jpg?1670813092",
+          "price": 263200
+        }
+      },
+      {
+        "fundingId": 11,
+        "userId": 3,
+        "name": "홍길삼",
+        "fundStatus": "Ing",
+        "product": {
+          "productId": 15,
+          "name": "14K 핑크골드 러브 하트 플라이 귀걸이 TEJK4P00082S",
+          "image": "https://www.tirrlirr.co.kr/shopimages/sillajewel/003001000030.jpg?1670813092",
+          "price": 263200
+        }
+      },
+      {
+        "fundingId": 12,
+        "userId": 4,
+        "name": "홍길사",
+        "fundStatus": "NotStart",
+        "product": {
+          "productId": 13,
+          "name": "메모리아 모던튤리 L 실버 화이트 팔찌 TBSSVW13738M-L",
+          "image": "https://www.tirrlirr.co.kr/shopimages/sillajewel/001002000067.jpg?1666850312",
+          "price": 239000
+        }
+      }
+    ]
+}

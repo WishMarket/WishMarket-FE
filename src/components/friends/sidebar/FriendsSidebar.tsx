@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import FriendList from "./FriendList";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -68,7 +68,7 @@ export default function FriendsSidebar() {
             {friends.length !=0 ? (
               friends.map((data: FriendsObj) => {
                 return (
-                    <Link to={'./'} key={data.Userid} style={{textDecoration:"none", color:"black"}}>
+                    <Link to={`./${data.Userid}`} key={data.Userid} style={{textDecoration:"none", color:"black"}}>
                         <FriendList image={data.profile} name={data.name} nickname={data.nickname} />
                   </Link>
                 );
