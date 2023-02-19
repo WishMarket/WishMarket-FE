@@ -18,9 +18,9 @@ export default function FamousFundingCard({ gift }: Funding) {
         setShow(true);
     };
 
-    useEffect(() => {
-        console.log(gift.startDate);
-    }, []);
+    // useEffect(() => {
+    //     console.log(gift.startDate);
+    // }, []);
 
     return (
         <div className="Famous_Funding_Item">
