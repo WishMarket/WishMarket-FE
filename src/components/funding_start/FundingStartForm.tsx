@@ -6,7 +6,7 @@ import { ko } from "date-fns/esm/locale";
 
 import DatePicker from "react-datepicker";
 import FriendPicker from "./FriendPicker";
-import FundingStart_Amount from "./FundingStart_Amount";
+import FundingStartAmount from "./FundingStartAmount";
 import FriendPicked from "./FriendPicked";
 import FundingStartModal from "./FundingStartModal";
 
@@ -94,8 +94,6 @@ export default function FundingStartForm() {
     setPickFriendProfile(profile);
   };
 
- 
-
   const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     //1.날짜현재시간이후 , 2.친구선택, 3.금액이 1000원 이상
@@ -132,7 +130,6 @@ export default function FundingStartForm() {
           {items != null ? (
             <form onSubmit={onSubmitHandler} target="blankifr">
               <div className="FundingStart_Top_Area">
-              {/* <FundingStart_Info /> */}
                 <div>
                   <img
                     src={items.image}
@@ -164,21 +161,23 @@ export default function FundingStartForm() {
                   </div>
                   <hr />
                   <div className="FundingStart_FriendPicker">
-                    <h2>펀딩 받을 친구 선택</h2>
-                    <ul className="FriendPicker_Wrapper">
-                      {friends.map((data: FriendsObj) => (
-                        <FriendPicker
-                          key={data.Userid}
-                          Userid={data.Userid}
-                          name={data.name}
-                          profile={data.profile}
-                          email={data.email}
-                          FriendSelect={(Userid, name, profile) =>
-                            onFriendsSelectHandler(Userid, name, profile)
-                          }
-                        />
-                      ))}
-                    </ul>
+                    <div>
+                      <h2>펀딩 받을 친구 선택</h2>
+                      <ul className="FriendPicker_Wrapper">
+                        {friends.map((data: FriendsObj) => (
+                          <FriendPicker
+                            key={data.Userid}
+                            Userid={data.Userid}
+                            name={data.name}
+                            profile={data.profile}
+                            email={data.email}
+                            FriendSelect={(Userid, name, profile) =>
+                              onFriendsSelectHandler(Userid, name, profile)
+                            }
+                          />
+                        ))}
+                      </ul>
+                    </div>
                     <FriendPicked
                       pickFriendName={pickFriendName}
                       setPickFriendName={setPickFriendName}
@@ -187,9 +186,7 @@ export default function FundingStartForm() {
                     />
                   </div>
                   <hr />
-                  <FundingStart_Amount
-                    setFundingAmount={setFundingAmount}
-                  />
+                  <FundingStartAmount setFundingAmount={setFundingAmount} />
                 </div>
               </div>
             </form>
