@@ -5,10 +5,10 @@ import ChangePasswdForm from "../components/login/findpasswd/ChangePasswdForm";
 
 export default function ChangePasswd() {
     return (
-        <div>
+        <>
             <Header />
             <ChangePasswdForm />
             <Footer />
-        </div>
+        </>
     );
 }

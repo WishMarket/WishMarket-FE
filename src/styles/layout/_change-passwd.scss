@@ -1,40 +1,33 @@
 .changepasswd_Wrapper {
+    margin-top: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    height: 1280px;
 }
 
 .changepasswd {
-    font-family: 'Noto Sans Kr', 'sans-serif';
+    margin-top: 60px;
+    font-family: "Noto Sans Kr", "sans-serif";
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    width: 40vw;
-    height: 100vh;
-    padding: 5vh;
-    border-radius: 15px;
-    max-height: 650px;
-    min-height: 400px;
-    max-width: 700px;
-    min-width: 600px;
-    background-color: $color-yellow-800;
+    justify-content: space-around;
+    width: 400px;
 
     div {
         h2 {
-            margin-bottom: 20px;
+            color: $color-gray-800;
             font-weight: 600;
             font-size: 50px;
             display: flex;
             justify-content: center;
+            margin-bottom: 32px;
         }
 
         h3 {
-            font-size: 20px;
-            white-space: nowrap;
-            margin-bottom: 50px;
+            margin-top: 16px;
+            margin-bottom: 32px;
         }
     }
 
@@ -42,89 +35,98 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        height: 40vh;
-        min-height: 300px;
     }
-
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    height: 400px;
-    min-height: 150px;
+.change-pw-form-container {
+    width: 360px;
 
     .changepasswd_Form {
-        background-color: $color-white;
-        border-radius: 15px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        height: 20vh;
-        padding: 2vh;
-        min-width: 150px;
-        min-height: 300px;
+        .pw-container {
+            display: flex;
+            position: relative;
 
+            .PW_Icon {
+                font-size: $font-medium;
+                color: $color-gray-400;
+                position: absolute;
+                left: 16px;
+                top: 16px;
+            }
+        }
 
         div {
-            width: 350px;
-            margin-top: 5px;
-            margin-bottom: 5px;
-            display: flex;
-            justify-content: space-between;
+            margin-bottom: 16px;
+            justify-content: center;
             align-items: center;
 
             input {
                 margin-left: 3px;
+
+                &:focus + .PW_Icon {
+                    color: $color-gray-800;
+                }
             }
         }
 
         .changeEmail_Form {
-            justify-content: start;
-            div{
-                width: 110px;
-            }
-            span{
-                font-weight: 600;
+            display: flex;
+            position: relative;
+
+            .Login_Icon {
+                font-size: $font-medium;
+                color: $color-gray-400;
+                position: absolute;
+                left: 16px;
+                top: 16px;
             }
         }
     }
 
     .validate {
         display: flex;
-        flex-direction: column;
+        position: relative;
 
-        button {
-            margin-top: 5px;
-            white-space: nowrap;
-            align-self: flex-end;
+        .PW_Icon {
+            font-size: $font-medium;
+            color: $color-gray-400;
+            position: absolute;
+            left: 16px;
+            top: 16px;
         }
     }
 
     .changepasswd_Button {
-        margin-top: 50px;
+        margin-top: 12px;
         height: 150px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        margin-bottom: 120px;
+        margin-top: 32px;
 
         div {
             button {
                 width: 100%;
+                height: 42px;
+                border-radius: 16px;
+                margin-bottom: 16px;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
             }
         }
-
     }
 }
 
 .changepasswd_Input_Box {
-    width: 250px;
-    height: 30px;
+    width: 100%;
+    height: 48px;
     font-size: 14px;
-    border: 0;
+    border: 1px solid $color-gray-400;
     border-radius: 16px;
     outline: none;
-    padding-left: 10px;
-    background-color: $color-gray-200;
+    padding-left: 38px;
+
+    &:focus {
+        border: 1px solid $color-gray-800;
+    }
 }
