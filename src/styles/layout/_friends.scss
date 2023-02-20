@@ -7,7 +7,6 @@
 
 .FriendsWrapper {
     width: 100%;
-    height: 100vh;
 }
 
 
@@ -21,7 +20,7 @@
         z-index: 10;
         background-color: $color-white;
         // 높이 늘릴려면 위 footer 아래 Sidebar_DESC 높이랑 같게 해야함(스크롤)
-        height: 100vh;
+        height: 1000px;
         width: 350px;
         border-left: 2px solid;
         border: 1px solid $color-gray-800;
@@ -47,7 +46,7 @@
 
         .Sidebar_DESC {
             //여기
-            height: 100vh;
+            height: 1000px;
             overflow-x: hidden;
             overflow-y: scroll;
 
@@ -120,6 +119,8 @@
 
 .FriendMain_Wrapper {
     height: auto;
+    display: flex;
+    justify-content: center;
 
     .FriendMain_DESC {
         margin-top: 50px;
@@ -127,7 +128,6 @@
         display: flex;
         flex-direction: column;
         width: auto;
-        min-width: 700px;
 
         .FriendMain_Title {
             font-size: 60px;
@@ -136,7 +136,6 @@
 
         .FriendSearch_Wrapper {
             form {
-
                 height: auto;
 
                 .FriendMain_Search {
@@ -212,13 +211,15 @@
 }
 
 .FriendResult_Container {
+    margin-top: 50px;
+    margin-bottom: 200px;
 
     .FriendResult_title {
 
         display: flex;
         font-size: $font-title-size;
         font-weight: 700;
-        margin-bottom: 15px;
+        margin-bottom: 30px;
 
         h2 {
 
@@ -230,6 +231,7 @@
     .FriendResult_List {
         display: flex;
         flex-wrap: wrap;
+        width: 1080px;
         gap: 50px;
 
         .Not_FoundFriend {
@@ -283,21 +285,79 @@
             }
         }
     }
+}
 
-    .FamousFriend {
-        height: auto;
-        margin-top: 100px;
-        margin-bottom: 200px;
+.FamousFriend {
+    height: auto;
+    margin-top: 50px;
+    margin-bottom: 200px;
 
-        .FamousFriend_title {
+    .FamousFriend_title {
+        display: flex;
+        font-size: $font-title-size;
+        font-weight: 700;
+        margin-bottom: 30px;
+        margin-left: 40px;
+
+        h2 {
+            color: $color-blue;
+        }
+    }
+
+    .FriendResult_List {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 50px;
+        width: 1080px;
+
+        .Not_FoundFriend {
+            color: $color-red-600;
+            font-weight: 600;
+            margin-top: 20px;
+            margin-left: 60px;
+        }
+
+        .FriendResult_Wrapper {
+            width: 232px;
+            border-radius: 20px;
             display: flex;
-            font-size: $font-title-size;
-            font-weight: 700;
-            margin-bottom: 15px;
-            margin-left: 40px;
+            flex-direction: column;
 
-            h2 {
-                color: $color-blue;
+            .FriendResult_image {
+                width: 232px;
+                height: 232px;
+                object-fit: contain;
+                border-radius: 20px 20px 0px 0px;
+                background-color: $color-white;
+            }
+
+            .FriendResult_DESC {
+                background-color: $color-gray-200;
+                border-radius: 0px 0px 20px 20px;
+
+                .FriendResult_bgc {
+                    padding: 10px;
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    gap: 20px;
+
+                    .FriendResult_names {
+                        display: flex;
+                        flex-direction: row;
+
+                        h2 {
+                            font-size: $font-sub-title-size;
+                            font-weight: 600;
+                        }
+
+                        h3 {
+                            align-self: flex-end;
+                            margin-left: 10px;
+                            font-size: $font-medium;
+                        }
+                    }
+                }
             }
         }
     }

@@ -1,14 +1,16 @@
 footer {
-    position:relative;
+    position: relative;
+    transform: translatY(-100%);
     width: 100%;
     background-color: $color-gray-600;
     padding: 60px 200px;
     z-index: 100;
+
     .Footer_Top_Area {
         display: flex;
         justify-content: space-between;
         margin-bottom: 20px;
-        
+
         .Footer_Left {
             line-height: 1.8;
 

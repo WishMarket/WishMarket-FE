@@ -3,20 +3,18 @@ import { Modal } from "react-bootstrap";
 import { FriendsError } from "../../../hooks/SignUpError";
 import {FaMedal} from 'react-icons/fa'
 interface Props {
-  data: FamousFriendsObj;
-}
-
-interface FamousFriendsObj {
-  Userid: string;
-  name: string;
-  nickname: string;
-  profile: string;
-  famous: boolean;
-  friends: boolean;
+  data: {
+    Userid: string;
+    name: string;
+    nickname: string;
+    famous: boolean;
+    profileImage: string;
+    isfriend: boolean;
+  };
 }
 
 export default function FamousFriendCard({ data }: Props) {
-  const [friended, setFriended] = useState<boolean>(data.friends);
+  const [friended, setFriended] = useState<boolean>(data.isfriend);
   const [errorShow, setErrorShow] = useState<boolean>(false);
   const [errorCode, setErrorCode] = useState<number>(0);
   
@@ -43,7 +41,7 @@ export default function FamousFriendCard({ data }: Props) {
     return (
       <div className="FriendResult_Wrapper">
         <div>
-          <img src={data.profile} className="FriendResult_image" />
+          <img src={data.profileImage} className="FriendResult_image" />
         </div>
         <div className="FriendResult_DESC">
           <div className="FriendResult_bgc">

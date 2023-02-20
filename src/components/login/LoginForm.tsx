@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Naver_Btn from "../../assets/Naver_Btn.png";
 import { AiOutlineMail } from "react-icons/ai";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { SiNaver } from "react-icons/si";
 import { FcGoogle } from "react-icons/fc";
-import { requestLogin } from "../../hooks/Login";
 
 export default function LoginForm() {
     const [email, setEmail] = useState<string>("");
@@ -22,15 +22,11 @@ export default function LoginForm() {
 
     const onLoginSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        requestLogin(email, password);
-    
+        console.log(email);
+        console.log(password);
     };
-
-
-
-
     return (
-        <div className="login_Wrapper">
+        <div className="login_Wrapper main">
             <div className="login">
                 <div>
                     <h2>Login</h2>
@@ -54,7 +50,6 @@ export default function LoginForm() {
                                     이메일로 로그인
                                 </button>
                             </div>
-
                             <div>
                                 <button className="Login_Button_Naver" type="button">
                                     <SiNaver className="Social_img_Naver" />
@@ -65,7 +60,6 @@ export default function LoginForm() {
                                 <button className="login_Button_Google" type="button">
                                     <div>
                                         <FcGoogle className="Social_img_Google" />
-
                                         <span className="Social_Google">Sign with Google</span>
                                     </div>
                                 </button>
