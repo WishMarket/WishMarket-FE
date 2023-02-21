@@ -72,7 +72,6 @@ export default function AccountComponent() {
         scrollTab.map((tab) => (tab.name === e.target.value ? tab.scroll() : null));
     };
 
-    // test
     // const getTest = async () => {
     //     await axios
     //         .get(TEST_URL)

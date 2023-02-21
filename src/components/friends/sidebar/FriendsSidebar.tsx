@@ -65,11 +65,19 @@ export default function FriendsSidebar() {
         </button>
         <div className="Sidebar_DESC">
           <ul>
-            {friends.length !=0 ? (
+            {friends.length != 0 ? (
               friends.map((data: FriendsObj) => {
                 return (
-                    <Link to={`./${data.Userid}`} key={data.Userid} style={{textDecoration:"none", color:"black"}}>
-                        <FriendList image={data.profile} name={data.name} nickname={data.nickname} />
+                  <Link
+                    to={`./${data.Userid}`}
+                    key={data.Userid}
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
+                    <FriendList
+                      image={data.profile}
+                      name={data.name}
+                      nickname={data.nickname}
+                    />
                   </Link>
                 );
               })

@@ -1,7 +1,11 @@
 import React, { useState } from "react";
-import { Modal } from "react-bootstrap";
-import { SignUpError, EmailCheckError } from "../../hooks/SignUpError";
 import { useNavigate } from "react-router-dom";
+import { AiOutlineMail } from "react-icons/ai";
+import { RiLockPasswordLine } from "react-icons/ri";
+import { SlPeople } from "react-icons/sl";
+import SignupModal from "./SignupModal";
+import EmailCheckModal from "./EmailCheckModal";
+
 export default function SignupForm() {
   const navigate = useNavigate();
   const [email, setEmail] = useState<string>("");
@@ -62,14 +66,9 @@ export default function SignupForm() {
     setNickname(e.currentTarget.value);
   };
 
-  const handleClose = (e: React.MouseEvent<HTMLButtonElement> | void) => {
-    setErrorShow(false);
-  };
-  const handleClose2 = (e: React.MouseEvent<HTMLButtonElement> | void) => {
-    setEmailCheckShow(false);
-  };
-
-  const onLoginSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSignupSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    console.log(errorShow);
+    console.log(errorCode);
     if (password !== retypePassword) {
       setErrorCode(1);
       setErrorShow(true);
@@ -89,37 +88,40 @@ export default function SignupForm() {
   };
 
   return (
-    <div className="signup_Wrapper">
+    <div className="signup_Wrapper main">
       <div className="signup">
         <div>
           <h2>Sign Up</h2>
-          <h3>서비스를 이용하시려면 SignUp 해주세요.</h3>
+          <h3>위시마켓의 모든 서비스를 이용하시려면 회원 가입하세요.</h3>
         </div>
         <div className="signup_content">
-          <form onSubmit={onLoginSubmitHandler} target="blankifr">
+          <form
+            onSubmit={onSignupSubmitHandler}
+            target="blankifr"
+            className="signup-form-container"
+          >
             <div className="signup_Form">
-              <div>
-                <label htmlFor="email">이메일:</label>
+              <div className="sign-up-form-container">
                 <input
                   id="email"
                   type="email"
                   placeholder="이메일"
-                  className="signup_Input_Box"
+                  className="signup_Input_Box email-check"
                   onChange={onEmailChangeHandler}
                   required
                   readOnly={!blockButton}
                 />
+                <AiOutlineMail className="Login_Icon" />
                 <button
-                  className="btn btn-primary"
+                  className="sign-up-check-btn"
                   type="button"
                   onClick={onEmailCheckHandler}
                   disabled={!blockButton}
                 >
-                  중복확인
+                  중복 확인
                 </button>
               </div>
-              <div>
-                <label htmlFor="password">비밀번호:</label>
+              <div className="sign-up-form-container">
                 <input
                   id="password"
                   type="password"
@@ -129,9 +131,9 @@ export default function SignupForm() {
                   autoComplete="off"
                   required
                 />
+                <RiLockPasswordLine className="PW_Icon" />
               </div>
-              <div>
-                <label htmlFor="re-password">비밀번호확인:</label>
+              <div className="sign-up-form-container">
                 <input
                   id="re-password"
                   type="password"
@@ -141,9 +143,9 @@ export default function SignupForm() {
                   autoComplete="off"
                   required
                 />
+                <RiLockPasswordLine className="PW_Icon" />
               </div>
-              <div>
-                <label htmlFor="name">이름:</label>
+              <div className="sign-up-form-container">
                 <input
                   id="name"
                   type="text"
@@ -152,23 +154,22 @@ export default function SignupForm() {
                   onChange={onNameChangeHandler}
                   required
                 />
+                <SlPeople className="name-icon" />
               </div>
-              <div>
-                <label htmlFor="nickname">별명:</label>
+              <div className="sign-up-form-container">
                 <input
                   id="nickname"
                   type="text"
-                  placeholder="별명"
+                  placeholder="닉네임"
                   className="signup_Input_Box"
                   onChange={onNicknameChangeHandler}
                   required
                 />
+                <SlPeople className="name-icon" />
               </div>
-            </div>
-            <div className="signup_Button">
-              <div>
+              <div className="signup_Button">
                 <button
-                  className="btn btn-primary"
+                  className="btn btn-warning"
                   type="submit"
                   disabled={blockButton}
                 >
@@ -185,24 +186,16 @@ export default function SignupForm() {
           display: "none",
         }}
       ></iframe>
-
-      <Modal show={errorShow} onHide={handleClose}>
-        <Modal.Body>{SignUpError(errorCode)}</Modal.Body>
-        <Modal.Footer>
-          <button className="btn btn-secondary" onClick={handleClose}>
-            닫기
-          </button>
-        </Modal.Footer>
-      </Modal>
-
-      <Modal show={emailCheckShow} onHide={handleClose2}>
-        <Modal.Body>{EmailCheckError(checkError)}</Modal.Body>
-        <Modal.Footer>
-          <button className="btn btn-secondary" onClick={handleClose2}>
-            닫기
-          </button>
-        </Modal.Footer>
-      </Modal>
+      <SignupModal
+        setErrorShow={setErrorShow}
+        errorShow={errorShow}
+        errorCode={errorCode}
+      />
+      <EmailCheckModal
+        setEmailCheckShow={setEmailCheckShow}
+        emailCheckShow={emailCheckShow}
+        checkError={checkError}
+      />
     </div>
   );
 }

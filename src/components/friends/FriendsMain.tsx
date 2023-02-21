@@ -7,7 +7,7 @@ export default function FriendsMain() {
   const [select, setSelect] = useState<string>("name");
   const [selected, setSelected] = useState<string>("이름");
   const [show, setShow] = useState<string>("none");
-  const selectRef = useRef<any>();
+  const selectRef = useRef<any>("");
   const onInputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.currentTarget.value);
   };
@@ -20,8 +20,10 @@ export default function FriendsMain() {
   };
 
   const outsideSelect = (e: any) => {
-    if (!selectRef.current.contains(e.target)) {
-      setShow("none");
+    if (selectRef.current !=null) {
+      if (!selectRef.current.contains(e.target)) {
+        setShow("none");
+      }
     }
   };
 
@@ -79,7 +81,7 @@ export default function FriendsMain() {
             </div>
           </form>
         </div>
-        
+
         {input != "" ? (
           <SearchForm input={input} select={select} selected={selected} />
         ) : null}

@@ -1,43 +1,33 @@
-
 .findpasswd_Wrapper {
+    margin-top: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    height: 1280px;
 }
 
 .findpasswd {
-    font-family: 'Noto Sans Kr', 'sans-serif';
+    margin-top: 60px;
+    font-family: "Noto Sans Kr", "sans-serif";
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    width: 40vw;
-    height: 100vh;
-    padding: 5vh;
-    border-radius: 15px;
-    max-height: 700px;
-    min-height: 400px;
-    max-width: 700px;
-    min-width: 600px;
-    background-color: $color-yellow-800;
+    justify-content: space-around;
+    width: 450px;
 
     div {
-
         h2 {
-            margin-bottom: 20px;
+            color: $color-gray-800;
             font-weight: 600;
             font-size: 50px;
             display: flex;
             justify-content: center;
-
+            margin-bottom: 32px;
         }
 
         h3 {
-            font-size: 20px;
-            white-space: nowrap;
-            margin-bottom: 50px;
+            margin-top: 16px;
+            margin-bottom: 32px;
         }
     }
 
@@ -45,43 +35,85 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        height: 40vh;
-        min-height: 300px;
     }
-
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    height: 400px;
-    min-height: 150px;
+.find-pw-form-container {
+    width: 450px;
 
     .findpasswd_Form {
-        background-color: $color-white;
-        border-radius: 15px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        height: 20vh;
-        padding: 2vh;
-        min-width: 150px;
-        min-height: 300px;
-
-        div{
-            width: 350px;
-            margin-top: 5px;
-            margin-bottom: 5px;
+        div {
+            margin-bottom: 16px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+
+            .email-form-container {
+                position: relative;
+                width: 80%;
+
+                .findpasswd-email-icon {
+                    font-size: $font-medium;
+                    color: $color-gray-400;
+                    position: absolute;
+                    left: 16px;
+                    top: 16px;
+                }
+
+                .findpasswd_Input_Box {
+                    padding-right: 118px;
+                }
+
+                .findpasswd-validate-btn {
+                    position: absolute;
+                    margin-left: 8px;
+                    background-color: $color-gray-400;
+                    border-radius: 12px;
+                    height: 32px;
+                    border: none;
+                    top: 4px;
+                    right: 8px;
+                    font-size: $font-btn-size;
+                    color: $color-white;
+                }
+            }
+
+            .name-form-container {
+                position: relative;
+                width: 80%;
+
+                .findpasswd-name-icon {
+                    font-size: $font-medium;
+                    color: $color-gray-400;
+                    position: absolute;
+                    left: 16px;
+                    top: 16px;
+                }
+            }
+
+            .code-form-container {
+                position: relative;
+                width: 80%;
+
+                .findpasswd-code-icon {
+                    font-size: $font-medium;
+                    color: $color-gray-400;
+                    position: absolute;
+                    left: 16px;
+                    top: 16px;
+                }
+            }
 
             input {
                 margin-left: 3px;
+
+                &:focus + .findpasswd-email-icon,
+                &:focus + .findpasswd-code-icon,
+                &:focus + .findpasswd-name-icon {
+                    color: $color-gray-800;
+                }
             }
         }
-
     }
 
     .validate {
@@ -96,58 +128,66 @@ form {
     }
 
     .findpasswd_Button {
-        margin-top: 50px;
-        height: 150px;
+        width: 450px;
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
+        margin-bottom: 120px;
 
-        div {
-            button {
-                width: 100%;
-            }
+        button {
+            width: 80%;
+            height: 42px;
+            border-radius: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
         }
-
     }
 }
 
 .findpasswd_Input_Box {
-    width: 250px;
-    height: 30px;
+    width: 100%;
+    height: 48px;
     font-size: 14px;
-    border: 0;
+    border: 1px solid $color-gray-400;
     border-radius: 16px;
     outline: none;
-    padding-left: 10px;
-    background-color: $color-gray-200;
+    padding-left: 38px;
+
+    &:focus {
+        border: 1px solid $color-gray-800;
+    }
 }
 
 .code-input {
     display: flex;
-    flex-direction: column;
+}
+
+.timer-wrapper {
+    width: 100%;
+    height: 20px;
 
     .count {
-        display: flex;
-        justify-content: end;
+        margin-top: 32px;
 
         .counter {
-            font-size: 15px;
-            color: $color-blue;
+            margin-top: 12px;
+            font-size: 16px;
+            color: $color-yellow-800;
+            font-weight: 400;
         }
 
         .counter_end {
-            font-size: 13px;
-            color: $color-red-600;
+            margin-left: 4px;
+            font-size: 16px;
+            color: $color-red-800;
+            font-weight: 400;
         }
     }
 
-}
-
-.reload_Button {
-    display: flex;
-    align-self: start;
-    font-size: 10px;
-    padding: 3px;
-    margin-right: 2px;
-
+    .reload_Button {
+        display: flex;
+        align-self: start;
+        font-size: 10px;
+        padding: 3px;
+        margin-right: 2px;
+    }
 }

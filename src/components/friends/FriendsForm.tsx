@@ -4,7 +4,7 @@ import FriendsSidebar from './sidebar/FriendsSidebar';
 
 export default function FriendsForm() {
   return (
-    <div className="FriendsWrapper">
+    <div className="FriendsWrapper main">
       <FriendsMain />
       <FriendsSidebar />
     </div>
