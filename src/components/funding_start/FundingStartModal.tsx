@@ -1,6 +1,6 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
-import { FundingStartError } from "../../hooks/SignUpError";
+import { FundingStartError } from "../../hooks/Errors";
 
 interface Modal {
   show: boolean;
