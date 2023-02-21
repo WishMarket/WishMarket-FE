@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Modal } from "react-bootstrap";
-import { FriendsError } from "../../../hooks/SignUpError";
+import { FriendsError } from "../../../hooks/Errors";
 
 interface Props {
   data: {

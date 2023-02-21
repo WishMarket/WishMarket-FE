@@ -6,9 +6,9 @@ interface FamousFriendsObj {
   Userid: string;
   name: string;
   nickname: string;
-  profile: string;
+  profileImage: string;
   famous: boolean;
-  friends: boolean;
+  isfriend: boolean;
 }
 
 

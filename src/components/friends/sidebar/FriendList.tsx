@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import { MdCancel } from "react-icons/md"
 import { Modal } from "react-bootstrap";
-import { FriendsError } from "../../../hooks/SignUpError";
+import { FriendsError } from "../../../hooks/Errors";
 interface Props {
   name: string;
   nickname: string;

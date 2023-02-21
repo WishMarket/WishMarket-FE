@@ -46,17 +46,18 @@ export default function DetailComponent() {
   
   const [test, setTest] = useState<ProductObj | null>(null);
 
+  // 나중에 지우기
   const url2 = "http://3.38.63.3:8080/api/products/1/detail";
   const getTest = async () => {
     await axios
-      .get(url2)
+      .get(url2, {withCredentials: true })
       .then((res) => {
         console.log(res.data);
         let response = res.data.products;
         setTest(response[id]); // 연동 시 교체 필요
       })
       .catch((error) => {
-        return Promise.reject(error);
+        return error.respose;
       });
     };
     

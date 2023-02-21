@@ -1,24 +1,28 @@
 import React, { useState, useEffect } from "react";
 import { IoReloadSharp } from "react-icons/io5";
 import { Modal } from "react-bootstrap";
-import { FindPasswdError } from "../../../hooks/SignUpError";
+import { FindPasswdError } from "../../hooks/Errors";
 
 interface Props {
-    time: number;
-    error: number;
+  timer: number;
+  error: number;
+  setTimeover: React.Dispatch<React.SetStateAction<boolean>>;
+  setError: React.Dispatch<React.SetStateAction<number>>;
 }
-export function Timer(props: Props) {
-    const [minutes, setMinutes] = useState<number>(props.time);
+export function Timer({timer,error,setTimeover,setError}: Props) {
+    const [minutes, setMinutes] = useState<number>(timer);
     const [seconds, setSeconds] = useState<number>(0);
     const [errorShow, setErrorShow] = useState(false);
 
     const onClickRetryHandler = (time: number) => {
+        setError(0);
         setErrorShow(true);
         setMinutes(time);
     };
     const handleClose = (e: React.MouseEvent<HTMLButtonElement> | void) => {
         setErrorShow(false);
     };
+
     useEffect(() => {
         const countdown = setInterval(() => {
             if (seconds > 0) {
@@ -37,13 +41,14 @@ export function Timer(props: Props) {
     }, [minutes, seconds]);
 
     if (minutes == 0 && seconds == 0) {
+        setTimeover(true);
         return (
             <div className="count">
                 <button
                     className="reload_Button btn btn-warning"
                     type="button"
                     onClick={() => {
-                        onClickRetryHandler(props.time);
+                        onClickRetryHandler(timer);
                     }}
                 >
                     <IoReloadSharp />
@@ -60,7 +65,7 @@ export function Timer(props: Props) {
                     </h2>
                 </div>
                 <Modal show={errorShow} onHide={handleClose}>
-                    <Modal.Body>{FindPasswdError(props.error)}</Modal.Body>
+                    <Modal.Body>{FindPasswdError(error)}</Modal.Body>
                     <Modal.Footer>
                         <button className="btn btn-secondary" onClick={handleClose}>
                             닫기
