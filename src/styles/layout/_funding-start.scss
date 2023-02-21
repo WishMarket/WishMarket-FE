@@ -17,13 +17,11 @@
                 width: 450px;
                 height: 450px;
                 border-radius: 15px;
-                margin-right: 100px;
+                margin-right: 48px;
             }
 
             .FundingStart_Desc {
-                width: 450px;
-                // 나중에 높이조절
-                height: 1000px;
+                width: 500px;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
@@ -37,39 +35,70 @@
 
                 .FundingStart_Price {
                     font-size: $font-sub-title-size;
-                    font-weight: 700;
+                    margin-bottom: 12px;
                 }
 
                 .FundingStart_DatePicker {
+                    margin-top: 48px;
+
                     h2 {
                         margin-bottom: 12px;
-                        font-weight: 700;
+                        font-weight: 500;
                         font-size: $font-sub-title-size;
+
+                        .FundingStart_DatePicker_Icon {
+                            margin-top: -4px;
+                            margin-right: 4px;
+                        }
                     }
 
                     input {
-                        padding-left: 10px;
-                        width: 230px;
-                        border-radius: 10px;
+                        width: 320px;
+                        height: 48px;
+                        font-size: 14px;
+                        border: 1px solid $color-gray-400;
+                        border-radius: 16px;
+                        outline: none;
+                        padding-left: 24px;
                     }
                 }
 
                 .FundingStart_FriendPicker {
+                    margin-top: 48px;
 
                     h2 {
                         margin-bottom: 15px;
-                        font-weight: 700;
+                        font-weight: 500;
                         font-size: $font-sub-title-size;
+
+                        .FundingStart_FriendPicker_Icon {
+                            margin-top: -4px;
+                            margin-right: 4px;
+                        }
                     }
 
-                    //border 없애기 
+                    //border 없애기
                     .FriendPicker_Wrapper {
-                        border-radius: 15px;
-                        border: 2px solid;
+                        border-radius: 8px;
+                        border: 1px solid $color-gray-400;
                         padding: 15px;
                         height: 400px;
-                        overflow: scroll;
+                        overflow-y: scroll;
                         font-size: 17px;
+
+                        &::-webkit-scrollbar {
+                            width: 6px;
+                        }
+
+                        &::-webkit-scrollbar-thumb {
+                            background-color: $color-gray-600;
+                            border-radius: 14px;
+                        }
+
+                        &::-webkit-scrollbar-track {
+                            background-color: $color-gray-400;
+                            border-radius: 14px;
+                        }
 
                         .Friend {
                             margin-bottom: 10px;
@@ -83,41 +112,43 @@
                                 align-items: center;
 
                                 .Friend_image {
-                                    border: 1px solid;
-                                    border-radius: 100px;
+                                    border-radius: 50%;
                                     padding: 3px;
                                     width: 35px;
                                     height: 35px;
                                     margin-right: 10px;
                                 }
-                                .Friend_info{
+                                .Friend_info {
                                     display: flex;
                                     flex-direction: column;
-                                    gap:3px;
-                                    .Friend_email{
+                                    gap: 3px;
+                                    .Friend_email {
                                         font-size: $font-desc-size;
-
                                     }
                                 }
                             }
-
                         }
 
                         .Friend:hover {
-                            background-color: $color-yellow-800;
+                            background-color: $color-gray-400;
                             transition: 0.3s;
                         }
                     }
 
                     .Selected_Wrapper {
-                        margin-top: 20px;
+                        margin-top: 48px;
+
+                        .Selected_Icon {
+                            margin-top: -4px;
+                            margin-right: 4px;
+                        }
 
                         .Selected_Friend {
                             border-radius: 15px;
                             padding: 15px;
                             padding-left: 28px;
-                            padding-right: 28px;
-                            border: 2px solid;
+                            padding-right: 34px;
+                            border: 1px solid $color-gray-400;
                             display: flex;
                             justify-content: space-between;
                             align-items: center;
@@ -127,7 +158,6 @@
                                 align-items: center;
 
                                 .Friend_image {
-                                    border: 1px solid;
                                     border-radius: 100px;
                                     padding: 3px;
                                     width: 35px;
@@ -142,29 +172,52 @@
         }
 
         .FundingStart_Desc_Bottom {
-            display: flex;
-            justify-content: flex-end;
+            margin-top: 48px;
             width: 100%;
 
             align-items: center;
 
             label {
-                font-weight: 700;
+                margin-bottom: 15px;
+                font-weight: 500;
                 font-size: $font-sub-title-size;
-                margin-right: 10px;
 
+                .Funding_Amount_Icon {
+                    margin-top: -4px;
+                    margin-right: 4px;
+                }
             }
 
-            input {
-                width: 220px;
-                border-radius: 10px;
-                margin-right: 10px;
-                padding-left: 10px;
-
+            .Funding_Amount_Desc {
+                margin-bottom: 15px;
             }
 
+            .Funding_Amount_Flex {
+                display: flex;
+                justify-content: space-between;
 
+                input {
+                    width: 320px;
+                    height: 48px;
+                    font-size: 14px;
+                    border: 1px solid $color-gray-400;
+                    border-radius: 16px;
+                    outline: none;
+                    padding-left: 24px;
+
+                    &::-webkit-outer-spin-button,
+                    &::-webkit-inner-spin-button {
+                        margin-right: 8px;
+                    }
+                }
+
+                .Funding_Amount_Btn {
+                    width: 120px;
+                    margin-left: 16px;
+                    height: 48px;
+                    border-radius: 16px;
+                }
+            }
         }
     }
-
 }

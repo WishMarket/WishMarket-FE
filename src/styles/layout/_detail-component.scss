@@ -62,13 +62,13 @@
 
         .Detail_Desc_Bottom {
             display: flex;
-            justify-content: right;
+            justify-content: space-between;
 
             .Detail_Btn {
-                width: 200px;
+                border-radius: 16px;
+                width: 120px;
                 height: 50px;
-                color: $color-white;
-                font-weight: 600;
+                font-size: $font-medium;
             }
 
             .Detail_Wish_Minus_Btn,

@@ -1,5 +1,4 @@
 .Friends_Container {
-
     footer {
         z-index: -10;
     }
@@ -8,7 +7,6 @@
 .FriendsWrapper {
     width: 100%;
 }
-
 
 .SideBarContainer {
     position: absolute;
@@ -92,7 +90,6 @@
         flex-direction: column;
         justify-content: space-between;
         height: 40px;
-
     }
 
     .Friend_Button {
@@ -109,7 +106,6 @@
             color: $color-red-800;
         }
     }
-
 }
 
 .FriendList:hover {
@@ -130,9 +126,11 @@
         width: auto;
 
         .FriendMain_Title {
-            margin-top: 50px;
-            font-size: 60px;
-            font-weight: 700;
+            margin-top: 100px;
+            text-align: center;
+            font-size: $font-larger;
+            font-weight: 600;
+            color: $color-gray-800;
         }
 
         .FriendSearch_Wrapper {
@@ -142,34 +140,37 @@
                 .FriendMain_Search {
                     margin-left: 50px;
                     display: flex;
-                    align-items: start;
-                    margin-top: 40px;
+                    align-items: center;
+                    justify-content: center;
+                    margin-top: 32px;
                     position: relative;
 
                     .search-button {
-                        margin-top: 5px;
+                        margin-left: 16px;
+                        height: 52px;
+                        border-radius: 10px;
+                        color: $color-white;
                     }
 
                     .SelectButton {
-
                         display: flex;
                         justify-content: center;
                         align-items: center;
                         cursor: pointer;
-                        border: 2px solid;
+                        border: 1px solid $color-gray-400;
                         border-radius: 10px;
-                        height: 50px;
+                        height: 52px;
                         width: 100px;
-                        margin-right: 10px;
-                        font-weight: 600;
+                        margin-right: 16px;
+                        font-weight: 500;
+                        color: $color-gray-800;
                         font-size: 18px;
-
                     }
 
                     .SelectOptions {
                         position: absolute;
-                        top: 42px;
-                        left: 0px;
+                        left: 146px;
+                        top: 58px;
                         width: 110px;
                         display: flex;
                         flex-direction: column;
@@ -178,7 +179,7 @@
                             background-color: $color-gray-200;
                             padding: 10px;
                             cursor: pointer;
-                            border: 2px solid;
+                            border: 1px solid $color-gray-400;
                             margin-right: 10px;
                             display: flex;
                             justify-content: center;
@@ -188,7 +189,7 @@
 
                         div:first-child {
                             height: 40px;
-                            border-top: 2px solid;
+                            border-top: 1px solid $color-gray-400;
                         }
 
                         div:last-child {
@@ -196,14 +197,15 @@
                         }
                     }
 
-
                     input {
-                        height: 50px;
-                        width: 400px;
-                        border-radius: 15px;
-                        margin-right: 10px;
-                        padding-left: 10px;
-
+                        width: 520px;
+                        height: 52px;
+                        font-size: 14px;
+                        border: 1px solid $color-gray-400;
+                        border-radius: 10px;
+                        outline: none;
+                        padding-left: 20px;
+                        font-size: $font-medium;
                     }
                 }
             }
@@ -216,14 +218,12 @@
     margin-bottom: 200px;
 
     .FriendResult_title {
-
         display: flex;
         font-size: $font-title-size;
         font-weight: 700;
         margin-bottom: 30px;
 
         h2 {
-
             margin-left: 40px;
             color: $color-blue;
         }
@@ -247,6 +247,7 @@
             border-radius: 20px;
             display: flex;
             flex-direction: column;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 
             .FriendResult_image {
                 width: 232px;
@@ -265,7 +266,6 @@
                     display: flex;
                     align-items: center;
                     flex-direction: column;
-                    gap: 20px;
 
                     .FriendResult_names {
                         display: flex;
@@ -282,6 +282,18 @@
                             font-size: $font-medium;
                         }
                     }
+
+                    .FriendResult_Mail {
+                        margin-top: 12px;
+                    }
+
+                    .FriendResult_Btns {
+                        margin-top: 16px;
+
+                        button {
+                            width: 120px;
+                        }
+                    }
                 }
             }
         }
@@ -290,19 +302,30 @@
 
 .FamousFriend {
     height: auto;
-    margin-top: 50px;
+    margin-top: 98px;
     margin-bottom: 200px;
 
     .FamousFriend_title {
         display: flex;
         font-size: $font-title-size;
-        font-weight: 700;
+        font-weight: 600;
         margin-bottom: 30px;
-        margin-left: 40px;
 
         h2 {
-            color: $color-blue;
+            margin-left: 6px;
+            margin-right: 6px;
+            color: $color-yellow-800;
         }
+
+        .FamousFriend_title_Icon {
+            margin-right: 4px;
+            color: $color-yellow-800;
+        }
+    }
+
+    .FamousFriend_Desc {
+        font-weight: $font-medium;
+        margin-bottom: 30px;
     }
 
     .FriendResult_List {
@@ -323,6 +346,7 @@
             border-radius: 20px;
             display: flex;
             flex-direction: column;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 
             .FriendResult_image {
                 width: 232px;
@@ -341,9 +365,19 @@
                     display: flex;
                     align-items: center;
                     flex-direction: column;
-                    gap: 20px;
+
+                    .FriendResult_Badge {
+                        margin-top: 12px;
+                        color: $color-yellow-800;
+
+                        .FriendResult_Badge_Icon {
+                            margin-top: -4px;
+                            margin-right: 4px;
+                        }
+                    }
 
                     .FriendResult_names {
+                        margin-top: 12px;
                         display: flex;
                         flex-direction: row;
 
@@ -356,6 +390,14 @@
                             align-self: flex-end;
                             margin-left: 10px;
                             font-size: $font-medium;
+                        }
+                    }
+
+                    .FriendResult_Btns {
+                        margin-top: 16px;
+
+                        button {
+                            width: 120px;
                         }
                     }
                 }
