@@ -60,6 +60,14 @@ export default function ViewProfileContainer({ userInfo }: userInfo) {
                 </tr>
                 <tr>
                     <th>
+                        <div className="User_Profile_Address_Detail_Head">상세 주소</div>
+                    </th>
+                    <td>
+                        <div className="User_Profile_Detail_Address">{userInfo.address}</div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
                         <div className="User_Profile_Phone_Head">연락처</div>
                     </th>
                     <td>

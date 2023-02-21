@@ -193,6 +193,14 @@ export default function ModifyProfile({ profileState, setProfileState }: IProfil
                             </tr>
                             <tr>
                                 <th>
+                                    <div className="User_Profile_Address_Detail_Head">상세 주소</div>
+                                </th>
+                                <td>
+                                    <input type="text" className="Modify_Profile_Detail_Address" defaultValue={userInfo.address} />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
                                     <div className="User_Profile_Phone_Head">연락처</div>
                                 </th>
                                 <td>

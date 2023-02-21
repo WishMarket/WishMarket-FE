@@ -85,6 +85,12 @@ export default function CompleteGiftCardActive({ gift }: FundingInfo) {
                                 </button>
                             </div>
                         </div>
+                        <div className="Complete_Gift_Address">
+                            <div className="Complete_Gift_Address_Label">상세 주소</div>
+                            <div className="Complete_Gift_Address_Area">
+                                <input type="text" defaultValue={address ? address : userInfo?.address} className="Complete_Gift_Address_Input" />
+                            </div>
+                        </div>
                         <div className="Complete_Gift_Review">
                             <div className="Complete_Gift_Review_Label">한줄 리뷰</div>
                             <div className="Complete_Review_Area">
