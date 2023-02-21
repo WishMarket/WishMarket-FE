@@ -21,9 +21,6 @@ interface Funding {
 }
 
 export default function AccountComponent() {
-    // const TEST_URL = "http://3.38.63.3:8080/sample";
-    // const [test, setTest] = useState<any>(null);
-
     const [fundingInfo, setFundingInfo] = useState<Funding[]>([]);
     const FUNDING_URL = "/data/AccountFunding.json";
 
@@ -71,22 +68,6 @@ export default function AccountComponent() {
     const handleScroll = (e: any) => {
         scrollTab.map((tab) => (tab.name === e.target.value ? tab.scroll() : null));
     };
-
-    // const getTest = async () => {
-    //     await axios
-    //         .get(TEST_URL)
-    //         .then((res) => {
-    //             setTest(res);
-    //         })
-    //         .catch((error) => {
-    //             return Promise.reject(error);
-    //         });
-    // };
-
-    // useEffect(() => {
-    //     getTest();
-    //     console.log(test);
-    // }, []);
 
     return (
         <>
