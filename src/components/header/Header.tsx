@@ -68,7 +68,12 @@ export default function Header() {
                                 </Link>
                             </li>
                             <li className="Header_Category_Item">
-                                <Link to="/friends" className="Header_Category_Link">
+                                <Link to="/friendslist" className="Header_Category_Link">
+                                    친구 목록
+                                </Link>
+                            </li>
+                            <li className="Header_Category_Item">
+                                <Link to="/searchfriends" className="Header_Category_Link">
                                     친구 찾기
                                 </Link>
                             </li>

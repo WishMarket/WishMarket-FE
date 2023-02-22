@@ -15,8 +15,8 @@ import FindPasswd from "./pages/FindPasswd";
 import ChangePasswd from "./pages/ChangePasswd";
 import FundingStart from "./pages/FundingStart";
 import FundingAddition from "./pages/FundingAddition";
-import Friends from "./pages/Friends";
-import FriendWishlist from "./pages/FriendWishlist";
+import SearchFriends from "./pages/SearchFriends";
+import FriendsList from "./pages/FriendsList";
 
 function App() {
     return (
@@ -38,8 +38,8 @@ function App() {
                     <Route path="/funding/start/:id" element={<FundingStart />}></Route>
                     {/* funding join은 params 다른것으로 받아야함 ex) fundingId */}
                     <Route path="/funding/join/:id" element={<FundingAddition />}></Route>
-                    <Route path="/friends" element={<Friends />}></Route>
-                    <Route path="/friends/:id" element={<FriendWishlist />}></Route>
+                    <Route path="/searchfriends" element={<SearchFriends />}></Route>
+                    <Route path="/friendslist" element={<FriendsList />}></Route>
                 </Routes>
             </BrowserRouter>
         </div>

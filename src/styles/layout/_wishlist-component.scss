@@ -60,10 +60,19 @@
                         margin-right: 16px;
                         width: 100px;
                         color: $color-gray-800;
+                        border-radius: 12px;
                     }
 
-                    .Wishlist_Delete {
+                    .Go_To_Delete {
+                        border: 1px solid $color-yellow-800;
+                        color: $color-yellow-800;
                         width: 100px;
+                        border-radius: 12px;
+                        background-color: $color-white;
+
+                        &:hover {
+                            background-color: $color-gray-200;
+                        }
                     }
                 }
             }
