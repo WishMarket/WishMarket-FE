@@ -78,7 +78,7 @@ export default function AccountComponent() {
                         <div className="Account_Select_Wrapper">
                             <select className="Account_Scroll_Select_Box" defaultValue="" onChange={handleScroll}>
                                 <option value="" disabled>
-                                    슝슝 💨
+                                    목록 보기
                                 </option>
                                 {scrollTab.map((tab) => (
                                     <option key={tab.id} value={tab.name}>
