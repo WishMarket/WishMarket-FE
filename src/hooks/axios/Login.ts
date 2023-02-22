@@ -1,7 +1,7 @@
 import axios from "axios"
 
 export const requestLogin = async (email:string, password:string) => {
-    await axios
+    return await axios
       .post(
         `http://3.38.63.3:8080/api/auth/sign-in/email`,
         { email: email, password: password },
@@ -11,12 +11,13 @@ export const requestLogin = async (email:string, password:string) => {
         axios.defaults.headers.common[
           "Authorization"
         ] = `bearer ${response.data.access_token}`;
-        console.log(response.data)
+        console.log(response)
         return response.data;
       })
       .catch((e) => {
         console.log(e.response);
-      });
+        throw e.response.status;
+      })
 }
 
 export const requestAccessToken = async (refresh_token:string) => {
@@ -26,7 +27,7 @@ export const requestAccessToken = async (refresh_token:string) => {
           return response.data.access;
       })
       .catch((e) => {
-        console.log(e.response.data);
+        console.log(e.response);
       });
 }
 
