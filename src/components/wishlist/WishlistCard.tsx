@@ -18,7 +18,7 @@ export default function WishlistCard({ item }: Item) {
                 </div>
                 <div className="Wishlist_Btn_Area">
                     <Link to={"/category/product/" + item.productId}>
-                        <button className="btn btn-warning Go_To_Detail"></button>
+                        <button className="btn btn-warning Go_To_Detail">삭제하기</button>
                     </Link>
                 </div>
             </div>
