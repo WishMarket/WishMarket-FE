@@ -5,6 +5,7 @@ import { RiLockPasswordLine } from "react-icons/ri";
 import { SlPeople } from "react-icons/sl";
 import SignupModal from "./SignupModal";
 import EmailCheckModal from "./EmailCheckModal";
+import { emailCheck } from "../../hooks/axios/Signup";
 
 export default function SignupForm() {
   const navigate = useNavigate();
@@ -17,30 +18,25 @@ export default function SignupForm() {
   const [errorCode, setErrorCode] = useState<number>(0);
   const [blockButton, setBlockButton] = useState<boolean>(true);
   const [emailCheckShow, setEmailCheckShow] = useState<boolean>(false);
-  const [checkError, setCheckError] = useState<number>(1);
+  const [checkError, setCheckError] = useState<string>("");
 
   const onEmailChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     setEmail(e.currentTarget.value);
   };
-  const onEmailCheckHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
-    let regExp =
-      /[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]$/i;
+    //백엔드 result.data-status message 달라서 수정요청중 
+    const onEmailCheckHandler = async(e: React.MouseEvent<HTMLButtonElement>) => {
+        const result =await emailCheck(email);
+        // console.log(result);
+        console.log(result.data);
     //중복된 이메일없으면
-    if (email == "abcd1@naver.com") {
-      setCheckError(1);
-      setBlockButton(true);
-    } else if (!email.match(regExp)) {
-      setCheckError(2);
-      setBlockButton(true);
-    } else if (email == "") {
-      setCheckError(3);
-      setBlockButton(true);
-    } else {
-      console.log(email);
-      setCheckError(0);
-      setBlockButton(false);
+    if (result.status == 400) {
+        setBlockButton(true);
+    } else if(result.status ==200){
+        console.log(email);
+        setBlockButton(false);
     }
+    setCheckError(result.data.message);
     setEmailCheckShow(true);
   };
 
