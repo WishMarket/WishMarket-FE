@@ -16,6 +16,7 @@ export const requestLogin = async (email:string, password:string) => {
       })
       .catch((e) => {
         console.log(e.response);
+
         throw e.response.status;
       })
 }
