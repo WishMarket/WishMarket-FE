@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 import best from "../../assets/category_icon/best.png";
@@ -11,7 +12,7 @@ import toy from "../../assets/category_icon/toy.png";
 import etc from "../../assets/category_icon/etc.png";
 
 import CategoryItemList from "./CategoryItemList";
-import { Link } from "react-router-dom";
+import { getProductList } from "../../hooks/axios/ProductList";
 
 interface Product {
     name: string;
@@ -94,6 +95,7 @@ export default function SubItemCategory() {
 
     useEffect(() => {
         getItems();
+        getProductList();
     }, []);
 
     return (

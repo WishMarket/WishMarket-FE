@@ -2,15 +2,17 @@ import { useEffect, useRef } from "react";
 import { VscChromeClose } from "react-icons/vsc";
 import { FaGithub, FaSchool } from "react-icons/fa";
 import { SiNotion } from "react-icons/si";
-import { Link } from "react-router-dom";
-import defaultProfileImg from "../../assets/default-profile-img.png";
+
+import ToggleContent from "./ToggleContent";
+import ToggleContentNull from "./ToggleContentNull";
 
 interface ToggleBtnType {
     tabState: boolean;
     setTabState: React.Dispatch<React.SetStateAction<boolean>>;
+    token: string | null;
 }
 
-export default function ToggleBar({ tabState, setTabState }: ToggleBtnType) {
+export default function ToggleBar({ tabState, setTabState, token }: ToggleBtnType) {
     const toggleRef = useRef<any>();
 
     useEffect(() => {
@@ -46,54 +48,7 @@ export default function ToggleBar({ tabState, setTabState }: ToggleBtnType) {
                 </div>
                 <div className="Toggle_Bar_Container">
                     <div className="Toggle_Bar_Wrapper">
-                        {/* 로그인 O */}
-                        {/* <div className="Toggle_User_Info">
-                            <div className="Toggle_User_Img">
-                                <img src={defaultProfileImg} alt="Profile" className="Toggle_User_Profile" />
-                            </div>
-                            <div className="Toggle_User_Welcome">user.nickname 님, 안녕하세요!</div>
-
-                            <div className="Toggle_User_Point">
-                                보유 포인트: <span>user.pointPrice</span>P
-                            </div>
-                            <div className="Toggle_Btn_Area">
-                                <a href="/">
-                                    <button type="button" className="btn btn-primary Toggle_User_Modify_Btn" onClick={handleToggleMenu}>
-                                        정보 변경
-                                    </button>
-                                </a>
-                                <a href="/">
-                                    <button type="button" className="btn Toggle_Logout_Btn">
-                                        로그아웃
-                                    </button>
-                                </a>
-                            </div>
-                        </div> */}
-                        {/* 로그인 O */}
-
-                        {/* 로그인 X */}
-                        <div className="Toggle_Not_Users_Container">
-                            <div className="Toggle_Not_Users_Wrapper">
-                                <div className="Toggle_Login_Area">
-                                    <div className="Toggle_Login_Desc">Wish Market 회원이시라면</div>
-                                    <Link to={"/login"}>
-                                        <button type="button" className="btn btn-primary Toggle_Login_Btn" onClick={handleToggleMenu}>
-                                            로그인
-                                        </button>
-                                    </Link>
-                                </div>
-                                <div className="Toggle_Go_To_Sign_Up">
-                                    <div className="Toggle_Sign_Up_Desc">아직 회원이 아니신가요?</div>
-                                    <Link to={"/signup"}>
-                                        <button type="button" className="btn btn-warning Toggle_Sign_Up_Btn" onClick={handleToggleMenu}>
-                                            회원 가입
-                                        </button>
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                        {/* 로그인 X */}
-
+                        {token ? <ToggleContent handleToggleMenu={handleToggleMenu} /> : <ToggleContentNull handleToggleMenu={handleToggleMenu} />}
                         <hr className="Toggle_Divide_Bar" />
                         <div className="Project_Info">
                             <div className="Project_Info_Title">Wish Market © GIFT4U</div>

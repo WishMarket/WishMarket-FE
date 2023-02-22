@@ -3,18 +3,21 @@ import { Link } from "react-router-dom";
 import { useRecoilState } from "recoil";
 
 import logo from "../../assets/logo.png";
-import { FaBell, FaBars } from "react-icons/fa";
-import { ImSearch } from "react-icons/im";
 
+import { ImSearch } from "react-icons/im";
+import { FaBars } from "react-icons/fa";
+
+import HeaderNotify from "./HeaderNotify";
 import ToggleBar from "../header/ToggleBar";
 import { SearchKeyword } from "../../hooks/recoil/atoms";
 
 export default function Header() {
     const [tabState, setTabState] = useState(false);
-    const [tabNotify, setTabNotify] = useState(false);
+
     const [showSubCategory, setShowSubCategory] = useState(false);
     const [showSubMyPage, setshowSubMyPage] = useState(false);
     const [keyword, setKeyword] = useRecoilState(SearchKeyword);
+    const token = window.localStorage.getItem("accessToken");
 
     // search
     const handleKeywordChange = (e: any) => {
@@ -28,11 +31,6 @@ export default function Header() {
         toggleMenu.classList.add("on");
         toggleMenu.classList.remove("off");
         document.body.style.overflow = "hidden";
-    };
-
-    // notify drop down
-    const handleToggleNotify = () => {
-        setTabNotify(!tabNotify);
     };
 
     // subcategory drop down
@@ -68,37 +66,37 @@ export default function Header() {
                                 </Link>
                             </li>
                             <li className="Header_Category_Item">
-                                <Link to="/friendslist" className="Header_Category_Link">
+                                <Link to={token ? "/friendslist" : "/login"} className="Header_Category_Link">
                                     친구 목록
                                 </Link>
                             </li>
                             <li className="Header_Category_Item">
-                                <Link to="/searchfriends" className="Header_Category_Link">
+                                <Link to={token ? "/searchfriends" : "/login"} className="Header_Category_Link">
                                     친구 찾기
                                 </Link>
                             </li>
                             <li className="Header_Category_Item" onMouseOver={subMyPageMouseOver} onMouseOut={subMyPageMouseOut}>
-                                <Link to="/profile" className="Header_Category_Link">
+                                <Link to={token ? "/profile" : "/login"} className="Header_Category_Link">
                                     마이 페이지
                                 </Link>
                                 <ul id="My_Page_Sub_Category" className={showSubMyPage ? "Sub_Category_Active" : ""}>
                                     <li className="My_Page_Sub_Category_Item">
-                                        <Link to="/profile" className="My_Page_Sub_Category_Link">
+                                        <Link to={token ? "/profile" : "/login"} className="My_Page_Sub_Category_Link">
                                             프로필
                                         </Link>
                                     </li>
                                     <li className="My_Page_Sub_Category_Item">
-                                        <Link to="/wish" className="My_Page_Sub_Category_Link">
+                                        <Link to={token ? "/wish" : "/login"} className="My_Page_Sub_Category_Link">
                                             위시 리스트
                                         </Link>
                                     </li>
                                     <li className="My_Page_Sub_Category_Item">
-                                        <Link to="/received" className="My_Page_Sub_Category_Link">
+                                        <Link to={token ? "/received" : "/login"} className="My_Page_Sub_Category_Link">
                                             받은 선물
                                         </Link>
                                     </li>
                                     <li className="My_Page_Sub_Category_Item">
-                                        <Link to="/account" className="My_Page_Sub_Category_Link">
+                                        <Link to={token ? "/account" : "/login"} className="My_Page_Sub_Category_Link">
                                             펀딩 내역
                                         </Link>
                                     </li>
@@ -107,7 +105,6 @@ export default function Header() {
                         </ul>
                     </div>
                 </div>
-
                 {/* 검색, 알림, 토글 바 */}
                 <div className="Header_Right_Area">
                     <div className="Header_Search_Container">
@@ -117,57 +114,12 @@ export default function Header() {
                         </Link>
                     </div>
                     <div className="Header_Icon_Area">
-                        <div className="Notify_Container">
-                            <input id="For_Notify_Dropdown" type="checkbox" className="Notify_Check_Box" />
-                            <label className="Notify_Dropdown" htmlFor="For_Notify_Dropdown">
-                                <FaBell className="Header_Notify" onClick={handleToggleNotify} />
-                                <div className="Header_Notify_Badge"></div>
-                            </label>
-                            <div id="Notify_dropdown_Content" className={tabNotify ? "Dropdown_Active" : "Dropdown_Unactive"}>
-                                <ul>
-                                    <div className="Unread_Notify">
-                                        <li className="Unread_Notify_Item Notify_dropdown_Item">
-                                            <a href="/">받은 선물이 있습니다.</a>
-                                            <div className="Notify_Cotroll">
-                                                <a href="/" className="Notify_Read">
-                                                    읽음
-                                                </a>
-                                                <a href="/" className="Notify_Delete">
-                                                    삭제
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li className="Read_Notify_Item Notify_dropdown_Item">
-                                            <a href="/">펀딩에 성공했어요.</a>
-                                            <div className="Notify_Cotroll">
-                                                <a href="/" className="Notify_Read">
-                                                    읽음
-                                                </a>
-                                                <a href="/" className="Notify_Delete">
-                                                    삭제
-                                                </a>
-                                            </div>
-                                        </li>
-                                    </div>
-                                    <hr />
-                                    <div className="Read_Notify">
-                                        <li className="Read_Notify_Item Notify_dropdown_Item">
-                                            <a href="/">펀딩에 성공했어요.</a>
-                                            <div className="Notify_Cotroll">
-                                                <a href="/" className="Notify_Delete">
-                                                    삭제
-                                                </a>
-                                            </div>
-                                        </li>
-                                    </div>
-                                </ul>
-                            </div>
-                        </div>
+                        <HeaderNotify token={token} />
                         <FaBars className="Header_Menu_Toggle" onClick={handleToggleMenu} />
                     </div>
                 </div>
             </div>
-            <ToggleBar tabState={tabState} setTabState={setTabState} />
+            <ToggleBar tabState={tabState} setTabState={setTabState} token={token} />
         </>
     );
 }
