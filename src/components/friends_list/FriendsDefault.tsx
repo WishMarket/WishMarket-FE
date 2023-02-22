@@ -1,17 +1,22 @@
-import React from "react";
-import { BsFillPatchCheckFill } from "react-icons/bs";
+import { BsFillCaretLeftFill } from "react-icons/bs";
 
 export default function FriendsDefault() {
     return (
         <>
-            <div className="friends-default-container">
-                <div>
-                    <BsFillPatchCheckFill className="friends-default-container-icon" />
-                    친구의 위시리스트와
+            <div className="friends-list-right-bottom-area">
+                <div className="friends-default-container">
+                    <div className="friends-default-container-inner">
+                        친구의 <span>위시리스트</span>와
+                        <div>
+                            진행 중인 <span className="particletext confetti">펀딩 내역</span>을 확인하세요.
+                        </div>
+                        <div className="friends-default-desc">
+                            <BsFillCaretLeftFill className="friends-default-desc-icon" />
+                            친구 목록을 클릭하면 리스트가 나옵니다.
+                        </div>
+                    </div>
                 </div>
-                <div>진행 중인 펀딩 내역을 확인할 수 있습니다.</div>
             </div>
-            <div className="friends-default-desc">우측 친구 목록을 클릭하세요.</div>
         </>
     );
 }

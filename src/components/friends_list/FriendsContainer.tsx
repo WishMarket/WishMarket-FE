@@ -42,26 +42,19 @@ export default function FriendsContainer() {
 
     return (
         <>
-            <div className="friends-list-content">
-                <div className="friends-list-left-area">
-                    <>
-                        {users.map((user) => {
-                            if (user.Userid === userId) {
-                                return <FriendsListContent key={user.Userid} user={user} />;
-                            } else return null;
-                        })}
-                    </>
-                    {userId === -1 ? <FriendsDefault /> : null}
-                </div>
-                <div className="friends-list-right-area">
-                    <div className="friends-list-item-wrapper">
-                        <div className="friends-list-item-title">친구 목록</div>
-                        <ul className="friends-list-item-container">
-                            {users.map((user) => (
-                                <FriendsListItem user={user} key={user.Userid} />
-                            ))}
-                        </ul>
+            <div className="friends-list-content main">
+                <div className="friends-list-wrapper">
+                    <div className="friends-list-left-area">
+                        <div className="friends-list-item-wrapper">
+                            <div className="friends-list-item-title">친구 목록</div>
+                            <ul className="friends-list-item-container">
+                                {users.map((user, idx) => (
+                                    <FriendsListItem user={user} key={idx} userId={userId} setUserId={setUserId} />
+                                ))}
+                            </ul>
+                        </div>
                     </div>
+                    <div className="friends-list-right-area">{userId === -1 ? <FriendsDefault /> : <FriendsListContent key={userId} users={users} userId={userId} />}</div>
                 </div>
             </div>
         </>

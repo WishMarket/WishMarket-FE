@@ -51,7 +51,7 @@ export default function GiftComponent() {
                 <div className="Scroll_Select_Wrapper">
                     <select className="Gift_Scroll_Select_Box" defaultValue="" onChange={handleScroll}>
                         <option value="" disabled>
-                            슝슝 💨
+                            목록 보기
                         </option>
                         {scrollTab.map((tab) => (
                             <option key={tab.id} value={tab.name}>
