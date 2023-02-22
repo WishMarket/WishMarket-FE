@@ -31,7 +31,11 @@ export function FindPasswdError(errorCode: number) {
   }
 }
 
-
+export function LoginError(errorCode: number) {
+  if (errorCode == 400) {
+    return <div>존재하지 않는 Email 입니다.</div>
+  }
+}
 export function FundingStartError(errorCode: number) {
   if (errorCode ==0) {
     return <div>펀딩을 시작합니다!</div>
