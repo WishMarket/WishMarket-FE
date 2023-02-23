@@ -1,28 +1,20 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useRecoilState } from "recoil";
-
 import logo from "../../assets/logo.png";
 
-import { ImSearch } from "react-icons/im";
 import { FaBars } from "react-icons/fa";
 
 import HeaderNotify from "./HeaderNotify";
+import SearchContainer from "./SearchContainer";
 import ToggleBar from "../header/ToggleBar";
-import { SearchKeyword } from "../../hooks/recoil/atoms";
 
 export default function Header() {
     const [tabState, setTabState] = useState(false);
 
     const [showSubCategory, setShowSubCategory] = useState(false);
     const [showSubMyPage, setshowSubMyPage] = useState(false);
-    const [keyword, setKeyword] = useRecoilState(SearchKeyword);
-    const token = window.localStorage.getItem("accessToken");
 
-    // search
-    const handleKeywordChange = (e: any) => {
-        setKeyword(e.target.value);
-    };
+    const token = window.localStorage.getItem("accessToken");
 
     // 우측 토글 handle
     const handleToggleMenu = () => {
@@ -107,12 +99,7 @@ export default function Header() {
                 </div>
                 {/* 검색, 알림, 토글 바 */}
                 <div className="Header_Right_Area">
-                    <div className="Header_Search_Container">
-                        <input type="text" className="Header_Search_Box" placeholder="상품을 검색해 보세요." onChange={handleKeywordChange} value={keyword || ""} />
-                        <Link to="/search">
-                            <ImSearch className="Header_Search_Btn" />
-                        </Link>
-                    </div>
+                    <SearchContainer />
                     <div className="Header_Icon_Area">
                         <HeaderNotify token={token} />
                         <FaBars className="Header_Menu_Toggle" onClick={handleToggleMenu} />

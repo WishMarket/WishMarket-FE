@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 
 import best from "../../assets/category_icon/best.png";
 import clothes from "../../assets/category_icon/clothes.png";
@@ -12,22 +11,12 @@ import toy from "../../assets/category_icon/toy.png";
 import etc from "../../assets/category_icon/etc.png";
 
 import CategoryItemList from "./CategoryItemList";
-import { getProductList } from "../../hooks/axios/ProductList";
-
-interface Product {
-    name: string;
-    image: string;
-    price: number;
-    date: string;
-    funded_price: number;
-    my_fund: number;
-    url: string;
-}
+import { getProductList, getBestProduct } from "../../hooks/axios/ProductList";
+import { Product } from "./Category.interface";
 
 export default function SubItemCategory() {
-    const [currentTab, setCurrentTab] = useState(0);
     const [items, setItems] = useState<Product[]>([]);
-    const [loading, setLoading] = useState(false);
+    const [currentTab, setCurrentTab] = useState(0);
 
     const categories = [
         {
@@ -42,28 +31,28 @@ export default function SubItemCategory() {
         },
         {
             id: 2,
-            name: "jewelry",
-            img: jewelry,
-        },
-        {
-            id: 3,
-            name: "furniture",
-            img: furniture,
-        },
-        {
-            id: 4,
             name: "appliances",
             img: appliances,
         },
         {
-            id: 5,
+            id: 3,
+            name: "toy",
+            img: toy,
+        },
+        {
+            id: 4,
             name: "electronics",
             img: electronics,
         },
         {
+            id: 5,
+            name: "jewelry",
+            img: jewelry,
+        },
+        {
             id: 6,
-            name: "toy",
-            img: toy,
+            name: "furniture",
+            img: furniture,
         },
         {
             id: 7,
@@ -72,31 +61,15 @@ export default function SubItemCategory() {
         },
     ];
 
-    const url = "/data/ProductData.json";
-
     // tab
-    const selectMenuHandler = (id: any) => {
+    const selectMenuHandler = (id: number) => {
         setCurrentTab(id);
+        if (id === 0) {
+            getBestProduct(setItems);
+        } else {
+            getProductList(setItems, id, 1, 12);
+        }
     };
-
-    // axios
-    const getItems = async () => {
-        setLoading(true);
-        await axios
-            .get(url)
-            .then((res) => {
-                let response = res.data.products;
-                setItems(response);
-            })
-            .catch((error) => {
-                return Promise.reject(error);
-            });
-    };
-
-    useEffect(() => {
-        getItems();
-        getProductList();
-    }, []);
 
     return (
         <>
@@ -116,7 +89,7 @@ export default function SubItemCategory() {
                 </div>
             </div>
             <div className="Category_Item_Container">
-                <CategoryItemList currentTab={currentTab} items={items} />
+                <CategoryItemList currentTab={currentTab} items={items} setItems={setItems} />
             </div>
         </>
     );

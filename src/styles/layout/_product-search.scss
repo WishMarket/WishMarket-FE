@@ -3,7 +3,7 @@
     margin-bottom: 64px;
     text-align: center;
     font-size: $font-larger;
-    font-weight: 400;
+    font-weight: 600;
     color: $color-gray-800;
     display: flex;
     justify-content: center;
@@ -11,7 +11,6 @@
     .strong {
         margin-right: 8px;
         color: $color-blue;
-        font-weight: 600;
     }
 }
 
@@ -20,4 +19,20 @@
     width: 1060px;
     display: flex;
     flex-wrap: wrap;
+}
+
+.Search_Result_None_Icon {
+    width: 100%;
+    margin-top: 128px;
+    margin-bottom: 48px;
+    display: flex;
+    justify-content: center;
+    font-size: 100px;
+    color: $color-gray-400;
+}
+
+.Search_Result_None {
+    text-align: center;
+    font-size: $font-title-size;
+    color: $color-gray-400;
 }
