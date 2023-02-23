@@ -30,6 +30,7 @@ export default function LoginForm() {
       let result = await requestLogin(email, password);
       window.localStorage.setItem("accessToken", result.accessToken);
       window.localStorage.setItem("refreshToken", result.refreshToken);
+      console.log(result);
       navigate("/");
     } catch (e) {
       if (e == 400) {
