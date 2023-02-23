@@ -3,43 +3,51 @@ import { useNavigate } from "react-router-dom";
 import { AiOutlineMail } from "react-icons/ai";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { SlPeople } from "react-icons/sl";
+import { MdOutlineMarkEmailRead } from "react-icons/md";
 import SignupModal from "./SignupModal";
 import EmailCheckModal from "./EmailCheckModal";
-import { emailCheck } from "../../hooks/axios/Signup";
+import { emailSend, requestSignup } from "../../hooks/axios/Signup";
+import { Timer } from "./Timer";
 
 export default function SignupForm() {
   const navigate = useNavigate();
   const [email, setEmail] = useState<string>("");
+  const [showInput, setShowInput] = useState<string>("none");
+  const [code, setCode] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [retypePassword, setRetypePassword] = useState<string>("");
   const [name, setName] = useState<string>("");
   const [nickname, setNickname] = useState<string>("");
   const [errorShow, setErrorShow] = useState<boolean>(false);
-  const [errorCode, setErrorCode] = useState<number>(0);
+  const [errorCode, setErrorCode] = useState<string>("");
   const [blockButton, setBlockButton] = useState<boolean>(true);
   const [emailCheckShow, setEmailCheckShow] = useState<boolean>(false);
   const [checkError, setCheckError] = useState<string>("");
+  const [timer, setTimer] = useState<number>(5);
+  const [timeover, setTimeover] = useState<boolean>(false);
 
   const onEmailChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     setEmail(e.currentTarget.value);
   };
-    //백엔드 result.data-status message 달라서 수정요청중 
-    const onEmailCheckHandler = async(e: React.MouseEvent<HTMLButtonElement>) => {
-        const result =await emailCheck(email);
-        // console.log(result);
-        console.log(result.data);
-    //중복된 이메일없으면
-    if (result.status == 400) {
-        setBlockButton(true);
-    } else if(result.status ==200){
-        console.log(email);
-        setBlockButton(false);
+
+  const onEmailSendHandler = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    const send = await emailSend(email);
+    if (send.status == 400) {
+      setBlockButton(true);
+      setCheckError(send.data.message);
+    } else if (send.status == 200) {
+      setBlockButton(false);
+      setShowInput("block");
+      setCheckError(send.data.message);
     }
-    setCheckError(result.data.message);
     setEmailCheckShow(true);
   };
 
+  const onCodeChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    setCode(e.currentTarget.value);
+  };
   const onPasswordChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     setPassword(e.currentTarget.value);
@@ -62,25 +70,22 @@ export default function SignupForm() {
     setNickname(e.currentTarget.value);
   };
 
-  const onSignupSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
-    console.log(errorShow);
-    console.log(errorCode);
-    if (password !== retypePassword) {
-      setErrorCode(1);
-      setErrorShow(true);
-    } else if (password.length < 8) {
-      setErrorCode(2);
-      setErrorShow(true);
+  const onSignupSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (retypePassword ==password) {
+          let result = await requestSignup(email, password, name, nickname, code);
+        
+          if (result.data.name != undefined) {
+              alert("회원가입 성공");
+              navigate("/");
+          } else {
+              setErrorCode(result.data.message);
+              setErrorShow(true);
+          }
     } else {
-      e.preventDefault();
-      console.log(email);
-      console.log(password);
-      console.log(retypePassword);
-      console.log(name);
-      console.log(nickname);
-
-      navigate("/");
-    }
+        setErrorCode("비밀번호와 비밀번호확인이 일치하지 않습니다.")
+        setErrorShow(true);
+      }
   };
 
   return (
@@ -111,11 +116,40 @@ export default function SignupForm() {
                 <button
                   className="sign-up-check-btn"
                   type="button"
-                  onClick={onEmailCheckHandler}
+                  onClick={onEmailSendHandler}
                   disabled={!blockButton}
                 >
-                  중복 확인
+                  이메일 인증
                 </button>
+              </div>
+              <div
+                className="sign-up-form-container"
+                style={{ display: `${showInput}` }}
+              >
+                <input
+                  id="text"
+                  type="text"
+                  placeholder="인증코드 입력"
+                  className="signup_Input_Box"
+                  onChange={onCodeChangeHandler}
+                  autoComplete="off"
+                  required
+                />
+                <MdOutlineMarkEmailRead className="Login_Icon" />
+              </div>
+              <div
+                className="signup-timer-wrapper "
+                style={{
+                  display: `${showInput}`,
+                }}
+              >
+                <Timer
+                  timer={timer}
+                  error={errorCode}
+                  setTimeover={setTimeover}
+                  setError={setErrorCode}
+                  email={email}
+                />
               </div>
               <div className="sign-up-form-container">
                 <input
@@ -182,6 +216,7 @@ export default function SignupForm() {
           display: "none",
         }}
       ></iframe>
+
       <SignupModal
         setErrorShow={setErrorShow}
         errorShow={errorShow}

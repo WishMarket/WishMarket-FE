@@ -5,7 +5,7 @@ import { SignUpError} from "../../hooks/Errors";
 interface Props {
   setErrorShow: React.Dispatch<React.SetStateAction<boolean>>;
   errorShow: boolean;
-  errorCode: number;
+  errorCode: string;
 }
 export default function SignupModal({setErrorShow,errorShow,errorCode}:Props) {
      const handleClose = (e: React.MouseEvent<HTMLButtonElement> | void) => {
