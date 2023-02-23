@@ -2,8 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { BsShareFill } from "react-icons/bs";
-import { RiHeartAddFill } from "react-icons/ri";
-import { TbHeartMinus } from "react-icons/tb";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 
 import ProductModal from "./ProductModal";
 import { commaNums } from "../../hooks/CommaNums";
@@ -30,10 +29,10 @@ export default function CategoryItemCard({ item }: Item) {
     return (
         <>
             <div className="Product_List_Item" key={item.productId}>
-                <img src={item.image} alt="/" className="Product_List_Img" />
+                <img src={item.productImageUrl} alt="/" className="Product_List_Img" />
                 <div className="Product_List_Inner">
                     <div className="Product_Top_Like">
-                        <div className="Like_Amount">💙 {item.like} 명이 추천했어요.</div>
+                        <div className="Like_Amount">💙 {item.likes} 명이 추천했어요.</div>
                         {item.best ? <div className="Product_List_Best_Badge">BEST</div> : null}
                     </div>
                     <div className="Product_List_Title">{item.name}</div>
@@ -43,7 +42,7 @@ export default function CategoryItemCard({ item }: Item) {
                             <button className="btn btn-warning Category_Funding_Btn">선물하기</button>
                         </Link>
                         <div className="Product_List_Icon">
-                            {tabWish ? <TbHeartMinus className="Category_Wish_Minus_Btn" onClick={handleTabWish} /> : <RiHeartAddFill className="Category_Wish_Add_Btn" onClick={handleTabWish} />}
+                            {tabWish ? <AiFillHeart className="Category_Wish_Minus_Btn" onClick={handleTabWish} /> : <AiOutlineHeart className="Category_Wish_Add_Btn" onClick={handleTabWish} />}
                             <button className="Product_Share_Btn" onClick={handleShowModal}>
                                 <BsShareFill className="Product_Share_Inner" />
                             </button>

@@ -1,30 +1,13 @@
 import React from "react";
+import { ProductItem } from "./Detail.interface";
 
-type ProductObj = {
-    category: number;
-    productId: string;
-    name: string;
-    image: string;
-    price: number;
-    like: number;
-    date: string;
-    funded_price: number;
-    my_fund: number;
-    url: string;
-    best: boolean;
-};
-
-interface Items {
-    items: ProductObj | null;
-}
-
-export default function ProductInfo({ items }: Items) {
+export default function ProductInfo({ item }: ProductItem) {
     return (
         <>
             <div className="Product_Info_Area">
-                {items != null ? (
+                {item != null ? (
                     <>
-                        <img src={items.image} alt={items.name} className="Product_Info_Img" />
+                        <img src={item.description} alt={item.name} className="Product_Info_Img" />
                     </>
                 ) : null}
             </div>
