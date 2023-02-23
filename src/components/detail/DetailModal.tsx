@@ -1,10 +1,12 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import { Modal } from "react-bootstrap";
-import { IoMdCopy } from "react-icons/io";
 import { CopyClipBoard } from "../../hooks/CopyClipBoard";
-import { ProductModalType } from "./Category.interface";
 
-export default function ProductModal({ item, showModal, setShowModal }: ProductModalType) {
+import { IoMdCopy } from "react-icons/io";
+import { DetailModalType } from "./Detail.interface";
+
+export default function DetailModal({ item, showModal, setShowModal }: DetailModalType) {
     const handleCloseModal = (e: React.MouseEvent<HTMLButtonElement> | void) => {
         setShowModal(false);
     };

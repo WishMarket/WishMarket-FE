@@ -1,20 +1,22 @@
+import { useEffect, useState } from "react";
 import CategoryItemCard from "./CategoryItemCard";
+import { getBestProduct } from "../../hooks/axios/ProductList";
+import { CategoryTab } from "./Category.interface";
 
-interface TabNums {
-    currentTab: number;
-    items: any;
-}
+export default function CategoryItemList({ items, setItems }: CategoryTab) {
+    const getBestProducts = () => {
+        getBestProduct(setItems);
+    };
 
-export default function CategoryItemList({ currentTab, items }: TabNums) {
+    useEffect(() => {
+        getBestProducts();
+    }, []);
+
     return (
         <>
-            {items.map((item: any) => {
-                if (item.category !== 0 && item.category == currentTab) {
-                    return <CategoryItemCard item={item} key={item.productId} />;
-                } else if (currentTab == 0 && item.best == true) {
-                    return <CategoryItemCard item={item} key={item.productId} />;
-                }
-            })}
+            {items.map((item) => (
+                <CategoryItemCard item={item} key={item.productId} />
+            ))}
         </>
     );
 }

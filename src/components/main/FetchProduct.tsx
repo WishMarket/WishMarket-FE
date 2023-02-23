@@ -1,29 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import CategoryItemCard from "../category/CategoryItemCard";
+import { getBestProduct } from "../../hooks/axios/ProductList";
 
-interface IFetch {
-    items: any;
+interface Product {
+    best: boolean;
+    category: number;
+    createdAt: string;
+    description: string;
+    likes: number;
+    modifiedAt: string;
+    name: string;
+    price: number;
+    productId: number;
+    productImageUrl: string;
 }
 
-export default function FetchProduct({ items }: IFetch) {
-    const [tabWish, setTabWish] = useState(false);
-    const [showModal, setShowModal] = useState(false);
+export default function FetchProduct() {
+    const [items, setItems] = useState<Product[]>([]);
 
-    // wishlist btn
-    const handleTabWish = () => {
-        setTabWish(!tabWish);
-    };
-
-    // share btn
-    const handleShowModal = (e: React.MouseEvent<HTMLButtonElement>) => {
-        e.preventDefault();
-        setShowModal(true);
-    };
-
-    const handleCloseModal = (e: React.MouseEvent<HTMLButtonElement> | void) => {
-        setShowModal(false);
-    };
+    useEffect(() => {
+        getBestProduct(setItems);
+    }, []);
 
     return (
         <>
