@@ -5,6 +5,7 @@ import { EmailSet } from "../../hooks/recoil/atoms";
 import { AiOutlineMail } from "react-icons/ai";
 import { RiLockPasswordLine } from "react-icons/ri";
 import ChangePasswdModal from "./ChangePasswdModal";
+import { ChangePassword } from "../../hooks/axios/ChangePasswd";
 
 export default function ChangePasswdForm() {
     const email = useRecoilValue(EmailSet);
@@ -13,7 +14,7 @@ export default function ChangePasswdForm() {
     const [retypePassword, setRetypePassword] = useState<string>("");
     const [buttonBlock, setButtonBlock] = useState<boolean>(true);
     const [errorShow, setErrorShow] = useState<boolean>(false);
-    const [error, setError] = useState<number>(1);
+    const [error, setError] = useState<string>("");
 
     useEffect(() => {
         if (password.length > 7 && retypePassword.length > 7) {
@@ -32,14 +33,22 @@ export default function ChangePasswdForm() {
         setRetypePassword(e.currentTarget.value);
     };
 
-    const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmitHandler = async(e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
         if (password !== retypePassword) {
-            setError(1);
+            setError("비밀번호와 비밀번호확인이 일치하지 않습니다.");
             setErrorShow(true);
         } else {
+          const change = await ChangePassword(email, password);
+          console.log(change);
+          if (change.status == 400) {
+            console.log(error);
+          } else {
+            console.log(email)
             console.log(password);
-            console.log(retypePassword);
+            alert('비밀번호가 변경되었습니다.');
             navigate("/");
+          }
         }
     };
 

@@ -24,7 +24,7 @@ export default function SignupForm() {
   const [emailCheckShow, setEmailCheckShow] = useState<boolean>(false);
   const [checkError, setCheckError] = useState<string>("");
   const [timer, setTimer] = useState<number>(5);
-  const [timeover, setTimeover] = useState<boolean>(false);
+
 
   const onEmailChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -32,13 +32,14 @@ export default function SignupForm() {
   };
 
   const onEmailSendHandler = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    const send = await emailSend(email);
+    const send = await emailSend(email,"signUp");
     if (send.status == 400) {
       setBlockButton(true);
       setCheckError(send.data.message);
     } else if (send.status == 200) {
       setBlockButton(false);
       setShowInput("block");
+      setTimer(timer);
       setCheckError(send.data.message);
     }
     setEmailCheckShow(true);
@@ -146,7 +147,6 @@ export default function SignupForm() {
                 <Timer
                   timer={timer}
                   error={errorCode}
-                  setTimeover={setTimeover}
                   setError={setErrorCode}
                   email={email}
                 />
