@@ -6,12 +6,9 @@ import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 
 import ProductModal from "./ProductModal";
 import { commaNums } from "../../hooks/CommaNums";
+import { ProductType } from "./Category.interface";
 
-interface Item {
-    item: any;
-}
-
-export default function CategoryItemCard({ item }: Item) {
+export default function CategoryItemCard({ item }: ProductType) {
     const [tabWish, setTabWish] = useState<boolean>(false);
     const [showModal, setShowModal] = useState<boolean>(false);
 

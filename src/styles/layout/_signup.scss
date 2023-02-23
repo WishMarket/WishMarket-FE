@@ -123,3 +123,32 @@
 .email-check {
     padding-right: 80px;
 }
+
+.signup-timer-wrapper {
+    width: 100%;
+    height: 20px;
+
+    .count {
+
+        .counter {
+            font-size: 16px;
+            color: $color-yellow-800;
+            font-weight: 400;
+        }
+
+        .counter_end {
+            margin-left: 4px;
+            font-size: 16px;
+            color: $color-red-800;
+            font-weight: 400;
+        }
+    }
+
+    .reload_Button {
+        display: flex;
+        align-self: start;
+        font-size: 10px;
+        padding: 3px;
+        margin-right: 2px;
+    }
+}

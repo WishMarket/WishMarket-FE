@@ -5,7 +5,7 @@ import { EmailCheckError } from "../../hooks/Errors";
 interface Props {
   setEmailCheckShow: React.Dispatch<React.SetStateAction<boolean>>;
   emailCheckShow: boolean;
-  checkError: number;
+  checkError: string;
 }
 export default function EmailCheckModal({
   setEmailCheckShow,

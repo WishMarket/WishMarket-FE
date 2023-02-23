@@ -16,3 +16,13 @@ export interface CategoryTab {
     items: Product[];
     setItems: React.Dispatch<React.SetStateAction<Product[]>>;
 }
+
+export interface ProductModalType {
+    item: Product;
+    showModal: boolean;
+    setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export interface ProductType {
+    item: Product;
+}

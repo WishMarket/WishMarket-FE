@@ -1,20 +1,16 @@
-import React from "react";
+import React from 'react'
 import { Modal } from "react-bootstrap";
-import { SignUpError } from "../../hooks/Errors";
+import { SignUpError} from "../../hooks/Errors";
 
 interface Props {
   setErrorShow: React.Dispatch<React.SetStateAction<boolean>>;
   errorShow: boolean;
-  errorCode: number;
+  errorCode: string;
 }
-export default function SignupModal({
-  setErrorShow,
-  errorShow,
-  errorCode,
-}: Props) {
-  const handleClose = (e: React.MouseEvent<HTMLButtonElement> | void) => {
-    setErrorShow(false);
-  };
+export default function SignupModal({setErrorShow,errorShow,errorCode}:Props) {
+     const handleClose = (e: React.MouseEvent<HTMLButtonElement> | void) => {
+       setErrorShow(false);
+     };
   return (
     <Modal show={errorShow} onHide={handleClose}>
       <Modal.Body>{SignUpError(errorCode)}</Modal.Body>

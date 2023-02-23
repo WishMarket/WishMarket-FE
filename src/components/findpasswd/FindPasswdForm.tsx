@@ -18,7 +18,7 @@ export default function FindPasswdForm() {
   const [showCodeInput, setShowCodeInput] = useState<boolean>(false);
   const [submitCode, setSubmitCode] = useState<boolean>(true);
   const [inputBlock, setInputBlock] = useState<boolean>(false);
-  const [timer, setTimer] = useState<number>(3);
+  const [timer, setTimer] = useState<number>(5);
   const [timeover, setTimeover] = useState<boolean>(false);
 
   useEffect(() => {

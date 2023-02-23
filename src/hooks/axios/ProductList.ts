@@ -1,17 +1,5 @@
 import axios from "axios";
-
-interface Product {
-    best: boolean;
-    category: number;
-    createdAt: string;
-    description: string;
-    likes: number;
-    modifiedAt: string;
-    name: string;
-    price: number;
-    productId: number;
-    productImageUrl: string;
-}
+import { Product } from "../../components/category/Category.interface";
 
 export const getProductList: any = async (setState: React.Dispatch<React.SetStateAction<Product[]>>, category: number, page: number, size: number) => {
     const PRODUCT_URL = `http://3.38.63.3:8080/api/products/category?categoryCode=${category}&page=${page}&size=${size}`;
@@ -20,7 +8,6 @@ export const getProductList: any = async (setState: React.Dispatch<React.SetStat
         .then((res) => {
             let response = res.data.content;
             setState(response);
-            console.log(response);
         })
         .catch((error) => {
             console.log(error);

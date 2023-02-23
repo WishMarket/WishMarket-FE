@@ -2,9 +2,9 @@ import React from "react";
 import { Modal } from "react-bootstrap";
 import { IoMdCopy } from "react-icons/io";
 import { CopyClipBoard } from "../../hooks/CopyClipBoard";
-import { ProductModalType } from "./Category.interface";
+import { SearchProductModalType } from "./Main.interface";
 
-export default function ProductModal({ item, showModal, setShowModal }: ProductModalType) {
+export default function SearchProductModal({ item, showModal, setShowModal }: SearchProductModalType) {
     const handleCloseModal = (e: React.MouseEvent<HTMLButtonElement> | void) => {
         setShowModal(false);
     };
