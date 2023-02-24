@@ -25,19 +25,19 @@ export default function SearchProductPagination({ keyword, setKeyword, items, se
     // page tab
     const handlePagePrevClick = () => {
         setPage(page - 1);
-        getSearchProductList(setItems, page - 1, 12);
+        getSearchProductList(setItems, keyword, page - 1, 12);
         scrollToTop();
     };
 
     const handlePageNextClick = () => {
         setPage(page + 1);
-        getSearchProductList(setItems, page + 1, 12);
+        getSearchProductList(setItems, keyword, page + 1, 12);
         scrollToTop();
     };
 
     const handlePageNumsClick = (idx: number) => {
         setPage(idx + 1);
-        getSearchProductList(setItems, idx + 1, 12);
+        getSearchProductList(setItems, keyword, idx + 1, 12);
         scrollToTop();
     };
 

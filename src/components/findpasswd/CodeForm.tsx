@@ -7,8 +7,9 @@ interface Props {
   timer: number;
   error: string;
   setError: React.Dispatch<React.SetStateAction<string>>;
+  email:string
 }
-export default function CodeForm({ setCode, timer, error,setError }:Props) {
+export default function CodeForm({ setCode, timer, error,setError,email }:Props) {
     const onCodeChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
       e.preventDefault();
       setCode(e.currentTarget.value);
@@ -33,6 +34,7 @@ export default function CodeForm({ setCode, timer, error,setError }:Props) {
           timer={timer}
           error={error}
           setError={setError}
+          email={email}
         />
       </div>
     </>

@@ -1,14 +1,22 @@
 import React from "react";
 import defaultProfileImg from "../../assets/default-profile-img.png";
+import { Account_Logout } from "../../hooks/axios/Togglebar";
 
 interface ToggleType {
     handleToggleMenu: () => void;
+    toggleClose: (e: any) => void;
 }
 
-export default function ToggleContent({ handleToggleMenu }: ToggleType) {
-    const handleLogout = () => {
-        window.localStorage.removeItem("accessToken");
-        window.localStorage.removeItem("refreshToken");
+export default function ToggleContent({ handleToggleMenu, toggleClose }: ToggleType) {
+    const handleLogout = async (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+        toggleClose(e.target);
+        const logout = await Account_Logout();
+        console.log(logout);
+        if (logout.status == 200) {
+            window.localStorage.removeItem("accessToken");
+            window.localStorage.removeItem("refreshToken");
+        }
     };
 
     return (

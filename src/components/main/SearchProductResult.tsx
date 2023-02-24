@@ -31,7 +31,9 @@ export default function SearchProductResult({ keyword, setKeyword }: Keyword) {
                             <SearchProductResultCard item={item} key={item.productId} />
                         ))}
                     </div>
-                    <SearchProductPagination keyword={keyword} setKeyword={setKeyword} items={items} setItems={setItems} page={page} setPage={setPage} />
+                    <div className="Search_Result_Btns">
+                        <SearchProductPagination keyword={keyword} setKeyword={setKeyword} items={items} setItems={setItems} page={page} setPage={setPage} />
+                    </div>
                 </>
             ) : (
                 <>

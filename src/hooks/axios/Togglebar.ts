@@ -1,16 +1,15 @@
 import axios from "axios";
 
-export const Account_Withdrawal = async () => {
+export const Account_Logout = async () => {
   return await axios
-    .patch(
-      `http://3.38.63.3:8080/api/auth/withdrawal`,
+    .post(
+      `http://3.38.63.3:8080/api/auth/logout`,
       {
         withCredentials: true,
       },
       { headers: { Authorization: window.localStorage.getItem("accessToken") } }
     )
     .then((response) => {
-      console.log(response);
       return response;
     })
     .catch((e) => {

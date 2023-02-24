@@ -128,6 +128,7 @@ export default function FindPasswdForm() {
                   timer={timer}
                   error={error}
                   setError={setError}
+                  email={email}
                 />
               )}
             </div>
