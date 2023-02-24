@@ -24,21 +24,21 @@ export default function LoginForm() {
         setPassword(e.currentTarget.value);
     };
 
-    const onLoginSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        try {
-            let result = await requestLogin(email, password);
-            window.localStorage.setItem("accessToken", result.accessToken);
-            window.localStorage.setItem("refreshToken", result.refreshToken);
-            console.log(result);
-            navigate("/");
-        } catch (e) {
-            if (e == 400) {
-                setErrorCode(400);
-            }
-            setErrorShow(true);
-        }
-    };
+  const onLoginSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      let result = await requestLogin(email, password);
+      window.localStorage.setItem("accessToken", result.accessToken);
+      window.localStorage.setItem("refreshToken", result.refreshToken);
+      console.log(result);
+      navigate("/");
+    } catch (e) {
+      if (e == 400) {
+        setErrorCode(400);
+      }
+      setErrorShow(true);
+    }
+  };
 
     return (
         <div className="login_Wrapper main">

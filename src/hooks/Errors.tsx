@@ -6,16 +6,8 @@ export function EmailCheckError(errorCode: string) {
   return <div>{errorCode}</div>
 }
 
-export function FindPasswdError(errorCode: number) {
-  if (errorCode == 0) {
-    return <div>인증 코드가 이메일로 발송되었습니다.</div>;
-  } else if (errorCode == 1) {
-    return <div>빈 항목이 있습니다.</div>;
-  } else if (errorCode == 2) {
-    return <div>일치하는 계정이 없습니다.</div>;
-  } else if (errorCode == 3) {
-    return <div>인증 시간이 초과되었습니다.</div>;
-  }
+export function FindPasswdError(errorCode: string) {
+  return <div>{errorCode}</div>;
 }
 
 export function LoginError(errorCode: number) {

@@ -5,11 +5,10 @@ import { BsPatchCheck } from "react-icons/bs";
 interface Props {
   setCode: React.Dispatch<React.SetStateAction<string>>;
   timer: number;
-  error: number;
-  setTimeover: React.Dispatch<React.SetStateAction<boolean>>;
-  setError: React.Dispatch<React.SetStateAction<number>>;
+  error: string;
+  setError: React.Dispatch<React.SetStateAction<string>>;
 }
-export default function CodeForm({ setCode, timer, error,setTimeover,setError }:Props) {
+export default function CodeForm({ setCode, timer, error,setError }:Props) {
     const onCodeChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
       e.preventDefault();
       setCode(e.currentTarget.value);
@@ -33,7 +32,6 @@ export default function CodeForm({ setCode, timer, error,setTimeover,setError }:
         <Timer
           timer={timer}
           error={error}
-          setTimeover={setTimeover}
           setError={setError}
         />
       </div>
