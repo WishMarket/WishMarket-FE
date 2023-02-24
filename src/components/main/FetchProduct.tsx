@@ -20,7 +20,7 @@ export default function FetchProduct() {
     const [items, setItems] = useState<Product[]>([]);
 
     useEffect(() => {
-        getBestProduct(setItems);
+        getBestProduct(setItems, 1, 12);
     }, []);
 
     return (

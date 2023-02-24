@@ -14,12 +14,12 @@ export const getProductList: any = async (setState: React.Dispatch<React.SetStat
         });
 };
 
-export const getBestProduct = async (setState: React.Dispatch<React.SetStateAction<Product[]>>) => {
-    const BEST_URL = `http://3.38.63.3:8080/api/products/best`;
+export const getBestProduct = async (setState: React.Dispatch<React.SetStateAction<Product[]>>, page: number, size: number) => {
+    const BEST_URL = `http://3.38.63.3:8080/api/products/best?page=${page}&size=${size}`;
     await axios
         .get(BEST_URL, { withCredentials: true })
         .then((res) => {
-            let response = res.data;
+            let response = res.data.content;
             setState(response);
         })
         .catch((error) => {

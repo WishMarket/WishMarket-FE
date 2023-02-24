@@ -41,3 +41,13 @@ export const requestAccessToken = async (refresh_token:string) => {
 //     return axios.defaults.headers.common["Authorization"].split(" ")[1];
 //   }
 // };
+
+export const naverLogin = async () =>{
+  return await axios.post(``, { withCredentials: true }).then((response) =>{
+    console.log(response);
+    return response;
+  }).catch((e) => {
+    console.log(e);
+    return 
+  })
+}
