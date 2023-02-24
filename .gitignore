@@ -26,3 +26,4 @@ css/
 *.sln
 *.sw?
 .env.*.local
+.env
