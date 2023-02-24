@@ -10,7 +10,7 @@ export const requestLogin = async (email:string, password:string) => {
       .then((response) => {
         axios.defaults.headers.common[
           "Authorization"
-        ] = `bearer ${response.data.access_token}`;
+        ] = `${response.data.access_token}`;
         console.log(response)
         return response.data;
       })

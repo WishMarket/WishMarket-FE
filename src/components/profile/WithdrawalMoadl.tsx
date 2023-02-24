@@ -1,5 +1,7 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import { Account_Withdrawal } from "../../hooks/axios/Profile";
 
 interface Props {
   errorShow: boolean;
@@ -7,6 +9,19 @@ interface Props {
 }
 
 export default function WithdrawalMoadl({ errorShow, setErrorShow }: Props) {
+  const navigate = useNavigate();
+  const onClickWithdrawal = async(e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    const result = await Account_Withdrawal();
+    console.log(result);
+    if (result.data.status == 200) {
+      window.localStorage.removeItem('accessToken');
+      window.localStorage.removeItem('refreshToken');
+      setErrorShow(false);
+      alert('회원탈퇴 되었습니다. 이용해주셔서 감사합니다.')
+      navigate('/');
+    }
+  }
   const handleClose = (e: React.MouseEvent<HTMLButtonElement> | void) => {
     setErrorShow(false);
   };
@@ -21,7 +36,7 @@ export default function WithdrawalMoadl({ errorShow, setErrorShow }: Props) {
         </div>
       </Modal.Body>
       <Modal.Footer>
-        <button className="btn btn-warning">회원 탈퇴</button>
+        <button className="btn btn-warning" onClick={onClickWithdrawal}>회원 탈퇴</button>
         <button className="btn btn-secondary" onClick={handleClose}>
           취소
         </button>
