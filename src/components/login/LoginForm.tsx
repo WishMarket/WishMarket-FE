@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineMail } from "react-icons/ai";
 import { RiLockPasswordLine } from "react-icons/ri";
-import { SiNaver } from "react-icons/si";
+
 
 import { requestLogin } from "../../hooks/axios/Login";
 import LoginModal from "./LoginModal";
