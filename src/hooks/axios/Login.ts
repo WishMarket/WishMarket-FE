@@ -10,7 +10,7 @@ export const requestLogin = async (email:string, password:string) => {
       .then((response) => {
         axios.defaults.headers.common[
           "Authorization"
-        ] = `bearer ${response.data.access_token}`;
+        ] = `${response.data.access_token}`;
         console.log(response)
         return response.data;
       })
@@ -41,3 +41,32 @@ export const requestAccessToken = async (refresh_token:string) => {
 //     return axios.defaults.headers.common["Authorization"].split(" ")[1];
 //   }
 // };
+
+export const naverLogin = async () =>{
+  return await axios.post(``, { withCredentials: true }).then((response) =>{
+    console.log(response);
+    return response;
+  }).catch((e) => {
+    console.log(e);
+    return 
+  })
+}
+
+export const googleLogin = async (hash:string) => {
+  return await axios
+    .post(
+      `http://3.38.63.3:8080/api/auth/sign-in/google`,
+      {
+        withCredentials: true,
+        params: hash,
+      }
+    )
+    .then((response) => {
+      console.log(response);
+      return response;
+    })
+    .catch((e) => {
+      console.log(e);
+      return;
+    });
+}

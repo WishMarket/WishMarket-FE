@@ -25,3 +25,5 @@ css/
 *.njsproj
 *.sln
 *.sw?
+.env.*.local
+.env
