@@ -17,12 +17,14 @@ import FundingStart from "./pages/FundingStart";
 import FundingAddition from "./pages/FundingAddition";
 import SearchFriends from "./pages/SearchFriends";
 import FriendsList from "./pages/FriendsList";
+import ScrollToTop from "./hooks/ScrollToTop";
 import GoogleRedirect from "./components/login/GoogleRedirect";
 
 function App() {
     return (
         <div>
             <BrowserRouter>
+                <ScrollToTop />
                 <Routes>
                     <Route path="/" element={<Home />}></Route>
                     <Route path="/category/:id" element={<Category />}></Route>

@@ -11,10 +11,13 @@ import toy from "../../assets/category_icon/toy.png";
 import etc from "../../assets/category_icon/etc.png";
 
 import CategoryItemList from "./CategoryItemList";
+import BestProductPagination from "./BestProductPagination";
+import ProductPagination from "./ProductPagination";
 import { getProductList, getBestProduct } from "../../hooks/axios/ProductList";
 import { Product } from "./Category.interface";
 
 export default function SubItemCategory() {
+    const [page, setPage] = useState<number>(1);
     const [items, setItems] = useState<Product[]>([]);
     const [currentTab, setCurrentTab] = useState(0);
 
@@ -61,13 +64,15 @@ export default function SubItemCategory() {
         },
     ];
 
+    // product default
     useEffect(() => {
-        getBestProduct(setItems, 1, 12);
-    }, []);
+        getBestProduct(setItems, page, 12);
+    }, [page]);
 
-    // tab
+    // category tab
     const selectMenuHandler = (id: number) => {
         setCurrentTab(id);
+        setPage(1);
         if (id === 0) {
             getBestProduct(setItems, 1, 12);
         } else {
@@ -94,6 +99,13 @@ export default function SubItemCategory() {
             </div>
             <div className="Category_Item_Container">
                 <CategoryItemList currentTab={currentTab} items={items} setItems={setItems} />
+            </div>
+            <div className="Category_Item_Page_Btn">
+                {currentTab === 0 ? (
+                    <BestProductPagination page={page} setPage={setPage} items={items} setItems={setItems} />
+                ) : (
+                    <ProductPagination page={page} setPage={setPage} items={items} setItems={setItems} currentTab={currentTab} />
+                )}
             </div>
         </>
     );

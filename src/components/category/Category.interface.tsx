@@ -17,6 +17,21 @@ export interface CategoryTab {
     setItems: React.Dispatch<React.SetStateAction<Product[]>>;
 }
 
+export interface BestPagination {
+    page: number;
+    setPage: React.Dispatch<React.SetStateAction<number>>;
+    items: Product[];
+    setItems: React.Dispatch<React.SetStateAction<Product[]>>;
+}
+
+export interface Pagination {
+    page: number;
+    setPage: React.Dispatch<React.SetStateAction<number>>;
+    items: Product[];
+    setItems: React.Dispatch<React.SetStateAction<Product[]>>;
+    currentTab: number;
+}
+
 export interface ProductModalType {
     item: Product;
     showModal: boolean;
