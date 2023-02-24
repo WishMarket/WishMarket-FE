@@ -17,12 +17,14 @@ import FundingStart from "./pages/FundingStart";
 import FundingAddition from "./pages/FundingAddition";
 import SearchFriends from "./pages/SearchFriends";
 import FriendsList from "./pages/FriendsList";
+import ScrollToTop from "./hooks/ScrollToTop";
 import GoogleRedirect from "./components/login/GoogleRedirect";
 
 function App() {
     return (
         <div>
             <BrowserRouter>
+                <ScrollToTop />
                 <Routes>
                     <Route path="/" element={<Home />}></Route>
                     <Route path="/category/:id" element={<Category />}></Route>
@@ -41,7 +43,9 @@ function App() {
                     <Route path="/funding/join/:id" element={<FundingAddition />}></Route>
                     <Route path="/searchfriends" element={<SearchFriends />}></Route>
                     <Route path="/friendslist" element={<FriendsList />}></Route>
-                    <Route path="/login/google/redirect" element={<GoogleRedirect />}> </Route>
+                    <Route path="/login/google/redirect" element={<GoogleRedirect />}>
+                        {" "}
+                    </Route>
                 </Routes>
             </BrowserRouter>
         </div>

@@ -8,8 +8,6 @@
 }
 
 .Sub_Item_Category_Container {
-    position: sticky;
-    top: 0;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -94,4 +92,12 @@
     width: 1060px;
     display: flex;
     flex-wrap: wrap;
+}
+
+.Category_Item_Page_Btn {
+    margin: 60px auto;
+    width: 1060px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 120px;
 }
