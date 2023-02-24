@@ -61,11 +61,15 @@ export default function SubItemCategory() {
         },
     ];
 
+    useEffect(() => {
+        getBestProduct(setItems, 1, 12);
+    }, []);
+
     // tab
     const selectMenuHandler = (id: number) => {
         setCurrentTab(id);
         if (id === 0) {
-            getBestProduct(setItems);
+            getBestProduct(setItems, 1, 12);
         } else {
             getProductList(setItems, id, 1, 12);
         }
