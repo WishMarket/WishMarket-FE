@@ -1,10 +1,10 @@
 import axios from "axios";
 
-export const emailSend = async (email: string) => {
+export const emailSend = async (email: string, type:string) => {
     return await axios
       .post(
         `http://3.38.63.3:8080/api/auth/email-auth`,
-        { email: email },
+        { email: email ,type:type},
         { withCredentials: true }
       )
       .then((response) => {

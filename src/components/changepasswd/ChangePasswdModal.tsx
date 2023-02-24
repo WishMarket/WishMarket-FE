@@ -5,7 +5,7 @@ import { SignUpError } from "../../hooks/Errors";
 interface Props {
   errorShow: boolean;
   setErrorShow: React.Dispatch<React.SetStateAction<boolean>>;
-  error: number;
+  error: string;
 }
 
 

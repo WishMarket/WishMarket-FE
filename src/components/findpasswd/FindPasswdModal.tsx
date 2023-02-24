@@ -4,7 +4,7 @@ import { FindPasswdError } from "../../hooks/Errors";
 
 interface Props {
   errorShow: boolean;
-  error: number;
+  error: string;
   setErrorShow: React.Dispatch<React.SetStateAction<boolean>>;
 }
 export default function FindPasswdModal({errorShow,error,setErrorShow}:Props) {

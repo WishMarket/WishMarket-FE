@@ -1,25 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
 import { useRecoilState } from "recoil";
 import { EmailSet } from "../../hooks/recoil/atoms";
 import { AiOutlineMail } from "react-icons/ai";
 import { SlPeople } from "react-icons/sl";
 import FindPasswdModal from "./FindPasswdModal";
 import CodeForm from "./CodeForm";
-
+import { codeCheck, emailSend } from "../../hooks/axios/FindPasswd";
 export default function FindPasswdForm() {
   const navigate = useNavigate();
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useRecoilState<string>(EmailSet);
   const [code, setCode] = useState<string>("");
-  const [error, setError] = useState<number>(0);
+  const [error, setError] = useState<string>("");
   const [errorShow, setErrorShow] = useState<boolean>(false);
   const [showCodeInput, setShowCodeInput] = useState<boolean>(false);
   const [submitCode, setSubmitCode] = useState<boolean>(true);
   const [inputBlock, setInputBlock] = useState<boolean>(false);
   const [timer, setTimer] = useState<number>(5);
-  const [timeover, setTimeover] = useState<boolean>(false);
 
   useEffect(() => {
     if (code.length == 6) {
@@ -38,28 +36,37 @@ export default function FindPasswdForm() {
     setEmail(e.currentTarget.value);
   };
 
-  const onCodeSendHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const onCodeSendHandler = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (name == "" || email == "") {
-      setError(1);
+      setError("빈 항목이 있습니다.");
     } else {
-      setInputBlock(true);
-      setError(0);
-      setShowCodeInput(true);
-      console.log(name);
-      console.log(email);
-      setTimer(timer);
+      const send = await emailSend(email, "passwordChange");
+      console.log(send);
+      console.log(send.status);
+      if (send.status == 400) {
+        setError(send.data.message);
+      } else if(send.status){
+        setInputBlock(true);
+        setShowCodeInput(true);
+        setSubmitCode(false);
+        setError(send.data.message);
+        console.log(name);
+        console.log(email);
+        setTimer(timer);
+      }
     }
-    setErrorShow(true);
-  };
+      setErrorShow(true);
+    };
 
-  const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmitHandler = async(e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (timeover == true) {
-      setError(3);
+    const check = await codeCheck(name, email, code);
+    if (check.status == 400) {
+      setError(check.data.message);
       setErrorShow(true);
     } else {
-      console.log(name);
+      console.log(email);
       console.log(code);
       navigate("./changepasswd");
     }
@@ -120,7 +127,6 @@ export default function FindPasswdForm() {
                   setCode={setCode}
                   timer={timer}
                   error={error}
-                  setTimeover={setTimeover}
                   setError={setError}
                 />
               )}

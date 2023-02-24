@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ViewProfileContainer from "./ViewProfileContainer";
+import WithdrawalMoadl from "./WithdrawalMoadl";
 
 interface IProfiles {
     profileState: boolean;
@@ -19,6 +20,7 @@ type UserInfo = {
 
 export default function ViewProfile({ profileState, setProfileState }: IProfiles) {
     const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
+    const [errorShow, setErrorShow] = useState<boolean>(false);
     const url = "/data/UserData.json";
 
     // axios
@@ -38,6 +40,12 @@ export default function ViewProfile({ profileState, setProfileState }: IProfiles
         getUserInfo();
     }, []);
 
+    const onClickWithdrawal = (
+      e: React.MouseEvent<HTMLButtonElement>
+    ) => {
+        e.preventDefault();
+        setErrorShow(true);
+    };
     return (
         <>
             <div className="Profile_Select_Container">
@@ -51,8 +59,9 @@ export default function ViewProfile({ profileState, setProfileState }: IProfiles
                     정보 변경
                 </button>
                 <button className="btn Point_Charge_Btn">포인트 충전</button>
-                <button className="btn btn-warning">회원 탈퇴</button>
+                <button className="btn btn-warning" onClick={onClickWithdrawal}>회원 탈퇴</button>
             </div>
+            <WithdrawalMoadl errorShow={errorShow} setErrorShow={setErrorShow} />
         </>
     );
 }

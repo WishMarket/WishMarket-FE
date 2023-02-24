@@ -7,11 +7,10 @@ import { emailSend } from "../../hooks/axios/Signup";
 interface Props {
   timer: number;
   error: string;
-  setTimeover: React.Dispatch<React.SetStateAction<boolean>>;
   setError: React.Dispatch<React.SetStateAction<string>>;
   email: string;
 }
-export function Timer({ timer, error, setTimeover, setError, email }: Props) {
+export function Timer({ timer, error, setError, email }: Props) {
   const [minutes, setMinutes] = useState<number>(timer);
   const [seconds, setSeconds] = useState<number>(0);
   const [errorShow, setErrorShow] = useState(false);
@@ -45,7 +44,6 @@ export function Timer({ timer, error, setTimeover, setError, email }: Props) {
   }, [minutes, seconds]);
 
   if (minutes == 0 && seconds == 0) {
-    setTimeover(true);
     return (
       <div className="count">
         <button

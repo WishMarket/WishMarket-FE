@@ -5,17 +5,16 @@ import { FindPasswdError } from "../../hooks/Errors";
 
 interface Props {
   timer: number;
-  error: number;
-  setTimeover: React.Dispatch<React.SetStateAction<boolean>>;
-  setError: React.Dispatch<React.SetStateAction<number>>;
+  error: string;
+  setError: React.Dispatch<React.SetStateAction<string>>;
 }
-export function Timer({timer,error,setTimeover,setError}: Props) {
+export function Timer({timer,error,setError}: Props) {
     const [minutes, setMinutes] = useState<number>(timer);
     const [seconds, setSeconds] = useState<number>(0);
     const [errorShow, setErrorShow] = useState(false);
 
     const onClickRetryHandler = (time: number) => {
-        setError(0);
+        setError("인증 코드가 이메일로 발송되었습니다.");
         setErrorShow(true);
         setMinutes(time);
     };
@@ -41,7 +40,6 @@ export function Timer({timer,error,setTimeover,setError}: Props) {
     }, [minutes, seconds]);
 
     if (minutes == 0 && seconds == 0) {
-        setTimeover(true);
         return (
             <div className="count">
                 <button
