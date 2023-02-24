@@ -18,7 +18,8 @@ import FundingAddition from "./pages/FundingAddition";
 import SearchFriends from "./pages/SearchFriends";
 import FriendsList from "./pages/FriendsList";
 import ScrollToTop from "./hooks/ScrollToTop";
-import GoogleRedirect from "./components/login/GoogleRedirect";
+import GoogleRedirect from "./components/login/social/GoogleRedirect";
+import NaverRedirect from "./components/login/social/NaverRedirect";
 
 function App() {
     return (
@@ -44,6 +45,7 @@ function App() {
                     <Route path="/searchfriends" element={<SearchFriends />}></Route>
                     <Route path="/friendslist" element={<FriendsList />}></Route>
                     <Route path="/login/google/redirect" element={<GoogleRedirect />}> </Route>
+                    <Route path="/login/naver/redirect" element={<NaverRedirect />}> </Route>
                 </Routes>
             </BrowserRouter>
         </div>
