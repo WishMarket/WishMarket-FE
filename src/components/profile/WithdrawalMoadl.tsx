@@ -14,7 +14,7 @@ export default function WithdrawalMoadl({ errorShow, setErrorShow }: Props) {
     e.preventDefault();
     const result = await Account_Withdrawal();
     console.log(result);
-    if (result.data.status == 200) {
+    if (result.data == "WITHDRAWAL_SUCCESS") {
       window.localStorage.removeItem('accessToken');
       window.localStorage.removeItem('refreshToken');
       setErrorShow(false);

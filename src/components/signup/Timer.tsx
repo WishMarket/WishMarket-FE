@@ -16,7 +16,7 @@ export function Timer({ timer, error, setError, email }: Props) {
   const [errorShow, setErrorShow] = useState(false);
 
   const onClickRetryHandler = async (time: number) => {
-    let send = await emailSend(email);
+    let send = await emailSend(email, "signUp");
     console.log(send);
     setError("인증코드가 재발송 되었습니다.");
     setErrorShow(true);
