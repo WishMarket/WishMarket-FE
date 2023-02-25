@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { AiOutlineMail } from "react-icons/ai";
-import { RiLockPasswordLine } from "react-icons/ri";
-import { SiNaver } from "react-icons/si";
-
 import { requestLogin } from "../../hooks/axios/Login";
 import LoginModal from "./LoginModal";
-import GoogleLogin from "./GoogleLogin";
-import NaverLogin from "./NaverLogin";
+import GoogleLogin from "./social/GoogleLogin";
+import NaverLogin from "./social/NaverLogin";
+import LoginEmail from "./form/LoginEmail";
+import LoginPasswd from "./form/LoginPasswd";
 
 export default function LoginForm() {
   const navigate = useNavigate();
@@ -15,15 +13,6 @@ export default function LoginForm() {
   const [password, setPassword] = useState<string>("");
   const [errorShow, setErrorShow] = useState<boolean>(false);
   const [errorCode, setErrorCode] = useState<number>(0);
-
-  const onEmailChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
-    setEmail(e.currentTarget.value);
-  };
-  const onPasswordChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
-    setPassword(e.currentTarget.value);
-  };
 
   const onLoginSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -56,27 +45,8 @@ export default function LoginForm() {
             className="login-form-container"
           >
             <div className="login_Form">
-              <div className="Login_Input_Container">
-                <input
-                  id="email"
-                  type="email"
-                  placeholder="이메일"
-                  className="login_Input_Box"
-                  onChange={onEmailChangeHandler}
-                />
-                <AiOutlineMail className="Login_Icon" />
-              </div>
-              <div className="PW_Input_Container">
-                <input
-                  id="password"
-                  type="password"
-                  placeholder="비밀번호"
-                  className="PW_Input_Box"
-                  onChange={onPasswordChangeHandler}
-                  autoComplete="off"
-                />
-                <RiLockPasswordLine className="PW_Icon" />
-              </div>
+              <LoginEmail setEmail={setEmail} />
+              <LoginPasswd setPassword={setPassword} />
             </div>
             <div className="login_Button">
               <div>

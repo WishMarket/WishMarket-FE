@@ -1,17 +1,13 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
-import { EmailCheckError } from "../../hooks/Errors";
+import { EmailCheckError } from "../../../hooks/Errors";
+import { EmailCheckModalProps } from "../Signup.interface";
 
-interface Props {
-  setEmailCheckShow: React.Dispatch<React.SetStateAction<boolean>>;
-  emailCheckShow: boolean;
-  checkError: string;
-}
 export default function EmailCheckModal({
   setEmailCheckShow,
   emailCheckShow,
   checkError,
-}: Props) {
+}: EmailCheckModalProps) {
   const handleClose = (e: React.MouseEvent<HTMLButtonElement> | void) => {
     setEmailCheckShow(false);
   };
