@@ -42,14 +42,19 @@ export const requestAccessToken = async (refresh_token:string) => {
 //   }
 // };
 
-export const naverLogin = async () =>{
-  return await axios.post(``, { withCredentials: true }).then((response) =>{
-    console.log(response);
-    return response;
-  }).catch((e) => {
-    console.log(e);
-    return 
-  })
+export const naverLogin = async (hash:string) =>{
+  return await axios
+    .post(`http://3.38.63.3:8080/api/auth/sign-in/naver`, {
+      withCredentials: true,
+    },{params:hash})
+    .then((response) => {
+      console.log(response);
+      return response;
+    })
+    .catch((e) => {
+      console.log(e);
+      return;
+    });
 }
 
 export const googleLogin = async (hash:string) => {
@@ -58,8 +63,8 @@ export const googleLogin = async (hash:string) => {
       `http://3.38.63.3:8080/api/auth/sign-in/google`,
       {
         withCredentials: true,
-        params: hash,
-      }
+      },
+      { params: hash }
     )
     .then((response) => {
       console.log(response);

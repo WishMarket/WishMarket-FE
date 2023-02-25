@@ -3,14 +3,9 @@ import { IoReloadSharp } from "react-icons/io5";
 import { Modal } from "react-bootstrap";
 import { EmailCheckError } from "../../hooks/Errors";
 import { emailSend } from "../../hooks/axios/Signup";
+import { TimerProps } from "./Signup.interface";
 
-interface Props {
-  timer: number;
-  error: string;
-  setError: React.Dispatch<React.SetStateAction<string>>;
-  email: string;
-}
-export function Timer({ timer, error, setError, email }: Props) {
+export function Timer({ timer, error, setError, email }: TimerProps) {
   const [minutes, setMinutes] = useState<number>(timer);
   const [seconds, setSeconds] = useState<number>(0);
   const [errorShow, setErrorShow] = useState(false);
