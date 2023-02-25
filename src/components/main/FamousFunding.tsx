@@ -3,28 +3,11 @@ import axios from "axios";
 
 import FamousFundingCard from "./FamousFundingCard";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
-
-interface Funding {
-    fundingId: number;
-    targetId: number;
-    targetName: string;
-    product: {
-        productId: number;
-        name: string;
-        productImageUrl: string;
-        price: number;
-    };
-    fundedPrice: number;
-    myfundingPrice: number;
-    participants: string[];
-    fundStatus: string;
-    startDate: string;
-    endDate: string;
-}
+import { FundingItemType } from "./Main.interface";
 
 export default function FamousFunding() {
     // 랜덤 노출 로직 추가 필요
-    const [fundingInfo, setFundingInfo] = useState<Funding[]>([]);
+    const [fundingInfo, setFundingInfo] = useState<FundingItemType[]>([]);
     const FAMOUS_FUNDING_URL = "/data/FamousFunding.json";
 
     const ITEM_WIDTH = 872;

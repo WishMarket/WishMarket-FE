@@ -1,32 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
-
-import { Modal } from "react-bootstrap";
-import DaumPostCode from "react-daum-postcode";
-
+import ModifyProfileContainer from "./ModifyProfileModal";
 import { commaNums } from "../../hooks/CommaNums";
+import { IProfiles, UserInfo } from "./Profile.interface";
 import { validateNickname, validatePhone } from "../../utils/regex";
-
 import { FaSearchLocation } from "react-icons/fa";
-
-interface IProfiles {
-    profileState: boolean;
-    setProfileState: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-interface AddressData {
-    address: string;
-}
-
-type UserInfo = {
-    name: string;
-    nickname: string;
-    pointPrice: number;
-    email: string;
-    address: string;
-    phone: string;
-    photo: string;
-};
 
 export default function ModifyProfile({ profileState, setProfileState }: IProfiles) {
     const [imageSrc, setImageSrc]: any = useState(null);
@@ -77,18 +55,9 @@ export default function ModifyProfile({ profileState, setProfileState }: IProfil
         setDisabled(!(!phoneErrorMsg && !nicknameErrorMsg));
     }, [phoneErrorMsg, nicknameErrorMsg]);
 
-    const onAddressChangeHandler = (data: AddressData) => {
-        setAddress(data.address);
-        setMapShow(false);
-    };
-
     const onMapClickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         setMapShow(true);
-    };
-
-    const handleClose = (e: React.MouseEvent<HTMLButtonElement> | void) => {
-        setMapShow(false);
     };
 
     const handleNicknameChange = (nickname: string) => {
@@ -212,16 +181,7 @@ export default function ModifyProfile({ profileState, setProfileState }: IProfil
                     ) : null}
                 </table>
             </div>
-            <Modal show={mapShow} onHide={handleClose}>
-                <Modal.Body>
-                    <DaumPostCode autoClose={false} onComplete={onAddressChangeHandler} />
-                </Modal.Body>
-                <Modal.Footer>
-                    <button className="btn btn-secondary" onClick={handleClose}>
-                        닫기
-                    </button>
-                </Modal.Footer>
-            </Modal>
+            <ModifyProfileContainer mapShow={mapShow} setMapShow={setMapShow} setAddress={setAddress} />
             <div className="User_Profile_Btn_Area">
                 <button className="btn btn-primary" onClick={() => setProfileState(true)} disabled={disabled}>
                     변경하기

@@ -7,16 +7,7 @@ import FriendsListItem from "./FriendsListItem";
 import FriendsListContent from "./FriendsListContent";
 
 import { FindUserId } from "../../hooks/recoil/atoms";
-
-interface FriendsObj {
-    Userid: number;
-    email: string;
-    name: string;
-    nickname: string;
-    address: string;
-    tel: string;
-    profile: string;
-}
+import { FriendsObj } from "./FriendsLists.inferface";
 
 export default function FriendsContainer() {
     const [users, setUsers] = useState<FriendsObj[]>([]);

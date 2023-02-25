@@ -6,12 +6,9 @@ import { TfiAlarmClock } from "react-icons/tfi";
 import { IoMdCopy } from "react-icons/io";
 import { BsShareFill } from "react-icons/bs";
 import { CopyClipBoard } from "../../hooks/CopyClipBoard";
+import { FriendsFundingItem } from "./FriendsLists.inferface";
 
-interface FundingInfo {
-    gift: any;
-}
-
-export default function FriendsFunding({ gift }: FundingInfo) {
+export default function FriendsFunding({ gift }: FriendsFundingItem) {
     const [show, setShow] = useState(false);
 
     const handleShow = (e: React.MouseEvent<HTMLButtonElement>) => {

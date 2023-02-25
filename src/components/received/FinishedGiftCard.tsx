@@ -1,22 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { commaNums } from "../../hooks/CommaNums";
-
-interface Funding {
-    fundingId: number;
-    name: string;
-    image: string;
-    price: number;
-    date: string;
-    gatherPoint: number;
-    participant: any;
-    addressInfo: boolean;
-    url: string;
-    review: string | null;
-}
+import { ReceivedFundingItem } from "./Received.interface";
 
 export default function FinishedGiftCard() {
-    const [fundingInfo, setFundingInfo] = useState<Funding[]>([]);
+    const [fundingInfo, setFundingInfo] = useState<ReceivedFundingItem[]>([]);
     const FUNDING_URL = "/data/TestFundingData.json";
 
     // funding data axios

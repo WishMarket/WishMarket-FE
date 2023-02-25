@@ -1,27 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Modal } from "react-bootstrap";
+
 import { commaNums } from "../../hooks/CommaNums";
+import GiftShareModal from "./GiftShareModal";
 
-import { IoMdCopy } from "react-icons/io";
 import { BsShareFill } from "react-icons/bs";
-import { CopyClipBoard } from "../../hooks/CopyClipBoard";
-
-interface Funding {
-    fundingId: number;
-    name: string;
-    image: string;
-    price: number;
-    date: string;
-    gatherPoint: number;
-    participant: any;
-    addressInfo: boolean;
-    url: string;
-}
+import { ReceivedFundingItem } from "./Received.interface";
 
 export default function InProgressGiftCard() {
     const [show, setShow] = useState(false);
-    const [fundingInfo, setFundingInfo] = useState<Funding[]>([]);
+    const [fundingInfo, setFundingInfo] = useState<ReceivedFundingItem[]>([]);
     const FUNDING_URL = "/data/TestFundingData.json";
 
     // funding data axios
@@ -44,10 +32,6 @@ export default function InProgressGiftCard() {
     const handleShow = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         setShow(true);
-    };
-
-    const handleClose = (e: React.MouseEvent<HTMLButtonElement> | void) => {
-        setShow(false);
     };
 
     return (
@@ -97,32 +81,13 @@ export default function InProgressGiftCard() {
                                 </div>
                             </div>
                         </div>
-
                         {/* 추후에 링크 경로 확인 필요 */}
+                        <GiftShareModal show={show} setShow={setShow} />
                         <div className="In_Progress_Gift_Btn_Area">
                             <button className="In_Progress_Gift_Share_Btn" onClick={handleShow}>
                                 <BsShareFill className="In_Progress_Gift_Share_Btn_Icon" />
                             </button>
                         </div>
-                        <Modal show={show} onHide={handleClose}>
-                            <Modal.Header closeButton>
-                                <Modal.Title>공유하기</Modal.Title>
-                            </Modal.Header>
-                            <Modal.Body>
-                                <div className="Modal_Inner">
-                                    <span className="Modal_Title">링크:</span>
-                                    <input className="Share_LinkBox" type="text" value={gift.url} readOnly></input>
-                                    <button className="btn btn-light">
-                                        <IoMdCopy className="copy_Button" onClick={() => CopyClipBoard(gift.url)} />
-                                    </button>
-                                </div>
-                            </Modal.Body>
-                            <Modal.Footer>
-                                <button className="btn btn-secondary" onClick={handleClose}>
-                                    닫기
-                                </button>
-                            </Modal.Footer>
-                        </Modal>
                     </div>
                 </div>
             ))}

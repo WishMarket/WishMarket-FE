@@ -5,14 +5,9 @@ import { SiNotion } from "react-icons/si";
 
 import ToggleContent from "./ToggleContent";
 import ToggleContentNull from "./ToggleContentNull";
+import { ToggleStateType } from "./Header.interface";
 
-interface ToggleBtnType {
-    tabState: boolean;
-    setTabState: React.Dispatch<React.SetStateAction<boolean>>;
-    token: string | null;
-}
-
-export default function ToggleBar({ tabState, setTabState, token }: ToggleBtnType) {
+export default function ToggleBar({ tabState, setTabState, token }: ToggleStateType) {
     const toggleRef = useRef<any>();
 
     useEffect(() => {

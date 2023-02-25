@@ -1,12 +1,9 @@
 import React from "react";
 import defaultImg from "../../assets/default-profile-img.png";
 import { commaNums } from "../../hooks/CommaNums";
+import { userInfoItem } from "./Profile.interface";
 
-interface userInfo {
-    userInfo: any;
-}
-
-export default function ViewProfileContainer({ userInfo }: userInfo) {
+export default function ViewProfileContainer({ userInfo }: userInfoItem) {
     return (
         <>
             <tbody>

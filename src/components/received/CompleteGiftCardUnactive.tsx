@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import CompleteGiftCardActive from "./CompleteGiftCardActive";
 import { commaNums } from "../../hooks/CommaNums";
+import { ReceivedFundingInfo } from "./Received.interface";
 
-interface FundingInfo {
-    gift: any;
-}
-
-export default function CompleteGiftCardUnactive({ gift }: FundingInfo) {
+export default function CompleteGiftCardUnactive({ gift }: ReceivedFundingInfo) {
     const [modifyState, setModifyState] = useState<boolean>(false);
 
     return (
