@@ -1,24 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import FriendsFunding from "./FriendsFunding";
-
-interface Funding {
-    fundingId: number;
-    name: string;
-    image: string;
-    price: number;
-    date: string;
-    gatherPoint: number;
-    accountPoint: number;
-    receiver: string;
-    participant: any;
-    url: string;
-    active: boolean;
-    achieve: boolean;
-}
+import { FundingList } from "./FriendsLists.inferface";
 
 export default function FriendsFundingContainer({ userId }: any) {
-    const [fundingInfo, setFundingInfo] = useState<Funding[]>([]);
+    const [fundingInfo, setFundingInfo] = useState<FundingList[]>([]);
     const FUNDING_URL = "/data/AccountFunding.json";
 
     // funding data axios

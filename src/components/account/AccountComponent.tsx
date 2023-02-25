@@ -4,24 +4,10 @@ import AccountCard from "./AccountCard";
 import AccountExpiredCard from "./AccountExpiredCard";
 import { BiCalendarHeart, BiCalendarCheck } from "react-icons/bi";
 import { MdKeyboardArrowDown } from "react-icons/md";
-
-interface Funding {
-    fundingId: number;
-    name: string;
-    image: string;
-    price: number;
-    date: string;
-    gatherPoint: number;
-    accountPoint: number;
-    receiver: string;
-    participant: any;
-    url: string;
-    active: boolean;
-    achieve: boolean;
-}
+import { AccountFunding } from "./Account.interface";
 
 export default function AccountComponent() {
-    const [fundingInfo, setFundingInfo] = useState<Funding[]>([]);
+    const [fundingInfo, setFundingInfo] = useState<AccountFunding[]>([]);
     const FUNDING_URL = "/data/AccountFunding.json";
 
     const activeRef = useRef<HTMLDivElement>(null);

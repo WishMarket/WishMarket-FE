@@ -1,22 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ViewProfileContainer from "./ViewProfileContainer";
-import WithdrawalMoadl from "./WithdrawalMoadl";
-
-interface IProfiles {
-    profileState: boolean;
-    setProfileState: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-type UserInfo = {
-    name: string;
-    nickname: string;
-    pointPrice: number;
-    email: string;
-    address: string;
-    phone: string;
-    photo: string;
-};
+import WithdrawalModal from "./WithdrawalModal";
+import { IProfiles, UserInfo } from "./Profile.interface";
 
 export default function ViewProfile({ profileState, setProfileState }: IProfiles) {
     const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
@@ -40,9 +26,7 @@ export default function ViewProfile({ profileState, setProfileState }: IProfiles
         getUserInfo();
     }, []);
 
-    const onClickWithdrawal = (
-      e: React.MouseEvent<HTMLButtonElement>
-    ) => {
+    const onClickWithdrawal = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         setErrorShow(true);
     };
@@ -59,9 +43,11 @@ export default function ViewProfile({ profileState, setProfileState }: IProfiles
                     정보 변경
                 </button>
                 <button className="btn Point_Charge_Btn">포인트 충전</button>
-                <button className="btn btn-warning" onClick={onClickWithdrawal}>회원 탈퇴</button>
+                <button className="btn btn-warning" onClick={onClickWithdrawal}>
+                    회원 탈퇴
+                </button>
             </div>
-            <WithdrawalMoadl errorShow={errorShow} setErrorShow={setErrorShow} />
+            <WithdrawalModal errorShow={errorShow} setErrorShow={setErrorShow} />
         </>
     );
 }

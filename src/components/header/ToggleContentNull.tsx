@@ -1,11 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { HandleToggleType } from "./Header.interface";
 
-interface ToggleType {
-    handleToggleMenu: () => void;
-}
-
-export default function ToggleContentNull({ handleToggleMenu }: ToggleType) {
+export default function ToggleContentNull({ handleToggleMenu, toggleClose }: HandleToggleType) {
     return (
         <div className="Toggle_Not_Users_Container">
             <div className="Toggle_Not_Users_Wrapper">

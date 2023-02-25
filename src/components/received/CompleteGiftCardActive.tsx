@@ -1,30 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Modal } from "react-bootstrap";
-import DaumPostCode from "react-daum-postcode";
+import GiftModal from "./GiftModal";
 import { commaNums } from "../../hooks/CommaNums";
 import { MdSentimentVerySatisfied, MdSentimentVeryDissatisfied } from "react-icons/md";
-import { FaKaaba } from "react-icons/fa";
+import { ReceivedFundingInfo } from "./Received.interface";
+import { UserInfo } from "../profile/Profile.interface";
 
-interface AddressData {
-    address: string;
-}
-
-interface FundingInfo {
-    gift: any;
-}
-
-type UserInfo = {
-    name: string;
-    nickname: string;
-    pointPrice: number;
-    email: string;
-    address: string;
-    phone: string;
-    photo: string;
-};
-
-export default function CompleteGiftCardActive({ gift }: FundingInfo) {
+export default function CompleteGiftCardActive({ gift }: ReceivedFundingInfo) {
     const [goodIcon, setGoodIcon] = useState<boolean>(false);
     const [badIcon, setBadIcon] = useState<boolean>(false);
     const [address, setAddress] = useState<string>("");
@@ -50,18 +32,9 @@ export default function CompleteGiftCardActive({ gift }: FundingInfo) {
         getUserInfo();
     }, []);
 
-    const onAddressChangeHandler = (data: AddressData) => {
-        setAddress(data.address);
-        setMapShow(false);
-    };
-
     const onMapClickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         setMapShow(true);
-    };
-
-    const handleClose = (e: React.MouseEvent<HTMLButtonElement> | void) => {
-        setMapShow(false);
     };
 
     return (
@@ -124,16 +97,7 @@ export default function CompleteGiftCardActive({ gift }: FundingInfo) {
                     </div>
                 </div>
             </div>
-            <Modal show={mapShow} onHide={handleClose}>
-                <Modal.Body>
-                    <DaumPostCode autoClose={false} onComplete={onAddressChangeHandler} />
-                </Modal.Body>
-                <Modal.Footer>
-                    <button className="btn btn-secondary" onClick={handleClose}>
-                        닫기
-                    </button>
-                </Modal.Footer>
-            </Modal>
+            <GiftModal mapShow={mapShow} setMapShow={setMapShow} setAddress={setAddress} />
         </>
     );
 }

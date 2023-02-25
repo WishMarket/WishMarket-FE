@@ -5,13 +5,9 @@ import FriendsWishContainer from "./FriendsWishContainer";
 
 import { BiCalendarHeart, BiCalendarCheck } from "react-icons/bi";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { FriendsItem } from "./FriendsLists.inferface";
 
-interface FriendsObj {
-    users: any;
-    userId: number;
-}
-
-export default function FriendsListContent({ users, userId }: FriendsObj) {
+export default function FriendsListContent({ users, userId }: FriendsItem) {
     const fundingRef = useRef<HTMLDivElement>(null);
     const wishRef = useRef<HTMLDivElement>(null);
 

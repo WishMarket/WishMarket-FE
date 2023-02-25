@@ -19,7 +19,7 @@
 
     .In_Progress_Gift_Item {
         width: 900px;
-        height: 264px;
+        height: 280px;
         display: flex;
         justify-content: space-between;
         margin-bottom: 28px;
@@ -34,7 +34,7 @@
 
         .In_Progress_Gift_Img {
             width: 280px;
-            height: 264px;
+            height: 280px;
             border-top-left-radius: 24px;
             border-bottom-left-radius: 24px;
             object-fit: cover;
@@ -42,7 +42,7 @@
 
         .In_Progress_Gift_Content {
             width: 620px;
-            height: 264px;
+            height: 280px;
             background-color: $color-gray-200;
             border-top-right-radius: 24px;
             border-bottom-right-radius: 24px;

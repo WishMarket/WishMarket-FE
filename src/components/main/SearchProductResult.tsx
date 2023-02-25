@@ -3,15 +3,10 @@ import { SearchProduct } from "./Main.interface";
 import { getSearchProductList } from "../../hooks/axios/SearchProduct";
 import SearchProductResultCard from "./SearchProductResultCard";
 import SearchProductPagination from "./SearchProductPagination";
-
+import { KeywordType } from "./Main.interface";
 import { GiNothingToSay } from "react-icons/gi";
 
-interface Keyword {
-    keyword: string;
-    setKeyword: any;
-}
-
-export default function SearchProductResult({ keyword, setKeyword }: Keyword) {
+export default function SearchProductResult({ keyword, setKeyword }: KeywordType) {
     const [items, setItems] = useState<SearchProduct[]>([]);
     const [page, setPage] = useState<number>(1);
 
