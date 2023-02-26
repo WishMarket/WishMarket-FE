@@ -2,12 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { commaNums } from "../../hooks/CommaNums";
+import { FriendsWishItem } from "./FriendsLists.inferface";
 
-interface Item {
-    item: any;
-}
-
-export default function FriendsWish({ item }: Item) {
+export default function FriendsWish({ item }: FriendsWishItem) {
     return (
         <>
             <div className="Wishlist_Item">

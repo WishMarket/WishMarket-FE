@@ -2,16 +2,10 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 import WishlistCard from "./WishlistCard";
-
-interface Wishlist {
-    productId: number;
-    name: string;
-    image: string;
-    price: number;
-}
+import { WishlistType } from "./Wishlist.interface";
 
 export default function WishlistComponent() {
-    const [list, setList] = useState<Wishlist[]>([]);
+    const [list, setList] = useState<WishlistType[]>([]);
 
     const url = "/data/Wishlist.json";
 

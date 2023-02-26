@@ -1,120 +1,5 @@
-.Friends_Container {
-    footer {
-        z-index: -10;
-    }
-}
-
 .FriendsWrapper {
     width: 100%;
-}
-
-.SideBarContainer {
-    position: absolute;
-    right: 0;
-    top: 130px;
-
-    .SidebarWrapper {
-        position: relative;
-        z-index: 10;
-        background-color: $color-white;
-        // 높이 늘릴려면 위 footer 아래 Sidebar_DESC 높이랑 같게 해야함(스크롤)
-        height: 1000px;
-        width: 350px;
-        border-left: 2px solid;
-        border: 1px solid $color-gray-800;
-        border-radius: 0px 0px 0px 15px;
-
-        .openButton {
-            background-color: $color-white;
-            width: 46px;
-            height: 180px;
-            position: absolute;
-            translate: transformX(-100%);
-            left: -46px;
-            top: -0.5px;
-            border: 1px solid $color-gray-800;
-            border-right: 0px;
-            border-radius: 8px 0px 0px 8px;
-
-            span {
-                font-size: $font-sub-title-size;
-                font-weight: 600;
-            }
-        }
-
-        .Sidebar_DESC {
-            //여기
-            height: 1000px;
-            overflow-x: hidden;
-            overflow-y: scroll;
-
-            ul {
-                li {
-                    width: 90%;
-                    margin: 20px;
-                    padding: 20px;
-                }
-            }
-        }
-    }
-}
-
-.NoFriend {
-    font-size: 24px;
-    font-weight: 600;
-}
-
-.FriendList {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 20px;
-
-    .Friend {
-        display: flex;
-        align-items: center;
-
-        img {
-            background-color: $color-white;
-            border: 1px solid;
-            border-radius: 100px;
-            padding: 3px;
-            width: 35px;
-            height: 35px;
-            margin-right: 10px;
-        }
-    }
-
-    .Friend_DESC {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 40px;
-    }
-
-    .Friend_Button {
-        border: none;
-        padding: 0px;
-        background-color: transparent;
-
-        .Button_Inner {
-            color: $color-red-600;
-            font-size: $font-title-size;
-        }
-
-        .Button_Inner:hover {
-            color: $color-red-800;
-        }
-    }
-}
-
-.FriendList:hover {
-    background-color: $color-gray-200;
-    transition: 0.3s ease-out;
-}
-
-.FriendMain_Wrapper {
-    height: auto;
     display: flex;
     justify-content: center;
 
@@ -135,8 +20,6 @@
 
         .FriendSearch_Wrapper {
             form {
-                height: auto;
-
                 .FriendMain_Search {
                     margin-left: 50px;
                     display: flex;

@@ -1,11 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { TabStateType } from "./Header.interface";
 
-interface Tab {
-    tabNotify: boolean;
-}
-
-export default function NotifyDropDownNull({ tabNotify }: Tab) {
+export default function NotifyDropDownNull({ tabNotify }: TabStateType) {
     return (
         <div id="Notify_dropdown_Content" className={tabNotify ? "Dropdown_Active" : "Dropdown_Unactive"}>
             <ul>

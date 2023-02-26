@@ -2,13 +2,9 @@ import React from "react";
 import { Modal } from "react-bootstrap";
 import { IoMdCopy } from "react-icons/io";
 import { CopyClipBoard } from "../../hooks/CopyClipBoard";
+import { FundingModalType } from "./Main.interface";
 
-interface Modal {
-    show: boolean;
-    setShow: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-export default function FundingModal({ show, setShow }: Modal) {
+export default function FundingModal({ show, setShow }: FundingModalType) {
     const handleClose = (e: React.MouseEvent<HTMLButtonElement> | void) => {
         setShow(false);
     };

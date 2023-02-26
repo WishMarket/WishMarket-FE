@@ -3,18 +3,10 @@ import axios from "axios";
 import FamousFriendCard from "./card/FamousFriendCard";
 
 import { MdWhereToVote } from "react-icons/md";
-
-interface FamousFriendsObj {
-    Userid: string;
-    name: string;
-    nickname: string;
-    profileImage: string;
-    famous: boolean;
-    isfriend: boolean;
-}
+import { FamousFriendObj } from "./SearchFriend.interface";
 
 export default function FamousFriendForm() {
-    const [famouseusers, setFamousUsers] = useState<FamousFriendsObj[]>([]);
+    const [famouseusers, setFamousUsers] = useState<FamousFriendObj[]>([]);
 
     const url2 = "/data/FamousFriends.json";
     const getFamousUsers = async () => {
@@ -34,17 +26,19 @@ export default function FamousFriendForm() {
     }, []);
 
     return (
-        <div className="FamousFriend">
-            <div className="FamousFriend_title">
-                <MdWhereToVote className="FamousFriend_title_Icon" />
-                위시마켓 <h2>인기</h2> 유저
-            </div>
-            <div className="FamousFriend_Desc">위시마켓의 인플루언서와 친구를 맺고 펀딩을 진행해 보세요.</div>
-            <div className="FriendResult_List">
-                {famouseusers.map((data: FamousFriendsObj) => {
-                    return <FamousFriendCard data={data} key={data.Userid} />;
-                })}
-            </div>
+      <div className="FamousFriend">
+        <div className="FamousFriend_title">
+          <MdWhereToVote className="FamousFriend_title_Icon" />
+          위시마켓 <h2>인기</h2> 유저
         </div>
+        <div className="FamousFriend_Desc">
+          위시마켓의 인플루언서와 친구를 맺고 펀딩을 진행해 보세요.
+        </div>
+        <div className="FriendResult_List">
+          {famouseusers.map((data: FamousFriendObj) => {
+            return <FamousFriendCard data={data} key={data.Userid} />;
+          })}
+        </div>
+      </div>
     );
 }

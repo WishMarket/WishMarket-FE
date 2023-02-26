@@ -5,14 +5,9 @@ import { TiUserDelete } from "react-icons/ti";
 import { Modal } from "react-bootstrap";
 
 import { FriendsError } from "../../hooks/Errors";
+import { FriendsItemState } from "./FriendsLists.inferface";
 
-interface FriendsObj {
-    user: any;
-    userId: number;
-    setUserId: any;
-}
-
-export default function FriendsListItem({ user, userId, setUserId }: FriendsObj) {
+export default function FriendsListItem({ user, userId, setUserId }: FriendsItemState) {
     const [errorShow, setErrorShow] = useState<boolean>(false);
     const [errorCode, setErrorCode] = useState<number>(1);
 

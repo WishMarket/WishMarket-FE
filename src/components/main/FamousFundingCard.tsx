@@ -5,12 +5,9 @@ import { TfiAlarmClock } from "react-icons/tfi";
 import FundingModal from "./FundingModal";
 import { commaNums } from "../../hooks/CommaNums";
 import { Link } from "react-router-dom";
+import { FundingItem } from "./Main.interface";
 
-interface Funding {
-    gift: any;
-}
-
-export default function FamousFundingCard({ gift }: Funding) {
+export default function FamousFundingCard({ gift }: FundingItem) {
     const [show, setShow] = useState<boolean>(false);
 
     const handleShow = (e: React.MouseEvent<HTMLButtonElement>) => {

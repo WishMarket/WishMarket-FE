@@ -1,12 +1,8 @@
 import { useState } from "react";
 import { FaBell } from "react-icons/fa";
-
 import NotifyDropDown from "./NotifyDropDown";
 import NotifyDropDownNull from "./NotifyDropDownNull";
-
-interface Token {
-    token: string | null;
-}
+import { Token } from "./Header.interface";
 
 export default function HeaderNotify({ token }: Token) {
     const [tabNotify, setTabNotify] = useState(false);

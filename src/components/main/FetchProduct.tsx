@@ -2,19 +2,7 @@ import { useState, useEffect } from "react";
 
 import CategoryItemCard from "../category/CategoryItemCard";
 import { getBestProduct } from "../../hooks/axios/ProductList";
-
-interface Product {
-    best: boolean;
-    category: number;
-    createdAt: string;
-    description: string;
-    likes: number;
-    modifiedAt: string;
-    name: string;
-    price: number;
-    productId: number;
-    productImageUrl: string;
-}
+import { Product } from "../category/Category.interface";
 
 export default function FetchProduct() {
     const [items, setItems] = useState<Product[]>([]);

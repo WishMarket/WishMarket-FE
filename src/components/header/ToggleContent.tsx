@@ -1,13 +1,9 @@
 import React from "react";
 import defaultProfileImg from "../../assets/default-profile-img.png";
 import { Account_Logout } from "../../hooks/axios/Togglebar";
+import { HandleToggleType } from "./Header.interface";
 
-interface ToggleType {
-    handleToggleMenu: () => void;
-    toggleClose: (e: any) => void;
-}
-
-export default function ToggleContent({ handleToggleMenu, toggleClose }: ToggleType) {
+export default function ToggleContent({ handleToggleMenu, toggleClose }: HandleToggleType) {
     const handleLogout = async (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         toggleClose(e.target);

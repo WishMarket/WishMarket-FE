@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import FriendsWish from "./FriendsWish";
-
-interface Wishlist {
-    productId: number;
-    name: string;
-    image: string;
-    price: number;
-}
+import { FriendsWishlist } from "./FriendsLists.inferface";
 
 export default function FriendsWishContainer({ userId }: any) {
-    const [list, setList] = useState<Wishlist[]>([]);
+    const [list, setList] = useState<FriendsWishlist[]>([]);
     const WISHLIST_URL = "/data/Wishlist.json";
 
     // setList
