@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { BsShareFill } from "react-icons/bs";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { postMyWish, getMyWish } from "../../hooks/axios/MyWishlist";
 
 import ProductModal from "./ProductModal";
 import { commaNums } from "../../hooks/CommaNums";
@@ -11,10 +12,21 @@ import { ProductType } from "./Category.interface";
 export default function CategoryItemCard({ item }: ProductType) {
     const [tabWish, setTabWish] = useState<boolean>(false);
     const [showModal, setShowModal] = useState<boolean>(false);
+    // const [wishItem, setWishItem] = useState([]);
+
+    // useEffect(() => {
+    //     getMyWish(setWishItem);
+    //     console.log(wishItem);
+    // }, []);
 
     // wishlist btn
-    const handleTabWish = () => {
-        setTabWish(!tabWish);
+    const handleAddWish = () => {
+        setTabWish(true);
+        postMyWish(item.productId);
+    };
+
+    const handleDeleteWish = () => {
+        setTabWish(false);
     };
 
     // share btn
@@ -39,7 +51,7 @@ export default function CategoryItemCard({ item }: ProductType) {
                             <button className="btn btn-warning Category_Funding_Btn">선물하기</button>
                         </Link>
                         <div className="Product_List_Icon">
-                            {tabWish ? <AiFillHeart className="Category_Wish_Minus_Btn" onClick={handleTabWish} /> : <AiOutlineHeart className="Category_Wish_Add_Btn" onClick={handleTabWish} />}
+                            {tabWish ? <AiFillHeart className="Category_Wish_Minus_Btn" onClick={handleDeleteWish} /> : <AiOutlineHeart className="Category_Wish_Add_Btn" onClick={handleAddWish} />}
                             <button className="Product_Share_Btn" onClick={handleShowModal}>
                                 <BsShareFill className="Product_Share_Inner" />
                             </button>

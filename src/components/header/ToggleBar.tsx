@@ -43,7 +43,7 @@ export default function ToggleBar({ tabState, setTabState, token }: ToggleStateT
                 </div>
                 <div className="Toggle_Bar_Container">
                     <div className="Toggle_Bar_Wrapper">
-                        {token ? <ToggleContent handleToggleMenu={handleToggleMenu} toggleClose={toggleClose} /> : <ToggleContentNull handleToggleMenu={handleToggleMenu} />}
+                        {token ? <ToggleContent handleToggleMenu={handleToggleMenu} toggleClose={toggleClose} /> : <ToggleContentNull handleToggleMenu={handleToggleMenu} toggleClose={toggleClose} />}
                         <hr className="Toggle_Divide_Bar" />
                         <div className="Project_Info">
                             <div className="Project_Info_Title">Wish Market © GIFT4U</div>
