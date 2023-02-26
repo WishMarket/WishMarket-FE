@@ -29,7 +29,7 @@ export default function SelectBox({
         className="SelectOptions"
       >
         <div onClick={(e) => closeSelect("name", e)}>이름</div>
-        <div onClick={(e) => closeSelect("nickname", e)}>닉네임</div>
+        <div onClick={(e) => closeSelect("nickName", e)}>닉네임</div>
         <div onClick={(e) => closeSelect("email", e)}>이메일</div>
       </div>
     </>

@@ -3,15 +3,22 @@ import FamousFriendForm from "./FamousFriendForm";
 import SearchForm from "./SearchForm";
 import SelectBox from "./SelectBox";
 import { SearchFriends } from "../../hooks/axios/SearchFriend";
+import { SearchFriendsObj } from "./SearchFriend.interface";
 
 export default function FriendsForm() {
   const [input, setInput] = useState<string>("");
   const [select, setSelect] = useState<string>("name");
   const [selected, setSelected] = useState<string>("이름");
   const [show, setShow] = useState<string>("none");
+  const [showFriend, setShowFriend] = useState<boolean>(false);
+  const [friend, setFriend] = useState<SearchFriendsObj[]>([]);
   const selectRef = useRef<any>("");
-  const onInputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+
+  const onInputChangeHandler = async (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
     setInput(e.currentTarget.value);
+    setShowFriend(false);
   };
 
   const outsideSelect = (e: any) => {
@@ -22,16 +29,17 @@ export default function FriendsForm() {
     }
   };
 
-  const onSubmitHandler = async(e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const getFriends = await SearchFriends(input, select);
-    console.log(getFriends);
+    setFriend(getFriends);
+    setShowFriend(true);
   };
 
   useEffect(() => {
     if (select == "name") {
       setSelected("이름");
-    } else if (select == "nickname") {
+    } else if (select == "nickName") {
       setSelected("닉네임");
     } else if (select == "email") {
       setSelected("이메일");
@@ -70,10 +78,16 @@ export default function FriendsForm() {
           </form>
         </div>
 
-        {input != "" ? (
-          <SearchForm input={input} select={select} selected={selected} />
-        ) : null}
-        {input == "" ? <FamousFriendForm /> : null}
+        {showFriend != false ? (
+          <SearchForm
+            input={input}
+            select={select}
+            selected={selected}
+            friend={friend}
+          />
+        ) : (
+          <FamousFriendForm />
+        )}
       </div>
     </div>
   );

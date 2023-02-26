@@ -2,10 +2,11 @@ export interface SearchFormProps {
   input: string;
   select: string;
   selected: string;
+  friend: SearchFriendsObj[];
 }
 
 export interface FamousFriendObj {
-  Userid: string;
+  userid: string;
   name: string;
   nickname: string;
   profileImage: string;
@@ -14,12 +15,12 @@ export interface FamousFriendObj {
 }
 
 export interface SearchFriendsObj {
-  Userid: string;
   email: string;
+  isFriend: boolean;
   name: string;
-  nickname: string;
-  profileImage: string;
-  isfriend: boolean;
+  nickName: string;
+  profileImageUrl: string;
+  userId: number;
 }
 
 export interface SelectBoxProps {
