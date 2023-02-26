@@ -5,9 +5,9 @@ import { BsShareFill } from "react-icons/bs";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 
 import { commaNums } from "../../hooks/CommaNums";
-import { DetailModal } from "./Detail.interface";
+import { DetailModalType } from "./Detail.interface";
 
-export default function DetailProductInfo({ item, showModal, setShowModal }: DetailModal) {
+export default function DetailProductInfo({ item, showModal, setShowModal }: DetailModalType) {
     const [tabWish, setTabWish] = useState(false);
 
     let { id } = useParams() as { id: string };
