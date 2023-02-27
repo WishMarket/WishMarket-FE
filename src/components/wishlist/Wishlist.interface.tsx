@@ -1,8 +1,11 @@
 export interface WishlistType {
+    wishListId: number;
+    userId: number;
+    fundingId: number | null;
     productId: number;
-    name: string;
-    image: string;
+    productName: string;
     price: number;
+    productImage: string;
 }
 
 export interface WishlistItemType {

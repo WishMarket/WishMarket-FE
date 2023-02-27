@@ -6,6 +6,7 @@ export type ProductObj = {
     price: number;
     description: string;
     likes: number;
+    best: boolean;
 };
 
 export type ProductItem = {

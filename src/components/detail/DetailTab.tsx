@@ -11,7 +11,7 @@ export default function DetailTab({ item }: ProductItem) {
 
     const tabs = [
         { id: 0, name: "상품 정보", content: <ProductInfo item={item} /> },
-        { id: 1, name: "한줄 리뷰", content: <ProductReview /> },
+        { id: 1, name: "한줄 리뷰", content: <ProductReview item={item} /> },
         { id: 2, name: "이용 안내", content: <HowToUse /> },
     ];
 
