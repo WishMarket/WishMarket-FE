@@ -11,7 +11,6 @@ export const getMyWish: any = async (setState: React.Dispatch<React.SetStateActi
         })
         .then((res) => {
             let response = res.data;
-            console.log(res);
             setState(response);
         })
         .catch((error) => {
@@ -20,7 +19,7 @@ export const getMyWish: any = async (setState: React.Dispatch<React.SetStateActi
 };
 
 export const postMyWish: any = async (productId: number) => {
-    const WISH_URL = `http://3.38.63.3:8080/api/wishlist/add?productId=${productId}`;
+    const WISH_URL = `http://3.38.63.3:8080/api/wishlist/add/${productId}`;
     await axios
         .post(
             WISH_URL,
@@ -36,14 +35,15 @@ export const postMyWish: any = async (productId: number) => {
             return res;
         })
         .catch((error) => {
+            console.log(error);
             return error;
         });
 };
 
-export const deleteMyWish: any = async (wishListId: number) => {
-    const WISH_URL = `http://3.38.63.3:8080/api/wishlist?wishListId=${wishListId}`;
+export const deleteMyWish: any = async (productId: number) => {
+    const WISH_DELETE_URL = `http://3.38.63.3:8080/api/wishlist/${productId}`;
     await axios
-        .delete(WISH_URL, {
+        .delete(WISH_DELETE_URL, {
             headers: {
                 Authorization: window.localStorage.getItem("accessToken"),
             },

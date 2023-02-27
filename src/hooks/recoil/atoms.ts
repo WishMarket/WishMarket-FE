@@ -10,6 +10,11 @@ export const SearchKeyword = atom<string>({
     default: "",
 });
 
+export const LoadWishlist = atom<[]>({
+    key: "MyWish",
+    default: [],
+});
+
 export const FindUserId = atom<number>({
     key: "UserId",
     default: -1,

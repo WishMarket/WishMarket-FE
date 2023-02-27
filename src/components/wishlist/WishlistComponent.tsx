@@ -1,29 +1,16 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
-
+import { useRecoilState } from "recoil";
+import { LoadWishlist } from "../../hooks/recoil/atoms";
 import WishlistCard from "./WishlistCard";
 import { WishlistType } from "./Wishlist.interface";
+import { getMyWish } from "../../hooks/axios/MyWishlist";
 
 export default function WishlistComponent() {
-    const [list, setList] = useState<WishlistType[]>([]);
+    const [list, setList] = useRecoilState(LoadWishlist);
 
-    const url = "/data/Wishlist.json";
-
-    // axios
-    const getList = async () => {
-        await axios
-            .get(url)
-            .then((res) => {
-                let response = res.data.list;
-                setList(response);
-            })
-            .catch((error) => {
-                return Promise.reject(error);
-            });
-    };
-
+    // 종속성 배열에 list 넣으면 새로고침 없이 잘 동작은 되는데 무한 루프 문제가 생김
     useEffect(() => {
-        getList();
+        getMyWish(setList);
     }, []);
 
     return (
@@ -32,7 +19,7 @@ export default function WishlistComponent() {
             <div className="Wishlist_Container">
                 <div className="Wishlist_Wrapper">
                     {list.map((item: any) => {
-                        return <WishlistCard item={item} key={item.productId} />;
+                        return <WishlistCard item={item} key={item.wishListId} />;
                     })}
                 </div>
             </div>
