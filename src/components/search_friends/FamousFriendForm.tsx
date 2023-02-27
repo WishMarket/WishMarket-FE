@@ -4,26 +4,21 @@ import FamousFriendCard from "./card/FamousFriendCard";
 
 import { MdWhereToVote } from "react-icons/md";
 import { FamousFriendObj } from "./SearchFriend.interface";
+import { InfluencerFriend } from "../../hooks/axios/SearchFriend";
 
 export default function FamousFriendForm() {
   const [famouseusers, setFamousUsers] = useState<FamousFriendObj[]>([]);
 
-  const url2 = "/data/FamousFriends.json";
-  const getFamousUsers = async () => {
-    await axios
-      .get(url2)
-      .then((res) => {
-        let response = res.data.famousfriend;
-        setFamousUsers(response); // 연동 시 교체 필요
-      })
-      .catch((error) => {
-        return Promise.reject(error);
-      });
-  };
+  // const getFamousUsers = async () => {
+  //   const Famous = await InfluencerFriend();
+  //   console.log(Famous);
+  //   setFamousUsers(Famous);
+    
+  // };
 
-  useEffect(() => {
-    getFamousUsers();
-  }, []);
+  // useEffect(() => {
+  //   getFamousUsers();
+  // }, []);
 
   return (
     <div className="FamousFriend">
@@ -38,13 +33,13 @@ export default function FamousFriendForm() {
         {famouseusers.map((data: FamousFriendObj) => {
           return (
             <FamousFriendCard
+              key={data.userid}
               userid={data.userid}
               name={data.name}
               nickname={data.nickname}
               famous={data.famous}
               profileImage={data.profileImage}
               isfriend={data.isfriend}
-              key={data.userid}
             />
           );
         })}

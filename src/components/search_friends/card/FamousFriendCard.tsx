@@ -33,7 +33,7 @@ export default function FamousFriendCard({
     setErrorShow(false);
   };
 
-  if (userid) {
+  if (userid ==null) {
     return <div>검색 결과가 없습니다.</div>;
   } else {
     return (

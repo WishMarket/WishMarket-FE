@@ -1,7 +1,7 @@
 {
   "famousfriend": [
     {
-      "Userid": "1",
+      "userid": 1,
       "name": "방탄소년단",
       "nickname": "유명인1",
       "profileImage": "https://w.namu.la/s/b08f047a5e40252885eade1e88cea066ff8fb41c304c167ae9ebe5677904fb907019b47eee3ac8a76cc05c2aec8353e64a3784b9f932b1309f395ba463e3b6292d435af094d4e4f4fd7a25baf0fc22e98da19b8f4dca8bee5a9d5486a703ea06e3eae74367aabce1866d6729b1a4b355",
@@ -9,7 +9,7 @@
       "isfriend": true
     },
     {
-      "Userid": "2",
+      "userid": 2,
       "name": "아이유",
       "nickname": "유명인2",
       "profileImage": "https://w.namu.la/s/b08f047a5e40252885eade1e88cea066ff8fb41c304c167ae9ebe5677904fb907019b47eee3ac8a76cc05c2aec8353e64a3784b9f932b1309f395ba463e3b6292d435af094d4e4f4fd7a25baf0fc22e98da19b8f4dca8bee5a9d5486a703ea06e3eae74367aabce1866d6729b1a4b355",
@@ -17,7 +17,7 @@
       "isfriend": false
     },
     {
-      "Userid": "3",
+      "userid": 3,
       "name": "뉴진스",
       "nickname": "유명인3",
       "profileImage": "https://w.namu.la/s/b08f047a5e40252885eade1e88cea066ff8fb41c304c167ae9ebe5677904fb907019b47eee3ac8a76cc05c2aec8353e64a3784b9f932b1309f395ba463e3b6292d435af094d4e4f4fd7a25baf0fc22e98da19b8f4dca8bee5a9d5486a703ea06e3eae74367aabce1866d6729b1a4b355",
@@ -25,7 +25,7 @@
       "isfriend":false
     },
     {
-      "Userid": "4",
+      "userid": 4,
       "name": "마동석",
       "nickname": "유명인4",
       "profileImage": "https://w.namu.la/s/b08f047a5e40252885eade1e88cea066ff8fb41c304c167ae9ebe5677904fb907019b47eee3ac8a76cc05c2aec8353e64a3784b9f932b1309f395ba463e3b6292d435af094d4e4f4fd7a25baf0fc22e98da19b8f4dca8bee5a9d5486a703ea06e3eae74367aabce1866d6729b1a4b355",

@@ -32,6 +32,7 @@ export default function FriendsForm() {
   const onSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const getFriends = await SearchFriends(input, select);
+    console.log(getFriends);
     setFriend(getFriends);
     setShowFriend(true);
   };
