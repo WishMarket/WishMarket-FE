@@ -1,32 +1,34 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import { useRecoilState } from "recoil";
+import { LoadWishlist } from "../../hooks/recoil/atoms";
 import { BsShareFill } from "react-icons/bs";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
-import { postMyWish, getMyWish } from "../../hooks/axios/MyWishlist";
+import { postMyWish, deleteMyWish } from "../../hooks/axios/MyWishlist";
 
 import ProductModal from "./ProductModal";
 import { commaNums } from "../../hooks/CommaNums";
 import { ProductType } from "./Category.interface";
 
 export default function CategoryItemCard({ item }: ProductType) {
-    const [tabWish, setTabWish] = useState<boolean>(false);
     const [showModal, setShowModal] = useState<boolean>(false);
-    // const [wishItem, setWishItem] = useState([]);
+    const [list, setList] = useRecoilState(LoadWishlist);
+    const [heartFill, setHeartFill] = useState<boolean>(false);
 
-    // useEffect(() => {
-    //     getMyWish(setWishItem);
-    //     console.log(wishItem);
-    // }, []);
+    useEffect(() => {
+        const wishArr = list.map((e: any) => e.productId);
+        setHeartFill(wishArr.includes(item.productId));
+    }, []);
 
     // wishlist btn
     const handleAddWish = () => {
-        setTabWish(true);
+        setHeartFill(true);
         postMyWish(item.productId);
     };
 
     const handleDeleteWish = () => {
-        setTabWish(false);
+        setHeartFill(false);
+        deleteMyWish(item.productId);
     };
 
     // share btn
@@ -51,7 +53,7 @@ export default function CategoryItemCard({ item }: ProductType) {
                             <button className="btn btn-warning Category_Funding_Btn">선물하기</button>
                         </Link>
                         <div className="Product_List_Icon">
-                            {tabWish ? <AiFillHeart className="Category_Wish_Minus_Btn" onClick={handleDeleteWish} /> : <AiOutlineHeart className="Category_Wish_Add_Btn" onClick={handleAddWish} />}
+                            {heartFill ? <AiFillHeart className="Category_Wish_Minus_Btn" onClick={handleDeleteWish} /> : <AiOutlineHeart className="Category_Wish_Add_Btn" onClick={handleAddWish} />}
                             <button className="Product_Share_Btn" onClick={handleShowModal}>
                                 <BsShareFill className="Product_Share_Inner" />
                             </button>
