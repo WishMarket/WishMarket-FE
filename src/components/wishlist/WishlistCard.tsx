@@ -6,6 +6,7 @@ import { commaNums } from "../../hooks/CommaNums";
 import { WishlistItemType } from "./Wishlist.interface";
 
 export default function WishlistCard({ item }: WishlistItemType) {
+    // reload는 일단 차선책
     const handleDeleteClick = () => {
         deleteMyWish(item.productId);
         location.reload();
