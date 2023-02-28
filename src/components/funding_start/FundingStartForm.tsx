@@ -44,7 +44,7 @@ export default function FundingStartForm() {
       console.log("관찰됨");
         setPage(page + 1);
         //page가늘어나면 아래 useEffect로 리랜더링을 해야하는데 안함
-      console.log(page);
+      console.log(page+1);
     }
   };
     
@@ -56,7 +56,7 @@ export default function FundingStartForm() {
     return () => {
       observer.disconnect();
     };
-  }, [moreDataRef]);
+  }, []);
 
 
   useEffect(() => {
