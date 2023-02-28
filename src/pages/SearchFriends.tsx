@@ -5,10 +5,10 @@ import Header from "../components/header/Header";
 
 export default function SearchFriends() {
     return (
-        <div className="Friends_Container">
+        <>
             <Header />
             <FriendsForm />
             <Footer />
-        </div>
+        </>
     );
 }
