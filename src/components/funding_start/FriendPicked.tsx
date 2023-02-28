@@ -1,14 +1,8 @@
 import React from "react";
 import { BsFillPersonCheckFill } from "react-icons/bs";
+import { FriendPickedProps } from "./FundingStart.interfact";
 
-interface Props {
-    setPickFriendName: React.Dispatch<React.SetStateAction<string | null>>;
-    pickFriendName: string | null;
-    setPickFriendProfile: React.Dispatch<React.SetStateAction<string | null>>;
-    pickFriendProfile: string | null;
-}
-
-export default function FriendPicked({ setPickFriendName, pickFriendName, setPickFriendProfile, pickFriendProfile }: Props) {
+export default function FriendPicked({ setPickFriendName, pickFriendName, setPickFriendProfile, pickFriendProfile }: FriendPickedProps) {
     const onCancelSelect = () => {
         setPickFriendName(null);
         setPickFriendProfile(null);

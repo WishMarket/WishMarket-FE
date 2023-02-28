@@ -85,7 +85,16 @@
                         height: 400px;
                         overflow-y: scroll;
                         font-size: 17px;
-
+                        .See_more{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 60px;
+                            width: 100%;
+                        }
+                        .test{
+                            height: 500px;
+                        }
                         &::-webkit-scrollbar {
                             width: 6px;
                         }
