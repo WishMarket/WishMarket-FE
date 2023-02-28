@@ -14,13 +14,19 @@ export interface AddressModalType {
 }
 
 export type UserInfo = {
+    id: number;
     name: string;
-    nickname: string;
-    pointPrice: number;
     email: string;
+    nickName: string;
+    phone: null | string;
+    profileImage: string;
     address: string;
-    phone: string;
-    photo: string;
+    detailAddress: string;
+    userRegistrationType: string;
+    userStatusType: string;
+    userRolesType: null | string;
+    createdAt: string;
+    modifiedAt: string;
 };
 
 export interface userInfoItem {

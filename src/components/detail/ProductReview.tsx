@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { ProductItem } from "./Detail.interface";
 import { getReviews } from "../../hooks/axios/Reviews";
+import { ReviewType } from "./Detail.interface";
 
 export default function ProductReview({ item }: ProductItem) {
-    const [reviews, setReviews] = useState<any>(null);
+    const [reviews, setReviews] = useState<ReviewType[]>([]);
 
     useEffect(() => {
         getReviews(setReviews, item.productId);
@@ -16,18 +17,12 @@ export default function ProductReview({ item }: ProductItem) {
                 <div className="Detail_Review_Wrapper">
                     <div className="Detail_Review_Title">상품 리뷰</div>
                     <div className="Detail_Review_Desc">상품을 선물 받은 분들이 작성하신 리뷰입니다.</div>
-                    <div className="Detail_Review_Item">
-                        <div className="Detail_Review_Name">철수</div>
-                        <div className="Detail_Review_Content">너무 좋아요</div>
-                    </div>
-                    <div className="Detail_Review_Item">
-                        <div className="Detail_Review_Name">철수</div>
-                        <div className="Detail_Review_Content">너무 좋아요</div>
-                    </div>
-                    <div className="Detail_Review_Item">
-                        <div className="Detail_Review_Name">철수</div>
-                        <div className="Detail_Review_Content">너무 좋아요</div>
-                    </div>
+                    {reviews.map((item) => (
+                        <div className="Detail_Review_Item" key={item.id}>
+                            <div className="Detail_Review_Name">{item.userName}</div>
+                            <div className="Detail_Review_Content">{item.comment}</div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </>

@@ -1,29 +1,16 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import ViewProfileContainer from "./ViewProfileContainer";
 import WithdrawalModal from "./WithdrawalModal";
 import { IProfiles, UserInfo } from "./Profile.interface";
+import { getUserInfo } from "../../hooks/axios/Profile";
 
 export default function ViewProfile({ profileState, setProfileState }: IProfiles) {
     const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
     const [errorShow, setErrorShow] = useState<boolean>(false);
-    const url = "/data/UserData.json";
-
-    // axios
-    const getUserInfo = async () => {
-        await axios
-            .get(url)
-            .then((res) => {
-                let response = res.data.users;
-                setUserInfo(response[0]); // 연동 시 교체 필요
-            })
-            .catch((error) => {
-                return Promise.reject(error);
-            });
-    };
 
     useEffect(() => {
-        getUserInfo();
+        getUserInfo(setUserInfo);
+        console.log(userInfo);
     }, []);
 
     const onClickWithdrawal = (e: React.MouseEvent<HTMLButtonElement>) => {
