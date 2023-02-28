@@ -85,16 +85,39 @@
                         height: 400px;
                         overflow-y: scroll;
                         font-size: 17px;
-                        .See_more{
+
+                        .See_more {
+                            height: 60px;
                             display: flex;
                             justify-content: center;
                             align-items: center;
-                            height: 60px;
-                            width: 100%;
+
+                            .See_more_Button {
+                                height: 40px;
+                                width: 80%;
+                            }
                         }
-                        .test{
-                            height: 500px;
+                        .Last_Friend_Wrapper{
+                            text-decoration: none;
+                            color:$color-gray-800;
+                            .Last_Friend{
+                                height: 80px;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                                background-color: $color-gray-200;
+                                border-radius: 15px;
+                                .Last_Friend_title{
+                                    font-weight: 600;
+                                    font-size: $font-medium;
+                                }
+                                .Last_Friend_Detail{
+                                    font-size: $font-desc-size;
+                                }
+                            }
                         }
+
                         &::-webkit-scrollbar {
                             width: 6px;
                         }
@@ -127,10 +150,12 @@
                                     height: 35px;
                                     margin-right: 10px;
                                 }
+
                                 .Friend_info {
                                     display: flex;
                                     flex-direction: column;
                                     gap: 3px;
+
                                     .Friend_email {
                                         font-size: $font-desc-size;
                                     }

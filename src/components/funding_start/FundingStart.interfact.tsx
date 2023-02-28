@@ -22,10 +22,10 @@ export interface FriendPickerProps {
 }
 
 export interface FriendPickedProps {
-  setPickFriendName: React.Dispatch<React.SetStateAction<string | null>>;
   pickFriendName: string | null;
-  setPickFriendProfile: React.Dispatch<React.SetStateAction<string | null>>;
+  setPickFriendName: React.Dispatch<React.SetStateAction<string | null>>;
   pickFriendProfile: string | null;
+  setPickFriendProfile: React.Dispatch<React.SetStateAction<string | null>>;
 }
 
 export interface FundingStartModalProps {

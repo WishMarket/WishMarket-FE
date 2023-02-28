@@ -13,24 +13,56 @@ export const getProduct: any = async (id: number) => {
     });
 };
 
-export const getFriend: any = async (page:number, size:number) => {
+export const getFriend: any = async (page: number, size: number) => {
   const GETFRIEND_URL = `http://3.38.63.3:8080/api/follow/friends`;
   return await axios
     .get(GETFRIEND_URL, {
-        headers: {
-            Authorization: window.localStorage.getItem("accessToken"),
-        },
-        params: {
-            page:page,
-            size:size,
-        },
+      headers: {
+        Authorization: window.localStorage.getItem("accessToken"),
+      },
+      params: {
+        page: page,
+        size: size,
+      },
       withCredentials: true,
     })
     .then((res) => {
-      let response = res.data;
-      return response;
+      console.log(res);
+      return res;
     })
     .catch((error) => {
       return error;
+    });
+};
+
+export const PostFundingStart = async (
+  productId: string,
+  targetId: string,
+  fundedPrice: number,
+  startDate: Date,
+  endDate: Date
+) => {
+  return await axios
+    .post(
+      `http://3.38.63.3:8080/api/funding/start`,
+      {
+        withCredentials: true,
+        productId: productId,
+        targetId: targetId,
+        fundedPrice: fundedPrice,
+        startDate: startDate,
+        endDate: endDate,
+      },
+      {
+        headers: {
+          Authorization: window.localStorage.getItem("accessToken"),
+        },
+      }
+    )
+    .then((response) => {
+      return response;
+    })
+    .catch((e) => {
+      return e.response;
     });
 };
