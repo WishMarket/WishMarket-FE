@@ -24,7 +24,7 @@ export function FundingStartError(errorCode: number) {
   } else if (errorCode == 2) {
     return <div>펀딩 받을 친구가 설정되지 않았습니다.</div>
   }else if (errorCode == 3) {
-    return <div>펀딩 최소금액은 1000원 이상이어야 합니다.</div>
+    return <div>펀딩 최소금액은 10원 이상이어야 합니다.</div>
   }
 }
 
