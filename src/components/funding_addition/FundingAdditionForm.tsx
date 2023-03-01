@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { commaNums } from "../../hooks/CommaNums";
 
@@ -8,64 +7,47 @@ import FundingAdditionGraph from "./FundingAdditionGraph";
 import FundingAdditionDate from "./FundingAdditionDate";
 import FundingAdditionToFrom from "./FundingAdditionToFrom";
 import FundingAdditionModal from "./FundingAdditionModal";
+import { getFunding, PostFundingAddition } from "../../hooks/axios/FundingAddition";
+import { FundingAdditionObj } from "./FundingAddition.interface";
 
-interface ProductObj {
-  productId: number;
-  name: string;
-  image: string;
-  price: number;
-  startdate: string;
-  enddate: string;
-  funded_price: number;
-  my_fund: number;
-  url: string;
-  to: string;
-  to_picture: string;
-  from: string[];
-}
+
 
 export default function FundingAdditionForm() {
   const navigate = useNavigate();
-  const [items, setItems] = useState<ProductObj | null>(null);
+  const [items, setItems] = useState<FundingAdditionObj | null>(null);
   const [fundingAmount, setFundingAmount] = useState<number>(0);
   const [errorShow, setErrorShow] = useState<boolean>(false);
   const [errorCode, setErrorCode] = useState<number>(0);
 
-  // fundingid 로 변경필요
+
   let { id } = useParams() as { id: string };
+  const id_num = Number(id); 
 
-  const url = "/data/FundingData.json";
-
-  // axios
-  const getItems = async () => {
-    await axios
-      .get(url)
-      .then((res) => {
-        let response = res.data.fundData;
-        setItems(response[0]); // 연동 시 교체 필요
-      })
-      .catch((error) => {
-        return Promise.reject(error);
-      });
+  const getFund = async (id_num:number) => {
+    const getFundingItem = await getFunding(id_num); 
+    console.log(getFundingItem);
+    setItems(getFundingItem);
   };
 
-  const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmitHandler = async(e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (fundingAmount < 1000) {
+    if (fundingAmount < 10) {
       setErrorCode(3);
       setErrorShow(true);
     } else {
-      setErrorCode(0);
-      setErrorShow(true);
-      console.log("product: " + id);
-      console.log(fundingAmount);
-      navigate("/");
+      const now = new Date();
+      const addition = await PostFundingAddition(now, id_num, fundingAmount);
+      console.log(addition);
+      if (addition.status == 200) {
+        alert('펀딩참여에 성공 하였습니다.')
+        navigate("/");
+      }
     }
   };
 
   useEffect(() => {
-    getItems();
+    getFund(id_num);
   }, []);
 
   return (
@@ -78,25 +60,38 @@ export default function FundingAdditionForm() {
                 <div className="FundingAddition_Top_Area">
                   <div>
                     <img
-                      src={items.image}
-                      alt={items.name}
+                      src={items.productImageUrl}
+                      alt={items.productName}
                       className="FundingAddition_Img"
                     />
                   </div>
                   <div className="FundingAddition_Desc">
-                    <div className="FundingAddition_Title">{items.name}</div>
+                    <div className="FundingAddition_Title">
+                      {items.productName}
+                    </div>
                     <div className="FundingAddition_Price">
                       <h2>목표 금액</h2>
-                      <span>{commaNums(items.price)} 원</span>
+                      <span>{commaNums(items.targetPrice)} 원</span>
                     </div>
-                    <FundingAdditionGraph items={items} />
+                    <FundingAdditionGraph
+                      targetPrice={items.targetPrice}
+                      fundedPrice={items.fundedPrice}
+                      totalFundedPrice={items.totalFundedPrice}
+                    />
                     <hr />
-                    <FundingAdditionDate items={items} />
+                    <FundingAdditionDate startDate={items.startDate} endDate={items.endDate} />
                     <hr />
-                    <FundingAdditionToFrom items={items} />
+                    <FundingAdditionToFrom
+                      targetUserName={items.targetUserName}
+                      targetUserImageUrl={items.targetUserImageUrl}
+                      participantsNameList={items.participantsNameList}
+                      participationCount={items.participationCount}
+                    />
                     <hr />
                     <FundingAdditionAmount
                       setFundingAmount={setFundingAmount}
+                      targetPrice={items.targetPrice}
+                      totalFundedPrice={items.totalFundedPrice}
                     />
                   </div>
                 </div>

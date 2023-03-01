@@ -9,16 +9,16 @@ import { InfluencerFriend } from "../../hooks/axios/SearchFriend";
 export default function FamousFriendForm() {
   const [famouseusers, setFamousUsers] = useState<FamousFriendObj[]>([]);
 
-  // const getFamousUsers = async () => {
-  //   const Famous = await InfluencerFriend();
-  //   console.log(Famous);
-  //   setFamousUsers(Famous);
+  const getFamousUsers = async () => {
+    const Famous = await InfluencerFriend();
+    console.log(Famous);
+    setFamousUsers(Famous);
     
-  // };
+  };
 
-  // useEffect(() => {
-  //   getFamousUsers();
-  // }, []);
+  useEffect(() => {
+    getFamousUsers();
+  }, []);
 
   return (
     <div className="FamousFriend">
@@ -33,12 +33,12 @@ export default function FamousFriendForm() {
         {famouseusers.map((data: FamousFriendObj) => {
           return (
             <FamousFriendCard
-              key={data.userid}
-              userid={data.userid}
+              key={data.userId}
+              userId={data.userId}
               name={data.name}
               nickname={data.nickname}
               famous={data.famous}
-              profileImage={data.profileImage}
+              profileImageUrl={data.profileImageUrl}
               isfriend={data.isfriend}
             />
           );

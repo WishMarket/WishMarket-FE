@@ -16,10 +16,7 @@ export function LoginError(errorCode: number) {
   }
 }
 export function FundingStartError(errorCode: number) {
-  if (errorCode ==0) {
-    return <div>펀딩을 시작합니다!</div>
-  }
-  else if (errorCode == 1) {
+  if (errorCode == 1) {
     return <div>펀딩 마감 기간이 설정되지 않았습니다.</div>
   } else if (errorCode == 2) {
     return <div>펀딩 받을 친구가 설정되지 않았습니다.</div>

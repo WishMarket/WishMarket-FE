@@ -27,7 +27,6 @@ export const getFriend: any = async (page: number, size: number) => {
             withCredentials: true,
         })
         .then((res) => {
-            console.log(res);
             return res;
         })
         .catch((error) => {

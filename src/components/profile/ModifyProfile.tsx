@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import ModifyProfileContainer from "./ModifyProfileModal";
-
+import defaultImg from "../../assets/default-profile-img.png";
 import { getUserInfo, updateUserInfo } from "../../hooks/axios/Profile";
 import { commaNums } from "../../hooks/CommaNums";
 import { IProfiles, UserInfo } from "./Profile.interface";
@@ -102,7 +102,11 @@ export default function ModifyProfile({ profileState, setProfileState }: IProfil
                                 <td>
                                     <form method="post" className="Profile_Img_Select_Form">
                                         <label htmlFor="chooseFile">
-                                            <img src={imageSrc ? imageSrc : userInfo.profileImage} alt="profile-image" className="Profile_Img_Select_Area" />
+                                            {userInfo.profileImage ? (
+                                                <img src={imageSrc ? imageSrc : userInfo.profileImage} alt="profile-image" className="Profile_Img_Select_Area" />
+                                            ) : (
+                                                <img src={imageSrc ? imageSrc : defaultImg} alt="profile-image" className="Profile_Img_Select_Area" />
+                                            )}
                                         </label>
                                         <input type="file" id="chooseFile" name="chooseFile" accept="image/*" className="hidden" onChange={(e) => onUpload(e)} />
                                     </form>

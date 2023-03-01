@@ -29,21 +29,19 @@ export default function FundingStartForm() {
 
     const [friends, setFriends] = useState<FundingStartFriendObj[]>([]);
     const [page, setPage] = useState<number>(1);
+
     const [lastPage, setLastPage] = useState<boolean>(false);
+
     useEffect(() => {
         getFriends(0);
     }, []);
 
-    useEffect(() => {
-        console.log(friends);
-    }, [friends]);
-
     let id_num = Number(id);
     const getFriends = async (page: number) => {
         try {
-            const lists = await getFriend(page, SIZE);
-            setFriends(friends.concat(lists.data));
-            if (lists.data.length < SIZE) {
+            const lists = await getFriend(page, 10);
+            setFriends(friends.concat(lists.data.content));
+            if (lists.data.last == true) {
                 setLastPage(true);
             }
         } catch (e) {
@@ -59,7 +57,6 @@ export default function FundingStartForm() {
     const FriendCallHandler = () => {
         setPage(page + 1);
         getFriends(page);
-        console.log(page);
     };
 
     const fileterPassedTime = (time: Date) => {
@@ -78,6 +75,7 @@ export default function FundingStartForm() {
     const onSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const now = new Date();
+
         //1.날짜현재시간이후 , 2.친구선택, 3.금액이 10원 이상
         if (endDate === null) {
             setErrorCode(1);
@@ -90,12 +88,10 @@ export default function FundingStartForm() {
             setErrorShow(true);
         } else {
             const start = await PostFundingStart(id_num, pickFriend, fundingAmount, now, endDate);
-            console.log(start);
-            alert("펀딩을 시작합니다!");
-            setErrorCode(0);
-            setErrorShow(true);
-
-            navigate("/");
+            if (start.status == 200) {
+                alert("펀딩을 시작합니다!");
+                navigate("/");
+            }
         }
     };
 
