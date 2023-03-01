@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import ModifyProfileContainer from "./ModifyProfileModal";
+
+import { getUserInfo, updateUserInfo } from "../../hooks/axios/Profile";
 import { commaNums } from "../../hooks/CommaNums";
 import { IProfiles, UserInfo } from "./Profile.interface";
 import { validateNickname, validatePhone } from "../../utils/regex";
@@ -15,10 +17,9 @@ export default function ModifyProfile({ profileState, setProfileState }: IProfil
     const [phoneErrorMsg, setPhoneErrorMsg] = useState<string>("");
     const [nicknameErrorMsg, setNicknameErrorMsg] = useState<string>("");
     const [address, setAddress] = useState<string>("");
+    const [detailAddress, setDetailAddress] = useState<string>("");
     const [mapShow, setMapShow] = useState<boolean>(false);
     const [disabled, setDisabled] = useState(false);
-
-    const url = "/data/UserData.json";
 
     // photo upload
     const onUpload = (e: any) => {
@@ -34,21 +35,8 @@ export default function ModifyProfile({ profileState, setProfileState }: IProfil
         });
     };
 
-    // axios
-    const getUserInfo = async () => {
-        await axios
-            .get(url)
-            .then((res) => {
-                let response = res.data.users;
-                setUserInfo(response[0]); // 연동 시 교체 필요
-            })
-            .catch((error) => {
-                return Promise.reject(error);
-            });
-    };
-
     useEffect(() => {
-        getUserInfo();
+        getUserInfo(setUserInfo);
     }, []);
 
     useEffect(() => {
@@ -94,6 +82,12 @@ export default function ModifyProfile({ profileState, setProfileState }: IProfil
         setPhoneErrorMsg(validatePhone(e.target.value) ? "📢 올바른 휴대폰 번호 형식이 아닙니다." : "");
     };
 
+    const handleModifyProfile = () => {
+        updateUserInfo(address, detailAddress, nickname, phone, imageSrc);
+        setProfileState(true);
+        console.log(address, detailAddress, nickname, phone, imageSrc);
+    };
+
     return (
         <>
             <div className="Profile_Select_Container">
@@ -108,7 +102,7 @@ export default function ModifyProfile({ profileState, setProfileState }: IProfil
                                 <td>
                                     <form method="post" className="Profile_Img_Select_Form">
                                         <label htmlFor="chooseFile">
-                                            <img src={imageSrc ? imageSrc : userInfo.photo} alt="profile-image" className="Profile_Img_Select_Area" />
+                                            <img src={imageSrc ? imageSrc : userInfo.profileImage} alt="profile-image" className="Profile_Img_Select_Area" />
                                         </label>
                                         <input type="file" id="chooseFile" name="chooseFile" accept="image/*" className="hidden" onChange={(e) => onUpload(e)} />
                                     </form>
@@ -127,7 +121,7 @@ export default function ModifyProfile({ profileState, setProfileState }: IProfil
                                     <div className="User_Profile_Nickname_Head">닉네임</div>
                                 </th>
                                 <td>
-                                    <input type="text" className="Modify_Profile_Nickname" defaultValue={userInfo.nickname} onChange={(e) => handleNicknameChange(e.target.value)} />
+                                    <input type="text" className="Modify_Profile_Nickname" defaultValue={userInfo.nickName} onChange={(e) => handleNicknameChange(e.target.value)} />
                                     <div className="Modify_Profile_Error_Msg">{nicknameErrorMsg}</div>
                                 </td>
                             </tr>
@@ -153,7 +147,7 @@ export default function ModifyProfile({ profileState, setProfileState }: IProfil
                                 </th>
                                 <td>
                                     <div className="Address_Area">
-                                        <input type="text" className="Modify_Profile_Address" value={address ? address : userInfo.address} readOnly />
+                                        <input type="text" className="Modify_Profile_Address" value={address ? address : userInfo.address} onChange={(e) => setAddress(e.target.value)} readOnly />
                                         <button className="btn btn-light Modify_Profile_Address_Btn" onClick={onMapClickHandler}>
                                             <FaSearchLocation className="Modify_Profile_Address_Btn_Icon" />
                                         </button>
@@ -165,7 +159,7 @@ export default function ModifyProfile({ profileState, setProfileState }: IProfil
                                     <div className="User_Profile_Address_Detail_Head">상세 주소</div>
                                 </th>
                                 <td>
-                                    <input type="text" className="Modify_Profile_Detail_Address" defaultValue={userInfo.address} />
+                                    <input type="text" className="Modify_Profile_Detail_Address" defaultValue={userInfo.detailAddress} onChange={(e) => setDetailAddress(e.target.value)} />
                                 </td>
                             </tr>
                             <tr>
@@ -173,7 +167,7 @@ export default function ModifyProfile({ profileState, setProfileState }: IProfil
                                     <div className="User_Profile_Phone_Head">연락처</div>
                                 </th>
                                 <td>
-                                    <input type="text" className="Modify_Profile_Phone" defaultValue={userInfo.phone} ref={phoneRef} onChange={handlePhoneChange} />
+                                    <input type="text" className="Modify_Profile_Phone" defaultValue={userInfo.phone == null ? "" : userInfo.phone} ref={phoneRef} onChange={handlePhoneChange} />
                                     <div className="Modify_Profile_Error_Msg">{phoneErrorMsg}</div>
                                 </td>
                             </tr>
@@ -183,7 +177,7 @@ export default function ModifyProfile({ profileState, setProfileState }: IProfil
             </div>
             <ModifyProfileContainer mapShow={mapShow} setMapShow={setMapShow} setAddress={setAddress} />
             <div className="User_Profile_Btn_Area">
-                <button className="btn btn-primary" onClick={() => setProfileState(true)} disabled={disabled}>
+                <button className="btn btn-primary" onClick={handleModifyProfile} disabled={disabled}>
                     변경하기
                 </button>
                 <button className="btn Point_Charge_Btn">포인트 충전</button>

@@ -27,6 +27,7 @@ export type UserInfo = {
     userRolesType: null | string;
     createdAt: string;
     modifiedAt: string;
+    pointPrice: number;
 };
 
 export interface userInfoItem {

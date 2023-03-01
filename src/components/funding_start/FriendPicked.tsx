@@ -2,7 +2,7 @@ import React from "react";
 import { BsFillPersonCheckFill } from "react-icons/bs";
 import { FriendPickedProps } from "./FundingStart.interfact";
 
-export default function FriendPicked({ setPickFriendName, pickFriendName, setPickFriendProfile, pickFriendProfile }: FriendPickedProps) {
+export default function FriendPicked({ pickFriendName, setPickFriendName, pickFriendProfile, setPickFriendProfile }: FriendPickedProps) {
     const onCancelSelect = () => {
         setPickFriendName(null);
         setPickFriendProfile(null);
@@ -17,6 +17,8 @@ export default function FriendPicked({ setPickFriendName, pickFriendName, setPic
                 </h2>
             </span>
             <div>
+                {/* 테스트는 pickFriendName ? 으로 해도 상관없음  */}
+                {/* 나중에 default 사진 생기면 pickFriendProfile? 로 바꾸기 */}
                 {pickFriendProfile ? (
                     <div className="Selected_Friend">
                         <div className="Friend_desc">

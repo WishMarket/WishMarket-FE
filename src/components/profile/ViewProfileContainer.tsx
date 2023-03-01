@@ -44,7 +44,7 @@ export default function ViewProfileContainer({ userInfo }: userInfoItem) {
                         <div className="User_Profile_Point_Head">보유 포인트</div>
                     </th>
                     <td>
-                        <div className="User_Profile_Point">999,999 P</div>
+                        <div className="User_Profile_Point">{commaNums(userInfo.pointPrice)} P</div>
                     </td>
                 </tr>
                 <tr>
