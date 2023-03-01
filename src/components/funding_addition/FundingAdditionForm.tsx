@@ -79,11 +79,16 @@ export default function FundingAdditionForm() {
                       totalFundedPrice={items.totalFundedPrice}
                     />
                     <hr />
-                    <FundingAdditionDate startDate={items.startDate} endDate={items.endDate} />
+                    <FundingAdditionDate
+                      startDate={items.startDate}
+                      endDate={items.endDate}
+                    />
                     <hr />
                     <FundingAdditionToFrom
                       targetUserName={items.targetUserName}
-                      targetUserImageUrl={items.targetUserImageUrl}
+                      targetUserProfileImageUrl={
+                        items.targetUserProfileImageUrl
+                      }
                       participantsNameList={items.participantsNameList}
                       participationCount={items.participationCount}
                     />

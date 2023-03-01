@@ -12,8 +12,7 @@ export interface FundingAdditionObj {
   startDate: string;
   targetPrice: number;
   targetUserId: number;
-  //수정되야함
-  targetUserImageUrl: string;
+  targetUserProfileImageUrl: string;
   targetUserName: string;
   totalFundedPrice: number;
 }
@@ -31,8 +30,7 @@ export interface FundingAdditionDateProps {
 
 export interface FundingAdditionToFromProps {
   targetUserName: string;
-  //수정되야함
-  targetUserImageUrl: string;
+  targetUserProfileImageUrl: string;
   participantsNameList: string[];
   participationCount: number;
 }
