@@ -27,7 +27,7 @@ export const getFriend: any = async (page: number, size: number) => {
       withCredentials: true,
     })
     .then((res) => {
-      console.log(res);
+
       return res;
     })
     .catch((error) => {
@@ -36,8 +36,8 @@ export const getFriend: any = async (page: number, size: number) => {
 };
 
 export const PostFundingStart = async (
-  productId: string,
-  targetId: string,
+  productId: number,
+  targetId: number,
   fundedPrice: number,
   startDate: Date,
   endDate: Date
