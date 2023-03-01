@@ -22,6 +22,7 @@ import {
 } from "../../hooks/axios/FundingStart";
 
 export default function FundingStartForm() {
+  const SIZE = 10;
   const navigate = useNavigate();
   let { id } = useParams() as { id: string };
   const [items, setItems] = useState<FundingStartProductObj | null>(null);
@@ -79,7 +80,8 @@ export default function FundingStartForm() {
   ) => {
     setPickFriend(userId);
     setPickFriendName(name);
-    setPickFriendProfile(profileImageUrl);
+      setPickFriendProfile(profileImageUrl);
+      console.log(pickFriendName);
   };
 
   const onSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {

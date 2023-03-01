@@ -75,7 +75,7 @@ export default function FundingAdditionForm() {
                     </div>
                     <FundingAdditionGraph
                       targetPrice={items.targetPrice}
-                      fundedPrice={items.fundedPrice}
+                      myFundedPrice={items.myFundedPrice}
                       totalFundedPrice={items.totalFundedPrice}
                     />
                     <hr />

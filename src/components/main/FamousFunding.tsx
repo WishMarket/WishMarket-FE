@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-
 import FamousFundingCard from "./FamousFundingCard";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import { FamousFundingItemType} from "./Main.interface";
@@ -23,10 +21,9 @@ export default function FamousFunding() {
         if (slidePx > -MAX_WIDTH) setSlidePx(slidePx - ITEM_WIDTH);
     };
 
-    // funding data axios
     const getFundingData = async () => {
         const fundingdata = await GetFamousFunding();
-        // setFamousFunding(fundingdata);
+        setFamousFunding(fundingdata);
         console.log(fundingdata);
     };
 
