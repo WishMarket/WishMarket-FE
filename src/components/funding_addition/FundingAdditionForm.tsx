@@ -41,7 +41,7 @@ export default function FundingAdditionForm() {
       console.log(addition);
       if (addition.status == 200) {
         alert('펀딩참여에 성공 하였습니다.')
-        navigate("/");
+        navigate("/account");
       }
     }
   };

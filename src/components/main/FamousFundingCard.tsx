@@ -82,7 +82,7 @@ export default function FamousFundingCard({ gift }: FundingItem) {
                 {gift.participationCount} 명 참여
               </div>
             </div>
-            {gift.myFundedPrice == 0 ? (
+            {gift.myFundedPrice != 0 ? (
               <div className="Famous_Funding_Payment">
                 <div className="Famous_Funding_Payment_Label">내 펀딩 금액</div>
                 <div className="Famous_Funding_Payment_Content">

@@ -4,6 +4,9 @@ export const GetFamousFunding = async () => {
   const GetFamousFunding_URL = "http://3.38.63.3:8080/api/funding/main";
   return await axios
     .get(GetFamousFunding_URL, {
+      headers: {
+        Authorization: window.localStorage.getItem("accessToken"),
+      },
       withCredentials: true,
     })
     .then((res) => {
