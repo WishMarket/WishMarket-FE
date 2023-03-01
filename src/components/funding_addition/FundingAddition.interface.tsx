@@ -1,6 +1,6 @@
 export interface FundingAdditionObj {
   endDate: string;
-  fundedPrice: number;
+  myFundedPrice: number;
   fundedStatusType: string;
   fundingId: number;
   fundingStatusType: string;
@@ -19,7 +19,7 @@ export interface FundingAdditionObj {
 
 export interface FundingAdditionGraphProps {
   targetPrice: number;
-  fundedPrice: number;
+  myFundedPrice: number;
   totalFundedPrice: number;
 }
 

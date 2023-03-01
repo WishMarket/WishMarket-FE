@@ -18,17 +18,15 @@ export interface FriendsFundingItem {
 }
 
 export interface FriendsObj {
-    Userid: number;
     email: string;
     name: string;
-    nickname: string;
-    address: string;
-    tel: string;
-    profile: string;
+    nickName: string;
+    profileImageUrl: string;
+    userId: number;
 }
 
 export interface FriendsItem {
-    users: any;
+    users: FriendsObj[];
     userId: number;
 }
 

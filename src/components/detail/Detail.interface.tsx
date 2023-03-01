@@ -9,6 +9,13 @@ export type ProductObj = {
     best: boolean;
 };
 
+export interface ReviewType {
+    id: number;
+    userId: number;
+    userName: string;
+    comment: string;
+}
+
 export type ProductItem = {
     item: ProductObj;
 };

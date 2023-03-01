@@ -35,17 +35,24 @@ export const getUserInfo: any = async (setState: any) => {
         });
 };
 
-export const updateUserInfo: any = async (setState: any) => {
+export const updateUserInfo: any = async (address: string, detailAddress: string, nickName: string, phone: string, profileImage: any) => {
     const USER_URL = `http://3.38.63.3:8080/api/user/update`;
     await axios
         .patch(USER_URL, {
             headers: {
                 Authorization: window.localStorage.getItem("accessToken"),
             },
+            params: {
+                address: address,
+                detailAddress: detailAddress,
+                nickName: nickName,
+                phone: phone,
+                profileImage: profileImage,
+            },
         })
         .then((res) => {
-            let response = res.data;
-            setState(response);
+            console.log(res);
+            return res;
         })
         .catch((error) => {
             console.log(error);

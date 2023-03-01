@@ -1,41 +1,27 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { commaNums } from "../../hooks/CommaNums";
 import { ReceivedFundingItem } from "./Received.interface";
+import { getFundingGift } from "../../hooks/axios/Gift";
 
 export default function FinishedGiftCard() {
     const [fundingInfo, setFundingInfo] = useState<ReceivedFundingItem[]>([]);
-    const FUNDING_URL = "/data/TestFundingData.json";
-
-    // funding data axios
-    const getFundingData = async () => {
-        await axios
-            .get(FUNDING_URL)
-            .then((res) => {
-                let response = res.data.funding;
-                setFundingInfo(response);
-            })
-            .catch((error) => {
-                return Promise.reject(error);
-            });
-    };
 
     useEffect(() => {
-        getFundingData();
+        getFundingGift(setFundingInfo);
     }, []);
 
     return (
         <>
             {fundingInfo.map((gift) => (
                 <div className="Finished_Gift_Item" key={gift.fundingId}>
-                    <img className="Finished_Gift_Img" src={gift.image} alt={gift.name} />
+                    <img className="Finished_Gift_Img" src={gift.productImagerUrl} alt={gift.productName} />
                     <div className="Finished_Gift_Content">
-                        <div className="Finished_Gift_Title">{gift.name}</div>
+                        <div className="Finished_Gift_Title">{gift.productName}</div>
                         <div className="Finished_Gift_Price">{commaNums(gift.price)} 원</div>
                         <div className="Finished_Gift_Notify">이미 수령한 상품입니다.</div>
                         <div className="Finished_Gift_Date">
                             <div className="Finished_Gift_Date_Label">펀딩 기간</div>
-                            <div className="Finished_Gift_Date_Content">{gift.date}</div>
+                            <div className="Finished_Gift_Date_Content">{gift.endDate}</div>
                         </div>
                         <div className="Finished_Gift_Review">
                             <div className="Finished_Gift_Review_Label">보낸 리뷰</div>

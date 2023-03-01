@@ -12,7 +12,7 @@ export default function ViewProfileContainer({ userInfo }: userInfoItem) {
                         <div className="User_Profile_Img_Head">프로필 사진</div>
                     </th>
                     <td>
-                        <img src={userInfo.photo ? userInfo.photo : defaultImg} alt="profile-image" className="User_Profile_Img" />
+                        <img src={userInfo.profileImage ? userInfo.profileImage : defaultImg} alt="profile-image" className="User_Profile_Img" />
                     </td>
                 </tr>
                 <tr>
@@ -28,7 +28,7 @@ export default function ViewProfileContainer({ userInfo }: userInfoItem) {
                         <div className="User_Profile_Nickname_Head">닉네임</div>
                     </th>
                     <td>
-                        <div className="User_Profile_Nickname">{userInfo.nickname}</div>
+                        <div className="User_Profile_Nickname">{userInfo.nickName}</div>
                     </td>
                 </tr>
                 <tr>
@@ -52,7 +52,7 @@ export default function ViewProfileContainer({ userInfo }: userInfoItem) {
                         <div className="User_Profile_Address_Head">주소</div>
                     </th>
                     <td>
-                        <div className="User_Profile_Address">{userInfo.address}</div>
+                        <div className="User_Profile_Address">{userInfo.address === "" ? "아직 정보를 입력하지 않았습니다." : userInfo.address}</div>
                     </td>
                 </tr>
                 <tr>
@@ -60,7 +60,7 @@ export default function ViewProfileContainer({ userInfo }: userInfoItem) {
                         <div className="User_Profile_Address_Detail_Head">상세 주소</div>
                     </th>
                     <td>
-                        <div className="User_Profile_Detail_Address">{userInfo.address}</div>
+                        <div className="User_Profile_Detail_Address">{userInfo.detailAddress === "" ? "아직 정보를 입력하지 않았습니다." : userInfo.detailAddress}</div>
                     </td>
                 </tr>
                 <tr>
@@ -68,7 +68,7 @@ export default function ViewProfileContainer({ userInfo }: userInfoItem) {
                         <div className="User_Profile_Phone_Head">연락처</div>
                     </th>
                     <td>
-                        <div className="User_Profile_Phone">{userInfo.phone}</div>
+                        <div className="User_Profile_Phone">{userInfo.phone === null ? "아직 정보를 입력하지 않았습니다." : userInfo.phone}</div>
                     </td>
                 </tr>
             </tbody>

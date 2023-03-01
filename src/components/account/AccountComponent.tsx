@@ -5,6 +5,7 @@ import AccountExpiredCard from "./AccountExpiredCard";
 import { BiCalendarHeart, BiCalendarCheck } from "react-icons/bi";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { AccountFunding } from "./Account.interface";
+import { getFundingHistory } from "../../hooks/axios/Gift";
 
 export default function AccountComponent() {
     const [fundingInfo, setFundingInfo] = useState<AccountFunding[]>([]);
@@ -13,21 +14,8 @@ export default function AccountComponent() {
     const activeRef = useRef<HTMLDivElement>(null);
     const unactiveRef = useRef<HTMLDivElement>(null);
 
-    // funding data axios
-    const getFundingData = async () => {
-        await axios
-            .get(FUNDING_URL)
-            .then((res) => {
-                let response = res.data.funding;
-                setFundingInfo(response);
-            })
-            .catch((error) => {
-                return Promise.reject(error);
-            });
-    };
-
     useEffect(() => {
-        getFundingData();
+        getFundingHistory(setFundingInfo);
     }, []);
 
     const scrollToActive = () => {
@@ -87,7 +75,7 @@ export default function AccountComponent() {
                             <BiCalendarHeart className="Active_Account_Title_Icon" />
                             진행 중 펀딩
                         </div>
-                        <div className="Account_Card_Wrapper">{fundingInfo.map((gift) => (gift.active ? <AccountCard gift={gift} key={gift.fundingId} /> : null))}</div>
+                        <div className="Account_Card_Wrapper">{fundingInfo.map((gift) => (gift.fundStatus === "ING" ? <AccountCard gift={gift} key={gift.fundingId} /> : null))}</div>
                     </div>
                     <hr className="Account_Division" />
                     <div className="Unactive_Card_List" ref={unactiveRef}>
@@ -95,7 +83,7 @@ export default function AccountComponent() {
                             <BiCalendarCheck className="Unactive_Account_Title_Icon" />
                             지난 펀딩
                         </div>
-                        <div className="Unactive_Card_Wrapper">{fundingInfo.map((gift) => (!gift.active ? <AccountExpiredCard gift={gift} key={gift.fundingId} /> : null))}</div>
+                        <div className="Unactive_Card_Wrapper">{fundingInfo.map((gift) => (gift.fundStatus !== "ING" ? <AccountExpiredCard gift={gift} key={gift.fundingId} /> : null))}</div>
                     </div>
                 </div>
             </div>

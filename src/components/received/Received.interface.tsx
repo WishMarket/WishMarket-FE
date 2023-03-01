@@ -1,14 +1,16 @@
 export interface ReceivedFundingItem {
     fundingId: number;
-    name: string;
-    image: string;
+    productId: number;
+    productName: string;
+    productImagerUrl: string;
     price: number;
-    date: string;
-    gatherPoint: number;
-    participant: any;
-    addressInfo: boolean;
+    fundedPrice: number;
+    participants: string[];
+    participantsNumber: number;
+    fundedStatusType: string;
     review: string;
-    url: string;
+    startDate: string;
+    endDate: string;
 }
 
 export interface ReceivedFundingInfo {

@@ -21,17 +21,17 @@ export default function FriendsListItem({ user, userId, setUserId }: FriendsItem
     };
 
     const checkUserId = () => {
-        setUserId(user.Userid);
+        setUserId(user.userId);
     };
 
     return (
         <>
-            <li className="friends-list-item" key={user.Userid} onClick={checkUserId}>
+            <li className="friends-list-item" key={user.userId} onClick={checkUserId}>
                 <div className="friends-list-info">
-                    <img src={user.profile} alt={user.name} className="friends-list-item-img" />
+                    <img src={user.profileImageUrl} alt={user.name} className="friends-list-item-img" />
                     <div>
                         <div className="friends-list-name">{user.name}</div>
-                        <div className="friends-list-nickname">{user.nickname}</div>
+                        <div className="friends-list-nickname">{user.nickName}</div>
                     </div>
                 </div>
                 <button type="button" className="friends-list-btn" onClick={DelateFriendHandler}>
