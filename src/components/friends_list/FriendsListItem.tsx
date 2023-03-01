@@ -21,7 +21,7 @@ export default function FriendsListItem({ user, userId, setUserId }: FriendsItem
     };
 
     const checkUserId = () => {
-        setUserId(user.Userid);
+        setUserId(user.userId);
     };
 
     return (

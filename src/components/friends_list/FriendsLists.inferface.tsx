@@ -26,7 +26,7 @@ export interface FriendsObj {
 }
 
 export interface FriendsItem {
-    users: any;
+    users: FriendsObj[];
     userId: number;
 }
 

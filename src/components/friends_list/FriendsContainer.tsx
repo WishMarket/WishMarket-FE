@@ -4,8 +4,7 @@ import { useRecoilState } from "recoil";
 import FriendsDefault from "./FriendsDefault";
 import FriendsListItem from "./FriendsListItem";
 import FriendsListContent from "./FriendsListContent";
-
-import { getFriend } from "../../hooks/axios/FundingStart";
+import { getFriendList } from "../../hooks/axios/FriendsList";
 import { FindUserId } from "../../hooks/recoil/atoms";
 import { FriendsObj } from "./FriendsLists.inferface";
 
@@ -14,21 +13,8 @@ export default function FriendsContainer() {
     const [userId, setUserId] = useRecoilState(FindUserId);
 
     useEffect(() => {
-        getFriends(0);
+        getFriendList(setUsers);
     }, []);
-
-    useEffect(() => {
-        console.log(users);
-    }, [users]);
-
-    const getFriends = async (page: number) => {
-        try {
-            const lists = await getFriend(1, 12);
-            setUsers(users.concat(lists.data));
-        } catch (e) {
-            console.log(e);
-        }
-    };
 
     return (
         <>
