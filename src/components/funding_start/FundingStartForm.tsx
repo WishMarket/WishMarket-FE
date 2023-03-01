@@ -15,13 +15,11 @@ import {
   FundingStartFriendObj,
   FundingStartProductObj,
 } from "./FundingStart.interfact";
-import {
-  getFriend,
-  getProduct,
-  PostFundingStart,
-} from "../../hooks/axios/FundingStart";
+import { getFriend, getProduct, PostFundingStart } from "../../hooks/axios/FundingStart";
+
 
 export default function FundingStartForm() {
+  const SIZE = 10;
   const navigate = useNavigate();
   let { id } = useParams() as { id: string };
   const [items, setItems] = useState<FundingStartProductObj | null>(null);
@@ -37,11 +35,14 @@ export default function FundingStartForm() {
 
   const [friends, setFriends] = useState<FundingStartFriendObj[]>([]);
   const [page, setPage] = useState<number>(1);
+
   const [lastPage, setLastPage] = useState<boolean>(false);
+
 
   useEffect(() => {
     getFriends(0);
   }, []);
+
 
   let id_num = Number(id);
   const getFriends = async (page: number) => {
@@ -51,6 +52,7 @@ export default function FundingStartForm() {
       if (lists.data.last == true) {
         setLastPage(true);
       }
+
     } catch (e) {
       console.log(e);
     }
@@ -79,12 +81,15 @@ export default function FundingStartForm() {
   ) => {
     setPickFriend(userId);
     setPickFriendName(name);
-    setPickFriendProfile(profileImageUrl);
+      setPickFriendProfile(profileImageUrl);
+      console.log(pickFriendName);
   };
+
 
   const onSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const now = new Date();
+
     //1.날짜현재시간이후 , 2.친구선택, 3.금액이 10원 이상
     if (endDate === null) {
       setErrorCode(1);
@@ -96,6 +101,7 @@ export default function FundingStartForm() {
       setErrorCode(3);
       setErrorShow(true);
     } else {
+
       const start = await PostFundingStart(
         id_num,
         pickFriend,
@@ -107,6 +113,7 @@ export default function FundingStartForm() {
         alert("펀딩을 시작합니다!");
         navigate("/");
       }
+
     }
   };
 
