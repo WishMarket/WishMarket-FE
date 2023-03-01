@@ -15,15 +15,15 @@ export default function AchieveCardItem({ gift, show, setShow }: AccountFundingT
         <div className="Account_Achieve_Card_Item">
             <div className="Account_Achieve_Card_Date">
                 <TfiAlarmClock className="Account_Achieve_Card_Date_Icon" />
-                {gift.date}
+                {gift.endDate}
             </div>
             <div className="Account_Achieve_Card_Inner">
-                <img src={gift.image} alt={gift.name} className="Account_Achieve_Card_Img" />
+                <img src={gift.productImagerUrl} alt={gift.productName} className="Account_Achieve_Card_Img" />
                 <div className="Account_Achieve_Card_Content">
-                    <div className="Account_Achieve_Card_Receiver">To. {gift.receiver}</div>
+                    <div className="Account_Achieve_Card_Receiver">To. {gift.targetName}</div>
                     <div className="Account_Achieve_Card_Top_Area">
                         <div className="Account_Achieve_Card_Product_Info">
-                            <div className="Account_Achieve_Card_Title">{gift.name}</div>
+                            <div className="Account_Achieve_Card_Title">{gift.productName}</div>
                             <div className="Account_Achieve_Card_Price">{commaNums(gift.price)} 원</div>
                         </div>
                     </div>
@@ -37,21 +37,21 @@ export default function AchieveCardItem({ gift, show, setShow }: AccountFundingT
                         <div
                             className="progress-bar"
                             style={{
-                                width: `${((gift.gatherPoint / gift.price) * 100).toFixed(2)}%`,
+                                width: `${((gift.fundedPrice / gift.price) * 100).toFixed(2)}%`,
                             }}
                         >
-                            {((gift.gatherPoint / gift.price) * 100).toFixed(2)}%
+                            {((gift.fundedPrice / gift.price) * 100).toFixed(2)}%
                         </div>
                     </div>
-                    <div className="Account_Achieve_Card_Notify">목표 금액을 달성하여 {gift.receiver} 님께 선물이 발송되었어요! 💌</div>
+                    <div className="Account_Achieve_Card_Notify">목표 금액을 달성하여 {gift.productName} 님께 선물이 발송되었어요! 💌</div>
                     <div className="Account_Achieve_Card_Gatherd">
                         <div className="Account_Achieve_Card_Gathered_Label">모인 금액</div>
-                        <div className="Account_Achieve_Card_Gathered_Content">{commaNums(gift.gatherPoint)} 원</div>
-                        <div className="Account_Achieve_Card_Attend_Badge">{gift.participant.length} 명 참여</div>
+                        <div className="Account_Achieve_Card_Gathered_Content">{commaNums(gift.fundedPrice)} 원</div>
+                        <div className="Account_Achieve_Card_Attend_Badge">{gift.participants.length} 명 참여</div>
                     </div>
                     <div className="Account_Achieve_Card_Payment">
                         <div className="Account_Achieve_Card_Payment_Label">내 펀딩 금액</div>
-                        <div className="Account_Achieve_Card_Payment_Content">{commaNums(gift.accountPoint)} 원</div>
+                        <div className="Account_Achieve_Card_Payment_Content">{commaNums(gift.myFundingPrice)} 원</div>
                     </div>
                     {/* 추후에 링크 경로 확인 필요 */}
                     <div className="Account_Achieve_Card_Btn_Area">

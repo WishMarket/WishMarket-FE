@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { getUserInfo } from "../../hooks/axios/Profile";
 import GiftModal from "./GiftModal";
 import { commaNums } from "../../hooks/CommaNums";
 import { MdSentimentVerySatisfied, MdSentimentVeryDissatisfied } from "react-icons/md";
@@ -10,26 +10,13 @@ export default function CompleteGiftCardActive({ gift }: ReceivedFundingInfo) {
     const [goodIcon, setGoodIcon] = useState<boolean>(false);
     const [badIcon, setBadIcon] = useState<boolean>(false);
     const [address, setAddress] = useState<string>("");
+    const [detailAddress, setDetailAddress] = useState<string>("");
     const [mapShow, setMapShow] = useState<boolean>(false);
     const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
-
     const USER_URL = "/data/UserData.json";
 
-    // address axios
-    const getUserInfo = async () => {
-        await axios
-            .get(USER_URL)
-            .then((res) => {
-                let response = res.data.users;
-                setUserInfo(response[0]); // 연동 시 교체 필요
-            })
-            .catch((error) => {
-                return Promise.reject(error);
-            });
-    };
-
     useEffect(() => {
-        getUserInfo();
+        getUserInfo(setUserInfo);
     }, []);
 
     const onMapClickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -40,15 +27,15 @@ export default function CompleteGiftCardActive({ gift }: ReceivedFundingInfo) {
     return (
         <>
             <div className="Complete_Gift_Card_Item Active">
-                <img src={gift.image} alt={gift.name} className="Complete_Gift_Img" />
+                <img src={gift.productImagerUrl} alt={gift.productName} className="Complete_Gift_Img" />
                 <div className="Complete_Gift_Content">
                     <div className="Complete_Gift_Info">
-                        <div className="Complete_Gift_Item_Title">{gift.name}</div>
+                        <div className="Complete_Gift_Item_Title">{gift.productName}</div>
                         <div className="Complete_Gift_Price">{commaNums(gift.price)} 원</div>
                         <div className="Complete_Gift_Address">
                             <div className="Complete_Gift_Address_Label">주소</div>
                             <div className="Complete_Gift_Address_Area">
-                                {userInfo?.address != null ? (
+                                {userInfo?.address != "" ? (
                                     <input type="text" value={address ? address : userInfo?.address} className="Complete_Gift_Address_Input" readOnly />
                                 ) : (
                                     <input type="text" value={address ? address : "주소를 입력해 주세요."} className="Complete_Gift_Address_Input" readOnly />
@@ -61,7 +48,12 @@ export default function CompleteGiftCardActive({ gift }: ReceivedFundingInfo) {
                         <div className="Complete_Gift_Address">
                             <div className="Complete_Gift_Address_Label">상세 주소</div>
                             <div className="Complete_Gift_Address_Area">
-                                <input type="text" defaultValue={address ? address : userInfo?.address} className="Complete_Gift_Address_Input" />
+                                <input
+                                    type="text"
+                                    defaultValue={detailAddress ? detailAddress : userInfo?.detailAddress}
+                                    className="Complete_Gift_Address_Input"
+                                    placeholder="상세 주소를 입력하세요."
+                                />
                             </div>
                         </div>
                         <div className="Complete_Gift_Review">
@@ -82,13 +74,13 @@ export default function CompleteGiftCardActive({ gift }: ReceivedFundingInfo) {
                         </div>
                         <div className="Complete_Gift_Date">
                             <div className="Complete_Gift_Date_Label">펀딩 기간</div>
-                            <div className="Complete_Gift_Date_Content">{gift.date}</div>
+                            <div className="Complete_Gift_Date_Content">{gift.endDate}</div>
                         </div>
                         <div className="Complete_Gift_People">
                             <div className="Complete_Gift_People_Label">참여자</div>
                             <div className="Flex_Container">
-                                <div className="Complete_Gift_People_Content">{gift.participant.join(", ")}</div>
-                                <div className="Complete_Gift_People_Badge">{gift.participant.length} 명 참여</div>
+                                <div className="Complete_Gift_People_Content">{gift.participants.join(", ")}</div>
+                                <div className="Complete_Gift_People_Badge">{gift.participants.length} 명 참여</div>
                             </div>
                         </div>
                     </div>

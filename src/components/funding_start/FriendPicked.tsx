@@ -2,7 +2,7 @@ import React from "react";
 import { BsFillPersonCheckFill } from "react-icons/bs";
 import { FriendPickedProps } from "./FundingStart.interfact";
 
-export default function FriendPicked({ pickFriendName,setPickFriendName ,pickFriendProfile, setPickFriendProfile  }: FriendPickedProps) {
+export default function FriendPicked({ pickFriendName, setPickFriendName, pickFriendProfile, setPickFriendProfile }: FriendPickedProps) {
     const onCancelSelect = () => {
         setPickFriendName(null);
         setPickFriendProfile(null);

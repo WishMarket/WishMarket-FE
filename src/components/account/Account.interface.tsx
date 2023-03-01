@@ -1,16 +1,18 @@
 export interface AccountFunding {
     fundingId: number;
-    name: string;
-    image: string;
+    targetId: number;
+    targetName: string;
+    productId: number;
+    productName: string;
+    productImagerUrl: string;
     price: number;
-    date: string;
-    gatherPoint: number;
-    accountPoint: number;
-    receiver: string;
-    participant: any;
-    url: string;
-    active: boolean;
-    achieve: boolean;
+    fundedPrice: number;
+    myFundingPrice: number;
+    participants: string[];
+    participantsNumber: number;
+    fundStatus: string;
+    startDate: string;
+    endDate: string;
 }
 
 export interface AccountFundingItem {
