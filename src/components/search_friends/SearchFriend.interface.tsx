@@ -6,10 +6,10 @@ export interface SearchFormProps {
 }
 
 export interface FamousFriendObj {
-  userid: number;
+  userId: number;
   name: string;
   nickname: string;
-  profileImage: string;
+  profileImageUrl: string;
   famous: boolean;
   isfriend: boolean;
 }

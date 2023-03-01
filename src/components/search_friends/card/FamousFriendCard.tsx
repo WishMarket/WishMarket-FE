@@ -5,11 +5,11 @@ import { FaMedal } from "react-icons/fa";
 import { FamousFriendObj } from "../SearchFriend.interface";
 
 export default function FamousFriendCard({
-  userid,
+  userId,
   name,
   nickname,
   famous,
-  profileImage,
+  profileImageUrl,
   isfriend,
 }: FamousFriendObj) {
   const [friended, setFriended] = useState<boolean>(isfriend);
@@ -33,13 +33,13 @@ export default function FamousFriendCard({
     setErrorShow(false);
   };
 
-  if (userid ==null) {
+  if (userId ==null) {
     return <div>검색 결과가 없습니다.</div>;
   } else {
     return (
       <div className="FriendResult_Wrapper">
         <div>
-          <img src={profileImage} className="FriendResult_image" />
+          <img src={profileImageUrl} className="FriendResult_image" />
         </div>
         <div className="FriendResult_DESC">
           <div className="FriendResult_bgc">

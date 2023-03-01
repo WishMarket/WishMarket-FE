@@ -1,25 +1,18 @@
 import React from 'react'
 import { commaNums } from "../../hooks/CommaNums";
+import { FundingAdditionGraphProps } from './FundingAddition.interface';
 
-interface Props{
-    items: Price;
-}
 
-interface Price{
-    price: number;
-    funded_price: number;
-    my_fund: number;
-}
-export default function FundingAdditionGraph({items}:Props) {
+export default function FundingAdditionGraph({targetPrice, fundedPrice, totalFundedPrice}:FundingAdditionGraphProps) {
 
      let remaining_Amount: number | undefined;
      let remaining_Percent;
-     if (items) {
-       remaining_Amount = items.price - items.funded_price;
-       remaining_Percent = ((items.funded_price / items.price) * 100).toFixed(
+
+       remaining_Amount = targetPrice - totalFundedPrice;
+       remaining_Percent = ((totalFundedPrice / targetPrice) * 100).toFixed(
          2
        );
-     }
+     
     
   return (
     <div className="FundingGraph_Desc">
@@ -44,7 +37,7 @@ export default function FundingAdditionGraph({items}:Props) {
       <div className="Funding_Amount_Desc">
         <div>
           <h3>모인 금액</h3>
-          <span> {commaNums(items.funded_price)}</span>
+          <span> {commaNums(totalFundedPrice)}</span>
         </div>
         <div>
           <h3>남은 금액</h3>
@@ -52,7 +45,7 @@ export default function FundingAdditionGraph({items}:Props) {
         </div>
         <div className="my-Funded">
           <h3>내 펀딩금액</h3>
-          <span> {commaNums(items.my_fund)}</span>
+          <span> {commaNums(fundedPrice)}</span>
         </div>
       </div>
     </div>

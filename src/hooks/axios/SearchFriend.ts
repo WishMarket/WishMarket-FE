@@ -60,7 +60,7 @@ export const FriendsFollowDelete = async (followId: number) => {
 };
 
 export const InfluencerFriend = async () => {
-  const Influencer_URL = "http://3.38.63.3:8080/api/follow/influencer";
+  const Influencer_URL = "http://3.38.63.3:8080/api/follow/influence";
   return await axios
     .get(Influencer_URL, {
       headers: {

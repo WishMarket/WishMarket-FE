@@ -1,14 +1,9 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
 import { FundingStartError } from "../../hooks/Errors";
+import { FundingAdditionModalProps } from "./FundingAddition.interface";
 
-interface Modal {
-  show: boolean;
-  setShow: React.Dispatch<React.SetStateAction<boolean>>;
-  code: number;
-}
-
-export default function FundingAdditionModal({ show, setShow, code }: Modal) {
+export default function FundingAdditionModal({ show, setShow, code }: FundingAdditionModalProps) {
   const handleClose = (e: React.MouseEvent<HTMLButtonElement> | void) => {
     setShow(false);
   };
