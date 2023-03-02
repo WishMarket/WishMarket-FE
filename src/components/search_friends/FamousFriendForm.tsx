@@ -39,7 +39,7 @@ export default function FamousFriendForm() {
               nickname={data.nickname}
               famous={data.famous}
               profileImageUrl={data.profileImageUrl}
-              isfriend={data.isfriend}
+              isFriend={data.isFriend}
             />
           );
         })}

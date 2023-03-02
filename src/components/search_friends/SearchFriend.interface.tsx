@@ -11,7 +11,7 @@ export interface FamousFriendObj {
   nickname: string;
   profileImageUrl: string;
   famous: boolean;
-  isfriend: boolean;
+  isFriend: boolean;
 }
 
 export interface SearchFriendsObj {

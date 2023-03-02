@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { requestLogin } from "../../hooks/axios/Login";
 import LoginModal from "./LoginModal";
@@ -13,7 +13,7 @@ export default function LoginForm() {
   const [password, setPassword] = useState<string>("");
   const [errorShow, setErrorShow] = useState<boolean>(false);
   const [errorCode, setErrorCode] = useState<number>(0);
-
+  
   const onLoginSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
