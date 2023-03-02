@@ -25,15 +25,15 @@ export default function FriendsFunding({ gift }: FriendsFundingItem) {
             <div className="Account_Card_Item">
                 <div className="Account_Card_Date">
                     <TfiAlarmClock className="Account_Card_Date_Icon" />
-                    {gift.date}
+                    {gift.endDate}
                 </div>
                 <div className="Account_Card_Inner">
-                    <img src={gift.image} alt={gift.name} className="Account_Card_Img" />
+                    <img src={gift.productImagerUrl} alt={gift.productName} className="Account_Card_Img" />
                     <div className="Account_Card_Content">
-                        <div className="Account_Card_Receiver">To. {gift.receiver}</div>
+                        <div className="Account_Card_Receiver">To. {gift.targetName}</div>
                         <div className="Account_Card_Top_Area">
                             <div className="Account_Card_Product_Info">
-                                <div className="Account_Card_Title">{gift.name}</div>
+                                <div className="Account_Card_Title">{gift.productName}</div>
                                 <div className="Account_Card_Price">{commaNums(gift.price)} 원</div>
                             </div>
                         </div>
@@ -47,24 +47,24 @@ export default function FriendsFunding({ gift }: FriendsFundingItem) {
                             <div
                                 className="progress-bar"
                                 style={{
-                                    width: `${((gift.gatherPoint / gift.price) * 100).toFixed(2)}%`,
+                                    width: `${((gift.fundedPrice / gift.price) * 100).toFixed(2)}%`,
                                 }}
                             >
-                                {((gift.gatherPoint / gift.price) * 100).toFixed(2)}%
+                                {((gift.fundedPrice / gift.price) * 100).toFixed(2)}%
                             </div>
                         </div>
                         <div className="Account_Card_Gatherd">
                             <div className="Account_Card_Gathered_Label">모인 금액</div>
-                            <div className="Account_Card_Gathered_Content">{commaNums(gift.gatherPoint)} 원</div>
-                            <div className="Account_Card_Attend_Badge">{gift.participant.length} 명 참여</div>
+                            <div className="Account_Card_Gathered_Content">{commaNums(gift.fundedPrice)} 원</div>
+                            <div className="Account_Card_Attend_Badge">{gift.participants.length} 명 참여</div>
                         </div>
                         <div className="Account_Card_Remaining">
                             <div className="Account_Card_Remaining_Label">남은 금액</div>
-                            <div className="Account_Card_Remaining_Content">{commaNums(gift.price - gift.gatherPoint)} 원</div>
+                            <div className="Account_Card_Remaining_Content">{commaNums(gift.price - gift.fundedPrice)} 원</div>
                         </div>
                         <div className="Account_Card_Payment">
                             <div className="Account_Card_Payment_Label">내 펀딩 금액</div>
-                            <div className="Account_Card_Payment_Content">{commaNums(gift.accountPoint)} 원</div>
+                            <div className="Account_Card_Payment_Content">{commaNums(gift.myFundingPrice)} 원</div>
                         </div>
 
                         {/* 추후에 링크 경로 확인 필요 */}
@@ -81,9 +81,9 @@ export default function FriendsFunding({ gift }: FriendsFundingItem) {
                             <Modal.Body>
                                 <div className="Modal_Inner">
                                     <span className="Modal_Title">링크:</span>
-                                    <input className="Share_LinkBox" type="text" value={gift.url} readOnly></input>
+                                    <input className="Share_LinkBox" type="text" value="ㅇㅇ" readOnly></input>
                                     <button className="btn btn-light">
-                                        <IoMdCopy className="copy_Button" onClick={() => CopyClipBoard(gift.url)} />
+                                        <IoMdCopy className="copy_Button" onClick={() => CopyClipBoard("ㅇㅇ")} />
                                     </button>
                                 </div>
                             </Modal.Body>

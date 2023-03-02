@@ -68,7 +68,7 @@ export default function FriendsContainer() {
                         마지막 친구 입니다.
                       </h2>
                       <p className="friedns-lastpage-desc">
-                        <span>친구찾기</span> 에서 더많은 친구를 찾아보세요.
+                        <span>친구 찾기</span> 에서 더 많은 친구를 찾아보세요.
                       </p>
                     </div>
                   </Link>
@@ -80,7 +80,7 @@ export default function FriendsContainer() {
             {userId === -1 ? (
               <FriendsDefault />
             ) : (
-              <FriendsListContent key={userId} users={users} userId={userId} />
+                <FriendsListContent key={userId} users={users} userId={userId} setUserId={setUserId} />
             )}
           </div>
         </div>
