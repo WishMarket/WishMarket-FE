@@ -43,7 +43,7 @@ export default function AchieveCardItem({ gift, show, setShow }: AccountFundingT
                             {((gift.fundedPrice / gift.price) * 100).toFixed(2)}%
                         </div>
                     </div>
-                    <div className="Account_Achieve_Card_Notify">목표 금액을 달성하여 {gift.productName} 님께 선물이 발송되었어요! 💌</div>
+                    <div className="Account_Achieve_Card_Notify">목표 금액을 달성하여 {gift.targetName} 님께 선물이 발송되었어요! 💌</div>
                     <div className="Account_Achieve_Card_Gatherd">
                         <div className="Account_Achieve_Card_Gathered_Label">모인 금액</div>
                         <div className="Account_Achieve_Card_Gathered_Content">{commaNums(gift.fundedPrice)} 원</div>
