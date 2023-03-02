@@ -11,8 +11,15 @@ import FundingStartModal from "./FundingStartModal";
 
 import { MdOutlineDateRange } from "react-icons/md";
 import { FaUserFriends } from "react-icons/fa";
-import { FundingStartFriendObj, FundingStartProductObj } from "./FundingStart.interfact";
-import { getFriend, getProduct, PostFundingStart } from "../../hooks/axios/FundingStart";
+import {
+  FundingStartFriendObj,
+  FundingStartProductObj,
+} from "./FundingStart.interfact";
+import {
+  getFriend,
+  getProduct,
+  PostFundingStart,
+} from "../../hooks/axios/FundingStart";
 
 export default function FundingStartForm() {
     const SIZE = 10;
