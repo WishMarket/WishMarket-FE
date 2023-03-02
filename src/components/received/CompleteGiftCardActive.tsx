@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getUserInfo } from "../../hooks/axios/Profile";
+import { postFundingReception } from "../../hooks/axios/Gift";
 import GiftModal from "./GiftModal";
 import { commaNums } from "../../hooks/CommaNums";
 import { MdSentimentVerySatisfied, MdSentimentVeryDissatisfied } from "react-icons/md";
@@ -11,9 +12,9 @@ export default function CompleteGiftCardActive({ gift }: ReceivedFundingInfo) {
     const [badIcon, setBadIcon] = useState<boolean>(false);
     const [address, setAddress] = useState<string>("");
     const [detailAddress, setDetailAddress] = useState<string>("");
+    const [comment, setComment] = useState<string>("");
     const [mapShow, setMapShow] = useState<boolean>(false);
     const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
-    const USER_URL = "/data/UserData.json";
 
     useEffect(() => {
         getUserInfo(setUserInfo);
@@ -22,6 +23,10 @@ export default function CompleteGiftCardActive({ gift }: ReceivedFundingInfo) {
     const onMapClickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         setMapShow(true);
+    };
+
+    const postFundingInfo = () => {
+        postFundingReception(address, comment, detailAddress, gift.fundingId, goodIcon, gift.productId);
     };
 
     return (
@@ -53,13 +58,14 @@ export default function CompleteGiftCardActive({ gift }: ReceivedFundingInfo) {
                                     defaultValue={detailAddress ? detailAddress : userInfo?.detailAddress}
                                     className="Complete_Gift_Address_Input"
                                     placeholder="상세 주소를 입력하세요."
+                                    onChange={(e) => setDetailAddress(e.target.value)}
                                 />
                             </div>
                         </div>
                         <div className="Complete_Gift_Review">
                             <div className="Complete_Gift_Review_Label">한줄 리뷰</div>
                             <div className="Complete_Review_Area">
-                                <input type="text" className="Complete_Review_Input" placeholder="리뷰를 입력하세요." />
+                                <input type="text" className="Complete_Review_Input" placeholder="리뷰를 입력하세요." onChange={(e) => setComment(e.target.value)} />
                                 <div className="Complete_Review_Icon">
                                     <div className={goodIcon ? "Complete_Review_Good active" : "Complete_Review_Good"} onClick={() => setGoodIcon(!goodIcon)}>
                                         <MdSentimentVerySatisfied className="Complete_Review_Good_Icon" />
@@ -85,7 +91,9 @@ export default function CompleteGiftCardActive({ gift }: ReceivedFundingInfo) {
                         </div>
                     </div>
                     <div className="Complete_Gift_Btn_Area">
-                        <button className="btn btn-primary Active_Controll">제출</button>
+                        <button className="btn btn-primary Active_Controll" onClick={postFundingInfo}>
+                            제출
+                        </button>
                     </div>
                 </div>
             </div>
