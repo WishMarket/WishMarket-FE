@@ -13,14 +13,21 @@ export default function LoginForm() {
   const [password, setPassword] = useState<string>("");
   const [errorShow, setErrorShow] = useState<boolean>(false);
   const [errorCode, setErrorCode] = useState<number>(0);
-  
+
   const onLoginSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       let result = await requestLogin(email, password);
       window.localStorage.setItem("accessToken", result.accessToken);
       window.localStorage.setItem("refreshToken", result.refreshToken);
-      console.log(result);
+      window.localStorage.setItem(
+        "accessTokenExpiredAt",
+        result.accessTokenExpiredAt
+      );
+      window.localStorage.setItem(
+        "refreshTokenExpiredAt",
+        result.refreshTokenExpiredAt
+      );
       navigate("/");
     } catch (e) {
       if (e == 400) {

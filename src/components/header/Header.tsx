@@ -1,45 +1,87 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { FaBars } from "react-icons/fa";
 import HeaderCategory from "./HeaderCategory";
 import HeaderNotify from "./HeaderNotify";
 import SearchContainer from "./SearchContainer";
 import ToggleBar from "../header/ToggleBar";
+import { requestAccessToken } from "../../hooks/axios/Login";
 
 export default function Header() {
-    const [tabState, setTabState] = useState(false);
-    const token = window.localStorage.getItem("accessToken");
+  const [tabState, setTabState] = useState(false);
+  const token = window.localStorage.getItem("accessToken");
+  const navigate = useNavigate();
 
-    // 우측 토글 handle
-    const handleToggleMenu = () => {
-        const toggleMenu = document.querySelector("#Toggle_Bar") as HTMLElement;
-        setTabState(!tabState);
-        toggleMenu.classList.add("on");
-        toggleMenu.classList.remove("off");
-        document.body.style.overflow = "hidden";
-    };
+  // 우측 토글 handle
+  const handleToggleMenu = () => {
+    const toggleMenu = document.querySelector("#Toggle_Bar") as HTMLElement;
+    setTabState(!tabState);
+    toggleMenu.classList.add("on");
+    toggleMenu.classList.remove("off");
+    document.body.style.overflow = "hidden";
+  };
 
-    return (
-        <>
-            <div className="Header_Bar">
-                {/* 로고, 카테고리, 서브 카테고리 구현 영역 */}
-                <div className="Header_Left_Area">
-                    <Link to="/">
-                        <img className="Header_Title" src={logo} alt="Wish Market" />
-                    </Link>
-                    <HeaderCategory token={token} />
-                </div>
-                {/* 검색, 알림, 토글 바 */}
-                <div className="Header_Right_Area">
-                    <SearchContainer />
-                    <div className="Header_Icon_Area">
-                        <HeaderNotify token={token} />
-                        <FaBars className="Header_Menu_Toggle" onClick={handleToggleMenu} />
-                    </div>
-                </div>
-            </div>
-            <ToggleBar tabState={tabState} setTabState={setTabState} token={token} />
-        </>
-    );
+  useEffect(() => {
+    checkToken();
+  }, []);
+
+  const checkToken = async () => {
+    const newToken = await requestAccessToken();
+    const now = new Date();
+    const refresh = localStorage.getItem("refreshTokenExpiredAt");
+    let refresh_date = new Date();
+    if (refresh) {
+      refresh_date = new Date(refresh);
+    }
+    console.log(newToken);
+    if (refresh_date < now) {
+      window.localStorage.removeItem("accessToken");
+      window.localStorage.removeItem("refreshToken");
+      window.localStorage.removeItem("accessTokenExpiredAt");
+      window.localStorage.removeItem("refreshTokenExpiredAt");
+      alert("토큰이 만료되었습니다. 다시 로그인 해주세요.");
+      navigate("/login");
+    } else if (newToken == "AccessToken Not Expired") {
+    } else if (newToken.refreshToken == null) {
+      window.localStorage.setItem("accessToken", newToken.accessToken);
+      window.localStorage.setItem(
+        "accessTokenExpiredAt",
+        newToken.accessTokenExpiredAt
+      );
+    } else {
+      window.localStorage.setItem("accessToken", newToken.accessToken);
+      window.localStorage.setItem("refreshToken", newToken.refreshToken);
+      window.localStorage.setItem(
+        "accessTokenExpiredAt",
+        newToken.accessTokenExpiredAt
+      );
+      window.localStorage.setItem(
+        "refreshTokenExpiredAt",
+        newToken.refreshTokenExpiredAt
+      );
+    }
+  };
+  return (
+    <>
+      <div className="Header_Bar">
+        {/* 로고, 카테고리, 서브 카테고리 구현 영역 */}
+        <div className="Header_Left_Area">
+          <Link to="/">
+            <img className="Header_Title" src={logo} alt="Wish Market" />
+          </Link>
+          <HeaderCategory token={token} />
+        </div>
+        {/* 검색, 알림, 토글 바 */}
+        <div className="Header_Right_Area">
+          <SearchContainer />
+          <div className="Header_Icon_Area">
+            <HeaderNotify token={token} />
+            <FaBars className="Header_Menu_Toggle" onClick={handleToggleMenu} />
+          </div>
+        </div>
+      </div>
+      <ToggleBar tabState={tabState} setTabState={setTabState} token={token} />
+    </>
+  );
 }

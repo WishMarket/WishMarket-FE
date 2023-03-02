@@ -11,13 +11,16 @@ export default function NaverRedirect() {
   useEffect(() => {
     getSocialLogin();
   }, []);
+
   const getSocialLogin = async () => {
     try {
       const socialLogin = await GetsocialLogin(naver_code);
       console.log(socialLogin);
-      window.localStorage.setItem('accessToken',socialLogin.config.data.accessToken);
-      window.localStorage.setItem('refreshToken',socialLogin.config.data.accessToken);
-      navigate('/');
+      if (socialLogin.response.status == 200) {
+        window.localStorage.setItem('accessToken',socialLogin.config.data.accessToken);
+        window.localStorage.setItem('refreshToken',socialLogin.config.data.accessToken);
+        navigate('/');
+      }
     } catch (e) {
       console.log(e);
     }
