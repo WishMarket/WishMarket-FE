@@ -57,16 +57,16 @@ export default function FriendsListContent({ users, userId }: FriendsItem) {
             </div>
             <div className="friends-list-right-bottom-area">
                 {users.map((user: any) => {
-                    if (user.Userid === userId) {
+                    if (user.userId === userId) {
                         return (
-                            <div key={user.Userid} className="friends-list-content-wrapper">
+                            <div key={user.userId} className="friends-list-content-wrapper">
                                 <div className="friends-list-funding-wrapper">
                                     <div className="friends-list-funding-title" ref={fundingRef}>
                                         <BiCalendarCheck className="friends-list-funding-title-icon" />
                                         {user.name} 님의 진행 중 펀딩
                                     </div>
                                     <div className="friends-list-funding">
-                                        <FriendsFundingContainer />
+                                        <FriendsFundingContainer user={user} userId={userId} />
                                     </div>
                                 </div>
                                 <hr />
@@ -76,7 +76,7 @@ export default function FriendsListContent({ users, userId }: FriendsItem) {
                                         {user.name} 님의 Wishlist
                                     </div>
                                     <div className="friends-list-wish">
-                                        <FriendsWishContainer />
+                                        <FriendsWishContainer user={user} userId={userId} />
                                     </div>
                                 </div>
                             </div>

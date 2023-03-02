@@ -1,16 +1,18 @@
 export interface FundingList {
     fundingId: number;
-    name: string;
-    image: string;
+    targetId: number;
+    targetName: string;
+    productId: number;
+    productName: string;
+    productImagerUrl: string;
     price: number;
-    date: string;
-    gatherPoint: number;
-    accountPoint: number;
-    receiver: string;
-    participant: any;
-    url: string;
-    active: boolean;
-    achieve: boolean;
+    fundedPrice: number;
+    myFundingPrice: number;
+    participants: string[];
+    participantsNumber: number;
+    fundStatus: string;
+    startDate: string;
+    endDate: string;
 }
 
 export interface FriendsFundingItem {
@@ -28,6 +30,7 @@ export interface FriendsObj {
 export interface FriendsItem {
     users: FriendsObj[];
     userId: number;
+    setUserId: any;
 }
 
 export interface FriendsItemState {
@@ -37,10 +40,13 @@ export interface FriendsItemState {
 }
 
 export interface FriendsWishlist {
+    wishListId: number;
+    userId: number;
+    fundingId: number | null;
     productId: number;
-    name: string;
-    image: string;
+    productName: string;
     price: number;
+    productImage: string;
 }
 
 export interface FriendsWishItem {
