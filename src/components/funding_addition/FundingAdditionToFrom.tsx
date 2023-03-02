@@ -1,25 +1,24 @@
-import React from 'react'
+import React from "react";
 import defaultImg from "../../assets/default-profile-img.png";
-import { FundingAdditionToFromProps } from './FundingAddition.interface';
-
+import { FundingAdditionToFromProps } from "./FundingAddition.interface";
 
 export default function FundingAdditionToFrom({
   targetUserName,
-  targetUserImageUrl,
+  targetUserProfileImageUrl,
   participantsNameList,
   participationCount,
 }: FundingAdditionToFromProps) {
   const FormatParticipant = () => {
-    let result:string = "";
-    for (let i = 0; i < participantsNameList.length; i++){
-      if (i<participantsNameList.length-1) {
-        result += participantsNameList[i] +", ";
+    let result: string = "";
+    for (let i = 0; i < participantsNameList.length; i++) {
+      if (i < participantsNameList.length - 1) {
+        result += participantsNameList[i] + ", ";
       } else {
         result += participantsNameList[i];
       }
-  }
+    }
     return result;
-  }
+  };
   return (
     <div>
       <div className="FundingAddition_To">
@@ -28,7 +27,9 @@ export default function FundingAdditionToFrom({
         </span>
         <div className="To_desc">
           <img
-            src={targetUserImageUrl ? targetUserImageUrl : defaultImg}
+            src={
+              targetUserProfileImageUrl ? targetUserProfileImageUrl : defaultImg
+            }
             className="To_image"
           ></img>
           <span>{targetUserName}</span>

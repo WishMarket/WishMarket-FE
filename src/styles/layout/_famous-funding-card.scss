@@ -32,7 +32,7 @@
             height: inherit;
             border-top-left-radius: 24px;
             border-bottom-left-radius: 24px;
-            object-fit: cover;
+            object-fit: contain;
         }
 
         .Famous_Funding_Content {
@@ -53,11 +53,15 @@
                     line-height: 2;
                     color: $color-blue;
                 }
-
+                
                 .Famous_Funding_Item_Title {
                     font-size: $font-sub-title-size;
                     font-weight: 600;
                     line-height: 2;
+                    width: 510px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
                 }
 
                 .Famous_Funding_Price {

@@ -3,17 +3,17 @@ import { commaNums } from "../../hooks/CommaNums";
 import { FundingAdditionGraphProps } from './FundingAddition.interface';
 
 
-export default function FundingAdditionGraph({targetPrice, fundedPrice, totalFundedPrice}:FundingAdditionGraphProps) {
+export default function FundingAdditionGraph({
+  targetPrice,
+  myFundedPrice,
+  totalFundedPrice,
+}: FundingAdditionGraphProps) {
+  let remaining_Amount: number | undefined;
+  let remaining_Percent;
 
-     let remaining_Amount: number | undefined;
-     let remaining_Percent;
+  remaining_Amount = targetPrice - totalFundedPrice;
+  remaining_Percent = ((totalFundedPrice / targetPrice) * 100).toFixed(2);
 
-       remaining_Amount = targetPrice - totalFundedPrice;
-       remaining_Percent = ((totalFundedPrice / targetPrice) * 100).toFixed(
-         2
-       );
-     
-    
   return (
     <div className="FundingGraph_Desc">
       <h2>펀딩 상세</h2>
@@ -45,7 +45,7 @@ export default function FundingAdditionGraph({targetPrice, fundedPrice, totalFun
         </div>
         <div className="my-Funded">
           <h3>내 펀딩금액</h3>
-          <span> {commaNums(fundedPrice)}</span>
+          <span> {commaNums(myFundedPrice)}</span>
         </div>
       </div>
     </div>

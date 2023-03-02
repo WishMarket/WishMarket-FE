@@ -21,28 +21,31 @@ export const requestLogin = async (email:string, password:string) => {
       })
 }
 
-export const requestAccessToken = async (refresh_token:string) => {
+export const requestAccessToken = async () => {
     await axios
-      .post(`/token/refresh`, { refresh:refresh_token }, { withCredentials: true })
+      .post(
+        `http://3.38.63.3:8080/api/auth/reissue`,
+        { refresh: window.localStorage.getItem('refreshToken') },
+        { withCredentials: true }
+      )
       .then((response) => {
-          return response.data.access;
+        return response;
       })
       .catch((e) => {
-        console.log(e.response);
+        console.log(e);
       });
 }
 
-// export const checkAccessToken = async (refresh_token:string) => {
-//   if (axios.defaults.headers.common["Authorization"] === undefined) {
-//     return await requestAccessToken(refresh_token).then((response) => {
-//       return response;
-//     });
-//   } else {
-//     return axios.defaults.headers.common["Authorization"].split(" ")[1];
-//   }
-// };
+export const checkAccessToken = async () => {
+  if (axios.defaults.headers.common["Authorization"] === undefined) {
+    return await requestAccessToken().then((response) => {
+      return response;
+    });
+  }
+};
 
-export const naverLogin = async (hash:string) =>{
+export
+  const naverLogin = async (hash: string) => {
   return await axios
     .post(`http://3.38.63.3:8080/api/auth/sign-in/naver`, {
       withCredentials: true,
