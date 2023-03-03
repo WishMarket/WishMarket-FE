@@ -1,21 +1,29 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import { naverLogin } from '../../../hooks/axios/Login';
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { GetsocialLogin } from "../../../hooks/axios/Login";
 
 export default function NaverRedirect() {
-    const navigate = useNavigate();
-    console.log(window.location.hash);
-    const socialLogin = async() => {
-        const hash = window.location.hash;
-        const result = await naverLogin(hash);
-        console.log(result);
-        return result;
-        // if (result) {
-        //     navigate('/');
-        // }
+  const navigate = useNavigate();
+
+  let code = document.location.search;
+  let naver_code ='naver'+code;
+
+  useEffect(() => {
+    getSocialLogin();
+  }, []);
+
+  const getSocialLogin = async () => {
+    try {
+      const socialLogin = await GetsocialLogin(naver_code);
+      console.log(socialLogin);
+      if (socialLogin.response.status == 200) {
+        window.localStorage.setItem('accessToken',socialLogin.config.data.accessToken);
+        window.localStorage.setItem('refreshToken',socialLogin.config.data.accessToken);
+        navigate('/');
+      }
+    } catch (e) {
+      console.log(e);
     }
-    console.log(socialLogin());
-  return (
-    <div>네이버 소셜로그인 진행중 ...</div>
-  )
+  };
+  return <div>네이버 소셜로그인 진행중 ...</div>;
 }

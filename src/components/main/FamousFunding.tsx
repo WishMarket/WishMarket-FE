@@ -24,7 +24,6 @@ export default function FamousFunding() {
     const getFundingData = async () => {
         const fundingdata = await GetFamousFunding();
         setFamousFunding(fundingdata);
-        console.log(fundingdata);
     };
 
     useEffect(() => {
