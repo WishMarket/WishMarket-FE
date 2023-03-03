@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { GetsocialLogin } from "../../../hooks/axios/Login";
+import { SetAccessToken, SetRefreshToken } from "../../../hooks/Tokens";
 
 export default function NaverRedirect() {
   const navigate = useNavigate();
@@ -16,9 +17,9 @@ export default function NaverRedirect() {
     try {
       const socialLogin = await GetsocialLogin(naver_code);
       console.log(socialLogin);
-      if (socialLogin.response.status == 200) {
-        window.localStorage.setItem('accessToken',socialLogin.config.data.accessToken);
-        window.localStorage.setItem('refreshToken',socialLogin.config.data.accessToken);
+      if (socialLogin.status == 200) {
+        SetAccessToken(socialLogin.data.accessToken, socialLogin.data.accessTokenExpiredAt);
+        SetRefreshToken(socialLogin.data.refreshToken, socialLogin.data.refreshTokenExpiredAt);
         navigate('/');
       }
     } catch (e) {

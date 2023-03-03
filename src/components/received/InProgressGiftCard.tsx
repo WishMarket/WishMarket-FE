@@ -67,7 +67,7 @@ export default function InProgressGiftCard() {
                                 </div>
                             </div>
                             {/* 추후에 링크 경로 확인 필요 */}
-                            <GiftShareModal show={show} setShow={setShow} />
+                            <GiftShareModal show={show} setShow={setShow} fundingId={gift.fundingId} />
                             <div className="In_Progress_Gift_Btn_Area">
                                 <button className="In_Progress_Gift_Share_Btn" onClick={handleShow}>
                                     <BsShareFill className="In_Progress_Gift_Share_Btn_Icon" />

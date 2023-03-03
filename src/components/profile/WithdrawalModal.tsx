@@ -2,6 +2,7 @@ import React from "react";
 import { Modal } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { Account_Withdrawal } from "../../hooks/axios/Profile";
+import { RemoveTokens } from "../../hooks/Tokens";
 import { WithdrawalProps } from "./Profile.interface";
 
 export default function WithdrawalModal({ errorShow, setErrorShow }: WithdrawalProps) {
@@ -11,8 +12,7 @@ export default function WithdrawalModal({ errorShow, setErrorShow }: WithdrawalP
         const result = await Account_Withdrawal();
         console.log(result);
         if (result.data == "WITHDRAWAL_SUCCESS") {
-            window.localStorage.removeItem("accessToken");
-            window.localStorage.removeItem("refreshToken");
+            RemoveTokens();
             setErrorShow(false);
             alert("회원탈퇴 되었습니다. 이용해주셔서 감사합니다.");
             navigate("/");
