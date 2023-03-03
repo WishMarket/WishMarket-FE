@@ -7,6 +7,7 @@ import HeaderNotify from "./HeaderNotify";
 import SearchContainer from "./SearchContainer";
 import ToggleBar from "../header/ToggleBar";
 import { requestAccessToken } from "../../hooks/axios/Login";
+import { RemoveTokens, SetAccessToken, SetRefreshToken } from "../../hooks/Tokens";
 
 export default function Header() {
   const [tabState, setTabState] = useState(false);
@@ -26,41 +27,36 @@ export default function Header() {
     checkToken();
   }, []);
 
-  const checkToken = async () => {
-    const newToken = await requestAccessToken();
-    const now = new Date();
-    const refresh = localStorage.getItem("refreshTokenExpiredAt");
-    let refresh_date = new Date();
-    if (refresh) {
-      refresh_date = new Date(refresh);
-    }
-    console.log(newToken);
-    if (refresh_date < now) {
-      window.localStorage.removeItem("accessToken");
-      window.localStorage.removeItem("refreshToken");
-      window.localStorage.removeItem("accessTokenExpiredAt");
-      window.localStorage.removeItem("refreshTokenExpiredAt");
-      alert("토큰이 만료되었습니다. 다시 로그인 해주세요.");
-      navigate("/login");
-    } else if (newToken == "AccessToken Not Expired") {
-    } else if (newToken.refreshToken == null) {
-      window.localStorage.setItem("accessToken", newToken.accessToken);
-      window.localStorage.setItem(
-        "accessTokenExpiredAt",
-        newToken.accessTokenExpiredAt
-      );
-    } else {
-      window.localStorage.setItem("accessToken", newToken.accessToken);
-      window.localStorage.setItem("refreshToken", newToken.refreshToken);
-      window.localStorage.setItem(
-        "accessTokenExpiredAt",
-        newToken.accessTokenExpiredAt
-      );
-      window.localStorage.setItem(
-        "refreshTokenExpiredAt",
-        newToken.refreshTokenExpiredAt
-      );
-    }
+    const checkToken = async () => {
+        if (window.localStorage.getItem("accessToken")) {
+          const newToken = await requestAccessToken();
+          const now = new Date();
+          const refresh = localStorage.getItem("refreshTokenExpiredAt");
+          let refresh_date = new Date();
+          if (refresh) {
+            refresh_date = new Date(refresh);
+          }
+          if (refresh_date < now) {
+              RemoveTokens();
+            alert("토큰이 만료되었습니다. 다시 로그인 해주세요.");
+            navigate("/login");
+          } else if (newToken == "AccessToken Not Expired") {
+          } else if (newToken.refreshToken == null) {
+              SetAccessToken(
+                newToken.accessToken,
+                newToken.accessTokenExpiredAt
+              );
+          } else {
+               SetAccessToken(
+                 newToken.accessToken,
+                 newToken.accessTokenExpiredAt
+               );
+              SetRefreshToken(
+                newToken.refreshToken,
+                newToken.refreshTokenExpiredAt
+              );
+          }
+        }
   };
   return (
     <>

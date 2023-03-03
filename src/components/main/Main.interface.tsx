@@ -23,6 +23,7 @@ export interface SearchProductType {
 export interface FundingModalType {
   show: boolean;
   setShow: React.Dispatch<React.SetStateAction<boolean>>;
+  fundingId: number;
 }
 
 export interface SearchProductModalType {

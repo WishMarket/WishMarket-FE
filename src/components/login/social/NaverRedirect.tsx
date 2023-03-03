@@ -16,9 +16,17 @@ export default function NaverRedirect() {
     try {
       const socialLogin = await GetsocialLogin(naver_code);
       console.log(socialLogin);
-      if (socialLogin.response.status == 200) {
-        window.localStorage.setItem('accessToken',socialLogin.config.data.accessToken);
-        window.localStorage.setItem('refreshToken',socialLogin.config.data.accessToken);
+      if (socialLogin.status == 200) {
+        window.localStorage.setItem('accessToken',socialLogin.data.accessToken);
+        window.localStorage.setItem(
+          "accessTokenExpiredAt",
+          socialLogin.data.accessTokenExpiredAt
+        );
+        window.localStorage.setItem('refreshToken',socialLogin.data.refreshToken);
+        window.localStorage.setItem(
+          "refreshTokenExpiredAt",
+          socialLogin.data.refreshTokenExpiredAt
+        );
         navigate('/');
       }
     } catch (e) {
