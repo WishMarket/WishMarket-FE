@@ -4,7 +4,8 @@ import { IoMdCopy } from "react-icons/io";
 import { CopyClipBoard } from "../../hooks/CopyClipBoard";
 import { FundingModalType } from "./Main.interface";
 
-export default function FundingModal({ show, setShow }: FundingModalType) {
+export default function FundingModal({ show, setShow, fundingId }: FundingModalType) {
+    const link = `funding/join/${fundingId}`;
     const handleClose = (e: React.MouseEvent<HTMLButtonElement> | void) => {
         setShow(false);
     };
@@ -18,9 +19,9 @@ export default function FundingModal({ show, setShow }: FundingModalType) {
                 <Modal.Body>
                     <div className="Modal_Inner">
                         <span className="Modal_Title">링크:</span>
-                        <input className="Share_LinkBox" type="text" value="보류" readOnly></input>
+                        <input className="Share_LinkBox" type="text" value={link} readOnly></input>
                         <button className="btn btn-light">
-                            <IoMdCopy className="copy_Button" onClick={() => CopyClipBoard("보류")} />
+                            <IoMdCopy className="copy_Button" onClick={() => CopyClipBoard(link)} />
                         </button>
                     </div>
                 </Modal.Body>

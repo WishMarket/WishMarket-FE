@@ -6,6 +6,7 @@ import GoogleLogin from "./social/GoogleLogin";
 import NaverLogin from "./social/NaverLogin";
 import LoginEmail from "./form/LoginEmail";
 import LoginPasswd from "./form/LoginPasswd";
+import { SetAccessToken, SetRefreshToken } from "../../hooks/Tokens";
 
 export default function LoginForm() {
   const navigate = useNavigate();
@@ -18,16 +19,8 @@ export default function LoginForm() {
     e.preventDefault();
     try {
       let result = await requestLogin(email, password);
-      window.localStorage.setItem("accessToken", result.accessToken);
-      window.localStorage.setItem("refreshToken", result.refreshToken);
-      window.localStorage.setItem(
-        "accessTokenExpiredAt",
-        result.accessTokenExpiredAt
-      );
-      window.localStorage.setItem(
-        "refreshTokenExpiredAt",
-        result.refreshTokenExpiredAt
-      );
+      SetAccessToken(result.accessToken, result.accessTokenExpiredAt);
+      SetRefreshToken(result.refreshToken, result.refreshTokenExpiredAt);
       navigate("/");
     } catch (e) {
       if (e == 400) {

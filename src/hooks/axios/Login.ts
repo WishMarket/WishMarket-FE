@@ -1,4 +1,5 @@
 import axios from "axios";
+import { GetAccessTokenExpiredAt } from "../Tokens";
 
 export const requestLogin = async (email: string, password: string) => {
     return await axios
@@ -14,7 +15,7 @@ export const requestLogin = async (email: string, password: string) => {
 
 export const requestAccessToken = async () => {
     let now = new Date();
-    let expire = window.localStorage.getItem("accessTokenExpiredAt");
+    let expire = GetAccessTokenExpiredAt();
     let expireDate;
     if (expire) {
         expireDate = new Date(expire);
@@ -35,7 +36,6 @@ export const requestAccessToken = async () => {
                 )
                 .then((response) => {
                     const res = response.data;
-                    console.log(response);
                     return res;
                 })
                 .catch((e) => {
@@ -50,7 +50,7 @@ export const requestAccessToken = async () => {
 export const GetsocialLogin = async (code: string) => {
     console.log(code);
     return await axios
-        .get(`http://3.38.63.3:8080/api/auth/sign-in/social/naver${code}`, {
+        .get(`http://3.38.63.3:8080/api/auth/sign-in/social/${code}`, {
             withCredentials: true,
         })
         .then((response) => {

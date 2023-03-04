@@ -9,7 +9,6 @@ import { FundingItem } from "./Main.interface";
 
 export default function FamousFundingCard({ gift }: FundingItem) {
   const [show, setShow] = useState<boolean>(false);
-
   const handleShow = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setShow(true);
@@ -105,7 +104,7 @@ export default function FamousFundingCard({ gift }: FundingItem) {
               <BsShareFill className="Famous_Funding_Share_Btn_Icon" />
             </button>
           </div>
-          <FundingModal show={show} setShow={setShow} />
+          <FundingModal show={show} setShow={setShow} fundingId={gift.fundingId} />
         </div>
       </div>
     </div>

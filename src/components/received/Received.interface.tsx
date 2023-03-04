@@ -26,4 +26,5 @@ export interface ReceivedModalType {
 export interface GiftShareModalType {
     show: boolean;
     setShow: React.Dispatch<React.SetStateAction<boolean>>;
+    fundingId: number;
 }

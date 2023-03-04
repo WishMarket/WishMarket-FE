@@ -2,13 +2,10 @@ import axios from "axios";
 
 export const Account_Withdrawal = async () => {
     return await axios
-        .patch(
-            `http://3.38.63.3:8080/api/auth/withdrawal`,
-            {
-                withCredentials: true,
-            },
-            { headers: { Authorization: window.localStorage.getItem("accessToken") } }
-        )
+        .delete(`http://3.38.63.3:8080/api/auth/withdrawal`, {
+            headers: { Authorization: window.localStorage.getItem("accessToken") },
+            withCredentials: true,
+        })
         .then((response) => {
             console.log(response);
             return response;

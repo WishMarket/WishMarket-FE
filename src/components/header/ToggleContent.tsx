@@ -6,6 +6,7 @@ import { HandleToggleType } from "./Header.interface";
 import { UserInfo } from "../profile/Profile.interface";
 import { commaNums } from "../../hooks/CommaNums";
 import { getUserInfo } from "../../hooks/axios/Profile";
+import { RemoveTokens } from "../../hooks/Tokens";
 
 export default function ToggleContent({
   handleToggleMenu,
@@ -18,13 +19,10 @@ export default function ToggleContent({
     toggleClose(e.target);
     const logout = await Account_Logout();
     console.log(logout);
-    // if (logout.status == 200) {
-    window.localStorage.removeItem("accessToken");
-    window.localStorage.removeItem("refreshToken");
-    window.localStorage.removeItem("accessTokenExpiredAt");
-    window.localStorage.removeItem("refreshTokenExpiredAt");
-    navigate("/login");
-    // }
+    if (logout.status == 200) {
+      RemoveTokens();
+      navigate("/login");
+    }
   };
 
   useEffect(() => {
