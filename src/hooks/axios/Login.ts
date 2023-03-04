@@ -25,7 +25,8 @@ let now = new Date();
   let expireDate;
   if (expire) {
     expireDate = new Date(expire);
-    let expireDate_1 = new Date(expireDate.setMinutes(expireDate.getMinutes() - 10));
+    let expireDate_1 = new Date(expireDate.setMinutes(expireDate.getMinutes() - 1));
+    console.log(expireDate_1);
     if (now > expireDate_1) {
       return await axios
         .post(
