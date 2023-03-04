@@ -7,9 +7,11 @@ import { IoMdCopy } from "react-icons/io";
 import { BsShareFill } from "react-icons/bs";
 import { CopyClipBoard } from "../../hooks/CopyClipBoard";
 import { FriendsFundingItem } from "./FriendsLists.inferface";
+import { Link } from "react-router-dom";
 
 export default function FriendsFunding({ gift }: FriendsFundingItem) {
     const [show, setShow] = useState(false);
+    const link = `/funding/join/${gift.fundingId}`;
 
     const handleShow = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
@@ -69,7 +71,9 @@ export default function FriendsFunding({ gift }: FriendsFundingItem) {
 
                         {/* 추후에 링크 경로 확인 필요 */}
                         <div className="Account_Card_Btn_Area">
+                            <Link to={`/funding/join/${gift.fundingId}`} >
                             <button className="Account_Card_Btn_Funding btn btn-warning">참여하기</button>
+                            </Link>
                             <button className="Account_Card_Btn_Share" onClick={handleShow}>
                                 <BsShareFill className="Account_Card_Share_Icon" />
                             </button>
@@ -81,9 +85,9 @@ export default function FriendsFunding({ gift }: FriendsFundingItem) {
                             <Modal.Body>
                                 <div className="Modal_Inner">
                                     <span className="Modal_Title">링크:</span>
-                                    <input className="Share_LinkBox" type="text" value="ㅇㅇ" readOnly></input>
+                                    <input className="Share_LinkBox" type="text" value={link} readOnly></input>
                                     <button className="btn btn-light">
-                                        <IoMdCopy className="copy_Button" onClick={() => CopyClipBoard("ㅇㅇ")} />
+                                        <IoMdCopy className="copy_Button" onClick={() => CopyClipBoard(link)} />
                                     </button>
                                 </div>
                             </Modal.Body>

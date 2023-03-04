@@ -321,9 +321,9 @@
                                 color: $color-gray-800;
 
                                 a {
+                                    text-decoration: none;
                                     font-size: $font-btn-size;
                                     color: $color-gray-800;
-                                    text-decoration: none;
 
                                     &:hover {
                                         font-weight: 600;
@@ -331,15 +331,29 @@
                                 }
 
                                 .Notify_Cotroll {
+                                    display: flex;
+
                                     .Notify_Read {
                                         color: $color-gray-600;
                                         text-decoration: none;
+                                        font-size: $font-btn-size;
+                                        cursor: pointer;
+
+                                        &:hover {
+                                            font-weight: 600;
+                                        }
                                     }
 
                                     .Notify_Delete {
                                         margin-left: 4px;
                                         color: $color-red-800;
                                         text-decoration: none;
+                                        font-size: $font-btn-size;
+                                        text-decoration: none;
+                                        cursor: pointer;
+                                        &:hover {
+                                            font-weight: 600;
+                                        }
                                     }
                                 }
                             }
@@ -369,8 +383,15 @@
 
                                 .Notify_Cotroll {
                                     .Notify_Delete {
+                                        margin-left: 4px;
                                         color: $color-red-800;
                                         text-decoration: none;
+                                        font-size: $font-btn-size;
+                                        text-decoration: none;
+                                        cursor: pointer;
+                                        &:hover {
+                                            font-weight: 600;
+                                        }
                                     }
                                 }
                             }

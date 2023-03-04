@@ -1,45 +1,22 @@
-import React from "react";
-import { TabStateType } from "./Header.interface";
+import React, { useState, useEffect } from "react";
+import NotifyUnreadItem from "./NotifyUnreadItem";
+import NotifyReadItem from "./NotifyReadItem";
+import { TabStateType, NotifyType } from "./Header.interface";
+import { getNotifyList } from "../../hooks/axios/Notify";
 
-export default function NotifyDropDown({ tabNotify }: TabStateType) {
+export default function NotifyDropDown({ tabNotify, setTabNotify }: TabStateType) {
+    const [notifyList, setNotifyList] = useState<NotifyType[]>([]);
+
+    useEffect(() => {
+        getNotifyList(setNotifyList);
+    }, [notifyList]);
+
     return (
         <div id="Notify_dropdown_Content" className={tabNotify ? "Dropdown_Active" : "Dropdown_Unactive"}>
             <ul>
-                <div className="Unread_Notify">
-                    <li className="Unread_Notify_Item Notify_dropdown_Item">
-                        <a href="/">받은 선물이 있습니다.</a>
-                        <div className="Notify_Cotroll">
-                            <a href="/" className="Notify_Read">
-                                읽음
-                            </a>
-                            <a href="/" className="Notify_Delete">
-                                삭제
-                            </a>
-                        </div>
-                    </li>
-                    <li className="Read_Notify_Item Notify_dropdown_Item">
-                        <a href="/">펀딩에 성공했어요.</a>
-                        <div className="Notify_Cotroll">
-                            <a href="/" className="Notify_Read">
-                                읽음
-                            </a>
-                            <a href="/" className="Notify_Delete">
-                                삭제
-                            </a>
-                        </div>
-                    </li>
-                </div>
+                <div className="Unread_Notify">{notifyList.map((item) => (item.read === false ? <NotifyUnreadItem item={item} key={item.id} /> : null))}</div>
                 <hr />
-                <div className="Read_Notify">
-                    <li className="Read_Notify_Item Notify_dropdown_Item">
-                        <a href="/">펀딩에 성공했어요.</a>
-                        <div className="Notify_Cotroll">
-                            <a href="/" className="Notify_Delete">
-                                삭제
-                            </a>
-                        </div>
-                    </li>
-                </div>
+                <div className="Read_Notify">{notifyList.map((item) => (item.read === true ? <NotifyReadItem item={item} key={item.id} /> : null))}</div>
             </ul>
         </div>
     );

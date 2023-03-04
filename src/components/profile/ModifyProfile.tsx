@@ -1,21 +1,21 @@
 import React, { useState, useEffect, useRef } from "react";
-import axios from "axios";
 import ModifyProfileContainer from "./ModifyProfileModal";
 import defaultImg from "../../assets/default-profile-img.png";
-import { getUserInfo, updateUserInfo } from "../../hooks/axios/Profile";
+import { getUserInfo, updateUserInfo, increasePoint } from "../../hooks/axios/Profile";
 import { commaNums } from "../../hooks/CommaNums";
 import { IProfiles, UserInfo } from "./Profile.interface";
 import { validateNickname, validatePhone } from "../../utils/regex";
 import { FaSearchLocation } from "react-icons/fa";
 
 export default function ModifyProfile({ profileState, setProfileState }: IProfiles) {
+    const [files, setFiles]: any = useState(null);
     const [imageSrc, setImageSrc]: any = useState(null);
     const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
-    const [nickname, setNickname] = useState<string>("");
+    const [nickName, setNickName] = useState<string>("");
     const [phone, setPhone] = useState<string>("");
     const phoneRef = useRef<HTMLInputElement>(null);
     const [phoneErrorMsg, setPhoneErrorMsg] = useState<string>("");
-    const [nicknameErrorMsg, setNicknameErrorMsg] = useState<string>("");
+    const [nickNameErrorMsg, setNickNameErrorMsg] = useState<string>("");
     const [address, setAddress] = useState<string>("");
     const [detailAddress, setDetailAddress] = useState<string>("");
     const [mapShow, setMapShow] = useState<boolean>(false);
@@ -26,6 +26,7 @@ export default function ModifyProfile({ profileState, setProfileState }: IProfil
         const file = e.target.files[0];
         const reader = new FileReader();
         reader.readAsDataURL(file);
+        setFiles(e.target.files[0]);
 
         return new Promise<void>((resolve) => {
             reader.onload = () => {
@@ -40,8 +41,8 @@ export default function ModifyProfile({ profileState, setProfileState }: IProfil
     }, []);
 
     useEffect(() => {
-        setDisabled(!(!phoneErrorMsg && !nicknameErrorMsg));
-    }, [phoneErrorMsg, nicknameErrorMsg]);
+        setDisabled(!(!phoneErrorMsg && !nickNameErrorMsg));
+    }, [phoneErrorMsg, setNickNameErrorMsg]);
 
     const onMapClickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
@@ -49,8 +50,8 @@ export default function ModifyProfile({ profileState, setProfileState }: IProfil
     };
 
     const handleNicknameChange = (nickname: string) => {
-        setNickname(nickname);
-        setNicknameErrorMsg(validateNickname(nickname) ? "📢 닉네임은 3 글자 이상, 최대 8 글자입니다." : "");
+        setNickName(nickName);
+        setNickNameErrorMsg(validateNickname(nickName) ? "📢 닉네임은 3 글자 이상, 최대 8 글자입니다." : "");
     };
 
     const handlePhoneChange = (e: any) => {
@@ -82,10 +83,16 @@ export default function ModifyProfile({ profileState, setProfileState }: IProfil
         setPhoneErrorMsg(validatePhone(e.target.value) ? "📢 올바른 휴대폰 번호 형식이 아닙니다." : "");
     };
 
+    const frm = new FormData();
+    frm.append("nickName", nickName);
+    frm.append("address", address);
+    frm.append("detailAddress", detailAddress);
+    frm.append("phone", phone);
+    frm.append("profileImage", files);
+
     const handleModifyProfile = () => {
-        updateUserInfo(address, detailAddress, nickname, phone, imageSrc);
+        updateUserInfo(frm);
         setProfileState(true);
-        console.log(address, detailAddress, nickname, phone, imageSrc);
     };
 
     return (
@@ -126,7 +133,7 @@ export default function ModifyProfile({ profileState, setProfileState }: IProfil
                                 </th>
                                 <td>
                                     <input type="text" className="Modify_Profile_Nickname" defaultValue={userInfo.nickName} onChange={(e) => handleNicknameChange(e.target.value)} />
-                                    <div className="Modify_Profile_Error_Msg">{nicknameErrorMsg}</div>
+                                    <div className="Modify_Profile_Error_Msg">{nickNameErrorMsg}</div>
                                 </td>
                             </tr>
                             <tr>
@@ -184,7 +191,9 @@ export default function ModifyProfile({ profileState, setProfileState }: IProfil
                 <button className="btn btn-primary" onClick={handleModifyProfile} disabled={disabled}>
                     변경하기
                 </button>
-                <button className="btn Point_Charge_Btn">포인트 충전</button>
+                <button className="btn Point_Charge_Btn" onClick={increasePoint}>
+                    포인트 충전
+                </button>
             </div>
         </>
     );
