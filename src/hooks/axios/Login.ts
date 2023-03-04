@@ -1,80 +1,63 @@
-import axios from "axios"
+import axios from "axios";
 
-export const requestLogin = async (email:string, password:string) => {
+export const requestLogin = async (email: string, password: string) => {
     return await axios
-      .post(
-        `http://3.38.63.3:8080/api/auth/sign-in/email`,
-        { email: email, password: password },
-        { withCredentials: true }
-      )
-      .then((response) => {
-        axios.defaults.headers.common[
-          "Authorization"
-        ] = `${response.data.access_token}`;
-        console.log(response)
-        return response.data;
-      })
-      .catch((e) => {
-        console.log(e.response);
-
-        throw e.response.status;
-      })
-}
-
-export const requestAccessToken = async () => {
-    await axios
-      .post(
-        `http://3.38.63.3:8080/api/auth/reissue`,
-        { refresh: window.localStorage.getItem('refreshToken') },
-        { withCredentials: true }
-      )
-      .then((response) => {
-        return response;
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-}
-
-export const checkAccessToken = async () => {
-  if (axios.defaults.headers.common["Authorization"] === undefined) {
-    return await requestAccessToken().then((response) => {
-      return response;
-    });
-  }
+        .post(`http://3.38.63.3:8080/api/auth/sign-in/email`, { email: email, password: password }, { withCredentials: true })
+        .then((response) => {
+            axios.defaults.headers.common["Authorization"] = `${response.data.accessToken}`;
+            return response.data;
+        })
+        .catch((e) => {
+            throw e.response.status;
+        });
 };
 
-export
-  const naverLogin = async (hash: string) => {
-  return await axios
-    .post(`http://3.38.63.3:8080/api/auth/sign-in/naver`, {
-      withCredentials: true,
-    },{params:hash})
-    .then((response) => {
-      console.log(response);
-      return response;
-    })
-    .catch((e) => {
-      console.log(e);
-      return;
-    });
-}
+export const requestAccessToken = async () => {
+    let now = new Date();
+    let expire = window.localStorage.getItem("accessTokenExpiredAt");
+    let expireDate;
+    if (expire) {
+        expireDate = new Date(expire);
+        let expireDate_1 = new Date(expireDate.setMinutes(expireDate.getMinutes() - 10));
+        if (now > expireDate_1) {
+            return await axios
+                .post(
+                    `http://3.38.63.3:8080/api/auth/reissue`,
+                    {
+                        withCredentials: true,
+                        refresh: window.localStorage.getItem("refreshToken"),
+                    },
+                    {
+                        headers: {
+                            Authorization: window.localStorage.getItem("accessToken"),
+                        },
+                    }
+                )
+                .then((response) => {
+                    const res = response.data;
+                    console.log(response);
+                    return res;
+                })
+                .catch((e) => {
+                    console.log(e);
+                });
+        } else {
+            return "AccessToken Not Expired";
+        }
+    }
+};
 
-export const googleLogin = async (hash:string) => {
-  return await axios
-    .post(
-      `http://3.38.63.3:8080/api/auth/sign-in/google`,
-      {
-        withCredentials: true,
-      },
-      { params: hash }
-    )
-    .then((response) => {
-      console.log(response);
-      return response;
-    })
-    .catch((e) => {
-      console.log(e);
-      return;
-    });
-}
+export const GetsocialLogin = async (code: string) => {
+    console.log(code);
+    return await axios
+        .get(`http://3.38.63.3:8080/api/auth/sign-in/social/naver${code}`, {
+            withCredentials: true,
+        })
+        .then((response) => {
+            console.log(response);
+            return response;
+        })
+        .catch((e) => {
+            return e;
+        });
+};

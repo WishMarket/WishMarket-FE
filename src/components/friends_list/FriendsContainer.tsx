@@ -14,7 +14,6 @@ export default function FriendsContainer() {
     const [userId, setUserId] = useRecoilState(FindUserId);
     const [page, setPage] = useState<number>(1);
     const [last, setLast] = useState<boolean>(false);
-
     useEffect(() => {
         getFriends(0);
     }, []);

@@ -18,8 +18,8 @@ import FundingAddition from "./pages/FundingAddition";
 import SearchFriends from "./pages/SearchFriends";
 import FriendsList from "./pages/FriendsList";
 import ScrollToTop from "./hooks/ScrollToTop";
-// import GoogleRedirect from "./components/login/social/GoogleRedirect";
 import NaverRedirect from "./components/login/social/NaverRedirect";
+import GoogleRedirect from "./components/login/social/GoogleRedirect";
 
 function App() {
     return (
@@ -40,11 +40,11 @@ function App() {
                     <Route path="/login/findpasswd/changepasswd" element={<ChangePasswd />}></Route>
                     <Route path="/signup" element={<Signup />}></Route>
                     <Route path="/funding/start/:id" element={<FundingStart />}></Route>
-                    {/* funding join은 params 다른것으로 받아야함 ex) fundingId */}
                     <Route path="/funding/join/:id" element={<FundingAddition />}></Route>
                     <Route path="/searchfriends" element={<SearchFriends />}></Route>
                     <Route path="/friendslist" element={<FriendsList />}></Route>
-                    <Route path="/login/naver/redirect" element={<NaverRedirect />}> </Route>
+                    <Route path="/login/oauth2/code/naver" element={<NaverRedirect />}> </Route>
+                    <Route path="/login/oauth2/code/google" element={<GoogleRedirect />}> </Route>
                 </Routes>
             </BrowserRouter>
         </div>

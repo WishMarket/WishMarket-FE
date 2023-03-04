@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { requestLogin } from "../../hooks/axios/Login";
 import LoginModal from "./LoginModal";
@@ -20,7 +20,14 @@ export default function LoginForm() {
       let result = await requestLogin(email, password);
       window.localStorage.setItem("accessToken", result.accessToken);
       window.localStorage.setItem("refreshToken", result.refreshToken);
-      console.log(result);
+      window.localStorage.setItem(
+        "accessTokenExpiredAt",
+        result.accessTokenExpiredAt
+      );
+      window.localStorage.setItem(
+        "refreshTokenExpiredAt",
+        result.refreshTokenExpiredAt
+      );
       navigate("/");
     } catch (e) {
       if (e == 400) {

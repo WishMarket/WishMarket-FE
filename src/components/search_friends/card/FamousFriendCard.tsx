@@ -3,6 +3,7 @@ import { Modal } from "react-bootstrap";
 import { FriendsError } from "../../../hooks/Errors";
 import { FaMedal } from "react-icons/fa";
 import { FamousFriendObj } from "../SearchFriend.interface";
+import { FriendsFollowAdd, FriendsFollowDelete } from "../../../hooks/axios/SearchFriend";
 
 export default function FamousFriendCard({
   userId,
@@ -10,23 +11,28 @@ export default function FamousFriendCard({
   nickname,
   famous,
   profileImageUrl,
-  isfriend,
+  isFriend,
 }: FamousFriendObj) {
-  const [friended, setFriended] = useState<boolean>(isfriend);
+  const [friended, setFriended] = useState<boolean>(isFriend);
   const [errorShow, setErrorShow] = useState<boolean>(false);
   const [errorCode, setErrorCode] = useState<number>(0);
 
-  const FriendDeleteHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
-    setErrorCode(1);
-    setFriended(false);
-    setErrorShow(true);
-    // 친구 삭제 axios
+  const FriendDeleteHandler = async(e: React.MouseEvent<HTMLButtonElement>) => {
+       const follow = await FriendsFollowDelete(userId);
+       if (follow.status == 200) {
+         setErrorCode(1);
+         setFriended(false);
+         setErrorShow(true);
+       }
   };
-  const FriendAddHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
-    setErrorCode(0);
-    setFriended(true);
-    setErrorShow(true);
-    // 친구 추가 axios
+  const FriendAddHandler = async(e: React.MouseEvent<HTMLButtonElement>) => {
+    const follow = await FriendsFollowAdd(userId);
+    console.log(follow);
+    if (follow.status == 200) {
+      setErrorCode(0);
+      setFriended(true);
+      setErrorShow(true);
+    }
   };
 
   const handleClose = (e: React.MouseEvent<HTMLButtonElement> | void) => {

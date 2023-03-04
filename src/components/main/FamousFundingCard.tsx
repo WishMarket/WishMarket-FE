@@ -92,9 +92,15 @@ export default function FamousFundingCard({ gift }: FundingItem) {
             ) : null}
           </div>
           <div className="Famous_Funding_Btn_Area">
-            <Link to={`/funding/join/${gift.fundingId}`}>
-              <button className="btn btn-warning">펀딩하기</button>
-            </Link>
+            {window.localStorage.getItem("accessToken") ? (
+              <Link to={`/funding/join/${gift.fundingId}`}>
+                <button className="btn btn-warning">펀딩하기</button>
+              </Link>
+            ) : (
+              <Link to={`/login`}>
+                <button className="btn btn-warning">펀딩하기</button>
+              </Link>
+            )}
             <button className="Famous_Funding_Share_Btn" onClick={handleShow}>
               <BsShareFill className="Famous_Funding_Share_Btn_Icon" />
             </button>
