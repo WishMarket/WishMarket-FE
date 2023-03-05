@@ -1,4 +1,3 @@
-import React from "react";
 import defaultImg from "../../assets/default-profile-img.png";
 import { commaNums } from "../../hooks/CommaNums";
 import { userInfoItem } from "./Profile.interface";
@@ -12,7 +11,7 @@ export default function ViewProfileContainer({ userInfo }: userInfoItem) {
                         <div className="User_Profile_Img_Head">프로필 사진</div>
                     </th>
                     <td>
-                        <img src={userInfo.profileImage ? userInfo.profileImage : defaultImg} alt="profile-image" className="User_Profile_Img" />
+                        <img src={userInfo.profileImageUrl ? userInfo.profileImageUrl : defaultImg} alt="profile-image" className="User_Profile_Img" />
                     </td>
                 </tr>
                 <tr>
