@@ -19,10 +19,10 @@ export default function ToggleContent({
     toggleClose(e.target);
     const logout = await Account_Logout();
     console.log(logout);
-    // if (logout.status == 200) {
+    if (logout.status == 200) {
       RemoveTokens();
       navigate("/login");
-    // }
+    }
   };
 
   useEffect(() => {
