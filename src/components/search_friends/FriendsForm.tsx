@@ -54,41 +54,44 @@ export default function FriendsForm() {
   return (
     <div className="FriendsWrapper main">
       <div className="FriendMain_DESC">
-        <div className="FriendMain_Title">
-          친구의 이름이나 이메일을 검색해 보세요.
+        <div>
+          <div className="FriendMain_Title">
+            친구의 이름이나 이메일을 검색해 보세요.
+          </div>
+          <div className="FriendSearch_Wrapper">
+            <form onSubmit={onSubmitHandler}>
+              <div className="FriendMain_Search">
+                <SelectBox
+                  setShow={setShow}
+                  setSelect={setSelect}
+                  selected={selected}
+                  selectRef={selectRef}
+                  show={show}
+                />
+                <input
+                  type="text"
+                  placeholder="친구를 검색해 보세요."
+                  onChange={onInputChangeHandler}
+                />
+                <button type="submit" className="btn btn-warning search-button">
+                  친구 검색
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-        <div className="FriendSearch_Wrapper">
-          <form onSubmit={onSubmitHandler}>
-            <div className="FriendMain_Search">
-              <SelectBox
-                setShow={setShow}
-                setSelect={setSelect}
-                selected={selected}
-                selectRef={selectRef}
-                show={show}
-              />
-              <input
-                type="text"
-                placeholder="친구를 검색해 보세요."
-                onChange={onInputChangeHandler}
-              />
-              <button type="submit" className="btn btn-warning search-button">
-                친구 검색
-              </button>
-            </div>
-          </form>
+        <div>
+          {showFriend != false ? (
+            <SearchForm
+              input={input}
+              select={select}
+              selected={selected}
+              friend={friend}
+            />
+          ) : (
+            <FamousFriendForm />
+          )}
         </div>
-
-        {showFriend != false ? (
-          <SearchForm
-            input={input}
-            select={select}
-            selected={selected}
-            friend={friend}
-          />
-        ) : (
-          <FamousFriendForm />
-        )}
       </div>
     </div>
   );

@@ -5,7 +5,6 @@ import { SetAccessToken, SetRefreshToken } from "../../../hooks/Tokens";
 
 export default function NaverRedirect() {
   const navigate = useNavigate();
-
   let code = document.location.search;
   let naver_code ='naver'+code;
 
