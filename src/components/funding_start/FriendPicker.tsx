@@ -1,7 +1,13 @@
 import React from "react";
-import { FriendPickerProps } from "./FundingStart.interfact";
+import { FriendPickerProps } from "./FundingStart.interface";
 
-export default function FriendPicker({ email, userId, name, profileImageUrl,FriendSelect }: FriendPickerProps) {
+export default function FriendPicker({
+  email,
+  userId,
+  name,
+  profileImageUrl,
+  FriendSelect,
+}: FriendPickerProps) {
   const clickSelect = (
     userId: number,
     name: string,
@@ -9,7 +15,7 @@ export default function FriendPicker({ email, userId, name, profileImageUrl,Frie
   ) => {
     FriendSelect(userId, name, profileImageUrl);
   };
-  
+
   return (
     <>
       <li className="Friend">

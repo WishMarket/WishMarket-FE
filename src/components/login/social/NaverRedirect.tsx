@@ -7,7 +7,7 @@ export default function NaverRedirect() {
   const navigate = useNavigate();
 
   let code = document.location.search;
-  let naver_code ='naver'+code;
+  let naver_code = "naver" + code;
 
   useEffect(() => {
     getSocialLogin();
@@ -18,9 +18,15 @@ export default function NaverRedirect() {
       const socialLogin = await GetsocialLogin(naver_code);
       console.log(socialLogin);
       if (socialLogin.status == 200) {
-        SetAccessToken(socialLogin.data.accessToken, socialLogin.data.accessTokenExpiredAt);
-        SetRefreshToken(socialLogin.data.refreshToken, socialLogin.data.refreshTokenExpiredAt);
-        navigate('/');
+        SetAccessToken(
+          socialLogin.data.accessToken,
+          socialLogin.data.accessTokenExpiredAt
+        );
+        SetRefreshToken(
+          socialLogin.data.refreshToken,
+          socialLogin.data.refreshTokenExpiredAt
+        );
+        navigate("/");
       }
     } catch (e) {
       console.log(e);

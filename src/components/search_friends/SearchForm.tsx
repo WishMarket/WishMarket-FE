@@ -9,9 +9,8 @@ export default function SearchForm({
   input,
   select,
   selected,
-  friend
+  friend,
 }: SearchFormProps) {
-
   return (
     <div className="FriendResult_Container">
       <div className="FriendResult_title">

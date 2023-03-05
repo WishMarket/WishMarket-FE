@@ -1,14 +1,12 @@
-import React from 'react'
+import React from "react";
 import { RiLockPasswordLine } from "react-icons/ri";
-import { LoginPasswdProps } from '../Login.interface';
+import { LoginPasswdProps } from "../Login.interface";
 
-export default function LoginPasswd({setPassword }:LoginPasswdProps) {
-      const onPasswordChangeHandler = (
-        e: React.ChangeEvent<HTMLInputElement>
-      ) => {
-        e.preventDefault();
-        setPassword(e.currentTarget.value);
-      };
+export default function LoginPasswd({ setPassword }: LoginPasswdProps) {
+  const onPasswordChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    setPassword(e.currentTarget.value);
+  };
   return (
     <div className="PW_Input_Container">
       <input

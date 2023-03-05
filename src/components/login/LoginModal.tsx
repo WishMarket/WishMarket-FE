@@ -1,9 +1,13 @@
-import React from 'react'
-import { Modal } from 'react-bootstrap';
-import { LoginError } from '../../hooks/Errors';
-import { LoginModalProps } from './Login.interface';
+import React from "react";
+import { Modal } from "react-bootstrap";
+import { LoginError } from "../../hooks/Errors";
+import { LoginModalProps } from "./Login.interface";
 
-export default function LoginModal({ setErrorShow, errorShow, errorCode }: LoginModalProps) {
+export default function LoginModal({
+  setErrorShow,
+  errorShow,
+  errorCode,
+}: LoginModalProps) {
   const handleClose = (e: React.MouseEvent<HTMLButtonElement> | void) => {
     setErrorShow(false);
   };
