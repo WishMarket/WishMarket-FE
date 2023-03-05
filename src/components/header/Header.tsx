@@ -41,7 +41,6 @@ export default function Header() {
       if (refreshTime) {
         refresh_date = new Date(refreshTime);
       }
-        
       if (refresh_date < now) {
         RemoveTokens();
         alert("토큰이 만료되었습니다. 다시 로그인 해주세요.");
