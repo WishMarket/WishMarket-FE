@@ -8,7 +8,6 @@ import SearchContainer from "./SearchContainer";
 import ToggleBar from "../header/ToggleBar";
 import { requestAccessToken } from "../../hooks/axios/Login";
 import {
-  GetAccessTokenExpiredAt,
   GetRefreshTokenExpiredAt,
   RemoveTokens,
   SetAccessToken,
@@ -36,16 +35,13 @@ export default function Header() {
   const checkToken = async () => {
     if (window.localStorage.getItem("accessToken")) {
       const newToken = await requestAccessToken();
-      console.log("재발급:");
-      console.log(newToken);
       const now = new Date();
       const refreshTime = GetRefreshTokenExpiredAt();
       let refresh_date = new Date();
-
       if (refreshTime) {
         refresh_date = new Date(refreshTime);
       }
-
+        
       if (refresh_date < now) {
         RemoveTokens();
         alert("토큰이 만료되었습니다. 다시 로그인 해주세요.");

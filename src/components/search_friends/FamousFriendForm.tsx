@@ -11,9 +11,7 @@ export default function FamousFriendForm() {
 
   const getFamousUsers = async () => {
     const Famous = await InfluencerFriend();
-    console.log(Famous);
     setFamousUsers(Famous);
-    
   };
 
   useEffect(() => {
@@ -30,19 +28,22 @@ export default function FamousFriendForm() {
         위시마켓의 인플루언서와 친구를 맺고 펀딩을 진행해 보세요.
       </div>
       <div className="FriendResult_List">
-        {famouseusers.map((data: FamousFriendObj) => {
-          return (
-            <FamousFriendCard
-              key={data.userId}
-              userId={data.userId}
-              name={data.name}
-              nickname={data.nickname}
-              famous={data.famous}
-              profileImageUrl={data.profileImageUrl}
-              isFriend={data.isFriend}
-            />
-          );
-        })}
+        {famouseusers[0] !=null ?
+            famouseusers.map((data: FamousFriendObj) => {
+              return (
+                <FamousFriendCard
+                  key={data.userId}
+                  userId={data.userId}
+                  name={data.name}
+                  nickname={data.nickname}
+                  famous={data.famous}
+                  profileImageUrl={data.profileImageUrl}
+                  isFriend={data.isFriend}
+                />
+              );
+            })
+          :<div></div>
+        }
       </div>
     </div>
   );
