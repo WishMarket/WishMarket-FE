@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import ModifyProfileContainer from "./ModifyProfileModal";
 import defaultImg from "../../assets/default-profile-img.png";
-import { getUserInfo, updateUserInfo, increasePoint } from "../../hooks/axios/Profile";
+import { getUserInfo, updateUserInfoImg, updateUserInfo, increasePoint } from "../../hooks/axios/Profile";
 import { commaNums } from "../../hooks/CommaNums";
 import { IProfiles, UserInfo } from "./Profile.interface";
 import { validateNickname, validatePhone } from "../../utils/regex";
@@ -88,9 +88,12 @@ export default function ModifyProfile({ profileState, setProfileState }: IProfil
     frm.append("address", address);
     frm.append("detailAddress", detailAddress);
     frm.append("phone", phone);
-    frm.append("profileImage", files);
+
+    const imgFrm = new FormData();
+    imgFrm.append("profileImage", files);
 
     const handleModifyProfile = () => {
+        files ? updateUserInfoImg(imgFrm) : null;
         updateUserInfo(frm);
         setProfileState(true);
     };
@@ -109,8 +112,8 @@ export default function ModifyProfile({ profileState, setProfileState }: IProfil
                                 <td>
                                     <form method="post" className="Profile_Img_Select_Form">
                                         <label htmlFor="chooseFile">
-                                            {userInfo.profileImage ? (
-                                                <img src={imageSrc ? imageSrc : userInfo.profileImage} alt="profile-image" className="Profile_Img_Select_Area" />
+                                            {userInfo.profileImageUrl ? (
+                                                <img src={imageSrc ? imageSrc : userInfo.profileImageUrl} alt="profile-image" className="Profile_Img_Select_Area" />
                                             ) : (
                                                 <img src={imageSrc ? imageSrc : defaultImg} alt="profile-image" className="Profile_Img_Select_Area" />
                                             )}
