@@ -1,7 +1,9 @@
 export const GetAccessTokenExpiredAt = () => {
   return window.localStorage.getItem("accessTokenExpiredAt");
 };
-
+export const GetRefreshTokenExpiredAt = () => {
+    return window.localStorage.getItem("refreshTokenExpiredAt");
+}
 export const SetAccessToken = (accessToken:string, accessTokenExpiredAt:string) => {
   window.localStorage.setItem("accessToken", accessToken);
   window.localStorage.setItem("accessTokenExpiredAt", accessTokenExpiredAt);
