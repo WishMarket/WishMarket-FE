@@ -19,7 +19,7 @@ export type UserInfo = {
     email: string;
     nickName: string;
     phone: null | string;
-    profileImage: string;
+    profileImageUrl: string;
     address: string;
     detailAddress: string;
     userRegistrationType: string;

@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { requestLogin } from "../../hooks/axios/Login";
 import LoginModal from "./LoginModal";
-import GoogleLogin from "./social/GoogleLogin";
+import GoogleLogin from "./social/GitLogin";
 import NaverLogin from "./social/NaverLogin";
 import LoginEmail from "./form/LoginEmail";
 import LoginPasswd from "./form/LoginPasswd";
 import { SetAccessToken, SetRefreshToken } from "../../hooks/Tokens";
+import GitLogin from "./social/GitLogin";
 
 export default function LoginForm() {
   const navigate = useNavigate();
@@ -55,7 +56,7 @@ export default function LoginForm() {
                 </button>
               </div>
               <NaverLogin />
-              <GoogleLogin />
+              <GitLogin />
             </div>
           </form>
           <div className="login_Link">

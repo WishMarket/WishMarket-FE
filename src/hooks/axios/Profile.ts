@@ -50,7 +50,25 @@ export const increasePoint: any = async () => {
 };
 
 export const updateUserInfo: any = async (frm: any) => {
-    const USER_URL = `http://3.38.63.3:8080/api/user/update`;
+    const USER_URL = `http://3.38.63.3:8080/api/user/updateUserInfo`;
+    await axios
+        .patch(USER_URL, frm, {
+            headers: {
+                "Content-Type": "multipart/form-data",
+                Authorization: window.localStorage.getItem("accessToken"),
+            },
+        })
+        .then((res) => {
+            console.log(res);
+            return res;
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+};
+
+export const updateUserInfoImg: any = async (frm: any) => {
+    const USER_URL = `http://3.38.63.3:8080/api/user/updateUserProfileImage`;
     await axios
         .patch(USER_URL, frm, {
             headers: {

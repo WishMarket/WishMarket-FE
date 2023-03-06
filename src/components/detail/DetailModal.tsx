@@ -1,5 +1,4 @@
 import React from "react";
-import { useParams } from "react-router-dom";
 import { Modal } from "react-bootstrap";
 import { CopyClipBoard } from "../../hooks/CopyClipBoard";
 
