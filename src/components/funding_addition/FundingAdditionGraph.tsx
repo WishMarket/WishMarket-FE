@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 import { commaNums } from "../../hooks/CommaNums";
-import { FundingAdditionGraphProps } from './FundingAddition.interface';
-
+import { AiOutlineInfoCircle } from "react-icons/ai";
+import { FundingAdditionGraphProps } from "./FundingAddition.interface";
 
 export default function FundingAdditionGraph({
   targetPrice,
@@ -16,7 +16,10 @@ export default function FundingAdditionGraph({
 
   return (
     <div className="FundingGraph_Desc">
-      <h2>펀딩 상세</h2>
+      <h2>
+        <AiOutlineInfoCircle className="FundingGraph_Desc_Icon" />
+        펀딩 상세
+      </h2>
       <div
         className="funding_Progress progress"
         role="progressbar"

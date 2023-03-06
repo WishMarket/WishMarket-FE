@@ -10,6 +10,6 @@ export const getProductDetail: any = async (setState: React.Dispatch<React.SetSt
             setState(response);
         })
         .catch((error) => {
-            console.log(error);
+            return error;
         });
 };

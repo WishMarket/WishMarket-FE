@@ -1,8 +1,6 @@
 import React, { useRef } from "react";
-
 import FriendsFundingContainer from "./FriendsFundingContainer";
 import FriendsWishContainer from "./FriendsWishContainer";
-
 import { BiCalendarHeart, BiCalendarCheck } from "react-icons/bi";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { FriendsItem } from "./FriendsLists.inferface";

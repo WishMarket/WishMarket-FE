@@ -13,7 +13,7 @@ export default function Header() {
     const [tabState, setTabState] = useState(false);
     const token = window.localStorage.getItem("accessToken");
     const navigate = useNavigate();
-    console.log(token);
+
     // 우측 토글 handle
     const handleToggleMenu = () => {
         const toggleMenu = document.querySelector("#Toggle_Bar") as HTMLElement;
@@ -30,7 +30,6 @@ export default function Header() {
     const checkToken = async () => {
         if (window.localStorage.getItem("accessToken")) {
             const newToken = await requestAccessToken();
-            console.log(newToken);
             const now = new Date();
             const refreshTime = GetRefreshTokenExpiredAt();
             let refresh_date = new Date();

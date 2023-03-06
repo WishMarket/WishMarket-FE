@@ -22,7 +22,9 @@ export default function FinishedGiftCard() {
                             <div className="Finished_Gift_Notify">이미 수령한 상품입니다.</div>
                             <div className="Finished_Gift_Date">
                                 <div className="Finished_Gift_Date_Label">펀딩 기간</div>
-                                <div className="Finished_Gift_Date_Content">{gift.endDate}</div>
+                                <div className="Finished_Gift_Date_Content">
+                                    {gift.startDate.substring(0, 10)} - {gift.endDate.substring(0, 10)}
+                                </div>
                             </div>
                             <div className="Finished_Gift_Review">
                                 <div className="Finished_Gift_Review_Label">보낸 리뷰</div>

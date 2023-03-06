@@ -8,7 +8,6 @@ export default function FriendsWishContainer({ users, userId }: any) {
 
     useEffect(() => {
         getFriendsWish(setList, userId);
-        console.log(list);
     }, []);
 
     return (

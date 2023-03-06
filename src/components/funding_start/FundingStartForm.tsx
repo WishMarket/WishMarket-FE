@@ -2,13 +2,11 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { commaNums } from "../../hooks/CommaNums";
 import { ko } from "date-fns/esm/locale";
-
 import DatePicker from "react-datepicker";
 import FriendPicker from "./FriendPicker";
 import FundingStartAmount from "./FundingStartAmount";
 import FriendPicked from "./FriendPicked";
 import FundingStartModal from "./FundingStartModal";
-
 import { MdOutlineDateRange } from "react-icons/md";
 import { FaUserFriends } from "react-icons/fa";
 import {
@@ -28,7 +26,9 @@ export default function FundingStartForm() {
   const [endDate, setEndDate] = useState<Date | null>(null);
   const [pickFriend, setPickFriend] = useState<number | null>(null);
   const [pickFriendName, setPickFriendName] = useState<string | null>(null);
-  const [pickFriendProfile, setPickFriendProfile] = useState<string | null>(null);
+  const [pickFriendProfile, setPickFriendProfile] = useState<string | null>(
+    null
+  );
   const [fundingAmount, setFundingAmount] = useState<number>(0);
   const [errorShow, setErrorShow] = useState<boolean>(false);
   const [errorCode, setErrorCode] = useState<number>(0);
@@ -46,9 +46,7 @@ export default function FundingStartForm() {
       if (lists.data.last == true) {
         setLastPage(true);
       }
-    } catch (e) {
-      console.log(e);
-    }
+    } catch (e) {}
   };
 
   const getItems = async () => {
@@ -75,7 +73,6 @@ export default function FundingStartForm() {
     setPickFriend(userId);
     setPickFriendName(name);
     setPickFriendProfile(profileImageUrl);
-    console.log(pickFriendName);
   };
 
   const onSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {

@@ -15,7 +15,6 @@ export default function ToggleContent({ handleToggleMenu, toggleClose }: HandleT
         e.preventDefault();
         toggleClose(e.target);
         const logout = await Account_Logout();
-        console.log(logout);
         if (logout.status == 200) {
             RemoveTokens();
             navigate("/login");

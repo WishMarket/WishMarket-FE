@@ -1,19 +1,21 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
-import { SignUpError } from "../../hooks/Errors";
-import { ChangePasswdModalProps } from "./ChangePasswd.interface";
+import { FriendsError } from "../../../hooks/Errors";
+import { FamousFriendCardModalProps } from "../SearchFriend.interface";
 
-export default function ChangePasswdModal({
+export default function FamousFriendCardModal({
   errorShow,
   setErrorShow,
-  error,
-}: ChangePasswdModalProps) {
+  errorCode,
+  name,
+}: FamousFriendCardModalProps) {
   const handleClose = (e: React.MouseEvent<HTMLButtonElement> | void) => {
     setErrorShow(false);
   };
+
   return (
     <Modal show={errorShow} onHide={handleClose}>
-      <Modal.Body>{SignUpError(error)}</Modal.Body>
+      <Modal.Body>{FriendsError(errorCode, name)}</Modal.Body>
       <Modal.Footer>
         <button className="btn btn-secondary" onClick={handleClose}>
           닫기

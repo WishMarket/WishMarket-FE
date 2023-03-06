@@ -30,3 +30,17 @@ export interface SelectBoxProps {
   selectRef: React.MutableRefObject<any>;
   show: string;
 }
+
+export interface FamousFriendCardModalProps {
+  errorShow: boolean;
+  setErrorShow: React.Dispatch<React.SetStateAction<boolean>>;
+  errorCode: number;
+  name: string;
+}
+
+export interface FriendCardModalProps {
+  errorShow: boolean;
+  setErrorShow: React.Dispatch<React.SetStateAction<boolean>>;
+  errorCode: number;
+  name: string;
+}

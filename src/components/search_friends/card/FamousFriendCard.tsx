@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Modal } from "react-bootstrap";
-import { FriendsError } from "../../../hooks/Errors";
+import defaultImg from "../../../assets/default-profile-img.png";
 import { FaMedal } from "react-icons/fa";
 import { FamousFriendObj } from "../SearchFriend.interface";
 import {
   FriendsFollowAdd,
   FriendsFollowDelete,
 } from "../../../hooks/axios/SearchFriend";
+import FamousFriendCardModal from "../modal/FamousFriendCardModal";
 
 export default function FamousFriendCard({
   userId,
@@ -30,18 +30,14 @@ export default function FamousFriendCard({
       setErrorShow(true);
     }
   };
+
   const FriendAddHandler = async (e: React.MouseEvent<HTMLButtonElement>) => {
     const follow = await FriendsFollowAdd(userId);
-    console.log(follow);
     if (follow.status == 200) {
       setErrorCode(0);
       setFriended(true);
       setErrorShow(true);
     }
-  };
-
-  const handleClose = (e: React.MouseEvent<HTMLButtonElement> | void) => {
-    setErrorShow(false);
   };
 
   if (userId == null) {
@@ -50,7 +46,10 @@ export default function FamousFriendCard({
     return (
       <div className="FriendResult_Wrapper">
         <div>
-          <img src={profileImageUrl} className="FriendResult_image" />
+          <img
+            src={profileImageUrl ? profileImageUrl : defaultImg}
+            className="FriendResult_image"
+          />
         </div>
         <div className="FriendResult_DESC">
           <div className="FriendResult_bgc">
@@ -84,14 +83,12 @@ export default function FamousFriendCard({
             </div>
           </div>
         </div>
-        <Modal show={errorShow} onHide={handleClose}>
-          <Modal.Body>{FriendsError(errorCode, name)}</Modal.Body>
-          <Modal.Footer>
-            <button className="btn btn-secondary" onClick={handleClose}>
-              닫기
-            </button>
-          </Modal.Footer>
-        </Modal>
+        <FamousFriendCardModal
+          errorShow={errorShow}
+          setErrorShow={setErrorShow}
+          errorCode={errorCode}
+          name={name}
+        />
       </div>
     );
   }

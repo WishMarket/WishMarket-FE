@@ -27,7 +27,6 @@ export default function NaverRedirect() {
         navigate("/");
       }
     } catch (e) {
-      console.log(e);
     }
   };
   return <div>Naver 소셜로그인 진행중 ...</div>;

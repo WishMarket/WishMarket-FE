@@ -8,13 +8,6 @@ import { Token } from "./Header.interface";
 export default function HeaderNotify({ token }: Token) {
     const [tabNotify, setTabNotify] = useState(false);
     const [badge, setBadge] = useState(0);
-    // const EVENT_URL = `http://3.38.63.3:8080/api/alarms/sse`;
-
-    // const eventSource = new EventSource(EVENT_URL, { withCredentials: true });
-
-    // eventSource.addEventListener("message", function (e) {
-    //     console.log(e.data);
-    // });
 
     // badge check
     useEffect(() => {

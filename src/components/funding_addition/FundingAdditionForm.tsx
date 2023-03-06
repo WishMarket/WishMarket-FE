@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { commaNums } from "../../hooks/CommaNums";
+import { RiMoneyDollarCircleLine } from "react-icons/ri";
 
 import FundingAdditionAmount from "./FundingAdditionAmount";
 import FundingAdditionGraph from "./FundingAdditionGraph";
 import FundingAdditionDate from "./FundingAdditionDate";
 import FundingAdditionToFrom from "./FundingAdditionToFrom";
 import FundingAdditionModal from "./FundingAdditionModal";
-import { getFunding, PostFundingAddition } from "../../hooks/axios/FundingAddition";
+import {
+  getFunding,
+  PostFundingAddition,
+} from "../../hooks/axios/FundingAddition";
 import { FundingAdditionObj } from "./FundingAddition.interface";
-
-
 
 export default function FundingAdditionForm() {
   const navigate = useNavigate();
@@ -19,17 +21,15 @@ export default function FundingAdditionForm() {
   const [errorShow, setErrorShow] = useState<boolean>(false);
   const [errorCode, setErrorCode] = useState<number>(0);
 
-
   let { id } = useParams() as { id: string };
-  const id_num = Number(id); 
+  const id_num = Number(id);
 
-  const getFund = async (id_num:number) => {
-    const getFundingItem = await getFunding(id_num); 
-    console.log(getFundingItem);
+  const getFund = async (id_num: number) => {
+    const getFundingItem = await getFunding(id_num);
     setItems(getFundingItem);
   };
 
-  const onSubmitHandler = async(e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (fundingAmount < 10) {
@@ -38,9 +38,8 @@ export default function FundingAdditionForm() {
     } else {
       const now = new Date();
       const addition = await PostFundingAddition(now, id_num, fundingAmount);
-      console.log(addition);
       if (addition.status == 200) {
-        alert('펀딩참여에 성공 하였습니다.')
+        alert("펀딩 참여에 성공하였습니다.");
         navigate("/account");
       }
     }
@@ -70,7 +69,10 @@ export default function FundingAdditionForm() {
                       {items.productName}
                     </div>
                     <div className="FundingAddition_Price">
-                      <h2>목표 금액</h2>
+                      <h2>
+                        <RiMoneyDollarCircleLine className="FundingAddition_Price_Icon" />
+                        목표 금액
+                      </h2>
                       <span>{commaNums(items.targetPrice)} 원</span>
                     </div>
                     <FundingAdditionGraph
@@ -78,12 +80,10 @@ export default function FundingAdditionForm() {
                       myFundedPrice={items.myFundedPrice}
                       totalFundedPrice={items.totalFundedPrice}
                     />
-                    <hr />
                     <FundingAdditionDate
                       startDate={items.startDate}
                       endDate={items.endDate}
                     />
-                    <hr />
                     <FundingAdditionToFrom
                       targetUserName={items.targetUserName}
                       targetUserProfileImageUrl={
@@ -92,7 +92,6 @@ export default function FundingAdditionForm() {
                       participantsNameList={items.participantsNameList}
                       participationCount={items.participationCount}
                     />
-                    <hr />
                     <FundingAdditionAmount
                       setFundingAmount={setFundingAmount}
                       targetPrice={items.targetPrice}

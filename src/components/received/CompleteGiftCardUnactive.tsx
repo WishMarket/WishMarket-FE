@@ -18,7 +18,9 @@ export default function CompleteGiftCardUnactive({ gift }: ReceivedFundingInfo) 
                             <div className="Complete_Gift_Notify">수령 가능한 상품입니다. 배송 정보를 입력하세요.</div>
                             <div className="Complete_Gift_Date">
                                 <div className="Complete_Gift_Date_Label">펀딩 기간</div>
-                                <div className="Complete_Gift_Date_Content">{gift.endDate}</div>
+                                <div className="Complete_Gift_Date_Content">
+                                    {gift.startDate.substring(0, 10)} - {gift.endDate.substring(0, 10)}
+                                </div>
                             </div>
                             <div className="Complete_Gift_People">
                                 <div className="Complete_Gift_People_Label">참여자</div>

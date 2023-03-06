@@ -1,5 +1,6 @@
 import React from "react";
 import defaultImg from "../../assets/default-profile-img.png";
+import { FaUserFriends } from "react-icons/fa";
 import { FundingAdditionToFromProps } from "./FundingAddition.interface";
 
 export default function FundingAdditionToFrom({
@@ -23,7 +24,10 @@ export default function FundingAdditionToFrom({
     <div>
       <div className="FundingAddition_To">
         <span>
-          <h2>받는 친구</h2>
+          <h2>
+            <FaUserFriends className="FundingStart_FriendPicker_Icon" />
+            펀딩 받는 친구
+          </h2>
         </span>
         <div className="To_desc">
           <img
@@ -39,6 +43,7 @@ export default function FundingAdditionToFrom({
       <div>
         <span className="FundingAddition_From">
           <h2>
+            <FaUserFriends className="FundingStart_FriendPicker_Icon" />
             참여한 친구
             <div className="From_count">{participationCount + "명 참여"}</div>
           </h2>

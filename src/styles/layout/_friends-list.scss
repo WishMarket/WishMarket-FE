@@ -82,7 +82,7 @@
                         height: 40px;
                         object-fit: cover;
                         border-radius: 50%;
-                        margin-right: 4px;
+                        margin-right: 8px;
                     }
 
                     .friends-list-name {
@@ -108,35 +108,35 @@
                     }
                 }
             }
-            .friends-more-button-wrapper{
+            .friends-more-button-wrapper {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 height: 70px;
-                .friends-more-button{
-                    width:70%
+                .friends-more-button {
+                    width: 70%;
                 }
             }
-            .friends-lastpage-wrapper{
-                color:$color-gray-800;
+            .friends-lastpage-wrapper {
+                color: $color-gray-800;
                 text-decoration: none;
-                .friends-lastpage{
+                .friends-lastpage {
                     background-color: $color-gray-200;
                     border-radius: 15px;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
-                    gap:10px;
+                    gap: 10px;
                     height: 70px;
                     margin-top: 10px;
-                    .friedns-lastpage-title{
+                    .friedns-lastpage-title {
                         font-weight: 600;
                     }
-                    .friedns-lastpage-desc{
+                    .friedns-lastpage-desc {
                         font-size: $font-desc-size;
-                        span{
-                            color:$color-blue;
+                        span {
+                            color: $color-blue;
                         }
                     }
                 }
@@ -448,7 +448,6 @@
                                 justify-content: right;
 
                                 .Go_To_Detail {
-                                    margin-right: 16px;
                                     width: 100px;
                                     color: $color-gray-800;
                                     border-radius: 12px;

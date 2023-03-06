@@ -18,7 +18,6 @@ export default function FriendsWish({ item }: FriendsWishItem) {
                         <Link to={"/category/product/" + item.productId}>
                             <button className="btn btn-warning Go_To_Detail">상세보기</button>
                         </Link>
-                        <button className="Go_To_Funding_Start">선물하기</button>
                     </div>
                 </div>
             </div>

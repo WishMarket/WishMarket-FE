@@ -20,12 +20,14 @@ export const requestLogin = async (email: string, password: string) => {
 };
 
 export const requestAccessToken = async () => {
-let now = new Date();
+  let now = new Date();
   let expire = GetAccessTokenExpiredAt();
   let expireDate;
   if (expire) {
     expireDate = new Date(expire);
-    let expireDate_1 = new Date(expireDate.setMinutes(expireDate.getMinutes() - 1));
+    let expireDate_1 = new Date(
+      expireDate.setMinutes(expireDate.getMinutes() - 1)
+    );
     if (now > expireDate_1) {
       return await axios
         .post(
@@ -47,9 +49,9 @@ let now = new Date();
         .catch((e) => {
           console.log(e);
         });
-    } else {
-      return "AccessToken Not Expired";
     }
+  } else {
+    return "AccessToken Not Expired";
   }
 };
 
@@ -59,7 +61,6 @@ export const GetsocialLogin = async (code: string) => {
       withCredentials: true,
     })
     .then((response) => {
-      console.log(response);
       return response;
     })
     .catch((e) => {

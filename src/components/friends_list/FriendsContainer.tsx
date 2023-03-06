@@ -14,6 +14,7 @@ export default function FriendsContainer() {
     const [userId, setUserId] = useRecoilState(FindUserId);
     const [page, setPage] = useState<number>(1);
     const [last, setLast] = useState<boolean>(false);
+
     useEffect(() => {
         getFriends(0);
     }, []);
@@ -50,9 +51,9 @@ export default function FriendsContainer() {
                                 ) : (
                                     <Link to={"/searchfriends"} className="friends-lastpage-wrapper">
                                         <div className="friends-lastpage">
-                                            <h2 className="friedns-lastpage-title">마지막 친구 입니다.</h2>
+                                            <h2 className="friedns-lastpage-title">마지막 친구입니다.</h2>
                                             <p className="friedns-lastpage-desc">
-                                                <span>친구 찾기</span> 에서 더 많은 친구를 찾아보세요.
+                                                <span>친구 찾기</span>에서 더 많은 친구를 찾아보세요.
                                             </p>
                                         </div>
                                     </Link>
