@@ -2,13 +2,13 @@ import React from "react";
 import { Modal } from "react-bootstrap";
 import { IoMdCopy } from "react-icons/io";
 import { CopyClipBoard } from "../../hooks/CopyClipBoard";
-import { GiftShareModalType } from "./Received.interface";
+import { AccountFundingType } from "./Account.interface";
 
-export default function GiftShareModal({ show, setShow, fundingId }: GiftShareModalType) {
+export default function AccountCardModal({ show, setShow, gift }: AccountFundingType) {
+    const link = `funding/join/${gift.fundingId}`;
     const handleClose = (e: React.MouseEvent<HTMLButtonElement> | void) => {
         setShow(false);
     };
-    const link = `funding/join/${fundingId}`;
 
     return (
         <Modal show={show} onHide={handleClose}>
@@ -18,7 +18,7 @@ export default function GiftShareModal({ show, setShow, fundingId }: GiftShareMo
             <Modal.Body>
                 <div className="Modal_Inner">
                     <span className="Modal_Title">링크:</span>
-                    <input className="Share_LinkBox" type="text" value={link} readOnly />
+                    <input className="Share_LinkBox" type="text" value={link} readOnly></input>
                     <button className="btn btn-light">
                         <IoMdCopy className="copy_Button" onClick={() => CopyClipBoard(link)} />
                     </button>

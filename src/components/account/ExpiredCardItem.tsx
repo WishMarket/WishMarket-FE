@@ -1,6 +1,6 @@
 import React from "react";
 import { commaNums } from "../../hooks/CommaNums";
-import CardItemModal from "./CardItemModal";
+import AccountCardModal from "./AccountCardModal";
 import { TfiAlarmClock } from "react-icons/tfi";
 import { BsShareFill } from "react-icons/bs";
 import { AccountFundingType } from "./Account.interface";
@@ -15,7 +15,7 @@ export default function ExpiredCardItem({ gift, show, setShow }: AccountFundingT
         <div className="Account_Expired_Card_Item">
             <div className="Account_Expired_Card_Date">
                 <TfiAlarmClock className="Account_Expired_Card_Date_Icon" />
-                {gift.endDate}
+                {gift.startDate.substring(0, 10)} - {gift.endDate.substring(0, 10)}
             </div>
             <div className="Account_Expired_Card_Inner">
                 <img src={gift.productImagerUrl} alt={gift.productName} className="Account_Expired_Card_Img" />
@@ -59,7 +59,7 @@ export default function ExpiredCardItem({ gift, show, setShow }: AccountFundingT
                             <BsShareFill className="Account_Expired_Card_Share_Icon" />
                         </button>
                     </div>
-                    <CardItemModal gift={gift} show={show} setShow={setShow} />
+                    <AccountCardModal gift={gift} show={show} setShow={setShow} />
                 </div>
             </div>
         </div>

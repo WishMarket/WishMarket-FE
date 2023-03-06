@@ -77,146 +77,146 @@
             }
         }
 
-                 .Account_Card_Item {
-                     width: 900px;
-                     margin: 60px 0;
-        
-                     .Account_Card_Date {
-                         margin-bottom: 8px;
-                         font-size: $font-desc-size;
-        
-                         .Account_Card_Date_Icon {
-                             margin-right: 6px;
-                             margin-bottom: 4px;
-                         }
-                     }
-        
-                     .Account_Card_Inner {
-                         display: flex;
-                         justify-content: space-between;
-        
-                         .Account_Card_Img {
-                             width: 280px;
-                             height: 328px;
-                             object-fit: cover;
-                             border-top-left-radius: 24px;
-                             border-bottom-left-radius: 24px;
-                         }
-        
-                         .Account_Card_Content {
-                             width: 620px;
-                             height: 328px;
-                             padding: 16px;
-                             border-top-right-radius: 24px;
-                             border-bottom-right-radius: 24px;
-                             background-color: $color-gray-200;
-        
-                             .Account_Card_Receiver {
-                                 display: flex;
-                                 justify-content: right;
-                                 font-size: $font-medium;
-                                 font-weight: 400;
-                                 line-height: 2;
-                                 color: $color-blue;
-                             }
-        
-                             .Account_Card_Top_Area {
-                                 display: flex;
-                                 justify-content: space-between;
-        
-                                 .Account_Card_Title {
-                                     font-size: $font-sub-title-size;
-                                     font-weight: 600;
-                                     line-height: 2;
-                                     text-overflow: ellipsis;
-                                     overflow: hidden;
-                                     white-space: nowrap;
-                                     max-width: 500px;
-                                 }
-        
-                                 .Account_Card_Price {
-                                     line-height: 2;
-                                 }
-                             }
-        
-                             .Account_Card_Progress {
-                                 margin: 12px 0;
-                             }
-        
-                             .Account_Card_Gatherd {
-                                 display: flex;
-                                 line-height: 2;
-        
-                                 .Account_Card_Gathered_Label {
-                                     font-weight: 600;
-                                     margin-right: 6px;
-                                 }
-        
-                                 .Account_Card_Gathered_Content {
-                                     margin-right: 6px;
-                                 }
-        
-                                 .Account_Card_Attend_Badge {
-                                     margin-top: 5px;
-                                     padding: 0 4px;
-                                     height: 24px;
-                                     background-color: $color-yellow-800;
-                                     font-size: $font-desc-size;
-                                     color: $color-white;
-                                     border-radius: 24px;
-                                 }
-                             }
-        
-                             .Account_Card_Remaining {
-                                 display: flex;
-                                 line-height: 2;
-        
-                                 .Account_Card_Remaining_Label {
-                                     font-weight: 600;
-                                     margin-right: 6px;
-                                 }
-                             }
-        
-                             .Account_Card_Payment {
-                                 display: flex;
-                                 color: $color-blue;
-                                 line-height: 2;
-        
-                                 .Account_Card_Payment_Label {
-                                     font-weight: 600;
-                                     margin-right: 6px;
-                                 }
-                             }
-        
-                             .Account_Card_Btn_Area {
-                                 display: flex;
-                                 justify-content: right;
-                                 align-items: end;
-        
-                                 .Account_Card_Btn_Funding {
-                                     margin-right: 6px;
-                                     height: 42px;
-                                 }
-        
-                                 .Account_Card_Btn_Share {
-                                     border: none;
-                                     background-color: transparent;
-                                     height: 42px;
-        
-                                     .Account_Card_Share_Icon {
-                                         color: $color-gray-800;
-                                         font-size: $font-medium;
-                                         transition: 0.4s;
-        
-                                         &:hover {
-                                             color: $color-yellow-800;
-                                             transition: 0.4s;
-                                         }
-                                     }
-                                 }
-                             }
-                         }
-                     }
-                 }
+        .Account_Card_Item {
+            width: 900px;
+            margin: 60px 0;
+
+            .Account_Card_Date {
+                margin-bottom: 8px;
+                font-size: $font-desc-size;
+
+                .Account_Card_Date_Icon {
+                    margin-right: 6px;
+                    margin-bottom: 4px;
+                }
+            }
+
+            .Account_Card_Inner {
+                display: flex;
+                justify-content: space-between;
+
+                .Account_Card_Img {
+                    width: 280px;
+                    height: 328px;
+                    object-fit: cover;
+                    border-top-left-radius: 24px;
+                    border-bottom-left-radius: 24px;
+                }
+
+                .Account_Card_Content {
+                    width: 620px;
+                    height: 328px;
+                    padding: 16px;
+                    border-top-right-radius: 24px;
+                    border-bottom-right-radius: 24px;
+                    background-color: $color-gray-200;
+
+                    .Account_Card_Receiver {
+                        display: flex;
+                        justify-content: right;
+                        font-size: $font-medium;
+                        font-weight: 400;
+                        line-height: 2;
+                        color: $color-blue;
+                    }
+
+                    .Account_Card_Top_Area {
+                        display: flex;
+                        justify-content: space-between;
+
+                        .Account_Card_Title {
+                            font-size: $font-sub-title-size;
+                            font-weight: 600;
+                            line-height: 2;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            max-width: 500px;
+                        }
+
+                        .Account_Card_Price {
+                            line-height: 2;
+                        }
+                    }
+
+                    .Account_Card_Progress {
+                        margin: 12px 0;
+                    }
+
+                    .Account_Card_Gatherd {
+                        display: flex;
+                        line-height: 2;
+
+                        .Account_Card_Gathered_Label {
+                            font-weight: 600;
+                            margin-right: 6px;
+                        }
+
+                        .Account_Card_Gathered_Content {
+                            margin-right: 6px;
+                        }
+
+                        .Account_Card_Attend_Badge {
+                            margin-top: 5px;
+                            padding: 0 4px;
+                            height: 24px;
+                            background-color: $color-yellow-800;
+                            font-size: $font-desc-size;
+                            color: $color-white;
+                            border-radius: 24px;
+                        }
+                    }
+
+                    .Account_Card_Remaining {
+                        display: flex;
+                        line-height: 2;
+
+                        .Account_Card_Remaining_Label {
+                            font-weight: 600;
+                            margin-right: 6px;
+                        }
+                    }
+
+                    .Account_Card_Payment {
+                        display: flex;
+                        color: $color-blue;
+                        line-height: 2;
+
+                        .Account_Card_Payment_Label {
+                            font-weight: 600;
+                            margin-right: 6px;
+                        }
+                    }
+
+                    .Account_Card_Btn_Area {
+                        display: flex;
+                        justify-content: right;
+                        align-items: end;
+
+                        .Account_Card_Btn_Funding {
+                            margin-right: 6px;
+                            height: 42px;
+                        }
+
+                        .Account_Card_Btn_Share {
+                            border: none;
+                            background-color: transparent;
+                            height: 42px;
+
+                            .Account_Card_Share_Icon {
+                                color: $color-gray-800;
+                                font-size: $font-medium;
+                                transition: 0.4s;
+
+                                &:hover {
+                                    color: $color-yellow-800;
+                                    transition: 0.4s;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { useRecoilState } from "recoil";
+import defaultImg from "../../assets/default-profile-img.png";
 
 import { TiUserDelete } from "react-icons/ti";
 import { Modal } from "react-bootstrap";
 
 import { FriendsError } from "../../hooks/Errors";
+import { FriendsFollowDelete } from "../../hooks/axios/SearchFriend";
 import { FriendsItemState } from "./FriendsLists.inferface";
 
 export default function FriendsListItem({ user, userId, setUserId }: FriendsItemState) {
@@ -18,25 +19,29 @@ export default function FriendsListItem({ user, userId, setUserId }: FriendsItem
 
     const handleClose = (e: React.MouseEvent<HTMLButtonElement> | void) => {
         setErrorShow(false);
+        location.reload();
     };
 
     const checkUserId = () => {
         setUserId(user.userId);
-        console.log(user.userId);
+    };
+
+    const DeleteFriends = () => {
+        FriendsFollowDelete(user.userId);
     };
 
     return (
         <>
             <li className="friends-list-item" key={user.userId} onClick={checkUserId}>
                 <div className="friends-list-info">
-                    <img src={user.profileImageUrl} alt={user.name} className="friends-list-item-img" />
+                    <img src={user.profileImageUrl ? user.profileImageUrl : defaultImg} alt={user.name} className="friends-list-item-img" />
                     <div>
                         <div className="friends-list-name">{user.name}</div>
                         <div className="friends-list-nickname">{user.nickName}</div>
                     </div>
                 </div>
                 <button type="button" className="friends-list-btn" onClick={DelateFriendHandler}>
-                    <TiUserDelete className="friends-list-icon" />
+                    <TiUserDelete className="friends-list-icon" onClick={DeleteFriends} />
                 </button>
             </li>
             <Modal show={errorShow} onHide={handleClose}>

@@ -13,7 +13,7 @@ export default function Header() {
     const [tabState, setTabState] = useState(false);
     const token = window.localStorage.getItem("accessToken");
     const navigate = useNavigate();
-    console.log(token);
+
     // 우측 토글 handle
     const handleToggleMenu = () => {
         const toggleMenu = document.querySelector("#Toggle_Bar") as HTMLElement;

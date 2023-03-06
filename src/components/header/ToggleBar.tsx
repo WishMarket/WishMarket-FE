@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import { VscChromeClose } from "react-icons/vsc";
 import { FaGithub, FaSchool } from "react-icons/fa";
 import { SiNotion } from "react-icons/si";
 

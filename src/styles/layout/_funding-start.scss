@@ -97,10 +97,10 @@
                                 width: 80%;
                             }
                         }
-                        .Last_Friend_Wrapper{
+                        .Last_Friend_Wrapper {
                             text-decoration: none;
-                            color:$color-gray-800;
-                            .Last_Friend{
+                            color: $color-gray-800;
+                            .Last_Friend {
                                 height: 80px;
                                 display: flex;
                                 flex-direction: column;
@@ -108,11 +108,11 @@
                                 align-items: center;
                                 background-color: $color-gray-200;
                                 border-radius: 15px;
-                                .Last_Friend_title{
+                                .Last_Friend_title {
                                     font-weight: 600;
                                     font-size: $font-medium;
                                 }
-                                .Last_Friend_Detail{
+                                .Last_Friend_Detail {
                                     font-size: $font-desc-size;
                                 }
                             }
@@ -208,7 +208,6 @@
         .FundingStart_Desc_Bottom {
             margin-top: 48px;
             width: 100%;
-
             align-items: center;
 
             label {

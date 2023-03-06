@@ -9,6 +9,6 @@ export const getReviews: any = async (setState: any, id: number) => {
             setState(response);
         })
         .catch((error) => {
-            console.log(error);
+            return error;
         });
 };

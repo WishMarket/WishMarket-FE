@@ -13,7 +13,7 @@ export const getFundingHistory: any = async (setState: any) => {
             setState(response);
         })
         .catch((error) => {
-            console.log(error);
+            return error;
         });
 };
 
@@ -30,7 +30,7 @@ export const getFundingGift: any = async (setState: any) => {
             setState(response);
         })
         .catch((error) => {
-            console.log(error);
+            return error;
         });
 };
 
@@ -51,6 +51,6 @@ export const postFundingReception: any = async (address: string, comment: string
             return response;
         })
         .catch((error) => {
-            console.log(error);
+            return error;
         });
 };
