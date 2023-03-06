@@ -10,6 +10,6 @@ export const getSearchProductList: any = async (setState: React.Dispatch<React.S
             setState(response);
         })
         .catch((error) => {
-            console.log(error);
+            return error;
         });
 };

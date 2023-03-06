@@ -37,9 +37,14 @@
 
                 .FundingAddition_Price {
                     h2 {
+                        margin-bottom: 15px;
+                        font-weight: 500;
                         font-size: $font-sub-title-size;
-                        font-weight: 700;
-                        margin-bottom: 12px;
+
+                        .FundingAddition_Price_Icon {
+                            margin-top: -4px;
+                            margin-right: 4px;
+                        }
                     }
                 }
 
@@ -47,28 +52,34 @@
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
-                    height: 120px;
 
                     h2 {
+                        margin-bottom: 15px;
+                        font-weight: 500;
                         font-size: $font-sub-title-size;
-                        font-weight: 700;
+                        margin-bottom: 24px;
+
+                        .FundingGraph_Desc_Icon {
+                            margin-top: -4px;
+                            margin-right: 4px;
+                        }
                     }
 
                     .Funding_Amount_Desc {
-
                         display: flex;
                         justify-content: center;
 
                         div {
                             padding-left: 35px;
                             padding-right: 35px;
-                            border-right: 1px solid;
 
                             h3 {
+                                margin-top: 20px;
                                 white-space: nowrap;
-                                font-size: $font-sub-title-size;
-                                font-weight: 700;
+                                font-size: 18px;
+                                font-weight: 600;
                                 margin-bottom: 5px;
+                                color: $color-blue;
                             }
 
                             span {
@@ -85,17 +96,31 @@
 
                 .FundingAddition_Date {
                     h2 {
-                        font-size: $font-sub-title-size;
-                        font-weight: 700;
                         margin-bottom: 12px;
+                        font-weight: 500;
+                        font-size: $font-sub-title-size;
+
+                        .FundingStart_DatePicker_Icon {
+                            margin-top: -4px;
+                            margin-right: 4px;
+                        }
+                    }
+
+                    .FundingAddition_Date_Text {
+                        margin-top: 16px;
                     }
                 }
 
                 .FundingAddition_To {
                     h2 {
+                        margin-bottom: 15px;
+                        font-weight: 500;
                         font-size: $font-sub-title-size;
-                        font-weight: 700;
-                        margin-bottom: 12px;
+
+                        .FundingStart_FriendPicker_Icon {
+                            margin-top: -4px;
+                            margin-right: 4px;
+                        }
                     }
 
                     .To_desc {
@@ -104,30 +129,37 @@
                         margin-bottom: 50px;
 
                         .To_image {
-                            border: 1px solid;
                             border-radius: 100px;
                             padding: 3px;
-                            width: 35px;
-                            height: 35px;
-                            margin-right: 10px;
+                            width: 42px;
+                            height: 42px;
+                            margin-right: 8px;
                         }
                     }
                 }
 
                 .FundingAddition_From {
+                    margin-top: 48px;
+
                     h2 {
                         display: flex;
-                        align-items: center;
+                        margin-bottom: 15px;
                         font-size: $font-sub-title-size;
-                        font-weight: 700;
-                        margin-bottom: 12px;
+                        font-weight: 500;
+
+                        .FundingStart_FriendPicker_Icon {
+                            margin-top: 2px;
+                            margin-right: 4px;
+                        }
 
                         .From_count {
-                            font-size: 15px;
+                            background-color: $color-yellow-800;
+                            border-radius: 16px;
+                            color: $color-white;
+                            font-size: 12px;
                             font-weight: 400;
-                            padding: 2px;
-                            border: 1px solid;
-                            margin-left: 5px;
+                            padding: 8px;
+                            margin-left: 8px;
                         }
                     }
 
@@ -139,34 +171,56 @@
                             overflow: hidden;
                             text-overflow: ellipsis;
                         }
-
                     }
                 }
             }
         }
-
     }
 }
 
 .FundingAddition_Desc_Bottom {
-    display: flex;
-    justify-content: space-between;
     width: 100%;
-
     align-items: center;
 
     label {
-        font-weight: 700;
+        margin-bottom: 15px;
+        font-weight: 500;
         font-size: $font-sub-title-size;
-        margin-right: 10px;
 
+        .Funding_Amount_Icon {
+            margin-top: -4px;
+            margin-right: 4px;
+        }
     }
 
-    input {
-        width: 220px;
-        border-radius: 10px;
-        margin-right: 10px;
-        padding-left: 10px;
+    .Funding_Amount_Desc {
+        margin-bottom: 15px;
     }
 
+    .Funding_Amount_Flex {
+        display: flex;
+        justify-content: space-between;
+
+        input {
+            width: 320px;
+            height: 48px;
+            font-size: 14px;
+            border: 1px solid $color-gray-400;
+            border-radius: 16px;
+            outline: none;
+            padding-left: 24px;
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                margin-right: 8px;
+            }
+        }
+
+        .Funding_Amount_Btn {
+            width: 120px;
+            margin-left: 16px;
+            height: 48px;
+            border-radius: 16px;
+        }
+    }
 }

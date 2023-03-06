@@ -10,7 +10,7 @@ export const getProductList: any = async (setState: React.Dispatch<React.SetStat
             setState(response);
         })
         .catch((error) => {
-            console.log(error);
+            return error;
         });
 };
 
@@ -23,6 +23,6 @@ export const getBestProduct = async (setState: React.Dispatch<React.SetStateActi
             setState(response);
         })
         .catch((error) => {
-            console.log(error);
+            return error;
         });
 };

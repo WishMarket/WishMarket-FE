@@ -23,7 +23,7 @@ export default function SelectBox({
       </div>
       <div
         ref={selectRef}
-        style={{ 
+        style={{
           display: `${show}`,
         }}
         className="SelectOptions"

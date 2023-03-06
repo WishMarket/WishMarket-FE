@@ -46,7 +46,9 @@ export default function InProgressGiftCard() {
                                 </div>
                                 <div className="In_Progress_Gift_Date">
                                     <div className="In_Progress_Gift_Date_Label">펀딩 기간</div>
-                                    <div className="In_Progress_Gift_Date_Content">{gift.endDate}</div>
+                                    <div className="In_Progress_Gift_Date_Content">
+                                        {gift.startDate.substring(0, 10)} - {gift.endDate.substring(0, 10)}
+                                    </div>
                                 </div>
                                 <div className="Flex_Container">
                                     <div className="In_Progress_Gift_Gathered">

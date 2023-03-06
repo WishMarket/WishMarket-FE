@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useCallback } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { commaNums } from "../../hooks/CommaNums";
 import { ko } from "date-fns/esm/locale";
@@ -11,20 +11,12 @@ import FundingStartModal from "./FundingStartModal";
 
 import { MdOutlineDateRange } from "react-icons/md";
 import { FaUserFriends } from "react-icons/fa";
-import {
-  FundingStartFriendObj,
-  FundingStartProductObj,
-} from "./FundingStart.interfact";
-import {
-  getFriend,
-  getProduct,
-  PostFundingStart,
-} from "../../hooks/axios/FundingStart";
+import { FundingStartFriendObj, FundingStartProductObj } from "./FundingStart.interface";
+import { getFriend, getProduct, PostFundingStart } from "../../hooks/axios/FundingStart";
 
 export default function FundingStartForm() {
-    const SIZE = 10;
     const navigate = useNavigate();
-    let { id } = useParams() as { id: string };
+
     const [items, setItems] = useState<FundingStartProductObj | null>(null);
     const [endDate, setEndDate] = useState<Date | null>(null);
     const [pickFriend, setPickFriend] = useState<number | null>(null);
@@ -33,17 +25,13 @@ export default function FundingStartForm() {
     const [fundingAmount, setFundingAmount] = useState<number>(0);
     const [errorShow, setErrorShow] = useState<boolean>(false);
     const [errorCode, setErrorCode] = useState<number>(0);
-
     const [friends, setFriends] = useState<FundingStartFriendObj[]>([]);
     const [page, setPage] = useState<number>(1);
-
     const [lastPage, setLastPage] = useState<boolean>(false);
 
-    useEffect(() => {
-        getFriends(0);
-    }, []);
-
+    let { id } = useParams() as { id: string };
     let id_num = Number(id);
+
     const getFriends = async (page: number) => {
         try {
             const lists = await getFriend(page, 10);
@@ -82,8 +70,6 @@ export default function FundingStartForm() {
     const onSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const now = new Date();
-
-        //1.날짜현재시간이후 , 2.친구선택, 3.금액이 10원 이상
         if (endDate === null) {
             setErrorCode(1);
             setErrorShow(true);
@@ -101,6 +87,10 @@ export default function FundingStartForm() {
             }
         }
     };
+
+    useEffect(() => {
+        getFriends(0);
+    }, []);
 
     useEffect(() => {
         getItems();
@@ -166,8 +156,8 @@ export default function FundingStartForm() {
                                                 ) : (
                                                     <Link to="/searchfriends" className="Last_Friend_Wrapper">
                                                         <div className="Last_Friend">
-                                                            <h2 className="Last_Friend_title">마지막 친구 입니다.</h2>
-                                                            <p className="Last_Friend_Detail">친구찾기에서 더많은 친구를 찾아보세요</p>
+                                                            <h2 className="Last_Friend_title">마지막 친구입니다.</h2>
+                                                            <p className="Last_Friend_Detail">친구 찾기에서 더 많은 친구를 찾아보세요.</p>
                                                         </div>
                                                     </Link>
                                                 )}

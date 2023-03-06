@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import { getFundingGift } from "../../hooks/axios/Gift";
 import CompleteGiftCardUnactive from "./CompleteGiftCardUnactive";
 import { ReceivedFundingItem } from "./Received.interface";

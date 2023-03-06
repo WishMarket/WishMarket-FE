@@ -7,7 +7,6 @@ export const Account_Withdrawal = async () => {
             withCredentials: true,
         })
         .then((response) => {
-            console.log(response);
             return response;
         })
         .catch((e) => {
@@ -28,7 +27,7 @@ export const getUserInfo: any = async (setState: any) => {
             setState(response);
         })
         .catch((error) => {
-            console.log(error);
+            return error;
         });
 };
 
@@ -41,11 +40,10 @@ export const increasePoint: any = async () => {
             },
         })
         .then((res) => {
-            console.log(res);
             return res;
         })
         .catch((error) => {
-            console.log(error);
+            return error;
         });
 };
 
@@ -59,11 +57,10 @@ export const updateUserInfo: any = async (frm: any) => {
             },
         })
         .then((res) => {
-            console.log(res);
             return res;
         })
         .catch((error) => {
-            console.log(error);
+            return error;
         });
 };
 
@@ -77,10 +74,9 @@ export const updateUserInfoImg: any = async (frm: any) => {
             },
         })
         .then((res) => {
-            console.log(res);
             return res;
         })
         .catch((error) => {
-            console.log(error);
+            return error;
         });
 };

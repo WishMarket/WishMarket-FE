@@ -1,6 +1,6 @@
 import React from "react";
 import { commaNums } from "../../hooks/CommaNums";
-import CardItemModal from "./CardItemModal";
+import AccountCardModal from "./AccountCardModal";
 import { TfiAlarmClock } from "react-icons/tfi";
 import { BsShareFill } from "react-icons/bs";
 import { AccountFundingType } from "./Account.interface";
@@ -15,7 +15,7 @@ export default function AchieveCardItem({ gift, show, setShow }: AccountFundingT
         <div className="Account_Achieve_Card_Item">
             <div className="Account_Achieve_Card_Date">
                 <TfiAlarmClock className="Account_Achieve_Card_Date_Icon" />
-                {gift.endDate}
+                {gift.startDate.substring(0, 10)} - {gift.endDate.substring(0, 10)}
             </div>
             <div className="Account_Achieve_Card_Inner">
                 <img src={gift.productImagerUrl} alt={gift.productName} className="Account_Achieve_Card_Img" />
@@ -53,13 +53,12 @@ export default function AchieveCardItem({ gift, show, setShow }: AccountFundingT
                         <div className="Account_Achieve_Card_Payment_Label">내 펀딩 금액</div>
                         <div className="Account_Achieve_Card_Payment_Content">{commaNums(gift.myFundingPrice)} 원</div>
                     </div>
-                    {/* 추후에 링크 경로 확인 필요 */}
                     <div className="Account_Achieve_Card_Btn_Area">
                         <button className="Account_Achieve_Card_Btn_Share" onClick={handleShow}>
                             <BsShareFill className="Account_Achieve_Card_Share_Icon" />
                         </button>
                     </div>
-                    <CardItemModal gift={gift} show={show} setShow={setShow} />
+                    <AccountCardModal gift={gift} show={show} setShow={setShow} />
                 </div>
             </div>
         </div>

@@ -13,7 +13,7 @@ export const getNotifyList: any = async (setState: any) => {
             setState(response);
         })
         .catch((error) => {
-            console.log(error);
+            return error;
         });
 };
 
@@ -26,10 +26,10 @@ export const NotifyRead: any = async (id: any) => {
             },
         })
         .then((res) => {
-            console.log(res);
+            return res;
         })
         .catch((error) => {
-            console.log(error);
+            return error;
         });
 };
 
@@ -42,11 +42,10 @@ export const NotifyDelete: any = async (id: any) => {
             },
         })
         .then((res) => {
-            console.log(res);
             return res;
         })
         .catch((error) => {
-            console.log(error);
+            return error;
         });
 };
 
@@ -62,6 +61,6 @@ export const NotifyBadge: any = async (setState: any) => {
             setState(res.data);
         })
         .catch((error) => {
-            console.log(error);
+            return error;
         });
 };

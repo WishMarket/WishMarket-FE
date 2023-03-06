@@ -124,7 +124,7 @@
     }
 }
 
-.login_Button_Google {
+.login_Button_Git {
     text-decoration: none;
     width: 360px;
     display: flex;
@@ -134,8 +134,8 @@
     border: none;
     align-items: center;
 
-    .Social_img_Google {
-        font-size: $font-medium;
+    .Social_img_Git {
+        font-size: $font-sub-title-size;
         margin-right: 8px;
     }
 
@@ -156,12 +156,12 @@
         width: 130px;
         white-space: nowrap;
 
-        .Social_Google {
+        .Social_Git {
             margin-left: 5px;
         }
 
         span {
-            .Social_img_Google {
+            .Social_img_Git {
                 font-size: 22px;
             }
         }

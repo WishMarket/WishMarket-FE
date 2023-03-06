@@ -9,7 +9,7 @@ export const getTotalBestElements = async (setState: React.Dispatch<React.SetSta
             setState(response);
         })
         .catch((error) => {
-            console.log(error);
+            return error;
         });
 };
 
@@ -22,7 +22,7 @@ export const getTotalBestPages = async (setState: React.Dispatch<React.SetStateA
             setState(response);
         })
         .catch((error) => {
-            console.log(error);
+            return error;
         });
 };
 
@@ -35,7 +35,7 @@ export const getTotalElements = async (setState: React.Dispatch<React.SetStateAc
             setState(response);
         })
         .catch((error) => {
-            console.log(error);
+            return error;
         });
 };
 
@@ -48,7 +48,7 @@ export const getTotalPages = async (setState: React.Dispatch<React.SetStateActio
             setState(response);
         })
         .catch((error) => {
-            console.log(error);
+            return error;
         });
 };
 
@@ -61,7 +61,7 @@ export const getSearchTotalElements = async (setState: React.Dispatch<React.SetS
             setState(response);
         })
         .catch((error) => {
-            console.log(error);
+            return error;
         });
 };
 
@@ -74,6 +74,6 @@ export const getSearchTotalPages = async (setState: React.Dispatch<React.SetStat
             setState(response);
         })
         .catch((error) => {
-            console.log(error);
+            return error;
         });
 };
