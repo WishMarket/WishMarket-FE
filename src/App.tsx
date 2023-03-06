@@ -19,7 +19,7 @@ import SearchFriends from "./pages/SearchFriends";
 import FriendsList from "./pages/FriendsList";
 import ScrollToTop from "./hooks/ScrollToTop";
 import NaverRedirect from "./components/login/social/NaverRedirect";
-import GoogleRedirect from "./components/login/social/GoogleRedirect";
+import GitRedirect from "./components/login/social/GitRedirect";
 
 function App() {
     return (
@@ -44,7 +44,7 @@ function App() {
                     <Route path="/searchfriends" element={<SearchFriends />}></Route>
                     <Route path="/friendslist" element={<FriendsList />}></Route>
                     <Route path="/login/oauth2/code/naver" element={<NaverRedirect />}> </Route>
-                    <Route path="/login/oauth2/code/google" element={<GoogleRedirect />}> </Route>
+                    <Route path="/login/oauth2/code/github" element={<GitRedirect />}> </Route>
                 </Routes>
             </BrowserRouter>
         </div>

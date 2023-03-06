@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Modal } from "react-bootstrap";
 import { FriendsError } from "../../../hooks/Errors";
 import { SearchFriendsObj } from "../SearchFriend.interface";
-import { FriendsFollowAdd, FriendsFollowDelete } from "../../../hooks/axios/SearchFriend";
+import {
+  FriendsFollowAdd,
+  FriendsFollowDelete,
+} from "../../../hooks/axios/SearchFriend";
 export default function FriendCard({
   userId,
   profileImageUrl,
@@ -25,7 +28,7 @@ export default function FriendCard({
       setErrorShow(true);
     }
   };
-  const FriendAddHandler = async(e: React.MouseEvent<HTMLButtonElement>) => {
+  const FriendAddHandler = async (e: React.MouseEvent<HTMLButtonElement>) => {
     const follow = await FriendsFollowAdd(userId);
     console.log(follow);
     if (follow.status == 200) {

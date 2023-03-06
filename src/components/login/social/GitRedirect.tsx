@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { GetsocialLogin } from "../../../hooks/axios/Login";
 import { SetAccessToken, SetRefreshToken } from "../../../hooks/Tokens";
 
-export default function NaverRedirect() {
+export default function GitRedirect() {
   const navigate = useNavigate();
   let code = document.location.search;
-  let naver_code = "naver" + code;
+  let git_code = "github" + code;
 
   useEffect(() => {
     getSocialLogin();
@@ -14,7 +14,8 @@ export default function NaverRedirect() {
 
   const getSocialLogin = async () => {
     try {
-      const socialLogin = await GetsocialLogin(naver_code);
+      const socialLogin = await GetsocialLogin(git_code);
+      console.log(socialLogin);
       if (socialLogin.status == 200) {
         SetAccessToken(
           socialLogin.data.accessToken,
@@ -30,5 +31,5 @@ export default function NaverRedirect() {
       console.log(e);
     }
   };
-  return <div>Naver 소셜로그인 진행중 ...</div>;
+  return <div>Github 소셜로그인 진행중 ...</div>;
 }

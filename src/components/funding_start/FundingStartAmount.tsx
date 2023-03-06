@@ -1,11 +1,11 @@
 import React from "react";
 import { TbReportMoney } from "react-icons/tb";
+import { FundingStartAmountProps } from "./FundingStart.interface";
 
-interface Props {
-  setFundingAmount: React.Dispatch<React.SetStateAction<number>>;
-  price: number;
-}
-export default function FundingStartAmount({ setFundingAmount, price }: Props) {
+export default function FundingStartAmount({
+  setFundingAmount,
+  price,
+}: FundingStartAmountProps) {
   const onChangeAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     setFundingAmount(parseInt(e.currentTarget.value));
