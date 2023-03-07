@@ -98,6 +98,9 @@ export default function FundingStartForm() {
       if (start.status == 200) {
         alert("펀딩을 시작합니다!");
         navigate("/");
+      } else {
+        setErrorCode(4);
+        setErrorShow(true);
       }
     }
   };
