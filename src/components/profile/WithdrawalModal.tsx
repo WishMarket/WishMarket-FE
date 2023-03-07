@@ -13,11 +13,14 @@ export default function WithdrawalModal({
   const onClickWithdrawal = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     const result = await Account_Withdrawal();
+    console.log(result)
     if (result.data == "WITHDRAWAL_SUCCESS") {
       RemoveTokens();
       setErrorShow(false);
       alert("회원탈퇴 되었습니다. 이용해주셔서 감사합니다.");
       navigate("/");
+    } else if (result.status == 400) {
+      alert('수령하지 않은 선물이 있습니다. 받은선물 내역을 확인해주세요.')
     }
   };
   const handleClose = (e: React.MouseEvent<HTMLButtonElement> | void) => {

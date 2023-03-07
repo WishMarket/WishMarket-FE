@@ -29,23 +29,26 @@ export default function Header() {
 
     const checkToken = async () => {
         if (window.localStorage.getItem("accessToken")) {
-            const newToken = await requestAccessToken();
-            const now = new Date();
-            const refreshTime = GetRefreshTokenExpiredAt();
-            let refresh_date = new Date();
-            if (refreshTime) {
-                refresh_date = new Date(refreshTime);
-            }
-            if (refresh_date < now) {
-                RemoveTokens();
-                alert("토큰이 만료되었습니다. 다시 로그인 해주세요.");
-                navigate("/login");
-            } else if (newToken == "AccessToken Not Expired") {
-            } else if (newToken.refreshToken == null) {
-                SetAccessToken(newToken.accessToken, newToken.accessTokenExpiredAt);
-            } else {
-                SetAccessToken(newToken.accessToken, newToken.accessTokenExpiredAt);
-                SetRefreshToken(newToken.refreshToken, newToken.refreshTokenExpiredAt);
+            try {
+                const newToken = await requestAccessToken();
+                const now = new Date();
+                const refreshTime = GetRefreshTokenExpiredAt();
+                let refresh_date = new Date();
+                if (refreshTime) {
+                    refresh_date = new Date(refreshTime);
+                }
+                if (refresh_date < now) {
+                    RemoveTokens();
+                    alert("토큰이 만료되었습니다. 다시 로그인 해주세요.");
+                    navigate("/login");
+                } else if (newToken == "AccessToken Not Expired") {
+                } else if (newToken.refreshToken == null) {
+                    SetAccessToken(newToken.accessToken, newToken.accessTokenExpiredAt);
+                } else {
+                    SetAccessToken(newToken.accessToken, newToken.accessTokenExpiredAt);
+                    SetRefreshToken(newToken.refreshToken, newToken.refreshTokenExpiredAt);
+                }
+            } catch(e) {
             }
         }
     };
