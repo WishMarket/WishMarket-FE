@@ -41,6 +41,9 @@ export default function FundingAdditionForm() {
       if (addition.status == 200) {
         alert("펀딩 참여에 성공하였습니다.");
         navigate("/account");
+      } else {
+        setErrorCode(4);
+        setErrorShow(true);
       }
     }
   };
