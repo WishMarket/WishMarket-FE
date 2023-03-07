@@ -8,7 +8,6 @@ import { getFundingHistory } from "../../hooks/axios/Gift";
 
 export default function AccountComponent() {
     const [fundingInfo, setFundingInfo] = useState<AccountFunding[]>([]);
-    const FUNDING_URL = "/data/AccountFunding.json";
 
     const activeRef = useRef<HTMLDivElement>(null);
     const unactiveRef = useRef<HTMLDivElement>(null);

@@ -16,10 +16,6 @@ export default function CompleteGiftCardActive({ gift }: ReceivedFundingInfo) {
     const [mapShow, setMapShow] = useState<boolean>(false);
     const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
 
-    useEffect(() => {
-        getUserInfo(setUserInfo);
-    }, []);
-
     const onMapClickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         setMapShow(true);
@@ -27,7 +23,12 @@ export default function CompleteGiftCardActive({ gift }: ReceivedFundingInfo) {
 
     const postFundingInfo = () => {
         postFundingReception(address, comment, detailAddress, gift.fundingId, goodIcon, gift.productId);
+        location.reload();
     };
+
+    useEffect(() => {
+        getUserInfo(setUserInfo);
+    }, []);
 
     return (
         <>

@@ -8,7 +8,7 @@ export default function CompleteGiftCard() {
 
     useEffect(() => {
         getFundingGift(setFundingInfo);
-    }, [fundingInfo]);
+    }, []);
 
     return <>{fundingInfo.map((gift) => (gift.fundedStatusType === "BEFORE_RECEIPT" ? <CompleteGiftCardUnactive gift={gift} key={gift.fundingId} /> : null))}</>;
 }

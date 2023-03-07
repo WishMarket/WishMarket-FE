@@ -24,6 +24,7 @@ export const getFundingGift: any = async (setState: any) => {
             headers: {
                 Authorization: window.localStorage.getItem("accessToken"),
             },
+            withCredentials: true,
         })
         .then((res) => {
             let response = res.data;
