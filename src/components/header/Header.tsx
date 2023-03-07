@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { useRecoilState } from "recoil";
+import { LoadWishlist } from "../../hooks/recoil/atoms";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { FaBars } from "react-icons/fa";
@@ -6,10 +8,12 @@ import HeaderCategory from "./HeaderCategory";
 import HeaderNotify from "./HeaderNotify";
 import SearchContainer from "./SearchContainer";
 import ToggleBar from "../header/ToggleBar";
+import { getMyWish } from "../../hooks/axios/MyWishlist";
 import { requestAccessToken } from "../../hooks/axios/Login";
 import { GetRefreshTokenExpiredAt, RemoveTokens, SetAccessToken, SetRefreshToken } from "../../hooks/Tokens";
 
 export default function Header() {
+    const [list, setList] = useRecoilState(LoadWishlist);
     const [tabState, setTabState] = useState(false);
     const token = window.localStorage.getItem("accessToken");
     const navigate = useNavigate();
@@ -25,6 +29,9 @@ export default function Header() {
 
     useEffect(() => {
         checkToken();
+        {
+            token ? getMyWish(setList) : null;
+        }
     }, []);
 
     const checkToken = async () => {
@@ -48,10 +55,10 @@ export default function Header() {
                     SetAccessToken(newToken.accessToken, newToken.accessTokenExpiredAt);
                     SetRefreshToken(newToken.refreshToken, newToken.refreshTokenExpiredAt);
                 }
-            } catch(e) {
-            }
+            } catch (e) {}
         }
     };
+
     return (
         <>
             <div className="Header_Bar">

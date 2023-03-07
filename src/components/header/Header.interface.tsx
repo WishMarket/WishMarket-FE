@@ -5,10 +5,14 @@ export interface Token {
 export interface TabStateType {
     tabNotify: boolean;
     setTabNotify: React.Dispatch<React.SetStateAction<boolean>>;
+    notify: number;
+    setNotify: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export interface NotifyItem {
     item: NotifyType;
+    notify: number;
+    setNotify: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export interface ToggleStateType {

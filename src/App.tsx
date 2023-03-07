@@ -43,8 +43,8 @@ function App() {
                     <Route path="/funding/join/:id" element={<FundingAddition />}></Route>
                     <Route path="/searchfriends" element={<SearchFriends />}></Route>
                     <Route path="/friendslist" element={<FriendsList />}></Route>
-                    <Route path="/login/oauth2/code/naver" element={<NaverRedirect />}> </Route>
-                    <Route path="/login/oauth2/code/github" element={<GitRedirect />}> </Route>
+                    <Route path="/login/oauth2/code/naver" element={<NaverRedirect />}></Route>
+                    <Route path="/login/oauth2/code/github" element={<GitRedirect />}></Route>
                 </Routes>
             </BrowserRouter>
         </div>

@@ -13,33 +13,39 @@ export const getNotifyList: any = async (setState: any) => {
             setState(response);
         })
         .catch((error) => {
-            return error;
+            console.log(error);
         });
 };
 
 export const NotifyRead: any = async (id: any) => {
     const NOTIFY_URL = `http://3.38.63.3:8080/api/alarms/${id}/read`;
-    await axios
-        .patch(NOTIFY_URL, {
-            headers: {
-                Authorization: window.localStorage.getItem("accessToken"),
-            },
-        })
+    return await axios
+        .patch(
+            NOTIFY_URL,
+            {},
+            {
+                headers: {
+                    Authorization: window.localStorage.getItem("accessToken"),
+                },
+                withCredentials: true,
+            }
+        )
         .then((res) => {
             return res;
         })
         .catch((error) => {
-            return error;
+            console.log(error);
         });
 };
 
 export const NotifyDelete: any = async (id: any) => {
-    const NOTIFY_URL = `http://3.38.63.3:8080/api/alarms/${id}/delete`;
-    await axios
-        .delete(NOTIFY_URL, {
+    const DELETE_URL = `http://3.38.63.3:8080/api/alarms/${id}/delete`;
+    return await axios
+        .delete(DELETE_URL, {
             headers: {
                 Authorization: window.localStorage.getItem("accessToken"),
             },
+            withCredentials: true,
         })
         .then((res) => {
             return res;
@@ -51,11 +57,12 @@ export const NotifyDelete: any = async (id: any) => {
 
 export const NotifyBadge: any = async (setState: any) => {
     const NOTIFY_URL = `http://3.38.63.3:8080/api/alarms/badge`;
-    await axios
+    return await axios
         .get(NOTIFY_URL, {
             headers: {
                 Authorization: window.localStorage.getItem("accessToken"),
             },
+            withCredentials: true,
         })
         .then((res) => {
             setState(res.data);

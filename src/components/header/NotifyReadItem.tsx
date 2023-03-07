@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { NotifyItem } from "./Header.interface";
 import { Link } from "react-router-dom";
 import { NotifyDelete } from "../../hooks/axios/Notify";
+import { getNotifyList } from "../../hooks/axios/Notify";
 
-export default function NotifyReadItem({ item }: NotifyItem) {
+export default function NotifyReadItem({ item, notify, setNotify }: NotifyItem) {
     const handleNotifyDelete = () => {
         NotifyDelete(item.id);
+        setNotify(notify + 1);
     };
 
     return (
