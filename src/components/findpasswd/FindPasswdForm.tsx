@@ -4,7 +4,7 @@ import { useRecoilState } from "recoil";
 import { EmailSet } from "../../hooks/recoil/atoms";
 import { AiOutlineMail } from "react-icons/ai";
 import { SlPeople } from "react-icons/sl";
-import FindPasswdModal from "./FindPasswdModal";
+import FindPasswdModal from "./modal/FindPasswdModal";
 import CodeForm from "./CodeForm";
 import { codeCheck, emailSend } from "../../hooks/axios/FindPasswd";
 export default function FindPasswdForm() {
@@ -42,32 +42,26 @@ export default function FindPasswdForm() {
       setError("빈 항목이 있습니다.");
     } else {
       const send = await emailSend(email, "passwordChange");
-      console.log(send);
-      console.log(send.status);
       if (send.status == 400) {
         setError(send.data.message);
-      } else if(send.status){
+      } else if (send.status) {
         setInputBlock(true);
         setShowCodeInput(true);
         setSubmitCode(false);
         setError(send.data.message);
-        console.log(name);
-        console.log(email);
         setTimer(timer);
       }
     }
-      setErrorShow(true);
-    };
+    setErrorShow(true);
+  };
 
-  const onSubmitHandler = async(e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const check = await codeCheck(name, email, code);
     if (check.status == 400) {
       setError(check.data.message);
       setErrorShow(true);
     } else {
-      console.log(email);
-      console.log(code);
       navigate("./changepasswd");
     }
   };

@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import FamousFriendCard from "./card/FamousFriendCard";
-
 import { MdWhereToVote } from "react-icons/md";
 import { FamousFriendObj } from "./SearchFriend.interface";
 import { InfluencerFriend } from "../../hooks/axios/SearchFriend";

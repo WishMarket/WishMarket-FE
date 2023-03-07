@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { IoReloadSharp } from "react-icons/io5";
-import { Modal } from "react-bootstrap";
-import { EmailCheckError } from "../../hooks/Errors";
+
 import { emailSend } from "../../hooks/axios/Signup";
 import { TimerProps } from "./Signup.interface";
+import TimerModal from "./modal/TimerModal";
 
 export function Timer({ timer, error, setError, email }: TimerProps) {
   const [minutes, setMinutes] = useState<number>(timer);
@@ -12,14 +12,13 @@ export function Timer({ timer, error, setError, email }: TimerProps) {
 
   const onClickRetryHandler = async (time: number) => {
     let send = await emailSend(email, "signUp");
-    console.log(send);
-    setError("인증코드가 재발송 되었습니다.");
-    setErrorShow(true);
-    setMinutes(time);
+    if (send.status == 200) {
+      setError("인증코드가 재발송 되었습니다.");
+      setErrorShow(true);
+      setMinutes(time);
+    }
   };
-  const handleClose = (e: React.MouseEvent<HTMLButtonElement> | void) => {
-    setErrorShow(false);
-  };
+ 
 
   useEffect(() => {
     const countdown = setInterval(() => {
@@ -61,14 +60,7 @@ export function Timer({ timer, error, setError, email }: TimerProps) {
             인증 코드 만료: {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
           </h2>
         </div>
-        <Modal show={errorShow} onHide={handleClose}>
-          <Modal.Body>{EmailCheckError(error)}</Modal.Body>
-          <Modal.Footer>
-            <button className="btn btn-secondary" onClick={handleClose}>
-              닫기
-            </button>
-          </Modal.Footer>
-        </Modal>
+        <TimerModal errorShow={errorShow} setErrorShow={setErrorShow} error={error} />
       </div>
     );
   }

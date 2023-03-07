@@ -1,17 +1,13 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
-import { FindPasswdError } from "../../hooks/Errors";
+import { FindPasswdError } from "../../../hooks/Errors";
+import { FindPasswdModalProps } from "../FindPasswd.interface";
 
-interface Props {
-  errorShow: boolean;
-  error: string;
-  setErrorShow: React.Dispatch<React.SetStateAction<boolean>>;
-}
 export default function FindPasswdModal({
   errorShow,
   error,
   setErrorShow,
-}: Props) {
+}: FindPasswdModalProps) {
   const handleClose = (e: React.MouseEvent<HTMLButtonElement> | void) => {
     setErrorShow(false);
   };

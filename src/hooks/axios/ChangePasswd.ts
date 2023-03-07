@@ -1,4 +1,5 @@
 import axios from "axios";
+
 export const ChangePassword = async ( email:string, password:string) => {
   return await axios
     .patch(
@@ -7,8 +8,6 @@ export const ChangePassword = async ( email:string, password:string) => {
       { withCredentials: true }
     )
     .then((response) => {
-      console.log(email)
-      console.log(password)
       return response;
     })
     .catch((e) => {
