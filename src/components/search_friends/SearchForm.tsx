@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
 import FriendCard from "./card/FriendCard";
-
 import NotFriendResult from "./NotFriendResult";
 import { SearchFriendsObj, SearchFormProps } from "./SearchFriend.interface";
 

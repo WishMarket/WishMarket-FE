@@ -15,7 +15,6 @@ export default function GitRedirect() {
   const getSocialLogin = async () => {
     try {
       const socialLogin = await GetsocialLogin(git_code);
-      console.log(socialLogin);
       if (socialLogin.status == 200) {
         SetAccessToken(
           socialLogin.data.accessToken,
@@ -28,7 +27,6 @@ export default function GitRedirect() {
         navigate("/");
       }
     } catch (e) {
-      console.log(e);
     }
   };
   return <div>Github 소셜로그인 진행중 ...</div>;

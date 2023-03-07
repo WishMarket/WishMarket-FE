@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { IoReloadSharp } from "react-icons/io5";
-import { Modal } from "react-bootstrap";
-import { FindPasswdError } from "../../hooks/Errors";
 import { emailSend } from "../../hooks/axios/FindPasswd";
+import { TimerProps } from "./FindPasswd.interface";
+import FindPasswdTimerModal from "./modal/FindPasswdTimerModal";
 
-interface Props {
-  timer: number;
-  error: string;
-  setError: React.Dispatch<React.SetStateAction<string>>;
-  email: string;
-}
-export function Timer({ timer, error, setError, email }: Props) {
+export function Timer({ timer, error, setError, email }: TimerProps) {
   const [minutes, setMinutes] = useState<number>(timer);
   const [seconds, setSeconds] = useState<number>(0);
   const [errorShow, setErrorShow] = useState(false);
@@ -20,9 +14,6 @@ export function Timer({ timer, error, setError, email }: Props) {
     const send = await emailSend(email, "passwordChange");
     setErrorShow(true);
     setMinutes(time);
-  };
-  const handleClose = (e: React.MouseEvent<HTMLButtonElement> | void) => {
-    setErrorShow(false);
   };
 
   useEffect(() => {
@@ -65,14 +56,11 @@ export function Timer({ timer, error, setError, email }: Props) {
             인증 코드 만료: {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
           </h2>
         </div>
-        <Modal show={errorShow} onHide={handleClose}>
-          <Modal.Body>{FindPasswdError(error)}</Modal.Body>
-          <Modal.Footer>
-            <button className="btn btn-secondary" onClick={handleClose}>
-              닫기
-            </button>
-          </Modal.Footer>
-        </Modal>
+        <FindPasswdTimerModal
+          errorShow={errorShow}
+          setErrorShow={setErrorShow}
+          error={error}
+        />
       </div>
     );
   }

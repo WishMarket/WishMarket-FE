@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { BsShareFill } from "react-icons/bs";
 import { TfiAlarmClock } from "react-icons/tfi";
-
 import FundingModal from "./FundingModal";
 import { commaNums } from "../../hooks/CommaNums";
 import { Link } from "react-router-dom";

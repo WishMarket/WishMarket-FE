@@ -30,7 +30,6 @@ export default function Header() {
     const checkToken = async () => {
         if (window.localStorage.getItem("accessToken")) {
             const newToken = await requestAccessToken();
-            console.log(newToken);
             const now = new Date();
             const refreshTime = GetRefreshTokenExpiredAt();
             let refresh_date = new Date();

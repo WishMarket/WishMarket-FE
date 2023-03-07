@@ -46,3 +46,9 @@ export interface SignupPasswdProps {
   setPassword: React.Dispatch<React.SetStateAction<string>>;
   setRetypePassword: React.Dispatch<React.SetStateAction<string>>;
 }
+
+export interface TimerModalProps{
+  errorShow:boolean;
+  setErrorShow:React.Dispatch<React.SetStateAction<boolean>>;
+  error:string;
+}

@@ -1,19 +1,19 @@
-import React from 'react'
+import React from "react";
 import { Timer } from "./Timer";
 import { BsPatchCheck } from "react-icons/bs";
+import { CodeFormProps } from "./FindPasswd.interface";
 
-interface Props {
-  setCode: React.Dispatch<React.SetStateAction<string>>;
-  timer: number;
-  error: string;
-  setError: React.Dispatch<React.SetStateAction<string>>;
-  email:string
-}
-export default function CodeForm({ setCode, timer, error,setError,email }:Props) {
-    const onCodeChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-      e.preventDefault();
-      setCode(e.currentTarget.value);
-    };
+export default function CodeForm({
+  setCode,
+  timer,
+  error,
+  setError,
+  email,
+}: CodeFormProps) {
+  const onCodeChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    setCode(e.currentTarget.value);
+  };
   return (
     <>
       <div className="code-input">
@@ -30,12 +30,7 @@ export default function CodeForm({ setCode, timer, error,setError,email }:Props)
         </div>
       </div>
       <div className="timer-wrapper">
-        <Timer
-          timer={timer}
-          error={error}
-          setError={setError}
-          email={email}
-        />
+        <Timer timer={timer} error={error} setError={setError} email={email} />
       </div>
     </>
   );

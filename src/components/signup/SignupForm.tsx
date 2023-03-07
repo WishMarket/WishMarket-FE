@@ -30,10 +30,9 @@ export default function SignupForm() {
     e.preventDefault();
     if (retypePassword == password) {
       let result = await requestSignup(email, password, name, nickname, code);
-
       if (result.data.name != undefined) {
         alert("회원가입 성공");
-        navigate("/");
+        navigate("/login");
       } else {
         setErrorCode(result.data.message);
         setErrorShow(true);
