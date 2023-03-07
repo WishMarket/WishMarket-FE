@@ -8,6 +8,7 @@ export interface ReceivedFundingItem {
     participants: string[];
     participantsNumber: number;
     fundedStatusType: string;
+    fundingStatusType: string;
     review: string;
     startDate: string;
     endDate: string;

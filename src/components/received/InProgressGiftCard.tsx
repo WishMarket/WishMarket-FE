@@ -21,7 +21,7 @@ export default function InProgressGiftCard() {
     return (
         <>
             {fundingInfo.map((gift) =>
-                gift.fundedStatusType === "ING" ? (
+                gift.fundingStatusType === "ING" ? (
                     <div className="In_Progress_Gift_Item" key={gift.fundingId}>
                         <img className="In_Progress_Gift_Img" src={gift.productImagerUrl} alt={gift.productName} />
                         <div className="In_Progress_Gift_Content">

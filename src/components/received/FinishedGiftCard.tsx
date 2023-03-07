@@ -8,7 +8,7 @@ export default function FinishedGiftCard() {
 
     useEffect(() => {
         getFundingGift(setFundingInfo);
-    }, [fundingInfo]);
+    }, []);
 
     return (
         <>
