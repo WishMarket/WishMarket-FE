@@ -8,6 +8,7 @@ import { validateNickname, validatePhone } from "../../utils/regex";
 import { FaSearchLocation } from "react-icons/fa";
 
 export default function ModifyProfile({ profileState, setProfileState }: IProfiles) {
+    const [point, setPoint] = useState<number>(0);
     const [files, setFiles]: any = useState(null);
     const [imageSrc, setImageSrc]: any = useState(null);
     const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
@@ -38,7 +39,7 @@ export default function ModifyProfile({ profileState, setProfileState }: IProfil
 
     useEffect(() => {
         getUserInfo(setUserInfo);
-    }, []);
+    }, [point]);
 
     useEffect(() => {
         setDisabled(!(!phoneErrorMsg && !nickNameErrorMsg));
@@ -96,6 +97,12 @@ export default function ModifyProfile({ profileState, setProfileState }: IProfil
         files ? updateUserInfoImg(imgFrm) : null;
         updateUserInfo(frm);
         setProfileState(true);
+        location.reload();
+    };
+
+    const getPoint = () => {
+        increasePoint();
+        setPoint(point + 1);
     };
 
     return (
@@ -194,7 +201,7 @@ export default function ModifyProfile({ profileState, setProfileState }: IProfil
                 <button className="btn btn-primary" onClick={handleModifyProfile} disabled={disabled}>
                     변경하기
                 </button>
-                <button className="btn Point_Charge_Btn" onClick={increasePoint}>
+                <button className="btn Point_Charge_Btn" onClick={getPoint}>
                     포인트 충전
                 </button>
             </div>

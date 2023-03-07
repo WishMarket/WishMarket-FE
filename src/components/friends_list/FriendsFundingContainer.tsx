@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import FriendsFunding from "./FriendsFunding";
 import { FundingList } from "./FriendsLists.inferface";
 import { getFriendsFunding } from "../../hooks/axios/FriendsList";

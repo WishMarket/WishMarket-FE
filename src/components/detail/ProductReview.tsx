@@ -8,7 +8,6 @@ export default function ProductReview({ item }: ProductItem) {
 
     useEffect(() => {
         getReviews(setReviews, item.productId);
-        console.log(reviews);
     }, []);
 
     return (

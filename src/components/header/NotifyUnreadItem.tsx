@@ -1,15 +1,16 @@
-import React from "react";
-import { NotifyItem } from "./Header.interface";
+import { NotifyItem, NotifyType } from "./Header.interface";
 import { Link } from "react-router-dom";
 import { NotifyRead, NotifyDelete } from "../../hooks/axios/Notify";
 
-export default function NotifyUnreadItem({ item }: NotifyItem) {
+export default function NotifyUnreadItem({ item, notify, setNotify }: NotifyItem) {
     const handleNotifyRead = () => {
         NotifyRead(item.id);
+        setNotify(notify + 1);
     };
 
     const handleNotifyDelete = () => {
         NotifyDelete(item.id);
+        setNotify(notify + 1);
     };
 
     return (

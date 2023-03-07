@@ -21,6 +21,7 @@ export const getUserInfo: any = async (setState: any) => {
             headers: {
                 Authorization: window.localStorage.getItem("accessToken"),
             },
+            withCredentials: true,
         })
         .then((res) => {
             let response = res.data;
@@ -34,11 +35,15 @@ export const getUserInfo: any = async (setState: any) => {
 export const increasePoint: any = async () => {
     const USER_URL = `http://3.38.63.3:8080/api/point/increase`;
     await axios
-        .put(USER_URL, {
-            headers: {
-                Authorization: window.localStorage.getItem("accessToken"),
-            },
-        })
+        .put(
+            USER_URL,
+            {},
+            {
+                headers: {
+                    Authorization: window.localStorage.getItem("accessToken"),
+                },
+            }
+        )
         .then((res) => {
             return res;
         })
@@ -55,6 +60,7 @@ export const updateUserInfo: any = async (frm: any) => {
                 "Content-Type": "multipart/form-data",
                 Authorization: window.localStorage.getItem("accessToken"),
             },
+            withCredentials: true,
         })
         .then((res) => {
             return res;
@@ -72,6 +78,7 @@ export const updateUserInfoImg: any = async (frm: any) => {
                 "Content-Type": "multipart/form-data",
                 Authorization: window.localStorage.getItem("accessToken"),
             },
+            withCredentials: true,
         })
         .then((res) => {
             return res;

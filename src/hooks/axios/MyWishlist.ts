@@ -3,7 +3,7 @@ import { WishlistType } from "../../components/wishlist/Wishlist.interface";
 
 export const getMyWish: any = async (setState: React.Dispatch<React.SetStateAction<WishlistType[]>>) => {
     const WISH_URL = `http://3.38.63.3:8080/api/wishlist`;
-    await axios
+    return await axios
         .get(WISH_URL, {
             headers: {
                 Authorization: window.localStorage.getItem("accessToken"),
@@ -14,13 +14,13 @@ export const getMyWish: any = async (setState: React.Dispatch<React.SetStateActi
             setState(response);
         })
         .catch((error) => {
-            console.log(error);
+            return error;
         });
 };
 
 export const postMyWish: any = async (productId: number) => {
     const WISH_URL = `http://3.38.63.3:8080/api/wishlist/add/${productId}`;
-    await axios
+    return await axios
         .post(
             WISH_URL,
             { withCredentials: true },
@@ -31,25 +31,22 @@ export const postMyWish: any = async (productId: number) => {
             }
         )
         .then((res) => {
-            console.log(res);
             return res;
         })
         .catch((error) => {
-            console.log(error);
             return error;
         });
 };
 
 export const deleteMyWish: any = async (productId: number) => {
     const WISH_DELETE_URL = `http://3.38.63.3:8080/api/wishlist/${productId}`;
-    await axios
+    return await axios
         .delete(WISH_DELETE_URL, {
             headers: {
                 Authorization: window.localStorage.getItem("accessToken"),
             },
         })
         .then((res) => {
-            console.log(res);
             return res;
         })
         .catch((error) => {

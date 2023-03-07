@@ -222,6 +222,11 @@
                     margin-bottom: 60px;
                     font-size: $product-title;
                     font-weight: 600;
+                    margin-top: 128px;
+
+                    &.gift {
+                        margin-top: 0px;
+                    }
 
                     .friends-list-funding-title-icon {
                         font-size: $font-larger;

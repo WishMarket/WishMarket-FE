@@ -52,3 +52,19 @@ export const getFriendsFunding: any = async (setState: any, id: number) => {
             return error;
         });
 };
+
+export const getFriendsGift: any = async (setState: any, id: number) => {
+    const FRIEND_GIFT_URL = `http://3.38.63.3:8080/api/funding/history/target/${id}`;
+    await axios
+        .get(FRIEND_GIFT_URL, {
+            headers: {
+                Authorization: window.localStorage.getItem("accessToken"),
+            },
+        })
+        .then((res) => {
+            setState(res.data);
+        })
+        .catch((error) => {
+            return error;
+        });
+};
