@@ -49,7 +49,7 @@ export default function ModifyProfile({ profileState, setProfileState }: IProfil
         setMapShow(true);
     };
 
-    const handleNicknameChange = (nickname: string) => {
+    const handleNicknameChange = (nickName: string) => {
         setNickName(nickName);
         setNickNameErrorMsg(validateNickname(nickName) ? "📢 닉네임은 3 글자 이상, 최대 8 글자입니다." : "");
     };
