@@ -22,7 +22,7 @@ export default function HowToUse() {
                     <FaUserCheck className="How_To_Use_Icon" />
                     <div className="How_To_Use_Title">2. 친구 선택</div>
                     <div className="How_To_Use_Desc">
-                        선물 받을 친구를 체크한 다음,
+                        선물 받을 친구를 체크한 다음
                         <br />
                         기간과 펀딩할 포인트를 입력합니다.
                     </div>
