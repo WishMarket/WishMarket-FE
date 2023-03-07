@@ -62,6 +62,7 @@ export default function FundingStartForm() {
         setPickFriendProfile(profileImageUrl);
     };
 
+<<<<<<< HEAD
     const onSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const now = new Date();
@@ -82,6 +83,37 @@ export default function FundingStartForm() {
             }
         }
     };
+=======
+  const onSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const now = new Date();
+    if (endDate === null) {
+      setErrorCode(1);
+      setErrorShow(true);
+    } else if (pickFriend === null) {
+      setErrorCode(2);
+      setErrorShow(true);
+    } else if (fundingAmount < 10) {
+      setErrorCode(3);
+      setErrorShow(true);
+    } else {
+      const start = await PostFundingStart(
+        id_num,
+        pickFriend,
+        fundingAmount,
+        now,
+        endDate
+      );
+      if (start.status == 200) {
+        alert("펀딩을 시작합니다!");
+        navigate("/");
+      } else {
+        setErrorCode(4);
+        setErrorShow(true);
+      }
+    }
+  };
+>>>>>>> 8be8aee80f40c8f57a932c931fe5cf43a0d3708b
 
     useEffect(() => {
         getFriends(0);
