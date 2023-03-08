@@ -14,7 +14,6 @@ import { getFriend, getProduct, PostFundingStart } from "../../hooks/axios/Fundi
 
 export default function FundingStartForm() {
     const navigate = useNavigate();
-
     const [items, setItems] = useState<FundingStartProductObj | null>(null);
     const [endDate, setEndDate] = useState<Date | null>(null);
     const [pickFriend, setPickFriend] = useState<number | null>(null);
@@ -62,35 +61,45 @@ export default function FundingStartForm() {
         setPickFriendProfile(profileImageUrl);
     };
 
-  const onSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const now = new Date();
-    if (endDate === null) {
-      setErrorCode(1);
-      setErrorShow(true);
-    } else if (pickFriend === null) {
-      setErrorCode(2);
-      setErrorShow(true);
-    } else if (fundingAmount < 10) {
-      setErrorCode(3);
-      setErrorShow(true);
-    } else {
-      const start = await PostFundingStart(
-        id_num,
-        pickFriend,
-        fundingAmount,
-        now,
-        endDate
-      );
-      if (start.status == 200) {
-        alert("펀딩을 시작합니다!");
-        navigate("/");
-      } else {
-        setErrorCode(4);
-        setErrorShow(true);
-      }
-    }
-  };
+    const getFormatDate = (date: any) => {
+        let year = date.getFullYear();
+        let month = 1 + date.getMonth();
+        let day = date.getDate();
+        let hour = date.getHours();
+        let minute = date.getMinutes();
+
+        month = month >= 10 ? month : "0" + month;
+        day = day >= 10 ? day : "0" + day;
+        hour = hour >= 10 ? hour : "0" + hour;
+        minute = minute >= 10 ? minute : "0" + minute;
+        return year + "-" + month + "-" + day + " " + hour + ":" + minute;
+    };
+
+    const onSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const now = new Date();
+        const nowDateString = getFormatDate(now);
+        const endDateString = getFormatDate(endDate);
+        if (endDate === null) {
+            setErrorCode(1);
+            setErrorShow(true);
+        } else if (pickFriend === null) {
+            setErrorCode(2);
+            setErrorShow(true);
+        } else if (fundingAmount < 10) {
+            setErrorCode(3);
+            setErrorShow(true);
+        } else {
+            const start = await PostFundingStart(id_num, pickFriend, fundingAmount, nowDateString, endDateString);
+            if (start.status == 200) {
+                alert("펀딩을 시작합니다!");
+                navigate("/");
+            } else {
+                setErrorCode(4);
+                setErrorShow(true);
+            }
+        }
+    };
 
     useEffect(() => {
         getFriends(0);
@@ -132,7 +141,6 @@ export default function FundingStartForm() {
                                             minDate={new Date()}
                                         />
                                     </div>
-
                                     <div className="FundingStart_FriendPicker">
                                         <div>
                                             <h2>
