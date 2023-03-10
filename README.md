@@ -281,7 +281,7 @@
 ###
 |Sign Up|Log In|
 |---|---|
-|<img src ="https://user-images.githubusercontent.com/111720709/224335202-39ea9f53-863d-427c-9174-a4e83dc4508f.gif" width="50%" height="200"/>|<img src ="https://user-images.githubusercontent.com/111720709/224335433-2ba00579-dff6-4d9e-b11f-62a9cd6a4061.gif" width="50%" height="200"/>|
+|<img src ="https://user-images.githubusercontent.com/111720709/224335202-39ea9f53-863d-427c-9174-a4e83dc4508f.gif" width="100%" height="200"/>|<img src ="https://user-images.githubusercontent.com/111720709/224335433-2ba00579-dff6-4d9e-b11f-62a9cd6a4061.gif" width="100%" height="200"/>|
 |Products|Wish List|
 |<img src ="https://user-images.githubusercontent.com/111720709/224335558-ece03f08-f32c-4080-ba8c-bc51d77085e2.gif" width="50%" height="200"/>|<img src ="https://user-images.githubusercontent.com/111720709/224335682-6260aa67-9ad1-4a8f-9d91-15122d5a717a.gif" width="50%" height="200"/>|
 |Funding Start|Funding Attend|
