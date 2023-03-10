@@ -318,6 +318,99 @@
 
 </br>
 
+
+## 🛠️기술 특장점
+<details>
+<summary> SSE(Sever-Sent-Event)</summary>
+<div markdown="1">
+<ul>
+<li>실시간 알림같은 경우는 서버에서 클라이언트 방향으로만 데이터를 보내면 되기 때문에 단방향 통신인 SSE가 적합하다. </li>
+<li>클라이언트에서 처음 HTTP 연결을 맺고 나면 서버는 클라이언트로 계속하여 데이터를 전송할 수 있다.</li>
+<li>websocket과 달리 별도의 프로토콜을 사용하지 않고 HTTP 프로토콜만으로 사용이 가능하며 훨씬 가볍다.</li>
+<li>접속에 문제가 있으면 자동으로 재연결을 시도한다.</li>
+<li>최대 동시 접속 수는 HTTP/1.1의 경우 브라우저 당 6개이며, HTTP/2는 100개까지 가능하다.</li>
+<li>IE를 제외한 브라우저에서 지원된다.</li>
+</ul>
+<img src="https://user-images.githubusercontent.com/112573111/224340927-0dded0ee-db09-4b1a-b373-7a0248f0618a.png" width="400" height="500">
+</div>
+</details>
+
+<details>
+<summary> Spring Batch / Scheduler</summary>
+<div markdown="1">
+<ul>
+<li>스케줄러를 통해 일정 주기마다 데이터를 처리해야 한다.!
+
+<ul>
+<li>위 경우 단순 메소드로 구현하기보단 데이터 처리, 자동화(사용자의 개입X), 신뢰성의 이유로 배치로 처리하기에 적합하다.</li>
+<li>펀딩의 성공 여부와 같은 민감한 데이터를 처리할 시 특정 문제가 발생 시 아예 동작하지 못하도록 해야 한다. (Step별로 작업 처리)</li>
+</ul>
+</li>
+<li>매 정각마다 펀딩 만료 여부를 확인해야 한다.
+<ul>
+<li>현재 진행 중인 펀딩 데이터들에 한해서 매 정각(ex 1:00)시간 마다 펀딩 목표 기간이 지난 데이터들에 대해서 펀딩의 상태 값을 FAIL처리를 해준다.</li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+
+<details>
+<summary> Redis</summary>
+<div markdown="1">
+<ul>
+<li>베스트 상품은 하루를 주기로 업데이트 되기 때문에 하루 동안은 변하지 않는다. 이때 다수의 사용자가 매번 조회하기 보단, Redis를 통해 캐시화 하여 저장하면 많은 유저가 같은 날 조회를 해도 DB가 아닌 바로 Redis에서 값을 가져오므로 처리량이 줄고 효율이 증가한다. </li>
+<li>토큰 기반 인증 방식에 Redis를 사용한 Refresh Token를 관리한다.</li>
+</ul>
+</div>
+</details>
+
+<details>
+<summary> OAuth2 LOGIN</summary>
+<div markdown="1">
+<ul>
+  <br>
+<img src="https://user-images.githubusercontent.com/112573111/224341745-4acbaeec-fb0a-499e-8e06-436b0d6ef35a.png">
+<li>[구현 방식]
+<ul>
+<li>Front 에서 Authorization code 발급받아 Server 로 전달</li>
+<li>Authorization code 를 받아 Access Token 및 유저 정보를 요청</li>
+<li>응답받은 유저 정보로 Database 를 검색하여 회원 정보 생성 및 수정</li>
+<li>로그인 성공 시 WishMarket Server 에서 Access, Refresh Token을 발급하여 응답</li>
+</ul>
+</li>
+<li>네이버, 깃허브 이메일을 통해 로그인</li>
+<li>계정의 생성, 인증 등 절차는 해당 OAuth Server 에서 관리</li>
+<li>WishMarket Server 에서는 이미 인증된 계정으로 간편하게 로그인 처리만 진행</li>
+</ul>
+</div>
+</details>
+
+<details>
+<summary> Recoil</summary>
+<div markdown="1">
+<ul>
+<li>Recoil을 활용하여 전역 상태 관리</li>
+<li>비밀번호 찾기 → 비밀번호 변경 페이지</li>
+<li>카테고리 하트 버튼 클릭 → 위시리스트 추가</li>
+</ul>
+</div>
+</details>
+
+<details>
+<summary> React-datepicker / Daum-Postcode</summary>
+<div markdown="1">
+<ul>
+<li>React-datepicker , Daum-Postcode 등 라이브러리를 이용해 사용자 친화적인 UI / UX</li>
+<li>펀딩시작 : React-datepicker</li>
+<li>마이페이지 - 정보변경, 받은선물 : Daum-Postcode </li>
+</ul>
+</div>
+</details>
+
+<br>
+
+
 ## 팀원소개
 - 원세영(Back-end) : 회원가입, 팔로우, 펀딩 기능 및 배포
 - 김선범(Back-end) : 상품검색, 포인트, 알림 기능
