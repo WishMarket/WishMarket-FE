@@ -6,15 +6,35 @@
 
 [Gift4U Team Notion](https://www.notion.so/Gift4U-Gift-for-you-dc8c3ba1c8724c41b2a798699a92ac36)
 
+### 프로젝트 개요 
+- 고가의 상품을 선물할 때  펀딩 방식을 통해 개인이 원하는 만큼 모금하여 부담 없이 선물할 수 있는 플랫폼
+
+### 기획배경
+  
+- 내가 아끼고 좋아하는 사람들을 위해 선물을 주는 것은 너무 기쁜 일이지만, 받는 사람은 선물 가격이 비싸다면 선뜻 의사를 밝히기 어렵고, 선물을 주는 사람 또한 흔한 선물보다는 의미 있는 값진 선물을 주고 싶은 경우가 많습니다.
+- 따라서 고가의 상품을 선물할 때 **펀딩 방식**을 통해 참여자 별 부담 가능한 금액을 모금하여 전달하는 플랫폼을 기획하였습니다.
+
+### 해결방법
+- 특정 대상(받는 사람)을 지정하여 참여자들의 펀딩 목적을 뚜렷하게 하고, 참여 금액은 자유롭게 설정할 수 있도록 하여 원하는 예산 내에서 선물에 동참할 수 있는 기회를 제공할 것입니다.
+- 친구 목록에 등록된 사용자라면 해당 사용자가 받고 싶어하는 선물 목록을 확인한 후, 펀딩을 통해 진행하고자 하는 선물의 선택의 폭을 줄일 수 있는 기회를 제공할 수 있습니다.
+- 해당 펀딩이 진행되는 링크를 통해 친구가 아니어도, 사용자들은 펀딩에 참여할 수 있기 때문에 선물을 할 수 있는 기회를 확대할 수 있습니다.
+
+**Demo link**
+[프로젝트 데모영상 링크](https://youtu.be/IbfWnYwOlSs)
+
+
+</br>
+
 ## 🕰️ 개발 기간
 * 23.01.26일 - 23.03.09일 (약 6주)
+
+</br>
 
 ## 🛠️ Skills
 ### Front-End
 <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white"> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white"> 
 <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=Vite&logoColor=white"> <img src="https://img.shields.io/badge/Recoil-0075EB?style=for-the-badge"> <img src="https://img.shields.io/badge/React Router-CA4245?style=for-the-badge&logo=sasReact Routers&logoColor=white"> <img src="https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=Axios&logoColor=white"> <img src="https://img.shields.io/badge/Scss-cc6699?style=for-the-badge&logo=sass&logoColor=white"> 
 <img src="https://img.shields.io/badge/CSS Modules-c4c4c4?style=for-the-badge&logo=CSS Modules&logoColor=000000"> 
-
 
 
 ### Back-End
@@ -31,6 +51,8 @@
 
 ### Collaboration tool
 <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white"> <img src="https://img.shields.io/badge/notion-000000?style=for-the-badge&logo=notion&logoColor=white"> <img src="https://img.shields.io/badge/slack-4A154B?style=for-the-badge&logo=slack&logoColor=white"> <img src="https://img.shields.io/badge/GitHub-4A154B?style=for-the-badge&logo=GitHub&logoColor=white">
+
+</br>
 
 ## 프로젝트 주요 기능
 <details>
@@ -259,6 +281,7 @@
 </div>
 </details>
 
+</br>
 
 ## ⚙️ Architecture
 ### System Architecture
@@ -277,6 +300,8 @@
 
 ![erd](https://user-images.githubusercontent.com/79897135/224329255-8a880e52-f79c-459a-b033-a7da57703759.png)
 
+</br>
+
 ## 🚀Demo
 ###
 |Sign Up|Log In|
@@ -291,8 +316,7 @@
 |Profile|Gift|
 |<img src ="https://user-images.githubusercontent.com/111720709/224336125-fcaa770a-b23d-462f-b0e8-37bfeeed67d4.gif" width="100%" height="200"/>|<img src ="https://user-images.githubusercontent.com/111720709/224336116-7ba29de9-b1d7-43c6-8ad6-fde5df684599.gif" width="100%" height="200"/>|
 
-
-
+</br>
 
 ## 팀원소개
 - 원세영(Back-end) : 회원가입, 팔로우, 펀딩 기능 및 배포
