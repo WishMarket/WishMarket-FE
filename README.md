@@ -2,9 +2,6 @@
 ![image](https://user-images.githubusercontent.com/113013495/224330528-670aded4-b5d6-4836-aa7d-9e053b43db52.png)
 
 
-받고 싶은 선물을 받아 마음이 따뜻해지는 프로젝트입니다
-
-[Gift4U Team Notion](https://www.notion.so/Gift4U-Gift-for-you-dc8c3ba1c8724c41b2a798699a92ac36)
 
 ### 프로젝트 개요 
 - 고가의 상품을 선물할 때  펀딩 방식을 통해 개인이 원하는 만큼 모금하여 부담 없이 선물할 수 있는 플랫폼
@@ -21,6 +18,9 @@
 
 **Demo link**
 [프로젝트 데모영상 링크](https://youtu.be/IbfWnYwOlSs)
+
+**팀 노션**
+[Gift4U Team Notion](https://www.notion.so/Gift4U-Gift-for-you-dc8c3ba1c8724c41b2a798699a92ac36)
 
 
 </br>
