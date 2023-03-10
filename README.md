@@ -295,9 +295,9 @@
 
 
 ## 팀원소개
-- 원세영(Back-end) https://github.com/seyoung5744
-- 김선범(Back-end) https://github.com/Kim-SeonBeom
-- 백동주(Back-end) https://github.com/paik-dongjoo
-- 고동우(Back-end) https://github.com/Ko-udon
-- 박주경(Front-end) https://github.com/trustmitt
-- 조혜준(Front-end) https://github.com/chj950807
+- 원세영(Back-end) : 회원가입, 팔로우, 펀딩 기능 및 배포
+- 김선범(Back-end) : 상품검색, 포인트, 알림 기능
+- 백동주(Back-end) : 소셜로그인, 유저정보관리 기능
+- 고동우(Back-end) : 상품추가, 베스트상품 조회, 위시리스트, 펀딩 기능 및 배포
+- 박주경(Front-end)
+- 조혜준(Front-end)
