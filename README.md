@@ -4,10 +4,13 @@
 
 받고 싶은 선물을 받아 마음이 따뜻해지는 프로젝트입니다
 
+[Gift4U Team Notion](https://www.notion.so/Gift4U-Gift-for-you-dc8c3ba1c8724c41b2a798699a92ac36)
+
 ## 🛠️ Skills
 ### Front-End
 <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white"> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white"> 
 <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=Vite&logoColor=white"> <img src="https://img.shields.io/badge/Recoil-0075EB?style=for-the-badge"> <img src="https://img.shields.io/badge/React Router-CA4245?style=for-the-badge&logo=sasReact Routers&logoColor=white"> <img src="https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=Axios&logoColor=white"> <img src="https://img.shields.io/badge/Scss-cc6699?style=for-the-badge&logo=sass&logoColor=white"> 
+<img src="https://img.shields.io/badge/CSS Modules-c4c4c4?style=for-the-badge&logo=CSS Modules&logoColor=000000"> 
 
 
 
@@ -33,7 +36,7 @@
 
 
 
-### Spring Batch
+### Batch
 ![배치 구조](https://user-images.githubusercontent.com/79897135/224329205-44fe09be-1f77-4807-b2c9-4d2be27f0e67.png)
 
 <br><br>
