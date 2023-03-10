@@ -54,7 +54,7 @@
 
 </br>
 
-## 프로젝트 주요 기능
+## ⚒️ 프로젝트 주요 기능
 <details>
 <summary> 회원가입</summary>
 <div markdown="1">
@@ -295,7 +295,7 @@
 
 <br><br>
 
-## ERD
+## 📄ERD
 [ERD-Cloud](https://www.erdcloud.com/d/vLR6JdRk3a6ZdrRhL)
 
 ![erd](https://user-images.githubusercontent.com/79897135/224329255-8a880e52-f79c-459a-b033-a7da57703759.png)
@@ -411,7 +411,7 @@
 <br>
 
 
-## 팀원소개
+## 👥 팀원소개
 - 원세영(Back-end) : 회원가입, 팔로우, 펀딩 기능 및 배포
 - 김선범(Back-end) : 상품검색, 포인트, 알림 기능
 - 백동주(Back-end) : 소셜로그인, 유저정보관리 기능
