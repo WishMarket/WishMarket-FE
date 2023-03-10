@@ -22,3 +22,11 @@
 
 ![erd](https://user-images.githubusercontent.com/79897135/224329255-8a880e52-f79c-459a-b033-a7da57703759.png)
 
+
+## 팀원소개
+- 원세영(Back-end) https://github.com/seyoung5744
+- 김선범(Back-end) https://github.com/Kim-SeonBeom
+- 백동주(Back-end) https://github.com/paik-dongjoo
+- 고동우(Back-end) https://github.com/Ko-udon
+- 박주경(Front-end) https://github.com/trustmitt
+- 조혜준(Front-end) https://github.com/chj950807
