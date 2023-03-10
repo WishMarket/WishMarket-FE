@@ -1,4 +1,4 @@
-# WishMarket
+# WishMarket-FE
 ![image](https://user-images.githubusercontent.com/113013495/224330528-670aded4-b5d6-4836-aa7d-9e053b43db52.png)
 
 
@@ -417,4 +417,4 @@
 - 백동주(Back-end) : 소셜로그인, 유저정보관리 기능
 - 고동우(Back-end) : 상품추가, 베스트상품 조회, 위시리스트, 펀딩 기능 및 배포
 - 박주경(Front-end) : 상품 조회 및 검색, 헤더, 메인 컴포넌트, 마이 페이지 UI 구현 및 연동, 프론트 배포
-- 조혜준(Front-end)
+- 조혜준(Front-end) : 로그인, 회원가입, 비밀번호변경, 친구검색, 펀딩 시작 & 참여, 메인 인기펀딩 페이지 UI 구현 및 연동
