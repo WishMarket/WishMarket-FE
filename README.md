@@ -1,4 +1,4 @@
-# WishMarket-FE
+# WishMarket
 ![image](https://user-images.githubusercontent.com/113013495/224330528-670aded4-b5d6-4836-aa7d-9e053b43db52.png)
 
 
