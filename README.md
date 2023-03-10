@@ -6,6 +6,9 @@
 
 [Gift4U Team Notion](https://www.notion.so/Gift4U-Gift-for-you-dc8c3ba1c8724c41b2a798699a92ac36)
 
+## 🕰️ 개발 기간
+* 23.01.26일 - 23.03.09일 (약 6주)
+
 ## 🛠️ Skills
 ### Front-End
 <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white"> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white"> 
