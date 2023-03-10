@@ -34,7 +34,7 @@
 
 
 
-### Batch
+### Spring Batch
 ![배치 구조](https://user-images.githubusercontent.com/79897135/224329205-44fe09be-1f77-4807-b2c9-4d2be27f0e67.png)
 
 <br><br>
